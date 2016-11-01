@@ -1,4 +1,5 @@
-void inicializar ( char tablero[8][8] )
+void 
+inicializar ( char tablero[8][8] )
 {
 
 }
