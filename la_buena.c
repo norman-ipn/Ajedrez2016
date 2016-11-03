@@ -1,0 +1,3 @@
+void la_buena()
+{
+}
