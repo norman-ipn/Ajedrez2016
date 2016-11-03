@@ -1,4 +1,4 @@
-int enrocar_corto(char tablero[8][8])
+void enrocar_corto(char tablero[8][8])
 {
-    return 0;
+    return;
 }
