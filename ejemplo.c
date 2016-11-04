@@ -1,5 +1,10 @@
-int main(void){
-return 0;
+
+/* Recuerden indentar con 'indent' */
+int
+main (void)
+{
+  return 0;
 }
+
 /*hOAI*/
 /*algo*/
