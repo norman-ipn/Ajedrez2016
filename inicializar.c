@@ -14,8 +14,8 @@ inicializar (char tablero[8][8])
   tablero[6][0] = 't';
   tablero[6][1] = 'c';
   tablero[6][2] = 'a';
-  tablero[6][3] = 'r';
-  tablero[6][4] = 'd';
+  tablero[6][3] = 'd';
+  tablero[6][4] = 'r';
   tablero[6][5] = 'a';
   tablero[6][6] = 'c';
   tablero[6][7] = 't';
