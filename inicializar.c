@@ -1,7 +1,7 @@
 void
 inicializar (char tablero[8][8])
 {
-  */iniciar piezas * /
+  /* Iniciando piezas */
    int i = 0;
   tablero[0][0] = 'T';
   tablero[0][1] = 'C';
