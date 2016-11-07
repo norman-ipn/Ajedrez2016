@@ -12,14 +12,14 @@ inicializar (char tablero[8][8])
   tablero[0][6] = 'C';
   tablero[0][7] = 'T';
 
-  tablero[6][0] = 't';
-  tablero[6][1] = 'c';
-  tablero[6][2] = 'a';
-  tablero[6][3] = 'd';
-  tablero[6][4] = 'r';
-  tablero[6][5] = 'a';
-  tablero[6][6] = 'c';
-  tablero[6][7] = 't';
+  tablero[7][0] = 't';
+  tablero[7][1] = 'c';
+  tablero[7][2] = 'a';
+  tablero[7][3] = 'd';
+  tablero[7][4] = 'r';
+  tablero[7][5] = 'a';
+  tablero[7][6] = 'c';
+  tablero[7][7] = 't';
   while (i < 8)
     {
       tablero[1][i] = 'P';
