@@ -6,5 +6,5 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 Lista de Alumnos
 
 Usuario github      Nombre
-
-AcardiaWolfman Oscar Guzmán Pérez
+CharlieC57          Carlos Enrique Contreras Casas
+IsamDavid           Isam David Espinosa Flores Isam 
