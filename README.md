@@ -10,4 +10,31 @@ AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
 Drazen420           DylanArturo González Armas
-CharlieC57          Carlos Enrique Contreras Casas
+DulceGaona          Dulce Gaona 
+LuisDRR             Luis Daniel Rodríguez Romo 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+dacicris2502      Cristopher A. Salinas Rivera
