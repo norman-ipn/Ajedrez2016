@@ -8,4 +8,6 @@ Lista de Alumnos
 Usuario github      Nombre Isam David Espinosa Flores
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
-AcardiaWolfman      Oscar Guzmán Pérez Oscar
+HackerManchister    Ajitzi Ricardo Quintana Ruiz
+LuisDRR             Luis Daniel Rodríguez Romo 
+dacicris2502        Cristopher Salinas Rivera
