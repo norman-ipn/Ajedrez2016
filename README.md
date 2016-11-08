@@ -23,7 +23,7 @@ Usuario github      Nombre
 *TafnesJ             Tafnes Lorena Jiménez Aguilar*
 *NoeAcosta           Noé Acosta Villeda*
 IsamDavid            Isam David Espinosa Flores
-
+AlejandroZF10        Alejandro de Jesus Zepeda Flores
 Smuuk               Reyes Medrano Alexis Daniel :v
 
 
