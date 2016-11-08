@@ -9,11 +9,14 @@ Usuario github      Nombre Isam David Espinosa Flores
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
-Drazen420           DylanArturo González Armas
+
 DulceGaona          Dulce Gaona 
 LuisDRR             Luis Daniel Rodríguez Romo 
 
 
+
+
+HackerManchister    Ajitzi Ricardo Quintana Ruiz
 
 
 
