@@ -8,7 +8,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
 Lista de Alumnos
 
-Usuario github      Nombre Isam David Espinosa Flores
+Usuario github      Nombre 
 *IrvingLucky27       Bautista Neyra Irving M.*
 *arturock127         Arturo Bustos Guevara*
 *AlexHrdRck          Luis Alejandro De los Santos Díaz*
@@ -22,7 +22,7 @@ Usuario github      Nombre Isam David Espinosa Flores
 *GerardoGGazon       Gonzalez Garzon Gerardo*
 *TafnesJ             Tafnes Lorena Jiménez Aguilar*
 *NoeAcosta           Noé Acosta Villeda*
-*KarlaPaolaOlivera   Torres Olivera Karla Paola
+IsamDavid            Isam David Espinosa Flores
 
 Smuuk               Reyes Medrano Alexis Daniel :v
 
