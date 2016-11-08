@@ -22,7 +22,7 @@ Usuario github      Nombre Isam David Espinosa Flores
 *GerardoGGazon       Gonzalez Garzon Gerardo*
 *TafnesJ             Tafnes Lorena Jiménez Aguilar*
 *NoeAcosta           Noé Acosta Villeda*
-
+*KarlaPaolaOlivera   Torres Olivera Karla Paola
 
 Smuuk               Reyes Medrano Alexis Daniel :v
 
