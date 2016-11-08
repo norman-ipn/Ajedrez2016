@@ -8,3 +8,4 @@ Lista de Alumnos
 Usuario github      Nombre
 Smuuk               Reyes Medrano Alexis Daniel
 IrvingLucky27       Bautista Neyra Irving M.
+LuisDRR             Luis Daniel Rodríguez Romo 
