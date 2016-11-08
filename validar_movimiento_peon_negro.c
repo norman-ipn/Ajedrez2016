@@ -1,8 +1,9 @@
 int
-validar_peon_negro (char tablero[8][8])
+validar_peon_negro (char tablero[7][7])
 {
-  int i = 0;
-  int j = 0;
-  int resultado = 0;
+  char i [6];
+  char j [7];
+  printf("en que posicion se encuentra el peon");
+  
   return resultado;
 }
