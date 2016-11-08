@@ -17,15 +17,15 @@ Usuario github      Nombre
 *HackerManchister    Ajitzi Ricardo Quintana Ruiz*
 *DulceGaona          Dulce Gaona*
 *LuisDRR             Luis Daniel Rodríguez Romo*
-*david-pm-31        Portilla Martinez Jose David*
+*david-pm-31         Portilla Martinez Jose David*
 *albertosilva123     Silva Cazares Luis Alberto* 
 *GerardoGGazon       Gonzalez Garzon Gerardo*
 *TafnesJ             Tafnes Lorena Jiménez Aguilar*
 *NoeAcosta           Noé Acosta Villeda*
 IsamDavid            Isam David Espinosa Flores
-*CharlieC57           Carlos Enrique Contreras Casas
-Smuuk               Reyes Medrano Alexis Daniel :v
-juliosandoval       Sandoval Pérez Julio César
+*CharlieC57          Carlos Enrique Contreras Casas
+Smuuk                Reyes Medrano Alexis Daniel :v
+juliosandoval        Sandoval Pérez Julio César
 
 
 
