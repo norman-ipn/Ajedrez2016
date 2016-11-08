@@ -16,6 +16,7 @@ DulceGaona          Dulce Gaona
 LuisDRR             Luis Daniel Rodríguez Romo 
 david-pm-31        Portilla Martinez Jose David
 albertosilva123     Silva Cazares Luis Alberto 
+GerardoGGazon       Gonzalez Garzon Gerardo
 
 
 
