@@ -5,10 +5,10 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
 Lista de Alumnos
 
-Usuario github      Nombre 
-
+Usuario github      Nombre Isam David Espinosa Flores
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 HackerManchister    Ajitzi Ricardo Quintana Ruiz
 LuisDRR             Luis Daniel Rodríguez Romo 
-IrvingLucky27       Bautista Neyra Irving M.
+CharlieC57          Carlos Enrique Contreras Casas
+Smuuk               Reyes Medrano Alexis Daniel 
