@@ -1,8 +1,5 @@
 # Ajedrez2016
 
-
-
-
 Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
@@ -22,10 +19,14 @@ Usuario github      Nombre
 *GerardoGGazon       Gonzalez Garzon Gerardo*
 *TafnesJ             Tafnes Lorena Jiménez Aguilar*
 *NoeAcosta           Noé Acosta Villeda*
-IsamDavid            Isam David Espinosa Flores
-*CharlieC57          Carlos Enrique Contreras Casas
-Smuuk                Reyes Medrano Alexis Daniel :v
-juliosandoval        Sandoval Pérez Julio César
-dacicris2502      Cristopher A. Salinas Rivera
-KarlaPaolaOlivera   Torres Olivera Karla Paola
-AlejandroZF10       Alejandro de Jesus Zepeda Flores
+*IsamDavid           Isam David Espinosa Flores*
+*CharlieC57          Carlos Enrique Contreras Casas*
+*Smuuk               Reyes Medrano Alexis Daniel*
+*juliosandoval       Sandoval Pérez Julio César*
+*dacicris2502        Cristopher A. Salinas Rivera*
+*KarlaPaolaOlivera   Torres Olivera Karla Paola*
+*AlejandroZF10       Alejandro de Jesus Zepeda Flores*
+
+
+
+
