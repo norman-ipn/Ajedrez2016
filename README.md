@@ -11,3 +11,4 @@ AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 HackerManchister    Ajitzi Ricardo Quintana Ruiz
 LuisDRR             Luis Daniel Rodríguez Romo 
+IrvingLucky27       Bautista Neyra Irving M.
