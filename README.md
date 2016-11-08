@@ -5,6 +5,5 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
 Lista de Alumnos
 
-Usuario github      Nombre Isam David Espinosa Flores
-AlexHrdRck          Luis Alejandro De los Santos Díaz
-arturock127         Arturo Bustos Guevara
+Usuario github      Nombre
+Smuuk               Reyes Medrano Alexis Daniel
