@@ -377,6 +377,10 @@ torre (char pieza, char tablero[8][8], int columnai, int filai, int columnaf,
      }
   return 1;
 }
+int alfil ( (char pieza, char tablero[8][8], int columnai, int filai, int columnaf,int filaf){
+	return 0;
+}
+	
 /*Esta función llama a otra, de aucerdo a la pieza seleccionada*/
 int
 analisis_movimiento (char pieza, char tablero[8][8], int columnai,
@@ -404,6 +408,14 @@ analisis_movimiento (char pieza, char tablero[8][8], int columnai,
       jugada = torre (pieza, tablero, columnai, filai, columnaf, filaf);
       return jugada;
     }
+  if(pieza=='A'){
+	         jugada= alfil( (pieza, tablero, columnai, filai, columnaf, filaf);
+                 }	         
+if(pieza=='a'){
+	       jugada= alfil( (pieza, tablero, columnai, filai, columnaf, filaf);
+               }
+			     
+			       
   return 1;
 }
 
@@ -581,7 +593,7 @@ Partida (char tablero[8][8], int turno)/*Esta función controla  las demas funci
       aplicacion =
 	analisis_movimiento (pieza, tablero, columnai_int, fila_inicial,
 			     columnaf_int, fila_final);
-    }
+    }			     
     tablero[fila_final][columnaf_int] = pieza;
   color = color_remplazo (columnai_int, fila_inicial);
   tablero[fila_inicial][columnai_int] = color;
