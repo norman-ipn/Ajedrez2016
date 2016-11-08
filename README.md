@@ -27,3 +27,4 @@ IsamDavid            Isam David Espinosa Flores
 Smuuk                Reyes Medrano Alexis Daniel :v
 juliosandoval        Sandoval Pérez Julio César
 dacicris2502      Cristopher A. Salinas Rivera
+KarlaPaolaOlivera   Torres Olivera Karla Paola
