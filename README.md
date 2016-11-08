@@ -10,7 +10,7 @@ AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
 Drazen420           DylanArturo González Armas
-
+DulceGaona          Dulce Gaona 
 
 
 
