@@ -26,17 +26,4 @@ IsamDavid            Isam David Espinosa Flores
 *CharlieC57          Carlos Enrique Contreras Casas
 Smuuk                Reyes Medrano Alexis Daniel :v
 juliosandoval        Sandoval Pérez Julio César
-
-
-
-
-
-
-
-
-
-
-
-
-
 dacicris2502      Cristopher A. Salinas Rivera
