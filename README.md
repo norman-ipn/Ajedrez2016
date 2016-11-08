@@ -5,18 +5,16 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
 Lista de Alumnos
 
-Usuario github      Nombre Isam David Espinosa Flores
+Usuario github      Nombre 
+IsamDavid           Isam David Espinosa Flores
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
-AcardiaWolfman      Oscar Guzmán Pérez Oscar
-
-DulceGaona          Dulce Gaona 
-LuisDRR             Luis Daniel Rodríguez Romo 
-
-
-
-
 HackerManchister    Ajitzi Ricardo Quintana Ruiz
+LuisDRR             Luis Daniel Rodríguez Romo 
+CharlieC57          Carlos Enrique Contreras Casas
+NoeAcosta           Noé Acosta Villeda
+AcardiaWolfman      Oscar Guzmán Pérez
+Drazen420           Dylan Arturo González Armas
 
 
 
@@ -29,15 +27,3 @@ HackerManchister    Ajitzi Ricardo Quintana Ruiz
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-dacicris2502      Cristopher A. Salinas Rivera
