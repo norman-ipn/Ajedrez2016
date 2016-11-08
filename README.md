@@ -22,7 +22,7 @@ NoeAcosta           Noé Acosta Villeda
 GerardoGGazon       Gonzalez Garzon Gerardo
 
 
-
+Smuuk               Reyes Medrano Alexis Daniel :v
 
 
 
