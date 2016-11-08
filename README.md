@@ -11,12 +11,11 @@ arturock127         Arturo Bustos Guevara
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
-HackerManchister    Ajitzi Ricardo Quintana Ruiz
+**HackerManchister    Ajitzi Ricardo Quintana Ruiz**
 DulceGaona          Dulce Gaona 
 LuisDRR             Luis Daniel Rodríguez Romo 
 david-pm-31        Portilla Martinez Jose David
 albertosilva123     Silva Cazares Luis Alberto 
-GerardoGGazon       Gonzalez Garzon Gerardo
 
 
 
