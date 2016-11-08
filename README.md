@@ -6,4 +6,5 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 Lista de Alumnos
 
 Usuario github      Nombre
-HackerManchister    Ajitzi Ricardo Quintana Ruiz
+AlexHrdRck          Luis Alejandro De los Santos Díaz
+arturock127         Arturo Bustos Guevara
