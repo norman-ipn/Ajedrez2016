@@ -7,7 +7,7 @@ Lista de Alumnos
 
 Usuario github      Nombre Isam David Espinosa Flores
 **IrvingLucky27       Bautista Neyra Irving M.**
-arturock127         Arturo Bustos Guevara
+**arturock127         Arturo Bustos Guevara**
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
