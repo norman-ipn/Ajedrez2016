@@ -19,6 +19,7 @@ albertosilva123     Silva Cazares Luis Alberto
 cgvrcarlos          Vazquez Rico Carlos Gabriel
 TafnesJ             Tafnes Lorena Jiménez Aguilar
 NoeAcosta           Noé Acosta Villeda
+GerardoGGazon       Gonzalez Garzon Gerardo
 
 
 
