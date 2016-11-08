@@ -11,7 +11,7 @@ arturock127         Arturo Bustos Guevara
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 AcardiaWolfman      Oscar Guzmán Pérez Oscar
-Drazen420           DylanArturo González Armas
+Drazen420           Dylan Arturo González Armas
 DulceGaona          Dulce Gaona 
 LuisDRR             Luis Daniel Rodríguez Romo 
 
