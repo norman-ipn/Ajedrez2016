@@ -11,3 +11,16 @@ PedroLuisMoOr       Pedro Luis Morelos Ordoñez
 HackerManchister    Ajitzi Ricardo Quintana Ruiz
 LuisDRR             Luis Daniel Rodríguez Romo 
 CharlieC57          Carlos Enrique Contreras Casas
+NoeAcosta           Noé Acosta Villeda
+
+
+
+
+
+
+
+
+
+
+
+
