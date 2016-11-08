@@ -18,9 +18,6 @@ AcardiaWolfman      Oscar Guzmán Pérez
 
 IrvingLucky27       Bautista Neyra Irving M.
 
-
-
-
 arturock127           Arturo Bustos Guevara
 
 
