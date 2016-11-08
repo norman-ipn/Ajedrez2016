@@ -10,16 +10,4 @@ IsamDavid           Isam David Espinosa Flores
 AlexHrdRck          Luis Alejandro De los Santos Díaz
 PedroLuisMoOr       Pedro Luis Morelos Ordoñez 
 HackerManchister    Ajitzi Ricardo Quintana Ruiz
-NoeAcosta           Noé Acosta Villeda
-
-
-
-
-
-
-
-
-
-
-
-
+LuisDRR             Luis Daniel Rodríguez Romo 
