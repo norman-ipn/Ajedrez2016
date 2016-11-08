@@ -6,4 +6,4 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 Lista de Alumnos
 
 Usuario github      Nombre
-AlexHrdRck          Luis Alejandro De los Santos Díaz
+HackerManchister    Ajitzi Ricardo Quintana Ruiz
