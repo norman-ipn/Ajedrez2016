@@ -28,3 +28,4 @@ Smuuk                Reyes Medrano Alexis Daniel :v
 juliosandoval        Sandoval Pérez Julio César
 dacicris2502      Cristopher A. Salinas Rivera
 KarlaPaolaOlivera   Torres Olivera Karla Paola
+AlejandroZF10       Alejandro de Jesus Zepeda Flores
