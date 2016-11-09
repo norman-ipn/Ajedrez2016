@@ -32,3 +32,4 @@ Lista de Alumnos
 |**OscarSTK**|Oscar David Ortega Prieto|
 |**mauricioww**|Marcos Mauricio Carpintero Mendoza|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro|
+|**leafar5645**|Hernandez Ruiz Rafael|
