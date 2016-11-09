@@ -27,3 +27,4 @@ Lista de Alumnos
 |**dacicris2502**|Cristopher A. Salinas Rivera|
 |**KarlaPaolaOlivera**|Torres Olivera Karla Paola|
 |**AlejandroZF10**|Alejandro de Jesus Zepeda Flores|
+|**ArturoRR97**|Arturo Rivas Rojas|
