@@ -29,3 +29,4 @@ Lista de Alumnos
 |**AlejandroZF10**|Alejandro de Jesus Zepeda Flores|
 |**ArturoRR97**|Arturo Rivas Rojas|
 |**Emm79**|Luis Emmanuel Maya Rocha|
+|**OscarSTK**|Oscar David Ortega Prieto|
