@@ -27,3 +27,5 @@ coordenada_valida (int x, int y)
 
   return 1;
 }
+
+/*Se ve bastante bien */
