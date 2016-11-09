@@ -14,7 +14,6 @@ inicializar (char tablero[8][8])
 	int y = 0;/* variable de control de la posicion del tablero en y*/
 	int f = 8;/* variable para la nmeracion de filas*/
 	int blanca = 220;
-	char tablero[8][8];
 	/* Se inicializa el tablero con caracteres nulos para no tener basura*/
 	while (y<=8){
 		while (x<=8){
@@ -28,38 +27,34 @@ inicializar (char tablero[8][8])
 	y = 0;
   /* Iniciando piezas */
    int i = 0;
-  tablero[0][0] = 'T';
-  tablero[0][1] = 'C';
-  tablero[0][2] = 'A';
-  tablero[0][3] = 'R';
-  tablero[0][4] = 'D';
-  tablero[0][5] = 'A';
-  tablero[0][6] = 'C';
-  tablero[0][7] = 'T';
-
-  tablero[7][0] = 't';
-  tablero[7][1] = 'c';
-  tablero[7][2] = 'a';
-  tablero[7][3] = 'd';
-  tablero[7][4] = 'r';
-  tablero[7][5] = 'a';
-  tablero[7][6] = 'c';
-  tablero[7][7] = 't';
+  tablero[0][0] = 't';
+  tablero[0][1] = 'c';
+  tablero[0][2] = 'a';
+  tablero[0][3] = 'd';
+  tablero[0][4] = 'r';
+  tablero[0][5] = 'a';
+  tablero[0][6] = 'c';
+  tablero[0][7] = 't';
+  tablero[7][0] = 'T';
+  tablero[7][1] = 'C';
+  tablero[7][2] = 'A';
+  tablero[7][3] = 'D';
+  tablero[7][4] = 'R';
+  tablero[7][5] = 'A';
+  tablero[7][6] = 'C';
+  tablero[7][7] = 'T';
   while (i < 8)
     {
-      tablero[1][i] = 'P';
-/* Piezas blancas se identifican por estar en mayusculas */
-      tablero[6][i] = 'p';
-/* Piezas negras se identifican por estar en minusculas */
+/* Piezas blancas se identifican por estar en mayusculas, negras en minuscula */
+tablero[6][i] = 'P';
+tablero[1][i] = 'p';
       i = i + 1;
     }
   /* impresion del tablero de ajedrez*/
-
-	
 	printf("\n");
 	printf("    ");
 	while (a < 50){
-		/* Se indica el tipo de dato %c para que interprete el entero segun el codigo ACII*/
+		/* Se indica el tipo de dato %c para que interprete el entero segun el codigo ASCII*/
 		printf("%c",partesuperior[a]);
 		a = a +1;
 	}
@@ -86,12 +81,10 @@ inicializar (char tablero[8][8])
 		x = 0;
 		y = y +1;
 		f = f -1;
-		
 	}
 	printf("\n");
 		printf("  %d ",f);
 				while (a<8){
-					
 				printf("%c %c  ", c,tablero[y][x]);
 				a= a +1; 
 				x = x +1;
@@ -107,13 +100,8 @@ inicializar (char tablero[8][8])
 	printf("\n");
 		printf("    ");
 	a = 0;
-	
 	while (a < 8){
 		printf("  %c  ",65 + a);
 		a = a +1;
 	}
-	
-
 }
-
-
