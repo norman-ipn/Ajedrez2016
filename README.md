@@ -1,4 +1,4 @@
-# Ajedrez2016
+﻿# Ajedrez2016
 
 Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
@@ -32,3 +32,4 @@ Lista de Alumnos
 |**OscarSTK**|Oscar David Ortega Prieto|
 |**mauricioww**|Marcos Mauricio Carpintero Mendoza|
 
+|**AlexMex2412**||Mexicano Ixtepan Alejandro|
