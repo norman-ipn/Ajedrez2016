@@ -31,4 +31,4 @@ Lista de Alumnos
 |**Emm79**|Luis Emmanuel Maya Rocha|
 |**OscarSTK**|Oscar David Ortega Prieto|
 |**mauricioww**|Marcos Mauricio Carpintero Mendoza|
-|**AlexMex2412**||Mexicano Ixtepan Alejandro|
+|**AlexMex2412**|Mexicano Ixtepan Alejandro|
