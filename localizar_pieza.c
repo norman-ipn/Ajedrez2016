@@ -16,6 +16,8 @@ localizar_pieza (char tablero[8][8], char pieza, int *x, int *y)
 	          *x = i;
 	          *y = j;
 	        }
+	      j = j + 1;
 	    }
+	  i = i +1;
     }
 }
