@@ -30,3 +30,5 @@ Lista de Alumnos
 |**ArturoRR97**|Arturo Rivas Rojas|
 |**Emm79**|Luis Emmanuel Maya Rocha|
 |**OscarSTK**|Oscar David Ortega Prieto|
+|**mauricioww**|Marcos Mauricio Carpintero Mendoza|
+
