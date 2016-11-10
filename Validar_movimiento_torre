@@ -1,0 +1,6 @@
+int 
+validar_movimiento_torre(char tablero[8][8])
+{
+int resultado=0;
+return resultado;
+}
