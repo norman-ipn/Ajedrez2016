@@ -2,6 +2,8 @@ Propuesta
 Main.c --> Todos las funciones implementadas para el funcionamiento adecuado de la aplicación.
 Movimientos.c --> Todo lo relacionado con los movimientos del juego.
 Movimientos.h --> Todo lo relacionado con los movimientos del juego. (Headers).
+Crear_perfil_usuario.c ----> Crear un registro para los usuarios
+Crear_perfil_usuario.h ----> (Headers)
 Estadojuego.c --> Movimientos que se realizarán dentro del juego.
 Estadojuego.h --> Movimientos que se realizarán dentro del juego. (Headers).
 Guardarjuego.c --> Todo lo relacionado con el historial, progreso del juego.
