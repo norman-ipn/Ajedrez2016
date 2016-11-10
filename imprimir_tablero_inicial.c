@@ -103,5 +103,4 @@ tablero[1][i] = 'p';
 	while (a < 8){
 		printf("  %c  ",65 + a);
 		a = a +1;
-	}
-}
+	}}
