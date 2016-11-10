@@ -33,3 +33,6 @@ Lista de Alumnos
 |**mauricioww**|Marcos Mauricio Carpintero Mendoza|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro|
 |**leafar5645**|Hernandez Ruiz Rafael|
+|**KarlaSilva**|Silva Rojas Karla Lizbeth
+|**Bucketh**|Loretto Estrada Galilea América|
+|**Drazen420**|González Armas Dylan Arturo|

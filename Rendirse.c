@@ -1,4 +1,4 @@
-#include <stdi.o>
+#include <stdio.h>
 /*Opino que la función se invoque cuando el jugador escriba "GIVEUP" y mande a llamar esta función*/
 
 void /*Opino que la función sea void, ya que no veo necesario regresar nada */
