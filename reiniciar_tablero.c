@@ -6,6 +6,20 @@ reiniciar_tablero (tablero[8][8])
 {
 
   int i = 0;
+  int j = 1;
+  
+  while (j < 7)
+  {
+    tablero[j][i] = "\o"
+    
+    i = i + 1;
+    
+    if (i == 7)
+    {
+     i = 0;
+     j = j + 1;
+    }
+  }
 
   while (i < 8)
     {
