@@ -37,3 +37,5 @@ Lista de Alumnos
 |**Bucketh**|Loretto Estrada Galilea América|
 |**Drazen420**|González Armas Dylan Arturo|
 |**erickvazquez**|Vázquez Núñez Erick Francisco|
+|**alaneos777**|Ontiveros Salazar Alan Enrique|
+
