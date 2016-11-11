@@ -1,3 +1,5 @@
+/*trabajo conjunto de Jorge Mendez y Carlos Ochoa*/
+
 #include "validaciones.h"
 
 void enrocar_corto(char tablero[8][8])
