@@ -1,15 +1,15 @@
-/* recuerden que hay que indentar con indent */
 #include <stdio.h>
 
 int
 main (void)
 {
   char tablero[8][8];
-
-  inicializar (tablero);
   int jugador1 = 0;
   int jugador2 = 0;
   int estado = 1;
+
+  inicializar (tablero);
+
   while (estado == 1)		/* estado es un variable que va a ser igual al valor que regrese la funcion analizar si este es diferente de 1 el juego termina */
     {
       printf ("es turno del jugador 1 \n");
