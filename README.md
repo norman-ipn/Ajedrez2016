@@ -36,3 +36,4 @@ Lista de Alumnos
 |**KarlaSilva**|Silva Rojas Karla Lizbeth
 |**Bucketh**|Loretto Estrada Galilea América|
 |**Drazen420**|González Armas Dylan Arturo|
+|**erickvazquez**|Vázquez Núñez Erick Francisco|
