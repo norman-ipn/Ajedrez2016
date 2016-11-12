@@ -1,0 +1,21 @@
+Propuesta 
+Main.c --> Todos las funciones implementadas para el funcionamiento adecuado de la aplicación.
+Movimientos.c --> Todo lo relacionado con los movimientos del juego.
+Movimientos.h --> Todo lo relacionado con los movimientos del juego. (Headers).
+Crear_perfil_usuario.c ----> Crear un registro para los usuarios
+Crear_perfil_usuario.h ----> (Headers)
+Estadojuego.c --> Movimientos que se realizarán dentro del juego.
+Estadojuego.h --> Movimientos que se realizarán dentro del juego. (Headers).
+Guardarjuego.c --> Todo lo relacionado con el historial, progreso del juego.
+Guardarjuego.c --> Todo lo relacionado con el historial, progreso del juego. (Headers).
+Modalidadjuego.c --> Tipo de juego que se ha de jugar (Player vs. Player,Player vs. PC,Player vs Player [Online]).
+Modalidadjuego.c --> Tipo de juego que se ha de jugar (Player vs. Player,Player vs. PC,Player vs Player [Online]). {Headers}.
+Pantalla.c --> Funciones necesarias para imprimir el contenido en la consola e interactuar con el usuario (tablero, menús, etc).
+Pantalla.h --> Funciones necesarias para imprimir el contenido en la consola e interactuar con el usuario (tablero, menús, etc). (Headers)
+
+						{-->Estadojuego.h
+                        {-->Estadojuego.c
+main.c ---> Modalidad.h {-->Movimientos.h
+						{-->Movimientos.c
+						{-->Guardajuego.h
+						{-->Guardajuego.c 
