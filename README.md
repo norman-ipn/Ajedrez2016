@@ -38,4 +38,4 @@ Lista de Alumnos
 |**Drazen420**|González Armas Dylan Arturo|
 |**erickvazquez**|Vázquez Núñez Erick Francisco|
 |**alaneos777**|Ontiveros Salazar Alan Enrique|
-
+|**Om3Ga-Z**|Lopez Manriquez Angel|
