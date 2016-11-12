@@ -39,3 +39,4 @@ Lista de Alumnos
 |**erickvazquez**|Vázquez Núñez Erick Francisco|
 |**alaneos777**|Ontiveros Salazar Alan Enrique|
 |**AlanKev117**|Fuentes García Alan Kevin|
+|**JoseRivera12**|Rivera Ramirez Jose Armando|

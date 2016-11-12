@@ -1,10 +1,8 @@
 void
-inicializar (char tablero[8][8])
+inicializar_o_reiniciar_tablero (char tablero[8][8])
 {
-  int i = 0;
   int x = 0;			/* variable de control de la posición del tablero en x */
   int y = 0;			/* variable de control de la posición del tablero en y */
-
   while (y <= 8)
     {				/*Se inicializa tablero con caracteres nulos, para no tener basura */
       while (x <= 8)
@@ -18,6 +16,7 @@ inicializar (char tablero[8][8])
   x = 0;
   y = 0;
   /* Iniciando piezas */
+  int i = 0;
   tablero[0][0] = 't';
   tablero[0][1] = 'c';
   tablero[0][2] = 'a';
@@ -36,7 +35,7 @@ inicializar (char tablero[8][8])
   tablero[7][7] = 'T';
   while (i < 8)
     {
-/* Piezas blancas se identifican por estar en mayúsculas, negras en minúscula */
+/* Piezas blancas se identifican por estar en mayúsculas, negras en minúsculas */
       tablero[6][i] = 'P';
       tablero[1][i] = 'p';
       i = i + 1;
