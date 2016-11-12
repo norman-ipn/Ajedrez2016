@@ -10,6 +10,8 @@ Guardarjuego.c --> Todo lo relacionado con el historial, progreso del juego.
 Guardarjuego.c --> Todo lo relacionado con el historial, progreso del juego. (Headers).
 Modalidadjuego.c --> Tipo de juego que se ha de jugar (Player vs. Player,Player vs. PC,Player vs Player [Online]).
 Modalidadjuego.c --> Tipo de juego que se ha de jugar (Player vs. Player,Player vs. PC,Player vs Player [Online]). {Headers}.
+Pantalla.c --> Funciones necesarias para imprimir el contenido en la consola e interactuar con el usuario (tablero, menús, etc).
+Pantalla.h --> Funciones necesarias para imprimir el contenido en la consola e interactuar con el usuario (tablero, menús, etc). (Headers)
 
 						{-->Estadojuego.h
                         {-->Estadojuego.c
