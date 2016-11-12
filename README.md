@@ -1,4 +1,4 @@
-# Ajedrez2016
+﻿# Ajedrez2016
 
 Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
@@ -31,4 +31,11 @@ Lista de Alumnos
 |**Emm79**|Luis Emmanuel Maya Rocha|
 |**OscarSTK**|Oscar David Ortega Prieto|
 |**mauricioww**|Marcos Mauricio Carpintero Mendoza|
-
+|**AlexMex2412**|Mexicano Ixtepan Alejandro|
+|**leafar5645**|Hernandez Ruiz Rafael|
+|**KarlaSilva**|Silva Rojas Karla Lizbeth
+|**Bucketh**|Loretto Estrada Galilea América|
+|**Drazen420**|González Armas Dylan Arturo|
+|**erickvazquez**|Vázquez Núñez Erick Francisco|
+|**alaneos777**|Ontiveros Salazar Alan Enrique|
+|**AlanKev117**|Fuentes García Alan Kevin|
