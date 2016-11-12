@@ -27,13 +27,10 @@ int
 validar_movimiento_alfil (char posicion_ini_x,int posicion_ini_y,int posicion_y,char posicion_x,char tablero[8][8]);
 
 int
-tirar_balncas (char tablero[8][8]);
+tirar_blancas (char tablero[8][8]);
 
 void 
 rendirse ();
-
-void
-reiniciar_tablero (char tablero[8][8]);
 
 void 
 print_row(char board[8][8], int j);
@@ -48,7 +45,7 @@ void
 localizar_pieza (char tablero[8][8], char pieza, int *x, int *y);
 
 void
-inicializar (char tablero[8][8]);
+inicializar_o_reiniciar_tablero (char tablero[8][8]);
 
 void 
 enrocar_corto(char tablero[8][8]);
