@@ -12,7 +12,7 @@ main (void)
   printf("Si deseas ver las instrucciones para jugar presiona 1, en caso contrario presiona 0");
   scanf("%d",&manual);
   if (manual==1);
-  ver_instrucciones();
+  ver_instrucciones(tablero);
   inicializar (tablero);
 	
   
