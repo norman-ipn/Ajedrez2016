@@ -297,20 +297,3 @@ instrucciones (char tablero[8][8])
   return;
 }
 
-int
-main (void)
-{
-
-  /*A    B    C    D    E    F    G    H */
-  char tablero[8][8] = { 'T', 'C', 'A', 'Q', 'K', 'A', 'C', 'T',	/*1 */
-    'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P',	/*2 */
-    'X', ' ', 'X', ' ', 'X', ' ', 'X', ' ',	/*3 */
-    ' ', 'X', ' ', 'X', ' ', 'X', ' ', 'X',	/*4 */
-    'X', ' ', 'X', ' ', 'X', ' ', 'X', ' ',	/*5 */
-    ' ', 'X', ' ', 'X', ' ', 'X', ' ', 'X',	/*6 */
-    'X', 'p', 'p', 'p', 'p', 'p', 'p', 'p',	/*7 */
-    't', 'c', 'a', 'q', 'k', 'a', 'c', 't'	/*8 */
-  };
-  instrucciones (tablero);
-  return 0;
-}
