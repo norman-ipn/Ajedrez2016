@@ -1,5 +1,5 @@
 void
-inicializar_o_reiniciar_tablero (char tablero[8][8])
+inicializar (char tablero[8][8])
 {
   int x = 0;			/* variable de control de la posición del tablero en x */
   int y = 0;			/* variable de control de la posición del tablero en y */
