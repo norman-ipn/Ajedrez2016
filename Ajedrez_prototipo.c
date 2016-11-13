@@ -377,7 +377,7 @@ torre (char pieza, char tablero[8][8], int columnai, int filai, int columnaf,
      }
   return 1;
 }
-int alfil ( (char pieza, char tablero[8][8], int columnai, int filai, int columnaf,int filaf){
+int alfil  (char pieza, char tablero[8][8], int columnai, int filai, int columnaf,int filaf){
 	return 0;
 }
 	
@@ -409,10 +409,10 @@ analisis_movimiento (char pieza, char tablero[8][8], int columnai,
       return jugada;
     }
   if(pieza=='A'){
-	         jugada= alfil( (pieza, tablero, columnai, filai, columnaf, filaf);
+	         jugada= alfil(pieza, tablero, columnai, filai, columnaf, filaf);
                  }	         
 if(pieza=='a'){
-	       jugada= alfil( (pieza, tablero, columnai, filai, columnaf, filaf);
+	       jugada= alfil (pieza, tablero, columnai, filai, columnaf, filaf);
                }
 			     
 			       
