@@ -41,3 +41,4 @@ Lista de Alumnos
 |**AlanKev117**|Fuentes García Alan Kevin|
 |**JoseRivera12**|Rivera Ramirez Jose Armando|
 |**MartinIMR**| Mercado Rogel Martin Isauro |
+|**Om3Ga-Z**| Angel Lopez |
