@@ -7,8 +7,15 @@ main (void)
   int jugador1 = 0;
   int jugador2 = 0;
   int estado = 1;
-
+  int manual = 0;
+	
+  printf("Si deseas ver las instrucciones para jugar presiona 1, en caso contrario presiona 0");
+  scanf("%d",&manual);
+  if (manual==1);
+  ver_instrucciones();
   inicializar (tablero);
+	
+  
 
   while (estado == 1)		/* estado es un variable que va a ser igual al valor que regrese la funcion analizar si este es diferente de 1 el juego termina */
     {
