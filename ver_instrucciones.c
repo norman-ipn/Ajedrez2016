@@ -267,7 +267,7 @@ instrucciones (char tablero[8][8])
   scanf (" %d", &avanzar);
 
   printf
-    ("EL jaque-mate se dara cuando uno de los reyes este amenazado por una pieza del oponente y este no puedo moverse o obtruir con otra pieza sin dejar \n de estar amenazado, esto se considerara como vitoria para el jugador que lo logre primero antes que el otro.  \n");
+    ("EL jaque-mate se dara cuando uno de los reyes este amenazado por una pieza del oponente y este no puedo moverse o obstruir con otra pieza sin dejar \n de estar amenazado, esto se considerara como vitoria para el jugador que lo logre primero antes que el otro.  \n");
 
   printf
     ("\n En este caso, el Rey se encuentra amenazado por la torre y al no poder moverse a otra posicion sin ser amenazado debido a la Dama esto es el fin de la partida. \n");
