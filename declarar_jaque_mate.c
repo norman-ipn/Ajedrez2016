@@ -10,7 +10,7 @@ declarar_jaque_mate (char tablero[8][8], char pieza_jaque,
   int mate = 0;
   mate = opciones_movimiento_rey (tablero, rey);
 /* opciones_movimiento_rey es una funcio para ver si el rey puede hacer algun movimiento para salir del jaque*/
-  if (mate = -1)
+  if (mate == -1)
     {
       mate = bloquear_ataque (tablero, pieza_jaque, coodenadas_pieza, rey);
     }
