@@ -1,3 +1,8 @@
+/*=============================================
+======= PROGRAMA PRINCIPAL AJEDREZ     ========
+=============================================*/
+
+//BIBLIOTECA
 #include <stdio.h>
 
 int
@@ -8,11 +13,15 @@ main (void)
   int jugador2 = 0;
   int estado = 1;
   int manual = 0;
-	
-  printf("Si deseas ver las instrucciones para jugar presiona 1, en caso contrario presiona 0");
+
+  // ===== Bienvenida al Jugador
+  printf(" == BIENVENIDO A AJEDREZ ==\n");
+  printf("Si deseas ver las instrucciones para jugar presiona 1, en caso contrario presiona 0: ");
   scanf("%d",&manual);
-  if (manual==1);
-  ver_instrucciones(tablero);
+
+  if (manual==1);{
+  	ver_instrucciones(tablero);
+  }
   inicializar (tablero);
 	
   
@@ -22,20 +31,21 @@ main (void)
       printf ("es turno del jugador 1 \n");
       jugador1 = tirar_blancas (tablero);
       while (jugador1 != 0)	/* este while es en caso de que el movimiento de las blancas piezas no sea valido  la funcion tirar_blancas regresara un valor y si este es diferente de cero le  pedira que vuelva a tirar */
-	{
-	  printf ("su movimiento no fue valido porfavor intentelo de nuevo \n ");
-	  jugador1 = tirar_blancas (tablero);
-	}
+		{
+		  printf ("su movimiento no fue valido porfavor intentelo de nuevo \n ");
+		  jugador1 = tirar_blancas (tablero);
+		}	
       printf ("es turno del jugador 2 \n");
       jugador2 = tirar_negras (tablero);
 
       while (jugador2 != 0)	/* este while es en caso de que el movimiento de las piezas negras no sea valido la funcion tirar_negras regresara un valor y si este es diferente de cero  le pedira que vuelva a tirar */
-	{
-	  printf ("su movimiento no fue valido porfavor intentelo de nuevo \n");
-	  jugador2 = tirar_blancas (tablero);
-	}
+		{
+		  printf ("su movimiento no fue valido porfavor intentelo de nuevo \n");
+		  jugador2 = tirar_blancas (tablero);
+		}
       estado = analizar (tablero);
     }
+    
   /*if(estado != 1)
     reiniciar(tablero);*/
 	
