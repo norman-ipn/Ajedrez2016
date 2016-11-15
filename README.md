@@ -43,3 +43,4 @@ Lista de Alumnos
 |**MartinIMR**| Mercado Rogel Martin Isauro |
 |**Om3Ga-Z**| Angel Lopez |
 |**SoyOscarRH**| Rosas Hernandez Oscar Andres |
+|**SaidSoria**|Soria Zúñiga Osvaldo Said|
