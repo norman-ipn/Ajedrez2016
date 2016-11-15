@@ -42,3 +42,4 @@ Lista de Alumnos
 |**JoseRivera12**|Rivera Ramirez Jose Armando|
 |**MartinIMR**| Mercado Rogel Martin Isauro |
 |**Om3Ga-Z**| Angel Lopez |
+|**SoyOscarRH**| Rosas Hernandez Oscar Andres |
