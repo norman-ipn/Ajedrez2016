@@ -13,7 +13,7 @@ main()
 
 
     printf("Escriba su nombre usurario :\t");
-    scanf("%s",Nombre);
+    getchar("%s",Nombre);
 
     if(strcmp(Joaquin,Nombre)== 0)
         {
@@ -26,7 +26,7 @@ main()
                     {
 
                         printf("Escriba su nombre usurario :\t");
-                        scanf("%s",Nombre);
+                        getchar("%s",Nombre);
                         if(strcmp(Joaquin,Nombre)>0 ||(Joaquin,Nombre)<0)
                         {
                             cont=cont+1;
@@ -42,7 +42,7 @@ main()
 
 
     printf("Escriba su Password (menor a diez caracteres):\t");
-    scanf("%s",Password);
+    getchar("%s",Password);
         if(strcmp(Contrasena,Password)== 0)
         {
            printf("Bienvenido");
@@ -52,7 +52,7 @@ main()
             while(cont<2)
                 {
                     printf("Escriba su Password:\t");
-                    scanf("%s",Nombre);
+                    getchar("%s",Nombre);
                     if(strcmp(Contrasena,Password)>0 || strcmp(Contrasena,Password)<0)
                         {
                             cont=cont+1;
