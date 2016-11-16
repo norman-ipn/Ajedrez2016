@@ -20,19 +20,17 @@ validar_rey (char tablero[8][8], int x, int y)
     { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
 
   localizar_pieza (tablero, 'R', &posicion_actual_x, &posicion_actual_y);
+  
   while (i < 8)
     {
       siguiente_x = posicion_actual_x + direccion[i][0];
       siguiente_y = posicion_actual_y + direccion[i][1];
       if (coordenada_valida (siguiente_x, siguiente_y) == 1)
 	      {
-	        if (siguiente_x == x)
-	          {
-	            if (siguiente_y == y)
-		            {
-		              return 1;
-		            }
-	          }
+	        if (siguiente_x == x && siguiente_y == y)
+		        {
+		          return 1;
+		        }
 	      }
     }
   return -1;
