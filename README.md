@@ -44,3 +44,4 @@ Lista de Alumnos
 |**Om3Ga-Z**| Angel Lopez |
 |**SoyOscarRH**| Rosas Hernandez Oscar Andres |
 |**SaidSoria**|Soria Zúñiga Osvaldo Said|
+|**atziripe**|Pérez García Atziri|
