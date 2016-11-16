@@ -45,4 +45,4 @@ Lista de Alumnos
 |**SoyOscarRH**| Rosas Hernandez Oscar Andres |
 |**SaidSoria**|Soria Zúñiga Osvaldo Said|
 |**atziripe**|Pérez García Atziri|
-|**JoaksIPN**| Domínguez Moran Joaquín|
+|**Edrasen**|Ramos Mesas Edgar Alain|
