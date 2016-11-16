@@ -22,10 +22,11 @@ main (void)
   if (manual==1);{
   	ver_instrucciones(tablero);
   }
+	
+  modalidad_de_juego (); //Este es un menú que ya esta probado, este menú pueden verlo en el Github y posee ya las opciones de IA, PvP
+			  //Instrucciones y demas.	
   inicializar (tablero);
 	
-  
-
   while (estado == 1)		/* estado es un variable que va a ser igual al valor que regrese la funcion analizar si este es diferente de 1 el juego termina */
     {
       printf ("es turno del jugador 1 \n");
