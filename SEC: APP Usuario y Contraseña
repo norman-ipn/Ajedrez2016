@@ -4,7 +4,7 @@
 
 main()
 {
-    char Joaquin[6]="Alexa";    //Nombre del usuario// 
+    char Joaquin[6]="Alexa";    
     char Nombre[6];             
     char Contrasena[10]="QAH20";
     char Password[10];
