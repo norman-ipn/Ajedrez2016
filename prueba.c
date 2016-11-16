@@ -1,4 +1,4 @@
 void prueba()
 {
-return;
+return 0;
 }
