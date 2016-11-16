@@ -4,8 +4,8 @@
 
 main()
 {
-    char Joaquin[6]="Alexa";
-    char Nombre[6];
+    char Joaquin[6]="Alexa";    //Nombre del usuario// 
+    char Nombre[6];             
     char Contrasena[10]="QAH20";
     char Password[10];
     int cont=0;
@@ -41,7 +41,7 @@ main()
                     }
 
 
-    printf("Escriba su Password :\t");
+    printf("Escriba su Password (menor a diez caracteres):\t");
     scanf("%s",Password);
         if(strcmp(Contrasena,Password)== 0)
         {
