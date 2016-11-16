@@ -12,36 +12,6 @@
 int
 validar_reina (char tablero[8][8], int x, int y, char reina)
 {
-  int i = 0;
-  int siguiente_x = 0;
-  int siguiente_y = 0;
-  int posicion_actual_x = 0;
-  int posicion_actual_y = 0;
-  int direccion[8][2] =
-    { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
-
-  localizar_pieza (tablero, reina, &posicion_actual_x, &posicion_actual_y);
-
-  while (i < 8)
-    {
-
-      siguiente_x = posicion_actual_x;
-      siguiente_y = posicion_actual_y;
-
-      /* No temais, esto solo es "la siguiente posición" */
-      while(coordenada (siguiente_x + direccion[i][0], siguiente_y + direccion[i][1]) == 1 &&
-             tablero[siguiente_x + direccion[i][0]][siguiente_y + direccion[i][1]] == '.')
-        {
-          siguiente_x += direccion[i][0];
-          siguiente_y += direccion[i][1];
-
-  	      if (siguiente_x == x && siguiente_y == y)
-            {
-  		        return 1;
-  	        }
-  	       
-        }
-    }
-  return -1;
+   /*Esperando actualizacion*/
 }
 
