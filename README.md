@@ -47,3 +47,4 @@ Lista de Alumnos
 |**atziripe**|Pérez García Atziri|
 |**Edrasen**|Ramos Mesas Edgar Alain|
 |**LuisVitax**|Gonzalez Velez Luis Fernando|
+|**Lalaandrea**|Morales López Laura Andrea|
