@@ -8,7 +8,7 @@
 /* 1 significa que la coordenada es valida y -1 si no lo es */
 /* Tambien asumire que el caracter 'Q' significa Reina */
 /* El ultimo parametro es el de la ficha de la reina para saber si es la reina blanca o negra --> 'Q' o 'q' */
-
+/* Asumire que '.' es una casilla libre */
 int
 validar_reina (char tablero[8][8], int x, int y, char reina)
 {
@@ -28,8 +28,9 @@ validar_reina (char tablero[8][8], int x, int y, char reina)
       siguiente_x = posicion_actual_x;
       siguiente_y = posicion_actual_y;
 
-      while(coordenada (siguiente_x + direccion[i][0], 
-                         siguiente_y + direccion[i][1]) == 1 )
+      /* No temais, esto solo es "la siguiente posición" */
+      while(coordenada (siguiente_x + direccion[i][0], siguiente_y + direccion[i][1]) == 1 &&
+             tablero[siguiente_x + direccion[i][0]][siguiente_y + direccion[i][1]] == '.')
         {
           siguiente_x += direccion[i][0];
           siguiente_y += direccion[i][1];
