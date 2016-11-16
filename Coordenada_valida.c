@@ -5,22 +5,12 @@
 int
 coordenada_valida (int x, int y)
 {
-  if (x < 0)
+  if (x < 0 || y < 0)
     {
       return -1;
     }
 
-  if (y < 0)
-    {
-      return -1;
-    }
-
-  if (x >= 8)
-    {
-      return -1;
-    }
-
-  if (y >= 8)
+  if (x >= 8 || y >= 8)
     {
       return -1;
     }
