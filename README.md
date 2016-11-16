@@ -46,4 +46,4 @@ Lista de Alumnos
 |**SaidSoria**|Soria Zúñiga Osvaldo Said|
 |**atziripe**|Pérez García Atziri|
 |**Edrasen**|Ramos Mesas Edgar Alain|
-|**LuisVitax**|Gonzalez Velez Luis Ferna|
+|**LuisVitax**|Gonzalez Velez Luis Fernand0|
