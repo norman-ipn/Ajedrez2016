@@ -8,7 +8,7 @@
 int
 main (void)
 {
-  char tablero[8][8];
+  char tablero[8][8]='0';
   int jugador1 = 0;
   int jugador2 = 0;
   int estado = 1;
