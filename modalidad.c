@@ -1,7 +1,7 @@
     // Funcion para escoger una modalidad de juego
 //Cambie esta función de "if" a una función "switch" para que tener mejor orden.
 
-void modalidad_de_juego (int opcion)
+void modalidad_de_juego ()
 {
     printf("Ajedrez.\n");
     printf("Escoge una opción.\n");
