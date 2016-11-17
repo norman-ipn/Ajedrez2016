@@ -1,5 +1,5 @@
 int
-validar_peon_negro (char tablero[7][7])
+validar_peon_negro (char tablero[8][8])
 {
   char i [6];
   char j [7];
