@@ -1,4 +1,5 @@
-void coronar_peon(char tablero[][], char entrada) /* char entrada es el valor que se quiere tomar, ya sea dama, torre, caballo o alfil */
+void coronar_peon(char tablero[][], char entrada) /* char entrada es el valor que se quiere tomar, ya sea dama, torre, caballo o alfil.
+char tablero es la posición donde se encuentra el peón */
 {
   if(tablero[][]='P')
   {
