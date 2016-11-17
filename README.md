@@ -52,4 +52,4 @@ Lista de Alumnos
 |**RV411**|Rodriguez Garcia Adan Ivan|
 |**WholeCharlygold**|Albarran Cruz Carlos Alberto|
 |**Yael-Estrada**|Estrada Estrada Jesse Yael|
-
+|**alfmemije**|Memije Avila Alfredo Raymundo|
