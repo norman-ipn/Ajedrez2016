@@ -33,6 +33,7 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
       resultado =
 	validar_movimiento_torre (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
+			/*termina alfredo 1cm1 */
      break;
   if (pieza == 'C')
     {
