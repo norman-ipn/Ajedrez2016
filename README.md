@@ -51,4 +51,5 @@ Lista de Alumnos
 |**BrendaArlenn19**|Martínez Barrera Brenda Arlenn|
 |**RV411**|Rodriguez Garcia Adan Ivan|
 |**WholeCharlygold**|Albarran Cruz Carlos Alberto|
-|**Meowstic**|Jorge Andrés Hernández Garcia|
+|**Yael-Estrada**|Estrada Estrada Jesse Yael|
+
