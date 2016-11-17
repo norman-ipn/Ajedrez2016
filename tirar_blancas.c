@@ -1,5 +1,5 @@
 int
-tirar_balncas (char tablero[8][8])
+tirar_blancas (char tablero[8][8])
 {
   int res = 0;
 
