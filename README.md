@@ -53,3 +53,4 @@ Lista de Alumnos
 |**WholeCharlygold**|Albarran Cruz Carlos Alberto|
 |**Yael-Estrada**|Estrada Estrada Jesse Yael|
 |**alfmemije**|Memije Avila Alfredo Raymundo|
+|**Meowstic**|Jorge Andrés Hernández García|
