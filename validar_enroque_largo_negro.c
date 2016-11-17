@@ -1,6 +1,6 @@
 
 int
-validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8])
+validar_enroque_largo_negro (int mov_torre_dama_negra, int mov_rey_negro, char tablero[8][8])
 {
   int se_puede = 1;
 
