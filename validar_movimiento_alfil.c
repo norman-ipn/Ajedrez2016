@@ -22,6 +22,8 @@ validar_movimiento_alfil (int pos_ini_x,int pos_ini_y,int posicion_x,int posicio
 {
   
   if(tablero[pos_ini_x][pos_ini_y]=='A'||tablero[pos_ini_x][pos_ini_y]=='a')
+  {
+    
  
   return 0;
 
