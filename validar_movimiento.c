@@ -3,33 +3,37 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
 		    int posicion_x, int posicion_y, char pieza)
 {
   int resultado = 0;
-  if (pieza == 'P')
-    {
+	switch (pieza)
+	{
+		case 'P' :
+			
+    
       resultado =
 	validar_movimiento_peon_blanco (posicion_ini_x, posicion_ini_y,
 					posicion_y, posicion_x, tablero);
-    }
+			break;
+    
 
-  if (pieza == 'p')
-    {
+  
+		case 'p' :
       resultado =
 	validar_movimiento_peon_negro (posicion_ini_x, posicion_ini_y,
 				       posicion_y, posicion_x, tablero);
-    }
+    break;
 
-  if (pieza == 'T')
-    {
+  
+		case 'T' :
       resultado =
 	validar_movimiento_torre (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
+			break;
+    
 
-  if (pieza == 't')
-    {
+		case 't' :
       resultado =
 	validar_movimiento_torre (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
+     break;
   if (pieza == 'C')
     {
       resultado =
@@ -80,6 +84,6 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
 				  posicion_x, tablero);
     }
 
-
+}
   return resultado;
 }
