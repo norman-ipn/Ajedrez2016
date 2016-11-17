@@ -15,8 +15,8 @@ enrocar_corto (char tablero[8][8])
      y devolvera 1 en caso contrario */
   if (validar_enroque (tablero) == 1)
     {
-      tablero[0][1] = tablero[0][3];
-      tablero[0][2] = tablero[0][0];
+      tablero[0][4] = tablero[0][6];
+      tablero[0][7] = tablero[0][5];
     }
   return;
 }
