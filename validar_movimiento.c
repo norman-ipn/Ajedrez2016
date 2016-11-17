@@ -35,32 +35,32 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
 				  posicion_x, tablero);
 			/*termina alfredo 1cm1 */
      break;
-  if (pieza == 'C')
-    {
+		case 'C':
       resultado =
 	validar_movimiento_caballo (posicion_ini_x, posicion_ini_y,
 				    posicion_y, posicion_x, tablero);
-    }
-  if (pieza == 'c')
-    {
+			break; 
+			
+		case 'c':
       resultado =
 	validar_movimiento_caballo (posicion_ini_x, posicion_ini_y,
 				    posicion_y, posicion_x, tablero);
-    }
+			break;
 
-  if (pieza == 'A')
-    {
+		case 'A':
+    
       resultado =
 	validar_movimiento_alfil (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
-  if (pieza == 'a')
-    {
+			break;
+			
+  case 'a':
+    
       resultado =
 	validar_movimiento_alfil (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
-  if (pieza == 'R')
+    break;
+		case 'R':
     {
       resultado =
 	validar_movimiento_rey (posicion_ini_x, posicion_ini_y, posicion_y,
