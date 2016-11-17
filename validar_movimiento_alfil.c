@@ -4,7 +4,7 @@ int
 validar_movimiento_alfil (int pos_ini_x,int pos_ini_y,int posicion_x,int posicion_y,char tablero[8][8])
 {
   
-  if(tablero[pos_x][pos_y]=='A'||tablero[pos_x][pos_y]=='a')
+  if(tablero[pos_ini_x][pos_ini_y]=='A'||tablero[pos_ini_x][pos_ini_y]=='a')
  
   return 0;
 
