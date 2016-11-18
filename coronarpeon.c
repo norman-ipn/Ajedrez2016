@@ -1,11 +1,47 @@
-char /*Creo que deberia ser 'Char' y no 'Void' ya que seria más facil que regresara la pieza que quiere a cambio */
-coronar_peon () /*No veo necesario pasar el tablero como parametro, simplemente invocar la función desde antes*/
+void coronar_peon(char tablero[][], char entrada) /* char entrada es el valor que se quiere tomar, ya sea dama, torre, caballo o alfil.
+char tablero es la posición donde se encuentra el peón */
 {
-  char Opcion;
+  if(tablero[][]='P')
+  {
+    switch(entrada)
+    {
+      case 'D':
+        /* Se manda a llamar la función de dama blanca */
+        break;
+      case 'T':
+        /* Se manda a llamar la función de torre blanca */
+        break;
+      case 'A':
+        /* Se manda a llamar la función de alfil blanco */
+        break;
+      case 'C':
+        /* Se manda a llamar la función de caballo blanco */
+        break;
+      default:
+        printf("\n Pieza no válida\n");
+    }    
+  }
   
-  printf("Elija que pieza quiere tomar. \n T=Torre \n D=Dama \n A=Alfil \n C=Caballo \n");
-  scanf("%c", &Opcion);
-  /* Creo también que aquí deberíamos de mandar a llamar las demás funciones, dependiendo de lo que el jugador elija. Primero tenemos que saber como se está inicializando el tablero y demás */
-  return Opcion;
-    
+  else
+  {
+    switch(entrada)
+    {
+      case 'd':
+        /* Se manda a llamar la función de dama negra */
+        break;
+      case 't':
+        /* Se manda a llamar la función de torre negra */
+        break;
+      case 'a':
+        /* Se manda a llamar la función de alfil negro */
+        break;
+      case 'c':
+        /* Se manda a llamar la función de caballo negro */
+        break;
+      default:
+        printf("\n Pieza no válida\n");
+    }
+  }
 }
+
+  
