@@ -6,7 +6,7 @@
 int
 main (void)
 {
-  char tablero[8][8] = '0';
+  char tablero[8][8];
   int jugador1 = 0;
   int jugador2 = 0;
   int estado = 1;
@@ -23,8 +23,7 @@ main (void)
     ver_instrucciones (tablero);
   }
 
-  modalidad_de_juego ();	//Este es un menú que ya esta probado, este menú pueden verlo en el Github y posee ya las opciones de IA, PvP
-  //Instrucciones y demas.      
+  modalidad_de_juego ();
   inicializar (tablero);
 
   while (estado == 1)		/* estado es un variable que va a ser igual al valor que regrese la funcion analizar si este es diferente de 1 el juego termina */

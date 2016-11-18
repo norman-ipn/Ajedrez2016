@@ -3,7 +3,7 @@
 
 
 void
-menu_jugador ()
+menu_jugador (void)
 {
   printf ("\n");
   printf ("1- Continuar partida \n");
@@ -15,7 +15,7 @@ menu_jugador ()
 
 
 void
-manual ()
+manual (void)
 {
 
 }
@@ -25,7 +25,8 @@ void
 iniciar_sesion ()
 {
 
-  int resp1, resp2;
+  int resp1 = 0;
+  int resp2 = 0;
   char user[99999] = "usuario";
   char password[99999] = "clave";
   char usuario[99999];
@@ -54,16 +55,11 @@ iniciar_sesion ()
     {
       menu_jugador ();
     }
-
-
   else
     {
       printf ("\n");
       printf ("Usuario incorrecto");
     }
-
-
-
 }
 
 
