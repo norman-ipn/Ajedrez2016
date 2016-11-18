@@ -12,7 +12,7 @@ main()
 
 
 
-    printf("Escriba su nombre usurario :\t");
+    printf("Escriba su nombre usuario :\t");
     getchar("%s",Nombre);
 
     if(strcmp(Joaquin,Nombre)== 0)
@@ -25,7 +25,7 @@ main()
                 while(cont<3)
                     {
 
-                        printf("Escriba su nombre usurario :\t");
+                        printf("Escriba su nombre usuario :\t");
                         getchar("%s",Nombre);
                         if(strcmp(Joaquin,Nombre)>0 ||(Joaquin,Nombre)<0)
                         {
