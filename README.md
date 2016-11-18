@@ -54,3 +54,4 @@ Lista de Alumnos
 |**Yael-Estrada**|Estrada Estrada Jesse Yael|
 |**alfmemije**|Memije Avila Alfredo Raymundo|
 |**Meowstic**|Jorge Andrés Hernández García|
+|**ShazellCrail**|Brenda Shazell Crail Castro|
