@@ -31,13 +31,8 @@ DetallesPartida (int partida, int jugador, char pieza, int x, int y)
 		 jugador, pieza, x, y);
       resultado = fprintf (fp, "%s", cadena);
       fclose (fp);
-      if (tamano == resultado)
-	{
-	  return 1;
-	}
-      else
-	{
-	  return 0;
-	}
+	    
+	(tamano == resultado)? return 1 : return 0;
+	
     }
 }
