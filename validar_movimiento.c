@@ -59,31 +59,32 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
       resultado =
 	validar_movimiento_alfil (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    break;
+			break;
+			
 		case 'R':
-    {
+   
       resultado =
 	validar_movimiento_rey (posicion_ini_x, posicion_ini_y, posicion_y,
 				posicion_x, tablero);
-    }
-  if (pieza == 'r')
-    {
+			break;
+		case 'r':
+    
       resultado =
 	validar_movimiento_rey (posicion_ini_x, posicion_ini_y, posicion_y,
 				posicion_x, tablero);
-    }
-  if (pieza == 'D')
-    {
+    break;
+		case 'D':
+   
       resultado =
 	validar_movimiento_reina (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
-  if (pieza == 'd')
-    {
+    break;
+		case 'd':
+    
       resultado =
 	validar_movimiento_reina (posicion_ini_x, posicion_ini_y, posicion_y,
 				  posicion_x, tablero);
-    }
+    break;
 
 }
   return resultado;
