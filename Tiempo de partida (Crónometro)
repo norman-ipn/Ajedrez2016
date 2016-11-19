@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
-#include<windows.h>
+#include<unistd.h>
 
 int main()
 {
@@ -22,7 +22,7 @@ while(!0){
        }
 system("cls");
 printf("%d:%d:%d" , hrs , min, seg);
-Sleep(1000);
+usleep(1000);
 seg=seg+1;
 }
 getch();
