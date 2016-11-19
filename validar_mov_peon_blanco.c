@@ -11,19 +11,18 @@ validar_mov_peon_blanco (int posicion_ini_x, int posicion_ini_y, int posicion_y,
        {
          if(posicion_x==1||posicion_x==2)
          {
-           
+           return 1;
          }
-       }
+       }   
       else
-      {
+       {
         return -1;
-      }
+       }
      }
     }
   }
   else
-  {}
-}
-
+     { 
     return -1;
+     }
 }
