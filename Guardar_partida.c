@@ -1,7 +1,7 @@
-void guardar_partida(tablero[8][8])
+void guardar_partida(char tablero[8][8])
 {
     FILE* archivo = 0;
-    char tablero[8][8];
+ 
 
     size_t numero = 0;
 
