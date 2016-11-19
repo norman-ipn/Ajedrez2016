@@ -31,20 +31,20 @@ switch(opcion1){
 case 1:
 printf("\nExisten 2  diferentes modos de juego, usted puede elegir entre jugar con un amigo uno a uno o jugar contra la maquina");
 printf("\nPresione r para regresar al manual");
-scanf("%c", retorno);
+scanf("%c", &retorno);
 if(retorno=='r'){
         manual ();
                  }
 break;
 case 2:
 printf("\nPara salvar la partida presione la letra  G");
-scanf("%c", save);
+scanf("%c", &save);
 if(save=='G'){
 /*salvar_partida ();------------------> funcion en construccion*/
 printf("Partida guardada con exito");
 }
 printf("\nPresione r para regresar al manual");
-scanf("%c", retorno);
+scanf("%c", &retorno);
 if(retorno=='r'){
         manual ();
                  }
@@ -53,7 +53,7 @@ break;
 case 3:
 printf("\nInstrucciones de juego"); /*Pido permiso de usar la función existente para las funciones, para agregarlo a este menu*/
 printf("\nPresione r para regresar al manual");
-scanf("%c", retorno);
+scanf("%c", &retorno);
 if(retorno=='r'){
         manual ();
 
