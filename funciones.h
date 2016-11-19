@@ -10,7 +10,7 @@ void
 validar_enroque_largo(char tablero[8][8]);
 
 int
-validar_mov_peon_blanco (char tablero[8][8]);
+validar_mov_peon_blanco (int posicion_ini_x, int posicion_ini_y, int posicion_y, int posicion_x, char tablero[8][8]);
 
 int
 validar_mov_peon_negro (char tablero[7][7]);
