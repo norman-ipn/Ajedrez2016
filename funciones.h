@@ -105,10 +105,54 @@ void
 declarar_tablas();
 
 void
-ofrecer_tablas();
+ofrecer_tablas(tablero[8][8]);
 
 int
 udhist (int win);
 
 int
 DetallesPartida (int partida, int jugador, char pieza, int x, int y);
+
+void 
+tablas (char tablero[8][8]);
+
+int
+GuardaPartida (char tablero[8][8]);
+
+int
+RecuperaPartida (char tablero[8][8]);
+
+int 
+comprobar_casilla (char tablero [8][8], int x_inicial, int y_inicial, int x_final, int y_final);
+
+int 
+MoverRey (char tablero [8][8], int x_inicial, int y_inicial, int x_final, int y_final);
+
+void 
+dibujarDiagonales (char simbolo, int ncolumnas, int nfilas);
+
+void
+alfabetoASCII (char letra[7][5], char c);
+
+int
+casilla_atacada (char tablero[8][8], int posicionini_x, int posicionini_y,
+		 int posicionevaluar_x, int posicionevaluar_y);
+
+void
+inicializar (char tablero[8][8]);
+
+void
+menu_jugador (void);
+
+void
+modalidad_de_juego ();
+
+void 
+mostrar_resultados(int num_jugador);
+
+int
+opciones_movimiento_rey (char tablero[8][8], int rey[2]);
+
+int 
+empieza_jugador();
+
