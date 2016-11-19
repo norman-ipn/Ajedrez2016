@@ -106,3 +106,9 @@ declarar_tablas();
 
 void
 ofrecer_tablas();
+
+int
+udhist (int win);
+
+int
+DetallesPartida (int partida, int jugador, char pieza, int x, int y);
