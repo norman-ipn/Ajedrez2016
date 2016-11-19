@@ -15,9 +15,10 @@ void dibujarDiagonales(char simbolo,int ncolumnas,int nfilas)
 {
 	int x=0;
 	int y=0;
+	char matriz[nfilas][ncolumnas];
 	for(x=0,y=0;x<=ncolumnas,y<=nfilas;x=x+1,y=y+1)
 	{
-
+		
 	}
 }
 void
