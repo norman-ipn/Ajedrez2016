@@ -63,7 +63,7 @@ int validar_movimiento_caballo(int pos_i_x, int pos_i_y, int pos_f_y, int pos_f_
     /* pos_i=Posicion inicial. pos_f=Posicion final.
     Para todas las afirmaciones se usara un 1 y para las negaciociones -1 */
 
- int resultado = 1;
+  int resultado = 1;
  if( revisar_coordenada(pos_i_x, pos_i_y, tablero [8][8]) == -1)
   {
     resultado = -1;
