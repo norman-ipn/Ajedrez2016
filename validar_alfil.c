@@ -1,4 +1,1 @@
-/*Enrique Romero*/
-int resultado =0
-return 0
-  //¡¿Que es eso men?
+/* Usen la funcion "validar_diagonal" para la funcion del alfil */
