@@ -1,5 +1,5 @@
 
-void continuar_partida(archivo)
+void continuar_partida(char archivo[100])
 {
 
     FILE* fp = 0;
