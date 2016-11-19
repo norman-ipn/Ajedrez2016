@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<conio.h>
+#include<windows.h>
+
+int main()
+{
+int hrs=0;
+int min=0; 
+int seg=0;
+
+while(!0){
+        if(seg>=60){
+            seg=0;
+            min=min+1;
+            
+        if(min>=60){
+            min=0;
+            hrs=hrs+1;
+       
+       }
+       
+       }
+system("cls");
+printf("%d:%d:%d" , hrs , min, seg);
+Sleep(1000);
+seg=seg+1;
+}
+getch();
+}
