@@ -11,6 +11,15 @@ recibe una matriz de 7x5 y la llena con la letra solicitada, y un char en minusc
 
 
 */
+void dibujarDiagonales(char simbolo,int ncolumnas,int nfilas)
+{
+	int x=0;
+	int y=0;
+	for(x=0,y=0;x<=ncolumnas,y<=nfilas;x=x+1,y=y+1)
+	{
+
+	}
+}
 void
 alfabetoASCII (char letra[7][5], char c)
 {
