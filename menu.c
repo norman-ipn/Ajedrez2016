@@ -17,9 +17,49 @@ menu_jugador (void)
 void
 manual (void)
 {
+char retorno=0;
+char save=0;
+int opcion1=0;
+printf("Escoja alguna de las siguientes opciones");
+printf("\n 1.-Modos de juego");
+printf("\n 2.-Guardar Partida");
+printf("\n 3.-Instrucciones");
+
+scanf("%i",&opcion1);
+
+switch(opcion1){
+case 1:
+printf("\nExisten 2  diferentes modos de juego, usted puede elegir entre jugar con un amigo uno a uno o jugar contra la maquina");
+printf("\nPresione r para regresar al manual");
+scanf("%c", retorno);
+if(retorno=='r'){
+        manual ();
+                 }
+break;
+case 2:
+printf("\nPara salvar la partida presione la letra  G");
+scanf("%c", save);
+if(save=='G'){
+/*salvar_partida ();------------------> funcion en construccion*/
+printf("Partida guardada con exito");
+}
+printf("\nPresione r para regresar al manual");
+scanf("%c", retorno);
+if(retorno=='r'){
+        manual ();
+                 }
+break;
+
+case 3:
+printf("\nInstrucciones de juego"); /*Pido permiso de usar la función existente para las funciones, para agregarlo a este menu*/
+printf("\nPresione r para regresar al manual");
+scanf("%c", retorno);
+if(retorno=='r'){
+        manual ();
 
 }
-
+}
+}
 
 void
 iniciar_sesion ()
