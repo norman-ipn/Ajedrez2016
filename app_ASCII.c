@@ -11,6 +11,94 @@ recibe una matriz de 7x5 y la llena con la letra solicitada, y un char en minusc
 
 
 */
+void
+sp (char letra[7][5])
+{
+  int i = 0;
+  int j = 0;
+  char a[7][5] = {
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '}
+  };
+  for (i = 0; i < 7; i = i + 1)
+    {
+      for (j = 0; j < 5; j = j + 1)
+	{
+	  letra[i][j] = a[i][j];
+	}
+    }
+}
+void
+ex (char letra[7][5])
+{
+  int i = 0;
+  int j = 0;
+  char a[7][5] = {
+    {' ', '#', '#', ' ', ' '},
+    {' ', '#', '#', ' ', ' '},
+    {' ', '#', '#', ' ', ' '},
+    {' ', '#', '#', ' ', ' '},
+    {' ', '#', '#', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', '#', '#', ' ', ' '}
+  };
+  for (i = 0; i < 7; i = i + 1)
+    {
+      for (j = 0; j < 5; j = j + 1)
+	{
+	  letra[i][j] = a[i][j];
+	}
+    }
+}
+void
+num1 (char letra[7][5])
+{
+  int i = 0;
+  int j = 0;
+  char a[7][5] = {
+    {' ', ' ', '1', ' ', ' '},
+    {' ', '1', '1', ' ', ' '},
+    {' ', ' ', '1', ' ', ' '},
+    {' ', ' ', '1', ' ', ' '},
+    {' ', ' ', '1', ' ', ' '},
+    {' ', ' ', '1', ' ', ' '},
+    {' ', '1', '1', '1', ' '}
+  };
+  for (i = 0; i < 7; i = i + 1)
+    {
+      for (j = 0; j < 5; j = j + 1)
+	{
+	  letra[i][j] = a[i][j];
+	}
+    }
+}
+void
+num2 (char letra[7][5])
+{
+  int i = 0;
+  int j = 0;
+  char a[7][5] = {
+    {' ', '2', '2', ' ', ' '},
+    {' ', ' ', ' ', '2', ' '},
+    {' ', ' ', ' ', '2', ' '},
+    {' ', ' ', 'A', ' ', ' '},
+    {' ', ' ', ' ', ' ', ' '},
+    {' ', 'A', ' ', ' ', ' '},
+    {' ', 'A', '2', '2', ' '}
+  };
+  for (i = 0; i < 7; i = i + 1)
+    {
+      for (j = 0; j < 5; j = j + 1)
+	{
+	  letra[i][j] = a[i][j];
+	}
+    }
+}
 
 void
 letraA (char letra[7][5])
@@ -694,6 +782,18 @@ alfabetoASCII (char letra[7][5], char c)
     case 'z':
       letraZ (letra);
       break;
+    case '0':
+      ex (letra);
+      break;
+    case '1':
+      num1 (letra);
+      break;
+    case '2':
+      num2 (letra);
+      break;
+    case ' ':
+      sp (letra);
+      break;
     default:
       printf ("letra no existe");
 
@@ -705,18 +805,22 @@ imprimeJaque ()
 {
   int i = 0;
   int j = 0;
-  char jaque[7][27];
+  char jaque[7][32];
   char j0[7][5];
   char a[7][5];
   char q[7][5];
   char u[7][5];
   char e[7][5];
+  char x[7][5];
+  char es[7][5];
   system("clear");
   alfabetoASCII (j0, 'j');
   alfabetoASCII (a, 'a');
   alfabetoASCII (q, 'q');
+  alfabetoASCII (x, '0');
   alfabetoASCII (u, 'u');
   alfabetoASCII (e, 'e');
+  alfabetoASCII (es, ' ');
   for (i = 0; i < 7; i = i + 1)
     {
       for (j = 0; j < 5; j = j + 1)
@@ -739,42 +843,48 @@ imprimeJaque ()
 	{
 	  jaque[i][j] = e[i][j-20];
 	}
-      jaque[i][25] = '\n';
-      jaque[i][26] = '\0';
+      for (j = 25; j < 30; j = j + 1)
+	{
+	  jaque[i][j] = x[i][j-25];
+	}
+      jaque[i][30] = '\n';
+      jaque[i][31] = '\0';
     }
-  for (i = 0; i < 7; i = i + 1)
+    for(i=0;i<7;i=i+1)
     {
-      printf ("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c", 
-      jaque[i][0],
-      jaque[i][1],
-      jaque[i][2],
-      jaque[i][3],
-      jaque[i][4],
-      jaque[i][5],
-      jaque[i][6],
-      jaque[i][7],
-      jaque[i][8],
-      jaque[i][9],
-      jaque[i][10],
-      jaque[i][11],
-      jaque[i][12],
-      jaque[i][13],
-      jaque[i][14],
-      jaque[i][15],
-      jaque[i][16],
-      jaque[i][17],
-      jaque[i][18],
-      jaque[i][19],
-      jaque[i][20],
-      jaque[i][21],
-      jaque[i][22],
-      jaque[i][23],
-      jaque[i][24],
-      jaque[i][25],
-      jaque[i][26]
-      );
-      usleep (100000);
+	for(j=0;j<32;j=j+1)
+	{
+		printf("%c",jaque[i][j]);
+	
+		usleep(10000);	
+	}
+	
     }
+    usleep(100000);
+    system("clear");
+    
+    for(i=0;i<7;i=i+1)
+    {
+	for(j=0;j<25;j=j+1)
+	{
+		printf("%c",jaque[i][j]);
+	
+	}
+	printf("\n");
+	
+    }
+    usleep(100000);
+    system("clear");
+    for(i=0;i<7;i=i+1)
+    {
+	for(j=0;j<32;j=j+1)
+	{
+		printf("%c",jaque[i][j]);
+	
+	}
+	
+    }
+    
     sleep(1);
     system("clear");
 }
