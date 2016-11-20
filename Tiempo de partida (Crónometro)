@@ -1,14 +1,20 @@
+/* Cronómetro que contabiliza el tiempo total de la partida.*/
+
 #include<stdio.h>
+#include<stdlib.h>
 #include<conio.h>
 #include<unistd.h>
 
-int main()
+int main(int argc, char *argv[])
 {
+/* Inicialización de las variables, contará con minutos, segundos y horas. */
 int hrs=0;
 int min=0; 
 int seg=0;
 
+/* Contabiliza desde el momento en que se da inicio a la partida.*/
 while(!0){
+
         if(seg>=60){
             seg=0;
             min=min+1;
@@ -20,10 +26,14 @@ while(!0){
        }
        
        }
-system("cls");
+/* Limpia la pantalla de la consola para que se muestre la siguiente. */
+system("/usr/bin/clear");
+/* Imprime el tiempo en la pantalla durante la partida. */
 printf("%d:%d:%d" , hrs , min, seg);
+/* Se coloca la dentención para aumentar la exactitud. */
 usleep(1000);
 seg=seg+1;
 }
 getch();
+return 0;
 }
