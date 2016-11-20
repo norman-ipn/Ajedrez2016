@@ -11,6 +11,7 @@ recibe una matriz de 7x5 y la llena con la letra solicitada, y un char en minusc
 
 
 */
+
 void
 letraA (char letra[7][5])
 {
@@ -224,13 +225,13 @@ letraJ (char letra[7][5])
   int i = 0;
   int j = 0;
   char a[7][5] = {
-    {' ', 'J', 'J', 'J', ' '},
+    {'J', 'J', 'J', 'J', ' '},
     {' ', ' ', 'J', ' ', ' '},
     {' ', ' ', 'J', ' ', ' '},
     {' ', ' ', 'J', ' ', ' '},
     {' ', ' ', 'J', ' ', ' '},
-    {' ', 'J', 'J', ' ', ' '},
-    {' ', ' ', 'J', ' ', ' '}
+    {'J', ' ', 'J', ' ', ' '},
+    {' ', 'J', 'J', ' ', ' '}
   };
   for (i = 0; i < 7; i = i + 1)
     {
@@ -710,6 +711,7 @@ imprimeJaque ()
   char q[7][5];
   char u[7][5];
   char e[7][5];
+  system("clear");
   alfabetoASCII (j0, 'j');
   alfabetoASCII (a, 'a');
   alfabetoASCII (q, 'q');
@@ -771,8 +773,10 @@ imprimeJaque ()
       jaque[i][25],
       jaque[i][26]
       );
-      usleep (1000);
+      usleep (100000);
     }
+    sleep(1);
+    system("clear");
 }
 
 int
