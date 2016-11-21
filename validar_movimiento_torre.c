@@ -9,7 +9,7 @@ validar_movimiento_torre (char tablero[8][8], int coordenadas_iniciales[2],
       || (tablero[coordenadas_iniciales[0]][coodenadas_iniciales[1]] == "t"))
     {
       i =
-	mover_horizontal (tablero, coodenadas_iniciales, coodenadas_finales);
+	mover_horizontalmente (tablero, coodenadas_iniciales, coodenadas_finales);
     }
 }
 
