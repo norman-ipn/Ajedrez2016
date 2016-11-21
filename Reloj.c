@@ -40,3 +40,5 @@ int main(int hr, min, seg)
                   /*horas se reinicia a 0*/
             }
                   printf("%d %d %d\n",hr,min,seg);
+      }
+}
