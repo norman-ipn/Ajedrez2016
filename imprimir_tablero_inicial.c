@@ -1,7 +1,7 @@
 #include<stdio.h>
 
 void
-inicializar (char tablero[8][8])
+imprimir_tablero_inicial (char tablero[8][8])
 {
   /* Arreglo de enteros para su posterior conversion a codigo ASCII */
   int partesuperior[50] =
