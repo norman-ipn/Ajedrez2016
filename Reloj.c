@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int hr, min, seg)
+void Reloj(int hr, min, seg)
 {
       int hr=0;
       int min=0;
