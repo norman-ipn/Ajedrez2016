@@ -5,7 +5,7 @@ void Reloj(int hr, min, seg)
 {
       int hr=0;
       int min=0;
-      int seg=o;
+      int seg=0;
       
       printf("Reloj\n");
       /*bucle para controlar los segundos*/
@@ -24,7 +24,7 @@ void Reloj(int hr, min, seg)
             if(min == 60)
                   /*si los minutos llegan a 60*/
                   {
-                        hr++;
+                        hr=hr+1;
                         /*horas aumentan a 1*/
                         min=0;
                         /*minutos se reinicia a 0*/
