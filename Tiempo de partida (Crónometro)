@@ -30,7 +30,7 @@ while(!0){
 system("/usr/bin/clear");
 /* Imprime el tiempo en la pantalla durante la partida. */
 printf("%d:%d:%d" , hrs , min, seg);
-/* Se coloca la dentención para aumentar la exactitud. */
+/* Se coloca la detención para aumentar la exactitud. */
 usleep(1000);
 seg=seg+1;
 }
