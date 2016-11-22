@@ -19,16 +19,16 @@ menu_colores (void)
   switch (i)
     {
     case 1:
-      printf ("azul \n");
+      printf ("Azul \n");
       break;
     case 2:
-      printf ("negro \n");
+      printf ("Negro \n");
       break;
     case 3:
-      printf ("rojo \n");
+      printf ("Rojo \n");
       break;
     case 4:
-      printf ("verdesillo \n");
+      printf ("Verde \n");
       break;
     }
   return 0;
