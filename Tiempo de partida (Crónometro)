@@ -5,7 +5,7 @@
 #include<conio.h>
 #include<unistd.h>
 
-int main(int argc, char *argv[])
+int Tiempo_de_Partida(int argc, char *argv[])
 {
 /* Inicialización de las variables, contará con minutos, segundos y horas. */
 int hrs=0;

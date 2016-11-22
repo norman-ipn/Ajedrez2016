@@ -2,7 +2,7 @@
 #include <string.h>
 
 
-main()
+void Usuario_Contraseña()
 {
     char Joaquin[6]="Alexa";    
     char Nombre[6];             

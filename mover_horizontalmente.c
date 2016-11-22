@@ -1,20 +1,21 @@
 #include <stdio.h>
 /*Esta función verifica que el movimiento de una pieza hasta un punto este despejado de manera horizontal,esta función asume que la posición final esta vacia o hay una pieza enemiga a la pieza que se este desplazando.*/
 int
-mover_horizontalmente (char tablero[8][8], int columnai, int filai,
-		       int columnaf, int filaf)
+mover_horizontalmente (char tablero[8][8], int coodenadas_iniciales[2],
+		       int coodenadas_finales[2])
 {
   int i = 0;
   char vacio = '0';
-  if (columnai > columnaf) /*se mueve a la izquierda*/
+  if (coodenadas_iniciales[0] > coodenadas_finales[0])	/*se mueve a la izquierda */
     {
 
-      vacio = tablero[filai][columnai - 1];
+      vacio = tablero[filai][coodenadas_iniciales[0] - 1];
       i = i + 1;
-      while (columnai - i != columnaf)
+      while (coordenadas_iniciales[0] - i != coodenadas_finales[0])
 	{
 
-	  if (tablero[filai][columnai - i] != vacio)
+	  if (tablero[coodenadas_iniciales[1]][coodenadas_iniciales[0] - i] !=
+	      vacio)
 	    {
 	      return 1;
 	    }
@@ -32,15 +33,16 @@ mover_horizontalmente (char tablero[8][8], int columnai, int filai,
 	}
       return 0;
     }
-  if (columnai < columnaf) /*se mueve a la derecha*/
+  if (coodenadas_iniciales[0] < coodenadas_finales[0])	/*se mueve a la derecha */
     {
 
-      vacio = tablero[filai][columnai + 1];
+      vacio = tablero[filai][coodenadas_iniciales[0] + 1];
       i = i + 1;
-      while (columnai + i != columnaf)
+      while (coodenadas_iniciales[0] + i != coodenadas_finales[0])
 	{
 
-	  if (tablero[filai][columnai + i] != vacio)
+	  if (tablero[coodenadas_iniciales[1]][coodenadas_iniciales[0] + i] !=
+	      vacio)
 	    {
 	      return 1;
 	    }
