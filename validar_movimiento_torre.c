@@ -1,17 +1,7 @@
-/*Se esta esperando actualización*/
-/*Usar validar_horizontal */
-int
-validar_movimiento_torre (char tablero[8][8], int coordenadas_iniciales[2],
-			  int coodenadas_finales[2])
-{
-  int i = -1;
-  if ((tablero[coordenadas_iniciales[0]][coodenadas_iniciales[1]] == "T")
-      || (tablero[coordenadas_iniciales[0]][coodenadas_iniciales[1]] == "t"))
-    {
-      i =
-	mover_horizontalmente (tablero, coodenadas_iniciales, coodenadas_finales);
-    }
-}
+/* regresa 1 si es valida y -1 si no */
 
-return i;
+int
+validar_movimiento_torre(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	return validar_movimiento_lineal(tablero, x1, y1, x2, y2);
 }
