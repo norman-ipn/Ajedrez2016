@@ -1,4 +1,5 @@
 #include <stdio.h>
+/*La funcion ya fue creada, se llama "valdiar_movimiento_lineal"*/
 /*Esta función verifica que el movimiento de una pieza hasta un punto este despejado de manera horizontal,esta función asume que la posición final esta vacia o hay una pieza enemiga a la pieza que se este desplazando.*/
 int
 mover_horizontalmente (char tablero[8][8], int coodenadas_iniciales[2],
