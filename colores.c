@@ -1,8 +1,9 @@
-include < stdio.h > enum colores =
+#include <stdio.h>
+enum colores
 { azul, negro, rojo, verde };
 
 int
-main (void)
+menu_colores (void)
 {
   int i = 0;
   char color[2];		/*aasasasas */
@@ -18,14 +19,19 @@ main (void)
   switch (i)
     {
     case 1:
-      azul break;
+      printf ("azul \n");
+      break;
     case 2:
-      negro break;
+      printf ("negro \n");
+      break;
     case 3:
-      rojo break;
+      printf ("rojo \n");
+      break;
     case 4:
-      verde break;
+      printf ("verdesillo \n");
+      break;
     }
-
+  return 0;
 
 }
+
