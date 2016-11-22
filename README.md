@@ -7,6 +7,7 @@ Lista de Alumnos
 
 | Usuario github | Nombre |
 |----------------|--------|
+|**Alichos**|Carlos Alexis Jiménez Vargas|
 |**IrvingLucky27**|Bautista Neyra Irving M.|
 |**arturock127**|Arturo Bustos Guevara|
 |**AlexHrdRck**|Luis Alejandro De los Santos Díaz|
