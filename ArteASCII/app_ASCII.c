@@ -5,7 +5,7 @@ COMO USAR ESTE CODIGO
 *********************
 Este codigo carga una direccion de memoria que contiene la letra en arte ASCII,
 recibe una matriz de 7x5 y la llena con la letra solicitada, y un char en minuscula de la letra a usar
-
+El ultimo cambio fue propiedad de AcardiaWolfman y asocidos
 
 
 */
