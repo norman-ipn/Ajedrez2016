@@ -1,5 +1,5 @@
 #include <stdio.h>
-/*La funcion ya fue creada, se llama "valdiar_movimiento_lineal"*/  /*Regrese a la función original para hacerla general y que funcione con cualquier caracvter que sea designado cono casilla negra y blanca, la función mover_lineal progrongo que la cambiemos por esta y otra funcion que sea mover  vertical ya que esta funciona para cualquier caracter y segun yo comprueba de mejor forma*/
+/*La funcion ya fue creada, se llama "valdiar_movimiento_lineal"*/  /*Regrese a la función original para hacerla general y que funcione con cualquier caracvter que sea designado cono casilla negra y blanca, la función mover_lineal progrongo que la cambiemos por esta y otra funcion que sea mover  vertical ya que esta funciona para cualquier caracter y segun yo comprueba de mejor forma, El ultimo cambio fue propiedad de Drazen420, NO DE CRISPIN97 marca registrada, derechos reservados S.A*/
 /*Esta función verifica que el movimiento de una pieza hasta un punto este despejado de manera horizontal,esta función asume que la posición final esta vacia o hay una pieza enemiga a la pieza que se este desplazando.*/
 int
 mover_horizontalmente (char tablero[8][8], int columnai, int filai,
