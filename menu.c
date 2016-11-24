@@ -1,128 +1,197 @@
 #include <stdio.h>
-#include <string.h>
+#include <stdlib.h>
 
-void menu_jugador(void)
+/*La mayoría de los printf están colocados sólo como marcadores de que el
+programa funciona hasta tal punto, en la versión final no estarán presentes.*/
+
+/*Esta función genera una pausa en la ejecución del programa*/
+void
+pausa (void)
 {
-    printf("\n");
-    printf("1- Continuar partida \n");
-    printf("2- Nueva partida vs player 2 \n");
-    printf("3- Nueva partida vs computer \n");
-    printf("4- Score \n\n");
+
+  printf ("Presione ENTER para continuar");
+
+  getchar ();
+  getchar ();
+  system ("clear");
+
 }
 
-void manual(void)
+/*Esta función prepara el tablero para iniciar una nueva partida*/
+void
+colocar_piezas (char a[8][8])
 {
-    char retorno = 0;
-    char save = 0;
-    int opcion1 = 0;
-    printf("Escoja alguna de las siguientes opciones");
-    printf("\n 1.-Modos de juego");
-    printf("\n 2.-Guardar Partida");
-    printf("\n 3.-Instrucciones");
 
-    scanf("%i", &opcion1);
+  int i = 0;
+  int j = 0;
 
-    switch (opcion1)
+  while (j < 4)
     {
-        case 1:
-            printf("\nExisten 2  diferentes modos de juego, usted puede elegir entre jugar con un "
-                   "amigo uno a uno o jugar contra la maquina");
-            printf("\nPresione r para regresar al manual");
-            scanf("%c", &retorno);
-            if (retorno == 'r')
-            {
-                manual();
-            }
-            break;
-        case 2:
-            printf("\nPara salvar la partida presione la letra  G");
-            scanf("%c", &save);
-            if (save == 'G')
-            {
-                /*salvar_partida ();------------------> funcion en construccion*/
-                printf("Partida guardada con exito");
-            }
-            printf("\nPresione r para regresar al manual");
-            scanf("%c", &retorno);
-            if (retorno == 'r')
-            {
-                manual();
-            }
-            break;
 
-        case 3:
-            printf(
-                "\nInstrucciones de juego"); /*Pido permiso de usar la función existente para las
-                                                funciones, para agregarlo a este menu*/
-            printf("\nPresione r para regresar al manual");
-            scanf("%c", &retorno);
-            if (retorno == 'r')
-            {
-                manual();
-            }
+      a[j + 2][i] = '\0';
+
+      i = i + 1;
+
+      if (i == 8)
+	{
+
+	  i = 0;
+	  j = j + 1;
+	}
+    }
+
+/*Letras mayúsculas representa a las piezas blancas*/
+  a[0][0] = 'T';
+  a[0][1] = 'C';
+  a[0][2] = 'A';
+  a[0][3] = 'D';
+  a[0][4] = 'R';
+  a[0][5] = 'A';
+  a[0][6] = 'C';
+  a[0][7] = 'T';
+  a[1][0] = 'P';
+  a[1][1] = 'P';
+  a[1][2] = 'P';
+  a[1][3] = 'P';
+  a[1][4] = 'P';
+  a[1][5] = 'P';
+  a[1][6] = 'P';
+  a[1][7] = 'P';
+  a[6][0] = 'p';
+  a[6][1] = 'p';
+  a[6][2] = 'p';
+  a[6][3] = 'p';
+  a[6][4] = 'p';
+  a[6][5] = 'p';
+  a[6][6] = 'p';
+  a[6][7] = 'p';
+  a[7][0] = 't';
+  a[7][1] = 'c';
+  a[7][2] = 'a';
+  a[7][3] = 'd';
+  a[7][4] = 'r';
+  a[7][5] = 'a';
+  a[7][6] = 'c';
+  a[7][7] = 't';
+
+}
+
+/*Esta función es la que rige todo el juego. Aquí deben estar las funciones
+que permitan el movimiento de las piezas.*/
+void
+jugar (char a[8][8])
+{
+
+  printf ("Comienza el juego\n\n");
+
+  pausa ();
+
+}
+
+/*Esta función inicia un nuevo juego*/
+int
+nuevo_juego (void)
+{
+
+  char tablero[8][8];
+
+  printf ("Se ha iniciado un nuevo juego.\n\n");
+
+  colocar_piezas (tablero);
+
+  jugar (tablero);
+
+  return 0;
+}
+
+/*Esta función carga la partida e inicia el juego*/
+int
+cargar_partida (void)
+{
+  char tablero[8][8];
+
+  printf ("Se ha cargado correctamente la partida.\n\n");
+
+  pausa ();
+
+  jugar (tablero);
+
+  return 0;
+}
+
+/*Esta función abre el manual del juego*/
+int
+manual (void)
+{
+
+  printf ("Estas son las reglas del juego. \n\n");
+
+/*Aquí deben escribirse las reglas del juego*/
+
+  pausa ();
+
+  return 0;
+}
+
+/*Esta función representa el menú principal del juego*/
+int
+menu (void)
+{
+
+  char opc;
+  int i = 0;
+
+  while (i != 1)		/*Aquí la condición solo es para rellenar al argumento del bucle.
+				   La unica forma de salir es cuando ocurre el caso en que opc = 's' */
+    {
+      printf ("Bienvenido a AjedrezEscom\n\n");
+      printf ("¿Qué desea hacer?\n\n");
+      printf ("Para comenzar un nuevo juego introduzca \"n\"\n");
+      printf ("Para cargar una partida introduzca \"c\"\n");
+      printf ("Para consultar el manual del juego introduzca \"h\"\n");
+      printf ("Para salir del juego introduzca \"s\"\n\n");
+
+      scanf ("%c", &opc);
+
+      switch (opc)
+	{
+
+	case 'n':
+	  system ("clear");
+	  nuevo_juego ();
+	  break;
+
+	case 'c':
+	  system ("clear");
+	  cargar_partida ();
+	  break;
+
+	case 'h':
+	  system ("clear");
+	  manual ();
+	  break;
+
+	case 's':
+	  system ("clear");
+	  printf ("Gracias por jugar\n\n");
+	  pausa ();
+	  return 0;
+
+	default:
+	  system ("clear");
+	  printf ("La opción no es válida\n");
+
+	  pausa ();
+	  break;
+	}
     }
 }
 
-void iniciar_sesion()
+int
+main (void)
 {
 
-    int resp1 = 0;
-    int resp2 = 0;
-    char user[99999] = "usuario";
-    char password[99999] = "clave";
-    char usuario[99999];
-    char clave[99999];
-    char buffer1[99999];
-    char buffer2[99999];
+  menu ();
 
-    printf("\n");
-    printf("Ingrese usuario ");
-
-    fgets(buffer1, 128, stdin);
-    sscanf(buffer1, "%s", &usuario);
-
-    printf("\n");
-
-    printf("Ingrese clave   ");
-
-    fgets(buffer2, 128, stdin);
-    sscanf(buffer2, "%s", &clave);
-
-    resp1 = strcmp(user, usuario);
-    resp2 = strcmp(password, clave);
-
-    if (resp1 == 0 && resp2 == 0)
-    {
-        menu_jugador();
-    }
-    else
-    {
-        printf("\n");
-        printf("Usuario incorrecto");
-    }
-}
-
-main(void)
-{
-    int condicion = 0;
-
-    printf("Bienvenido \n\n");
-
-    printf("1- Iniciar sesion \n");
-    printf("2- Manual/Instruciones \n");
-    printf("3- Salir \n\n");
-
-    char buffer[128];
-    fgets(buffer, 128, stdin);
-    sscanf(buffer, "%d", &condicion);
-
-    if (condicion == 1)
-    {
-        iniciar_sesion();
-    }
-
-    if (condicion == 2)
-    {
-        manual();
-    }
+  return 0;
 }
