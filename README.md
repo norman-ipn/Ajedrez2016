@@ -58,3 +58,5 @@ Lista de Alumnos
 |**LittleBigMarty**|Barriga Vargas Martín Eduardo|
 |**Omar6re**|Rojas Espinoza Omar|
 |**kikerique**|Romero Godinez José Enrique|
+|**carlos-ochoa**|Ochoa Ginera Carlos Armando|
+
