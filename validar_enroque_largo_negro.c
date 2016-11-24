@@ -52,7 +52,7 @@ validar_enroque_largo_negro (int mov_torre_dama_negra, int mov_rey_negro, char t
 
     }
 
-
-
+return se_puede;
+}
 
 
