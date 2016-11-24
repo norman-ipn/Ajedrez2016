@@ -23,3 +23,24 @@ main ()
     }
   system ("PAUSE>NUL");		/* Pausamos el proyecto, al presionar cualquier tecla se cierra */
 }
+
+/* OPCIONAL: tiempo y hora local durante el juego */
+
+#include <stdio.h> 
+#include <time.h> 
+
+int main() 
+{ 
+time_t tiempo; 
+char cad[80]; 
+struct tm *tmPtr; 
+
+tiempo = time(NULL); 
+tmPtr = localtime(&tiempo); 
+strftime( cad, 80, "%H:%M.%S, %A de %B de %Y", tmPtr ); 
+
+printf( "La hora local es: %s\n", asctime(tmPtr) ); 
+printf( "La hora y fecha locales son: %s\n", cad ); 
+
+return 0; 
+}
