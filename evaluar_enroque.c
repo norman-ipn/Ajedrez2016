@@ -8,16 +8,16 @@ void evauar_enroque(char tablero[8][8], int turno, int pos_torre_x, int pos_torr
     if((turno % 2) == 1)
     {
         if((pos_torre_x == 0) && (pos_torre_y == 0)) 
-            enrocar_largo_blancas(tablero);      
+            validar_enroque_largo_blanco(tablero);      
         if((pos_torre_x == 0) && (pos_torre_y == 7)) 
-            enrocar_corto_blancas(tablero);
+            validar_enroque_corto_blanco(tablero);
     }
     
     if((turno % 2) == 0)
     {
         if((pos_torre_x == 7) && (pos_torre_y == 0)) 
-            enrocar_corto_negras(tablero);      
+            validar_enroque_corto_negro(tablero);      
         if((pos_torre_x == 7) && (pos_torre_y == 7)) 
-            enrocar_largo_negras(tablero);
+            validar_enroque_largo_negro(tablero);
     }
         

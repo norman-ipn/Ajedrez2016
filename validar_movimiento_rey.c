@@ -10,7 +10,7 @@
 /* El ultimo parametro es el de la ficha del rey para saber si es el rey blanco o negro */ --> "R" o "r"
 
 int
-validar_rey (char tablero[8][8], int x, int y, char rey)
+validar_movimiento_rey (char tablero[8][8], int x, int y, char rey)
 {
   int i = 0;
   int siguiente_x = 0;
