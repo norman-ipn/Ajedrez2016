@@ -19,12 +19,14 @@ ofrecer_tablas(tablero[8][8])
   case 2:
   return 0;
   case 3:
-    ver tablero(tablero[8][8]);
+    ver_tablero(tablero[8][8]);
     printf("Tu oponente desea ofrecer tablas. Estas de acuerdo?");
-    printf("1._ Aceptar\t2._rechazar\t3._Ver Tabla");
+    printf("1._ Aceptar\t2._rechazar");
     scanf("%d", &opcion2);
     if(opcion2 == 1)
     tablas(tablero[8][8]) = true;
+    else
+    return 0;
     break;
   }
   else
