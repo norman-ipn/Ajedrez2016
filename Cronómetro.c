@@ -1,6 +1,18 @@
 #include <stdlib.h>
 #include <iostream>
+#include <stdio.h>
 using namespace std;
+void
+pausa (void)
+{
+
+  printf ("Presione ENTER para continuar");
+
+  getchar ();
+  getchar ();
+  system ("clear");
+
+}
 int
 main ()
 {
@@ -11,17 +23,17 @@ main ()
 	{
 	  for (SEGUNDO = 0; SEGUNDO < 60; SEGUNDO++)
 	    {
-	      for (ML = 0; ML < 18.9; ML++)	/* Hacemos for que hasta 18.9 milesimas, en tiempo real 100 milesimas */
+	      for (ML = 0; ML < 500; ML++)
 		{
 		  cout << "Cronometro   ";
 		  cout << HORA << ":" << MINUTO << ":" << SEGUNDO << "." << ML
 		    << "\n";
-		  system ("cls");
+		  system ("clear");
 		}
 	    }
 	}
     }
-  system ("PAUSE>NUL");		/* Pausamos el proyecto, al presionar cualquier tecla se cierra */
+  pausa ();
 }
 
 /* OPCIONAL: tiempo y hora local durante el juego */
