@@ -57,3 +57,4 @@ Lista de Alumnos
 |**ShazellCrail**|Brenda Shazell Crail Castro|
 |**LittleBigMarty**|Barriga Vargas Martín Eduardo|
 |**Omar6re**|Rojas Espinoza Omar|
+|**kikerique**|Romero Godinez José Enrique|
