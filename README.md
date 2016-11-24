@@ -59,4 +59,4 @@ Lista de Alumnos
 |**Omar6re**|Rojas Espinoza Omar|
 |**kikerique**|Romero Godinez José Enrique|
 |**carlos-ochoa**|Ochoa Ginera Carlos Armando|
-
+|**TyrZephyroth**|Arenas de la Calleja Carlos Eduardo|
