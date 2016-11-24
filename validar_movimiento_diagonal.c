@@ -15,8 +15,11 @@ validar_movimiento_diagonal(char tablero[8][8], int x1, int y1, int x2, int y2)
 		{
 			
 			if(siguiente_x == x2 && siguiente_y == y2)
-			{
+			{     
+				if(dar_jaque(tablero,x2,y2)==0)
+				 {
 				return 1;
+                                 }
 			}
 
 			siguiente_x = siguiente_x + direccion[i][0];
