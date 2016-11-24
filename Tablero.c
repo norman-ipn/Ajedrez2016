@@ -1,4 +1,3 @@
-//Nada de esto funciona
 #include <stdio.h>
 
 void
@@ -26,6 +25,15 @@ main (void)
 
       if (j = 1)
 	{
+	  tablero[8][1] = 'T';
+	  tablero[7][1] = 'C';
+	  tablero[6][1] = 'A';
+	  tablero[5][1] = 'K';
+	  tablero[4][1] = 'Q';
+	  tablero[3][1] = 'A';
+	  tablero[2][1] = 'C';
+	  tablero[1][1] = 'T';
+	  /*
 	  tablero[8][1] = 'T1';
 	  tablero[7][1] = 'C1';
 	  tablero[6][1] = 'A1';
@@ -33,8 +41,9 @@ main (void)
 	  tablero[4][1] = 'Re';
 	  tablero[3][1] = 'A2';
 	  tablero[2][1] = 'C2';
-	  tablero[1][1] = 'R2';
-	  /*no se si aqui va otro de espacio */
+	  tablero[1][1] = 'T2';
+	  */
+		//no se si aqui va otro de espacio
 	  printf ("%c", tablero[8][1]);
 	  printf (" ");
 	  printf ("%c", tablero[7][1]);
@@ -61,15 +70,25 @@ main (void)
 	}
       if (j = 7)
 	{
-	  tablero[8][7] = 'T1';
-	  tablero[7][7] = 'C1';
-	  tablero[6][7] = 'A1';
-	  tablero[5][7] = 'Ry';
-	  tablero[4][7] = 'Re';
-	  tablero[3][7] = 'A2';
-	  tablero[2][7] = 'C2';
-	  tablero[1][7] = 'R2';
-	  /*no se si aqui va otro de espacio */
+	  tablero[8][1] = 'T';
+	  tablero[7][1] = 'C';
+	  tablero[6][1] = 'A';
+	  tablero[5][1] = 'K';
+	  tablero[4][1] = 'Q';
+	  tablero[3][1] = 'A';
+	  tablero[2][1] = 'C';
+	  tablero[1][1] = 'T';
+	  /*
+	  tablero[8][1] = 'T1';
+	  tablero[7][1] = 'C1';
+	  tablero[6][1] = 'A1';
+	  tablero[5][1] = 'Ry';
+	  tablero[4][1] = 'Re';
+	  tablero[3][1] = 'A2';
+	  tablero[2][1] = 'C2';
+	  tablero[1][1] = 'T2';
+	  */
+	/*no se si aqui va otro de espacio */
 	  printf ("%c", tablero[8][7]);
 	  printf (" ");
 	  printf ("%c", tablero[7][7]);
