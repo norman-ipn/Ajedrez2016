@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+/*Correción de ususario*/
 //Definiendo colores a utilizar
 #define Rojo     "\x1b[31m"
 #define Reset    "\x1b[0m"
