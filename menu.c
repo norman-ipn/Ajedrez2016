@@ -33,21 +33,6 @@ guardar_partida (char a[8][8])
 
  pausa(void);
 }
-
-/*Esta funcion muestra un mensaje, alternando el turno del jugador, solo falta implementar el contador*/
-char
-turnos (int x)
-{
- if (x % 2 == 0)
-   {
-        return 'b';
-   }
- else
-   {
-        return 'n';
-   }
-}
-
 ~                                                                                                                                     
 ~              
 
@@ -210,6 +195,20 @@ char h[5];
  
   pausa ();
  
+}
+/*Esta función guarda un historial de los movimientos realizados*/
+void 
+guardar_mov(char a[5], int i;)
+{	
+  char partida[150][5];
+  int j=0;
+  	
+  while(j<5)
+  {
+  partida[i][j]=a[j];
+  j=j+1;
+  }
+	
 }
 /*Esta función guarda la partida actual*/
 void
