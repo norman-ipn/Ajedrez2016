@@ -1,3 +1,6 @@
+/* Regresa 1 si es valido, -1 si no lo es*/
+/* La actualizacion fue para ahorrar codigo */
+
 int
 validar_movimiento_lineal(char tablero[8][8], int x1, int y1, int x2, int y2)
 {
