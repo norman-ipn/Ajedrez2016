@@ -10,31 +10,33 @@
 /* El ultimo parametro es el de la ficha del rey para saber si es el rey blanco o negro */ --> "R" o "r"
 
 int
-validar_movimiento_rey (char tablero[8][8], int x, int y, char rey)
+validar_movimiento_rey(char tablero[8][8], int x1, int y1, int x2, int y2)
 {
-  int i = 0;
-  int siguiente_x = 0;
-  int siguiente_y = 0;
-  int posicion_actual_x = 0;
-  int posicion_actual_y = 0;
-  int direccion[8][2] =
+	int direccion[8][2] =
     { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
+	
+	int i = 0;
+	int siguiente_x = 0;
+	int siguiente_y = 0;
 
-  localizar_pieza (tablero, rey, &posicion_actual_x, &posicion_actual_y);
-  
-  while (i < 8)
-    {
-      siguiente_x = posicion_actual_x + direccion[i][0];
-      siguiente_y = posicion_actual_y + direccion[i][1];
-      if (coordenada_valida (siguiente_x, siguiente_y) == 1 &&
-           tablero[siguiente_x][siguiente_y] == '.')
-	      {
-	        if (siguiente_x == x && siguiente_y == y)
-		        {
-		          return 1;
-		        }
-	      }
-    }
-  return -1;
+	while(i < 8)
+	{
+		siguiente_x = x1 + direccion[i][0];
+		siguiente_y = y1 + direccion[i][1];
+		if(coordenada_valida( siguiente_x , siguiente_y ) &&
+		       tablero[siguiente_x][siguiente_y] == ' ')
+		{
+			
+			if(siguiente_x == x2 && siguiente_y == y2)
+			{     
+				return 1;
+			}
+
+			siguiente_x = siguiente_x + direccion[i][0];
+			siguiente_y = siguiente_y + direccion[i][1];
+		}
+		i = i + 1;		
+	}
+	return -1;
 }
 
