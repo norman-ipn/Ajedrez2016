@@ -2,7 +2,7 @@
 #include <iostream>
 #include <stdio.h>
 #include <time.h> 
-using namespace std;
+
 void
 pausa (void)
 {
@@ -38,7 +38,7 @@ main ()
     }
   pausa ();
 /* OPCIONAL: tiempo y hora local durante el juego */
-  printf("\n---------HORA LOCAL-------");
+  printf("\n---------HORA LOCAL-------\n");
   tiempo = time(NULL); 
   tmPtr = localtime(&tiempo); 
   strftime( cad, 80, "%H:%M.%S, %A de %B de %Y", tmPtr ); 
