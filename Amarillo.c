@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 //Definiendo colores a utilizar
-#define Magenta    "\x1b[35m"
-#define RESET   "\x1b[0m"
-
-int
-magenta (void)
+#define Amarillo "\x1b[33m"
+#define Reset    "\x1b[0m"
+void
+main (void)
 {
   char tablero[9][9];
   int i = 0;
@@ -15,7 +14,7 @@ magenta (void)
     {
       tablero[i][j] = '*';
       printf (" ");
-      printf (Magenta "%c" RESET, tablero[i][j]);
+      printf (Amarillo "%c" Reset, tablero[i][j]);
     }
 /*-----------------------------------*/
   printf ("\n");
@@ -25,7 +24,7 @@ magenta (void)
     {
       printf (" ");
       tablero[9][j] = '*';
-      printf (Magenta "%c" RESET, tablero[9][j]);
+      printf (Amarillo "%c" Reset, tablero[9][j]);
 /*Aqui le puedes quitar el while y poner la letras de las piezas :D*/
       while (e < 17)
 	{
@@ -35,7 +34,7 @@ magenta (void)
       e = 0;
 /*-----------------------------------------------------------------*/
       tablero[i][j] = '*';
-      printf (Magenta "%c \n" RESET, tablero[i][j]);
+      printf (Amarillo "%c \n" Reset, tablero[i][j]);
       j = j + 1;
     }
 /*-----------------------------------*/
@@ -44,7 +43,7 @@ magenta (void)
     {
       tablero[i][8] = '*';
       printf (" ");
-      printf (Magenta "%c" RESET, tablero[i][8]);
+      printf (Amarillo "%c" Reset, tablero[i][8]);
     }
 /*-----------------------------------*/
   printf ("\n");

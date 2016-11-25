@@ -4,9 +4,9 @@
    donde mov_torre es el contador de veces que se ha movido torre
    lo mismo para rey.
 */
-
+#include "validar_enroque_largo_blanco.h"
 int
-validar_enroque (int mov_torre, int mov_rey, char tablero[8][8])
+validar_enroque_largo_blanco (int mov_TD, int mov_R, char tablero[8][8])
 {
   int se_puede = 1;
   int posini_x = 4;
@@ -16,11 +16,7 @@ validar_enroque (int mov_torre, int mov_rey, char tablero[8][8])
   int pos2_x = 2;
   int pos2_y = 7;
 
-  if (mov_torre != 0)
-    {
-      se_puede = 0;
-    }
-  if (mov_rey != 0)
+  if ((mov_TD != 0) || (mov_R != 0))
     {
       se_puede = 0;
     }
