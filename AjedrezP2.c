@@ -105,7 +105,7 @@ void dibujar(){
 }
 
 int tirar(){
-	
+	char buffer[5];
 	int y1 = 0;
 	int y2 = 0;
 	char x1 = ' ';
@@ -114,7 +114,9 @@ int tirar(){
 	int x2_i = 0;
 	
 	printf("\nTu jugada:\n");
-	scanf(" %c%d %c%d",&x1,&y1,&x2,&y2);
+	
+	fgets(buffer, 5, stdin);
+	scanf(buffer,"%c%d %c%d",&x1,&y1,&x2,&y2);
 	
 	if(x1=='*')
 	return 2;
