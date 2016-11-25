@@ -20,7 +20,7 @@ while(!0)
         if(min>=60){
             min=0;
             hrs=hrs+1;
-       
+       break;
        }
        
        }
