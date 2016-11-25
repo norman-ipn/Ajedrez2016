@@ -3,8 +3,11 @@
 
 /*Prueba de la impresión de colores con caracteres*/
 
-#include "magenta.h"
+#include "rojo.h"
+#include "verde.h"
 #include "negro.h"
+#include "azul.h"
+#include "magenta.h"
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
 #define ANSI_COLOR_BLACK   "\x1b[30m"
@@ -13,7 +16,7 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 enum colores
-{ azul, cNegro, rojo, verde };
+{ rojo, verde, negro, azul, magenta};
 
 
 int
