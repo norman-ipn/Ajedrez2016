@@ -3,8 +3,9 @@
 //Definiendo colores a utilizar
 #define Magenta    "\x1b[35m"
 #define RESET   "\x1b[0m"
-void
-main (void)
+
+int
+magenta (void)
 {
   char tablero[9][9];
   int i = 0;
