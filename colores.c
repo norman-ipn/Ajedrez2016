@@ -42,7 +42,7 @@ menu_colores (void)
       colr = negro ();
       break;
     case 3:
-      printf (ANSI_COLOR_RED "Rojo" ANSI_COLOR_RESET " \n");
+      colr = rojo();
       break;
     case 4:
       printf (ANSI_COLOR_GREEN "Verde" ANSI_COLOR_RESET "\n");
