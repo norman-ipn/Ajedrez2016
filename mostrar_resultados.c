@@ -1,17 +1,13 @@
 #include "mostrar_resultados.h"
-#include "(F)historial_de_partidas.h"
-
 
 void
-mostrar_resultados (int num_jugador, int mostrar_historial)	/*Número del jugador que ha ganado */
+mostrar_resultados (int num_jugador )	/*Número del jugador que ha ganado */
 {
 
 
-  int mostrar_historial = 0;
-
   printf ("El jugador %d ha ganado esta partida, Felicidades  ", num_jugador);
 
-  mostrar_historial = udhist ();
+  udhist ();
 }
 
 
