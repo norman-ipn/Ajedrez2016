@@ -11,15 +11,15 @@ mostrar_resultados (int num_jugador)	/*Número del jugador que ha ganado */
 
 }
 
-void historial (int mostrar_historial)
-
+void
+historial (int mostrar_historial)
 {
 
-	int mostrar_historial = 0;
+  int mostrar_historial = 0;
 
-	mostrar_historial = udhist();
+  mostrar_historial = udhist ();
 }
 
 
  /*Aqui yo creo se tendria que mandar a llamar lo que es el almacenado de partidas y el menu yo creo */
-/*Propongo que se cambie el nombre de la función del historial por algo que se entienda sin tener que leer los comentarios*/ 
+/*Propongo que se cambie el nombre de la función del historial por algo que se entienda sin tener que leer los comentarios*/
