@@ -16,6 +16,7 @@ Lista de Alumnos
 |**HackerManchister**|Ajitzi Ricardo Quintana Ruiz|
 |**DulceGaona**|Dulce Gaona|
 |**LuisDRR**|Luis Daniel Rodríguez Romo|
+|**LittleBigMarty**|Barriga Vargas Martín Eduardo|
 |**albertosilva123**|Silva Cazares Luis Alberto|
 |**GerardoGGazon**|Gonzalez Garzon Gerardo|
 |**TafnesJ**|Tafnes Lorena Jiménez Aguilar|
@@ -55,5 +56,7 @@ Lista de Alumnos
 |**alfmemije**|Memije Avila Alfredo Raymundo|
 |**Meowstic**|Jorge Andrés Hernández García|
 |**ShazellCrail**|Brenda Shazell Crail Castro|
-|**LittleBigMarty**|Barriga Vargas Martín Eduardo|
 |**Omar6re**|Rojas Espinoza Omar|
+|**kikerique**|Romero Godinez José Enrique|
+|**carlos-ochoa**|Ochoa Ginera Carlos Armando|
+|**TyrZephyroth**|Arenas de la Calleja Carlos Eduardo|

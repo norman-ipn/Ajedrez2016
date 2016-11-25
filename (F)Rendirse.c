@@ -5,8 +5,21 @@
 void /*Opino que la función sea void, ya que no veo necesario regresar nada */
 rendirse (int jugador) /*No veo necesario pasar parametros a la función */
 { 
-   printf("El jugador contrario gano ya que te rendiste."); /*Opino que esto se englobe y sea para IA y PvP, para evitar problemas.*/
-   printf("Gracias por jugar y suerte para la proxima");
+   int i = 0;  
+   char cadena[5];
+   printf("El jugador contrario ganó ya que te rendiste.\n"); /*Opino que esto se englobe y sea para IA y PvP, para evitar problemas.*/
+   printf("Gracias por jugar y suerte para la próxima\n");
+   printf("¿Quieres volver a jugar?\n");
+   printf("Presiona '1' para jugar otra vez o '2' para salir\n");
+   fgets (cadena, sizeof (cadena), stdin);
+   sscanf(cadena, "%d", &i);
+   if (i == 1)
+   {
+    menu();
+   }
+   if (i == 2)
+   {
    exit(-1); 
+   }
 }
 
