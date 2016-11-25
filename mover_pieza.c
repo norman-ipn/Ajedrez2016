@@ -1,3 +1,4 @@
+//la funcion mover pieza es una parte del codigo modificado del archivo menu.c
 void
 mover_pieza (char tablero[8][8])
 {
@@ -41,7 +42,7 @@ char h[5];
  
 }
 
-
+//esta funcion dice si la casilla a la que se quiere avanzar esta libre o no
 
 void 
 amigo_o_enemigo(char aux ,char aux2)
