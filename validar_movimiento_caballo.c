@@ -14,7 +14,7 @@ validar_movimiento_caballo(char tablero[8][8], int x1, int y1, int x2, int y2)
 	{
 		siguiente_x = x1 + direccion[i][0];
 		siguiente_y = y1 + direccion[i][1];
-		while(coordenada_valida( siguiente_x , siguiente_y ) &&
+		if(coordenada_valida( siguiente_x , siguiente_y ) &&
 		       tablero[siguiente_x][siguiente_y] == ' ')
 		{
 			
