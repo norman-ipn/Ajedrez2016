@@ -74,20 +74,22 @@ i = 0;
 }
 
 void
-regresar_mov (char tablero [8][8], char copia[8][8])
+regresar_mov (char tablero[8][8], char copia[8][8])
 {
-int i = 0;
-int j = 0;
-
-while (i < 8)
-  {
-    while (j < 8)
+  int i = 0;
+  int j = 0;
+ 
+  while (i < 8)
     {
-    tablero[i][j] = copia [i][j];
-    j = j + 1;
+      copia[i][j] = tablero[i][j];
+      j = j + 1;
+      if (j == 8)
+    {
+      j = 0;
+      i = i + 1;
+ 
     }
-  i = i + 1;
-  }
+    }
 }
 
 /*Esta función prepara el tablero para iniciar una nueva partida*/
@@ -250,6 +252,13 @@ jugar (char a[8][8])
 	  printf ("Se ha iniciado una nueva partida\n\n");
 	  pausa ();
 	  break;
+		 
+	 case 'c':
+          system ("clear");
+          regresar_mov (copia, a);
+          printf ("\nSe ha cancelado el último movimiento\n\n");
+          pausa ();
+          break;
 
 	case 's':
 	  system ("clear");
