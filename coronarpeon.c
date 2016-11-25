@@ -1,4 +1,3 @@
-/* Aquí irá un include con las cabeceras de las funciones */
 void coronar_peon(char tablero, char entrada, int x, int y) /* char entrada es el valor que se quiere tomar, ya sea dama, torre, caballo o alfil.
 char tablero es la matriz en la que se encuentran todos los datos de nuestro tablero , x es la posicion en "x" de nuestro peón, y es la posición en "y" */
 {
