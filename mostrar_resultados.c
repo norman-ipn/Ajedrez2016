@@ -1,6 +1,6 @@
-#include <stdio.h>
+#include "mostrar_resultados.h"
 void
-mostrar_resultados (int num_jugador)    /*Número del jugador que ha ganado */
+mostrar_resultados (int num_jugador)	/*Número del jugador que ha ganado */
 {
 
   printf ("El jugador %d ha ganado esta partida, Felicidades", num_jugador);
