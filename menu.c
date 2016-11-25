@@ -15,64 +15,6 @@ pausa (void)
   system ("clear");
 }
 
-/*Esta función imprime el tablero en pantalla*/
-void
-imprimir_tablero (char a[8][8])
-{
-
-  int i = 0;
-  int j = 8;
-  char aux = 'A';
-
-while (j > 0)
-    {
-      if (i == 0)
-	{
-	  printf ("%c | ", (aux + (j - 1)));
-	}
-
-      printf ("  %c  |", a[j - 1][i]);
-
-      i = i + 1;
-
-      if (i == 8)
-	{
-
-
-	  printf ("\n");
-	  printf ("----");
-
-i = 0;
-
-	  while (i < 8)
-	    {
-	      printf ("------");
-
-	      i = i + 1;
-	    }
-	  printf ("\n");
-	  i = 0;
-	  j = j - 1;
-
-	}
-    }
-
-  j = 8;
-  i = 0;
-  printf ("  |  ");
-  while (j > 0)
-    {
-      aux = '1';
-      printf (" %c  | ", (aux + i));
-
-      j = j - 1;
-      i = i + 1;
-    }
-
-
-  printf ("\n\n");
-}
-
 void
 regresar_mov (char tablero [8][8], char copia[8][8])
 {
@@ -144,7 +86,55 @@ colocar_piezas (char a[8][8])
   a[7][6] = 'c';
   a[7][7] = 't';
 }
+/*Esta función debe evaluar y realizar el movimiento que requiere el jugador*/
+void
+mover_pieza (char tablero[8][8])
+{
+  char movimiento[5];
+  char aux;
+  int columna = 0, 
+  int fila = 0;
+ 
+  printf ("Introduzca la coordenada de la pieza que desea mover\n\n");
+ 
+  scanf ("%s", movimiento);
+  columna = movimiento[1] - '1';
+  fila = movimiento[0] - 'A';
+  aux = tablero[fila][columna];
+  tablero[fila][columna] = ' ';
+ 
+  movimiento[2] = 'i';
+  printf ("\nIntroduzca la coordenada de destino \n\n");
+char h[5];
+  scanf ("%s", h);
+  columna = h[1] - '1';
+  fila = h[0] - 'A';
+  tablero[fila][columna] = aux;
+ // guardar_mov (movimiento);
+ 
+  printf ("Tu pieza ha sido movida exitosamente\n\n");
+ 
+  pausa ();
+ 
+}
+/*Esta función guarda la partida actual*/
+void
+guardar_partida (char a[8][8])
+{
 
+  FILE *archivo;
+
+  archivo = fopen ("tablero.tab", "w");
+
+  fwrite (a, sizeof (char), 64, archivo);
+
+  fclose (archivo);
+
+  printf ("La partida se guardó exitosamente\n\n");
+
+  pausa ();
+
+}
 /*Esta función es la que rige todo el juego. Aquí deben estar las funciones
 que permitan el movimiento de las piezas.*/
 int
