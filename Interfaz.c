@@ -1,4 +1,5 @@
 /* Esta función recopila funciones que imprimen el tablero y menús en pantalla, estará cambiando pues faltan funciones. */
+#include "Interfaz.h"
 void Reloj(int hr, min, seg)
 {
       int hr=0;
