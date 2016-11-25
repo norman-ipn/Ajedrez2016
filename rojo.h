@@ -1,3 +1,1 @@
-#include "rojo.c"
-
-int rojo (void);
+void rojo (void);
