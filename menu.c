@@ -15,9 +15,6 @@ pausa (void)
   system ("clear");
 }
 
-/* Esta funcion, valga la redundancia, guarda la partida */
-
-
 /*Esta función imprime el tablero en pantalla*/
 void
 imprimir_tablero (char a[8][8])
