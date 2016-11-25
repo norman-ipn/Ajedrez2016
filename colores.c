@@ -3,8 +3,11 @@
 
 /*Prueba de la impresión de colores con caracteres*/
 
-#include "magenta.h"
+#include "rojo.h"
+#include "verde.h"
 #include "negro.h"
+#include "azul.h"
+#include "magenta.h"
 #define ANSI_COLOR_RED     "\x1b[31m"
 #define ANSI_COLOR_GREEN   "\x1b[32m"
 #define ANSI_COLOR_BLACK   "\x1b[30m"
@@ -13,7 +16,7 @@
 #define ANSI_COLOR_RESET   "\x1b[0m"
 
 enum colores
-{ azul, cNegro, rojo, verde };
+{ rojo, verde, negro, azul, magenta};
 
 
 int
@@ -27,7 +30,8 @@ menu_colores (void)
   printf (ANSI_COLOR_MAGENTA "1.Magenta" ANSI_COLOR_RESET "\n");
   printf (ANSI_COLOR_BLACK "2.Negro" ANSI_COLOR_RESET "\n");
   printf (ANSI_COLOR_RED "3.Rojo" ANSI_COLOR_RESET "\n");
-  printf (ANSI_COLOR_GREEN "4.Verde\n" ANSI_COLOR_RESET);
+  printf (ANSI_COLOR_GREEN "4.Verde" ANSI_COLOR_RESET"\n");
+  printf (ANSI_COLOR_BLUE "5.Azul" ANSI_COLOR_RESET"\n");
   printf ("\n");
   printf ("Teclea el numero\n");
   fgets (color, 2, stdin);
@@ -42,10 +46,13 @@ menu_colores (void)
       colr = negro ();
       break;
     case 3:
-      printf (ANSI_COLOR_RED "Rojo" ANSI_COLOR_RESET " \n");
+      colr = rojo();
       break;
     case 4:
-      printf (ANSI_COLOR_GREEN "Verde" ANSI_COLOR_RESET "\n");
+      colr = verde();
+      break;
+    case 5:
+      colr = azul();
       break;
     }
   return 0;
