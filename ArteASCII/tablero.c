@@ -29,7 +29,7 @@ while (y <= 8)
   char TorreN[]="\u2662";
   char AlfilB[]="\u2657";
   char AlfilN[]="\u2663";
-  char CaballoB[]="\u2658";
+  char CaballoB[]="\u2658";          /* Piezas de ajedrez en unicode para utilizarlas en la funcion piezas comidas*/
   char CaballoN[]="\u2664";
   char ReynaB[]="\u2655";
   char ReynaN[]="\u2661";
@@ -109,13 +109,13 @@ while (y <= 8)
 		printf("  %c  ",65 + a);
 		a = a +1;
 	}
-
+	/* Estas son pruebas para comprobar que el tablero se actualiza segun las coordenadas que mande el usuario*/
 	printf("\nTurno de blancas\n Ingrese su movimiento");
 
 	scanf("%d %d %d %d",&n,&m,&p,&o);
 
 	printf("%d %d %d %d",m,n,o,p);
-
+         /* Esto debera de ser remplazado por las funciones que validan los movimientos*/
 	if (tablero [m][n] != ' '){
 
 	
