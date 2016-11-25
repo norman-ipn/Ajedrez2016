@@ -27,7 +27,8 @@ menu_colores (void)
   printf (ANSI_COLOR_MAGENTA "1.Magenta" ANSI_COLOR_RESET "\n");
   printf (ANSI_COLOR_BLACK "2.Negro" ANSI_COLOR_RESET "\n");
   printf (ANSI_COLOR_RED "3.Rojo" ANSI_COLOR_RESET "\n");
-  printf (ANSI_COLOR_GREEN "4.Verde\n" ANSI_COLOR_RESET);
+  printf (ANSI_COLOR_GREEN "4.Verde" ANSI_COLOR_RESET"\n");
+  printf (ANSI_COLOR_BLUE "5.Azul" ANSI_COLOR_RESET"\n");
   printf ("\n");
   printf ("Teclea el numero\n");
   fgets (color, 2, stdin);
@@ -45,7 +46,10 @@ menu_colores (void)
       colr = rojo();
       break;
     case 4:
-      printf (ANSI_COLOR_GREEN "Verde" ANSI_COLOR_RESET "\n");
+      colr = verde();
+      break;
+    case 5:
+      colr = azul();
       break;
     }
   return 0;
