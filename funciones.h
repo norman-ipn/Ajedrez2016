@@ -6,8 +6,17 @@
 void 
 validar_enroque_corto(char tablero[8][8]);
 
+void
+evaluar_enroque(char tablero[8][8], int turno, int pos_torre_x, int pos_torre_y);
+
 void 
 validar_enroque_largo(char tablero[8][8]);
+
+int
+validar_movimiento_reina(char tablero[8][8], int x1, int y1, int x2, int y2);
+
+int
+validar_enroque_largo_negro (int mov_torre_dama_negra, int mov_rey_negro, char tablero[8][8]);
 
 int
 validar_mov_peon_blanco (int posicion_ini_x, int posicion_ini_y, int posicion_y, int posicion_x, char tablero[8][8]);
@@ -16,10 +25,13 @@ int
 validar_mov_peon_negro (char tablero[7][7]);
 
 int
-validar_movimiento_torre(char tablero[8][8]);
+validar_movimiento_torre(char tablero[8][8], int x1, int y1, int x2, int y2);
 
 int 
-validar_movimiento_caballo(char tablero[8][8]);
+validar_movimiento_caballo(char tablero[8][8], int x1, int y1, int x2, int y2);
+
+int
+validar_movimientos_instantaneos(char tablero[8][8], int direccion[8][2], int x1, int y1, int x2, int y2);
 
 int
 validar_movimiento_alfil (char posicion_ini_x,int posicion_ini_y,int posicion_y,char posicion_x,char tablero[8][8]);
@@ -27,8 +39,17 @@ validar_movimiento_alfil (char posicion_ini_x,int posicion_ini_y,int posicion_y,
 int
 validar_movimiento_dama(char tablero[8][8]);
 
+int 
+validar_peon(char tablero[8][8], char negro_blanco, int x1, int y1, int x2, int y2);
+
 int
-validar_movimiento_rey (char tablero[8][8], int x, int y);
+validar_movimiento_rey (char tablero[8][8], int x1, int y2, int x2, int y2);
+
+int
+validar_movimiento_diagonal(char tablero[8][8], int x1, int y1, int x2, int y2);
+
+int
+validar_movimiento_lineal(char tablero[8][8], int x1, int y1, int x2, int y2);
 
 int
 validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
@@ -80,6 +101,9 @@ reiniciar_tablero (char tablero[8][8]);
 void 
 enroque_corto(char tablero[8][8]);
 
+int
+mover_horizontalmente(char tablero[8][8], int columnai, int filai, int columnaf, int filaf, char negra, char blanca);
+
 void 
 enroque_largo(char tablero[8][8]);
 
@@ -100,6 +124,9 @@ coordenada_valida (int x, int y);
 
 void 
 rendirse ();
+
+int
+analisis_de_tablero(char tablero[8][8], char pieza, int fila, int columna, int fila_nueva, int columna_nueva);
 
 void
 declarar_tablas();
@@ -155,4 +182,10 @@ opciones_movimiento_rey (char tablero[8][8], int rey[2]);
 
 int 
 empieza_jugador();
+
+void
+inicializar_piezas_mov (char piezas_mov[1000]);
+
+int
+validar_comer_al_paso (char tablero[8][8], int cord_x, int cord_y);
 
