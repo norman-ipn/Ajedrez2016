@@ -17,6 +17,23 @@ pausa (void)
 
 }
 
+void
+regresar_mov (char tablero [8][8], char copia[8][8])
+{
+int i = 0;
+int j = 0;
+
+while (i < 8)
+  {
+    while (j < 8)
+    {
+    tablero[i][j] = copia [i][j];
+    j = j + 1;
+    }
+  i = i + 1;
+  }
+}
+
 /*Esta función prepara el tablero para iniciar una nueva partida*/
 void
 colocar_piezas (char a[8][8])
