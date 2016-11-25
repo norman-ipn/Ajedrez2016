@@ -1,1 +1,4 @@
-int azul (void);
+#include "azul.c"
+
+int
+azul (void);
