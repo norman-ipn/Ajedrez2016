@@ -15,27 +15,6 @@ pausa (void)
   system ("clear");
 }
 
-/* Esta funcion, valga la redundancia, guarda la partida */
-
-void
-guardar_partida (char a[8][8])
-{
-
- FILE *archivo;
-
- archivo = fopen("tablero.tab", "w");
-
- fwrite (a, sizeof (char), 64, archivo);
-
- fclose (archivo);
-
- printf ("La partida se guardo exitosamente \n\n");
-
- pausa(void);
-}
-~                                                                                                                                     
-~              
-
 /*Esta función imprime el tablero en pantalla*/
 void
 imprimir_tablero (char a[8][8])
