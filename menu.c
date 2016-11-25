@@ -33,6 +33,21 @@ guardar_partida (char a[8][8])
 
  pausa(void);
 }
+
+/*Esta funcion muestra un mensaje, alternando el turno del jugador, solo falta implementar el contador*/
+char
+turnos (int x)
+{
+ if (x % 2 == 0)
+   {
+        return 'b';
+   }
+ else
+   {
+        return 'n';
+   }
+}
+
 ~                                                                                                                                     
 ~              
 
