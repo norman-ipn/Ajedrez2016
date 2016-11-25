@@ -7,7 +7,7 @@
 
 /* 1 significa que la coordenada es valida y -1 si no lo es */
 /* Tambien asumire que el caracter 'R' significa Rey */
-/* El ultimo parametro es el de la ficha del rey para saber si es el rey blanco o negro */ --> "R" o "r"
+/* El ultimo parametro es el de la ficha del rey para saber si es el rey blanco o negro  --> "R" o "r"*/
 
 int
 validar_movimiento_rey(char tablero[8][8], int x1, int y1, int x2, int y2)
