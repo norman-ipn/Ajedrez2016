@@ -2,8 +2,8 @@
 
 /*Esta funcion leera las coordenadas para obtener que pieza se quiere mover*/
 
-int
-main ()
+void
+leer_movimiento()
 {
 
   FILE *miarchivo;
