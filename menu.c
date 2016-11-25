@@ -8,13 +8,90 @@ programa funciona hasta tal punto, en la versión final no estarán presentes.*/
 void
 pausa (void)
 {
-
   printf ("Presione ENTER para continuar");
 
   getchar ();
   getchar ();
   system ("clear");
+}
 
+/* Esta funcion, valga la redundancia, guarda la partida */
+
+void
+guardar_partida (char a[8][8])
+{
+
+ FILE *archivo;
+
+ archivo = fopen("tablero.tab", "w");
+
+ fwrite (a, sizeof (char), 64, archivo);
+
+ fclose (archivo);
+
+ printf ("La partida se guardo exitosamente \n\n");
+
+ pausa(void);
+}
+~                                                                                                                                     
+~              
+
+/*Esta función imprime el tablero en pantalla*/
+void
+imprimir_tablero (char a[8][8])
+{
+
+  int i = 0;
+  int j = 8;
+  char aux = 'A';
+
+while (j > 0)
+    {
+      if (i == 0)
+	{
+	  printf ("%c | ", (aux + (j - 1)));
+	}
+
+      printf ("  %c  |", a[j - 1][i]);
+
+      i = i + 1;
+
+      if (i == 8)
+	{
+
+
+	  printf ("\n");
+	  printf ("----");
+
+i = 0;
+
+	  while (i < 8)
+	    {
+	      printf ("------");
+
+	      i = i + 1;
+	    }
+	  printf ("\n");
+	  i = 0;
+	  j = j - 1;
+
+	}
+    }
+
+  j = 8;
+  i = 0;
+  printf ("  |  ");
+  while (j > 0)
+    {
+      aux = '1';
+      printf (" %c  | ", (aux + i));
+
+      j = j - 1;
+      i = i + 1;
+    }
+
+
+  printf ("\n\n");
 }
 
 void
@@ -38,26 +115,23 @@ while (i < 8)
 void
 colocar_piezas (char a[8][8])
 {
-
   int i = 0;
   int j = 0;
 
   while (j < 4)
     {
-
       a[j + 2][i] = '\0';
-
       i = i + 1;
 
       if (i == 8)
 	{
-
 	  i = 0;
 	  j = j + 1;
 	}
     }
 
 /*Letras mayúsculas representa a las piezas blancas*/
+	
   a[0][0] = 'T';
   a[0][1] = 'C';
   a[0][2] = 'A';
@@ -90,32 +164,123 @@ colocar_piezas (char a[8][8])
   a[7][5] = 'a';
   a[7][6] = 'c';
   a[7][7] = 't';
-
 }
-
-/*Esta función es la que rige todo el juego. Aquí deben estar las funciones
-que permitan el movimiento de las piezas.*/
+/*Esta función debe evaluar y realizar el movimiento que requiere el jugador*/
 void
-jugar (char a[8][8])
+mover_pieza (char tablero[8][8])
+{
+  char movimiento[5];
+  char aux;
+  int columna = 0, 
+  int fila = 0;
+ 
+  printf ("Introduzca la coordenada de la pieza que desea mover\n\n");
+ 
+  scanf ("%s", movimiento);
+  columna = movimiento[1] - '1';
+  fila = movimiento[0] - 'A';
+  aux = tablero[fila][columna];
+  tablero[fila][columna] = ' ';
+ 
+  movimiento[2] = 'i';
+  printf ("\nIntroduzca la coordenada de destino \n\n");
+char h[5];
+  scanf ("%s", h);
+  columna = h[1] - '1';
+  fila = h[0] - 'A';
+  tablero[fila][columna] = aux;
+ // guardar_mov (movimiento);
+ 
+  printf ("Tu pieza ha sido movida exitosamente\n\n");
+ 
+  pausa ();
+ 
+}
+/*Esta función guarda la partida actual*/
+void
+guardar_partida (char a[8][8])
 {
 
-  printf ("Comienza el juego\n\n");
+  FILE *archivo;
+
+  archivo = fopen ("tablero.tab", "w");
+
+  fwrite (a, sizeof (char), 64, archivo);
+
+  fclose (archivo);
+
+  printf ("La partida se guardó exitosamente\n\n");
 
   pausa ();
 
+}
+/*Esta función es la que rige todo el juego. Aquí deben estar las funciones
+que permitan el movimiento de las piezas.*/
+int
+jugar (char a[8][8])
+{
+  int i = 0;
+  char opc_j;
+
+  printf ("Comienza el juego\n\n");
+  pausa ();
+
+  while (i != 1)
+    {
+      imprimir_tablero (a);
+
+      printf ("¿Qué desea hacer a continuación?\n\n");
+
+      printf ("Para realizar un movimiento introduzca \"m\"\n");
+      printf ("Para guardar la partida introduzca \"g\"\n");
+      printf ("Para reiniciar la partida actual introduzca \"r\"\n");
+      printf ("Para salir de la partida actual introduzca \"s\"\n\n");
+
+      scanf ("%c", &opc_j);
+
+      switch (opc_j)
+	{
+
+	case 'm':
+	  system ("clear");
+	  mover_pieza (a);
+	  break;
+
+	case 'g':
+	  system ("clear");
+	  guardar_partida (a);
+	  break;
+
+	case 'r':
+	  system ("clear");
+	  colocar_piezas (a);
+	  printf ("Se ha iniciado una nueva partida\n\n");
+	  pausa ();
+	  break;
+
+	case 's':
+	  system ("clear");
+	  printf ("Ha salido de la partida actual\n\n");
+	  pausa ();
+	  return 0;
+
+	default:
+	  system ("clear");
+	  printf ("La opción no es válida\n\n");
+	  pausa ();
+	  break;
+	}
+    }
 }
 
 /*Esta función inicia un nuevo juego*/
 int
 nuevo_juego (void)
 {
-
   char tablero[8][8];
 
   printf ("Se ha iniciado un nuevo juego.\n\n");
-
   colocar_piezas (tablero);
-
   jugar (tablero);
 
   return 0;
@@ -128,9 +293,7 @@ cargar_partida (void)
   char tablero[8][8];
 
   printf ("Se ha cargado correctamente la partida.\n\n");
-
   pausa ();
-
   jugar (tablero);
 
   return 0;
@@ -140,7 +303,6 @@ cargar_partida (void)
 int
 manual (void)
 {
-
   printf ("Estas son las reglas del juego. \n\n");
 
 /*Aquí deben escribirse las reglas del juego*/
@@ -154,12 +316,11 @@ manual (void)
 int
 menu (void)
 {
-
   char opc;
   int i = 0;
 
   while (i != 1)		/*Aquí la condición solo es para rellenar al argumento del bucle.
-				   La unica forma de salir es cuando ocurre el caso en que opc = 's' */
+	         		   La unica forma de salir es cuando ocurre el caso en que opc = 's' */
     {
       printf ("Bienvenido a AjedrezEscom\n\n");
       printf ("¿Qué desea hacer?\n\n");
@@ -197,7 +358,6 @@ menu (void)
 	default:
 	  system ("clear");
 	  printf ("La opción no es válida\n");
-
 	  pausa ();
 	  break;
 	}
@@ -207,7 +367,7 @@ menu (void)
 int
 main (void)
 {
-
+  pausa();
   menu ();
 
   return 0;

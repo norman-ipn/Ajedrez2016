@@ -1,10 +1,9 @@
-#include <stdio.h>
+
 
 //Definiendo colores a utilizar
 #define Verde    "\x1b[32m"
 #define RESET   "\x1b[0m"
-void
-main (void)
+void verde(void)
 {
   char tablero[9][9];
   int i = 0;
