@@ -24,7 +24,7 @@ void iniciar_sesion();
 void menu(void);
 
 void
-menu_jugador (void)
+menu_jugador (void);
 
 void
 manual (void);
