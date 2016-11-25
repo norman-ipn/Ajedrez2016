@@ -12,12 +12,11 @@ int min=0;
 int seg=0;
 
 /* Contabiliza desde el momento en que se da inicio a la partida.*/
-while(!0){
-
+while(!0)
+{
         if(seg>=60){
             seg=0;
             min=min+1;
-            
         if(min>=60){
             min=0;
             hrs=hrs+1;
