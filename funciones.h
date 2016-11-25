@@ -93,7 +93,7 @@ void
 dar_jaque(tablero[8][8]);
 
 char
-coronar_peon ();
+coronar_peon(char tablero, char entrada, int x, int y);
 
 int
 coordenada_valida (int x, int y);
