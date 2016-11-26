@@ -12,13 +12,13 @@ main (void)
 	{
 		for(j=0; j<8; j++)
 		{
-			if(i==1)
+			if( i == 1)
 			{
 				
 				tablero[i][j] = 'P';
 			}
 			
-			if( i == 6)
+			else if( i == 6)
 			{
 				
 				tablero[i][j] = 'p';
@@ -35,7 +35,7 @@ main (void)
 			{
 				tablero[i][j]='C';
 			}
-			else if((i ==6 && j == 0) || (i ==7 && j==6))
+			else if((i ==7 && j == 1) || (i ==7 && j==6))
 			{
 				tablero[i][j]='c';
 			}
@@ -43,7 +43,7 @@ main (void)
 			{
 				tablero[i][j]='A';
 			}
-			else if((i ==7 && j == 2) || (i ==7 && j==6))
+			else if((i ==7 && j == 2) || (i ==7 && j==5))
 			{
 				tablero[i][j]='a';
 			}
@@ -68,16 +68,18 @@ main (void)
 					tablero[i][j]='*';
 					}
 				
-				for (i=0; i<8; i++)
+				
+				//return 0;
+			
+		}
+	}
+		for (i=0; i<8; i++)
 				{
 					printf("\n");
 					for(j=0; j<8; j++)
 					{
 						printf("%c", tablero[i][j]);
 					}
-				}	
+				}
 				return 0;
-			
-		}
-	}
 }	
