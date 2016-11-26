@@ -11,14 +11,14 @@ validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
 
 
       resultado =
-	validar_movimiento_peon_blanco (posicion_ini_x, posicion_ini_y,
+	validar_movimiento_peon (posicion_ini_x, posicion_ini_y,
 					posicion_y, posicion_x, tablero);
       break;
 
 
     case 'p':
       resultado =
-	validar_movimiento_peon_negro (posicion_ini_x, posicion_ini_y,
+	validar_movimiento_peon (posicion_ini_x, posicion_ini_y,
 				       posicion_y, posicion_x, tablero);
       break;
 
