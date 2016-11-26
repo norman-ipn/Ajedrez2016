@@ -2,7 +2,7 @@
 void
 instrucciones (char tablero[8][8])
 { char comando= '0';
-  char orden='\n' 
+  char orden='0';
   char a_acento = 160;
   char e_acento = 130;
   char i_acento = 161;
