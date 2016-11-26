@@ -32,7 +32,7 @@ detectar_jaque (char tablero[8][8], char pieza_rey)
 		   || color_pieza (pieza_actual) == color_pieza (pieza_rey)))
 		{
 		  if (validar_movimiento
-		      (tablero, i, j, x, y, pieza_actual, NULL) == 1)
+		      (tablero, i, j, x, y, pieza_actual) == 1)
 		    {
 		      return 1;
 		    }
