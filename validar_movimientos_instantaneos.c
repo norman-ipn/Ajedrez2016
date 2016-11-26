@@ -20,9 +20,6 @@ validar_movimientos_instantaneos(char tablero[8][8], int direccion[8][2], int x1
 			{     
 				return 1;
 			}
-
-			siguiente_x = siguiente_x + direccion[i][0];
-			siguiente_y = siguiente_y + direccion[i][1];
 		}
 		i = i + 1;		
 	}
