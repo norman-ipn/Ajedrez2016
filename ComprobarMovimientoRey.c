@@ -1,3 +1,5 @@
+/*No entiendo, que hace esta funcion?*/
+
 #include "ComprobarMovimientoRey.h"
 /* comprueba que el movimiento se realice dentro del parametro de movimiento del rey suponiendo que '0' es una casilla vacia*/
 int
