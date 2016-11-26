@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "Rendirse.h"
 /*Opino que la función se invoque cuando el jugador escriba "GIVEUP" y mande a llamar esta función*/
 /*Cuando juegua contra otro jugador si seria necesario mandar al menos un parametro para saber cual de los dos jugadores invoco la funcion.*/
  
