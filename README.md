@@ -60,3 +60,4 @@ Lista de Alumnos
 |**kikerique**|Romero Godinez José Enrique|
 |**carlos-ochoa**|Ochoa Ginera Carlos Armando|
 |**TyrZephyroth**|Arenas de la Calleja Carlos Eduardo|
+|**CubeXtreme**|Castro Reyna Roberto Armando|
