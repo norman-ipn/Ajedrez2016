@@ -1,10 +1,7 @@
-/*Esta función recibe la posición de la ficha, y la casilla donde se movera la pieza, se invoca cuando se escribe en el juego. */
+/* regresa 1 si es valida y -1 si no */
 
-int 
-validar_movimiento_torre(char tablero[8][8],int pos_ini_x,int pos_ini_y,int pos_x,int pos_y)
+int
+validar_movimiento_torre(char tablero[8][8], int x1, int y1, int x2, int y2)
 {
-
-  return validar_movimiento_lineal(tablero, pos_ini_x,pos_ini_y,pos_x,pos_y);
+  return validar_movimiento_lineal(tablero, x1, y1, x2, y2);
 }
-
-

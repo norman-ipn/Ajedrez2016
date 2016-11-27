@@ -1,15 +1,16 @@
-void guardar_partida(char tablero[8][8])
+void
+guardar_partida (char a[8][8])
 {
-    FILE* archivo = 0;
- 
 
-    size_t numero = 0;
+ FILE *archivo;
 
-    archivo = fopen("tablero.txt", "w");
+ archivo = fopen("tablero.tab", "w");
 
-    numero = fwrite(tablero, sizeof(char), 64, archivo);
+ fwrite (a, sizeof (char), 64, archivo);
 
-    fclose(archivo);
+ fclose (archivo);
+
+ printf ("La partida se guardo exitosamente \n\n");
+
+ pausa(void);
 }
-
-
