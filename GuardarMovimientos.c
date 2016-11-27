@@ -13,3 +13,4 @@ guardar_mov(char a[5], int i;){
   }
 }
 
+/*Podrias explicar que hace esto???, si no tendra que borrarse */
