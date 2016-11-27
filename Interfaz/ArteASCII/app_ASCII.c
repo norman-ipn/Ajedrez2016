@@ -10,6 +10,24 @@ El ultimo cambio fue propiedad de AcardiaWolfman y asocidos
 
 */
 void
+Igualarletra (char letra[7][5], char array[7][5])
+{
+  int i = 0;
+  int j = 0;
+  for (i = 0; i < 7; i = i + 1)
+    {
+      for (j = 0; j < 5; j = j + 1)
+	{
+	  letra[i][j] = array[i][j];
+	}
+
+    }
+
+
+
+}
+
+void
 sp (char letra[7][5])
 {
   int i = 0;
@@ -23,13 +41,7 @@ sp (char letra[7][5])
     {' ', ' ', ' ', ' ', ' '},
     {' ', ' ', ' ', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -46,13 +58,7 @@ ex (char letra[7][5])
     {' ', ' ', ' ', ' ', ' '},
     {' ', '#', '#', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -69,13 +75,7 @@ num1 (char letra[7][5])
     {' ', ' ', '1', ' ', ' '},
     {' ', '1', '1', '1', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -92,13 +92,7 @@ num2 (char letra[7][5])
     {' ', 'A', ' ', ' ', ' '},
     {' ', 'A', '2', '2', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -115,13 +109,7 @@ letraA (char letra[7][5])
     {' ', 'A', ' ', 'A', ' '},
     {' ', 'A', ' ', 'A', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -138,13 +126,7 @@ letraB (char letra[7][5])
     {' ', 'B', ' ', 'B', ' '},
     {' ', 'B', 'B', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -161,13 +143,7 @@ letraC (char letra[7][5])
     {' ', 'C', ' ', ' ', ' '},
     {' ', ' ', 'C', 'C', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -184,14 +160,11 @@ letraD (char letra[7][5])
     {' ', 'D', ' ', 'D', ' '},
     {' ', 'D', 'D', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+
+  Igualarletra (letra, a);
 }
+
+
 
 void
 letraE (char letra[7][5])
@@ -207,13 +180,7 @@ letraE (char letra[7][5])
     {' ', 'E', ' ', ' ', ' '},
     {' ', 'E', 'E', 'E', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -230,14 +197,9 @@ letraF (char letra[7][5])
     {' ', 'F', ' ', ' ', ' '},
     {' ', 'F', ' ', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
+
 
 void
 letraG (char letra[7][5])
@@ -253,14 +215,9 @@ letraG (char letra[7][5])
     {' ', 'G', ' ', 'G', ' '},
     {' ', ' ', 'G', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
+
 
 void
 letraH (char letra[7][5])
@@ -276,13 +233,7 @@ letraH (char letra[7][5])
     {' ', 'H', ' ', 'H', ' '},
     {' ', 'H', ' ', 'H', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -299,13 +250,7 @@ letraI (char letra[7][5])
     {' ', ' ', 'I', ' ', ' '},
     {' ', 'I', 'I', 'I', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -322,13 +267,7 @@ letraJ (char letra[7][5])
     {'J', ' ', 'J', ' ', ' '},
     {' ', 'J', 'J', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -345,13 +284,7 @@ letraK (char letra[7][5])
     {' ', 'K', ' ', 'K', ' '},
     {' ', 'K', ' ', 'K', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -368,13 +301,7 @@ letraL (char letra[7][5])
     {' ', 'L', ' ', ' ', ' '},
     {' ', 'L', 'L', 'L', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -391,13 +318,7 @@ letraM (char letra[7][5])
     {' ', 'M', ' ', 'M', ' '},
     {' ', 'M', ' ', 'M', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -414,13 +335,7 @@ letraN (char letra[7][5])
     {' ', 'N', ' ', ' ', ' '},
     {' ', 'N', ' ', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -437,13 +352,7 @@ letraO (char letra[7][5])
     {' ', 'O', ' ', 'O', ' '},
     {' ', ' ', 'O', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -460,13 +369,7 @@ letraP (char letra[7][5])
     {' ', 'P', ' ', ' ', ' '},
     {' ', 'P', ' ', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -483,13 +386,7 @@ letraQ (char letra[7][5])
     {' ', 'Q', ' ', 'Q', ' '},
     {' ', ' ', 'Q', ' ', 'Q'}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -506,13 +403,7 @@ letraR (char letra[7][5])
     {' ', 'R', ' ', 'R', ' '},
     {' ', 'R', ' ', 'R', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -529,13 +420,7 @@ letraS (char letra[7][5])
     {' ', ' ', ' ', 'S', ' '},
     {' ', 'S', 'S', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -552,13 +437,7 @@ letraT (char letra[7][5])
     {' ', ' ', 'T', ' ', ' '},
     {' ', ' ', 'T', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -575,13 +454,7 @@ letraU (char letra[7][5])
     {' ', 'U', ' ', 'U', ' '},
     {' ', ' ', 'U', 'U', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -598,13 +471,7 @@ letraW (char letra[7][5])
     {' ', 'W', 'W', 'W', ' '},
     {' ', 'W', ' ', 'W', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 
@@ -622,13 +489,7 @@ letraV (char letra[7][5])
     {' ', 'V', ' ', 'V', ' '},
     {' ', ' ', 'V', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -645,13 +506,7 @@ letraX (char letra[7][5])
     {' ', 'X', ' ', 'X', ' '},
     {' ', 'X', ' ', 'X', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -668,13 +523,7 @@ letraY (char letra[7][5])
     {' ', ' ', 'Y', ' ', ' '},
     {' ', ' ', 'Y', ' ', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
 
 void
@@ -691,14 +540,9 @@ letraZ (char letra[7][5])
     {' ', 'Z', ' ', ' ', ' '},
     {' ', 'Z', 'Z', 'Z', ' '}
   };
-  for (i = 0; i < 7; i = i + 1)
-    {
-      for (j = 0; j < 5; j = j + 1)
-	{
-	  letra[i][j] = a[i][j];
-	}
-    }
+  Igualarletra (letra, a);
 }
+
 
 void
 alfabetoASCII (char letra[7][5], char c)
