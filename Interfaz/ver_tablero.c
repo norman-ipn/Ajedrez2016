@@ -11,9 +11,9 @@ ver_tablero(char tablero [8][8])
   int i = 0;
   int j = 0;
   
-  for(i = 0; i < 8; i++)
+  for(i = 0; i < 8; i=i+1)
   {
-    for(j = 0; j < 8;j++)
+    for(j = 0; j < 8;j=j+1)
     {
       printf(tablero[i][j]);
     }
