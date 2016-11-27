@@ -1,3 +1,17 @@
+
+/*Esta función maneja una estructura de datos necesaria en el cuerpo
+de la función principal, también emplea una segunda función para su funcionamiento interno*/
+struct capturadas
+{
+  char negras[16];
+  char blancas[16];
+  int posn;
+  int posb;
+  int pieza;
+  int color;
+}
+
+
 void
 anadir (char arreglo[16], int b, int pos)
 {
@@ -19,22 +33,16 @@ anadir (char arreglo[16], int b, int pos)
       arreglo[pos] = 'c';
       break;
     }
-
-
+  return;
 }
 
 void
-pcomida (int a, int color)
+pcomida (struct capturadas comida)
 {
-  char negras[16];
-  char blancas[16];
-  if (color == 0)
+  if (comida.color == 0)
     {
-      /*funcion con casos para pieza */
-    }
-  if (color == 1)
+    anadir (comida.blancas, comida.pieza, comida.posb)}
+  if (comida.color == 1)
     {
-      /*fucion con casos ara pieza */
-
-    }
+    anadir (comida.blancas, comida.pieza, comida.posb)}
 }
