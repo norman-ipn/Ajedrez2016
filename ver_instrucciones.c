@@ -57,8 +57,8 @@ instrucciones (char tablero[8][8])
     ("\n  Los peones son las principales unidades para cubrir terreno, no son muy fuertes y est%cn pensados m%cs para ocupar posiciones que para capturar, se mueven de la siguiente forma: \n",
      a_acento, a_acento);
   printf
-    ("\n El pe%cn puede avanzar 2 casillas y terminar en el caracter # solo si se encuentra en su casilla de arranque. Despu%cs de esto, tendr%c que avanzar 1 casilla a la vez \n o puede hacerlo desde  el inicio. Los 'O' representan las posiciones en las que si una pieza enemiga se encuentra ah%c, esta puede ser capturada.     \n",
-     o_acento, e_acento, a_acento, i_acento);
+    ("\n El pe%cn puede avanzar 2 casillas y terminar en el caracter # solo si se encuentra en su casilla de arranque. Despu%cs de esto, tendr%c que avanzar 1 casilla a la vez \n o puede hacerlo desde  el inicio. Los 'O' representan las posiciones en las que si una pieza enemiga se encuentra ah%c, esta puede ser capturada. Existe tambi%cn otro movimiento de los peones el cual es comer al paso. \n",
+     o_acento, e_acento, a_acento, i_acento, e_acento);
 
   printf ("  A B C D E F G H  \n");
   printf (" |================|\n");
@@ -75,6 +75,70 @@ instrucciones (char tablero[8][8])
   printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', '%', 'O', ' ', 'X',
 	  ' ');
   printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'P', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+printf
+    ("\n Si un pe%cn en su primer movimiento avanza dos cuadros, y al hacerlo queda al lado de un pe%cn contrario (este avance evita la posibilidad del otro pe%cn de capturarlo), ese otro pe%cn tiene la oportunidad de capturar al primero a su paso. La captura debe hacerse inmediatamente despu%cs del paso del primer pe%cn, porque luego de otras jugadas, ya no ser%c permitida esta jugada. La 'P' representa un pe%cn blanco y la 'p' representa un pe%cn negro. \n",
+     o_acento, o_acento, o_acento, o_acento, e_acento, o_acento, a_acento, o_acento, o_acento);
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', 'p',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'P', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'P', 'p',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', 'p', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
 	  'X');
   printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
 	  ' ');
@@ -320,6 +384,57 @@ instrucciones (char tablero[8][8])
   printf (" |================|\n");
 
   while (getchar () != '\n');
+
+printf ("\n Tablas en Ajedrez (Empate)   \n");
+
+  printf
+    ("\n Hay cinco razones por las cuales una partida de ajedrez puede terminar en tablas.  \n");
+
+  printf
+    ("\n 1: La posici%cn del juego llega a un punto muerto (estancamiento), en el cual un jugador tiene su turno para mover, pero, aunque su Rey no est%c en JAQUE, este no puede hacer ning%cn movimiento permitido, pues quedar%ca expuesto al ataque de una pieza contraria; es decir, se produce un AHOGAMIENTO.  \n",
+     o_acento, a_acento, u_acento, i_acento);
+  printf
+    ("\n En el siguiente ejemplo juegan las piezas negras, pero su Rey no puede ocupar ninguna de las casillas adyacentes pues quedar%ca en manos de las fichas blancas (jaque), ni tampoco puede tomar la Torre porque el Rey Blanco lo capturar%ca.  \n",
+     i_acento, i_acento);
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'Q', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', 'k', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'P', ' ', 'X', 'T', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', 'K', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+  printf
+    ("\n 2:Un jugador puede ofrecer tablas a su oponente despu%cs de realizar su jugada, y si %cste acepta dicha oferta la partida se declara tablas. \n",
+     e_acento, e_acento);
+  printf
+    ("\n 3:Cuando NO hay suficientes piezas en el tablero para forzar un jaque-mate. Esto ocurre cuando en el tablero solo quedan:\n");
+  printf
+    ("\n Rey contra Rey.\n");
+  printf
+    ("\n Rey y Caballo contra Rey, o contra Rey y Caballo.\n");
+  printf
+    ("\n Rey y Alfil contra Rey, o contra Rey y Caballo, o contra Rey y Alfil.\n");
+  printf("\n 4:Un jugador declara Tablas si la misma jugada es repetida tres veces (aunque no necesariamente las tres veces en la misma fila). \n");
+  printf("\n 5:Si al cabo de 50 jugadas consecutivas no se decide la partida, y no se produce una captura o se avanza un pe%cn, la partida termina en tablas si uno de los jugadores lo solicita antes de que haya jaque mate. \n",o_acento);
+
+  
+  while (getchar () != '\n');
+
+
 
   return;
 }
