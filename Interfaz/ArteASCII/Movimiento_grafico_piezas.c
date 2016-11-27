@@ -74,29 +74,58 @@
 void
 mover_pieza (char tablero[8][8])
 {
-  char movimiento[5];
+  char movimiento[1];
   char aux;
-  int columna = 0, 
+  int columna = 0; 
   int fila = 0;
- printf ("Turno de las blancas\n\n")
+ printf ("Turno de las negras\n\n")
   printf ("Introduzca la coordenada de la pieza que desea mover\n\n");
   scanf ("%s", movimiento);
-  columna = movimiento[1];
+  columna = movimiento[0];
   fila = movimiento[0];
   aux = tablero[fila][columna];
-  tablero[fila][columna] = ' ';
+  tablero[fila][columna] = 't';
  
   movimiento[2] = 'i';
   printf ("\nIntroduzca la coordenada de destino \n\n");
-char h[5];
+char h[1];
   scanf ("%s", h);
-  columna = h[1];
-  fila = h[0];
+  columna = h[0];
+  fila = h[1];
   tablero[fila][columna] = aux;
  // guardar_mov (movimiento);
-  printf ("Tu pieza ha sido movida exitosamente\n\n");
-    scanf ("%c", &opc_j);
-
+	
+void
+mover_pieza (char tablero[8][8])
+{
+  char movimiento[1];
+  char aux;
+  int columna = 0; 
+  int fila = 1;
+ printf ("Turno de las negras\n\n")
+  printf ("Introduzca la coordenada de la pieza que desea mover\n\n");
+  scanf ("%s", movimiento);
+  columna = movimiento[0];
+  fila = movimiento[2];
+  aux = tablero[fila][columna];
+  tablero[fila][columna] = 'c';
+ 
+  movimiento[2] = 'i';
+  printf ("\nIntroduzca la coordenada de destino \n\n");
+char h[2];
+  scanf ("%s", h);
+  columna = h[0];
+  fila = h[3];
+  tablero[fila][columna] = aux;
+ // guardar_mov (movimiento);
+	
+	
+	
+	
+	
+	
+printf ("t\n\n");
+    scanf ("%c", &opc_j);	
   switch (opc_j)
 	{
       
