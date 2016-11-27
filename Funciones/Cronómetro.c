@@ -21,13 +21,13 @@ main ()
   time_t tiempo; 
   char cad[80]; 
   struct tm *tmPtr; 
-  for (HORA = 0; HORA < 1000; HORA++)
+  for (HORA = 0; HORA < 1000; HORA= HORA+1)
     {
-      for (MINUTO = 0; MINUTO < 60; MINUTO++)
+      for (MINUTO = 0; MINUTO < 60; MINUTO= MINUTO+1)
 	{
-	  for (SEGUNDO = 0; SEGUNDO < 60; SEGUNDO++)
+	  for (SEGUNDO = 0; SEGUNDO < 60; SEGUNDO= SEGUNDO+1)
 	    {
-	      for (ML = 0; ML < 500; ML++)
+	      for (ML = 0; ML < 500; ML= ML+1)
 		{
 		  printf("Cronometro");
 		  printf("%d : %d : %d . %d \n",HORA, MINUTO, SEGUNDO,ML);
