@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+/* Esta funcion se cambio por tablero.c en la carpeta arte ASCII con caracteres unicode ya que ubunto no interpreta toda la tabla ASCII/* 
 void
 imprimir_tablero_inicial (char tablero[8][8])
 {
