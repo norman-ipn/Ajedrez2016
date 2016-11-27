@@ -28,7 +28,7 @@ imprimir_tablero_inicial (char tablero[8][8])
   int blanca = 220;
   int i = 0;
   /* Se inicializa el tablero con caracteres nulos para no tener basura */
-  for (y = 0; y <= 8; y++)
+      for (y = 0; y <= 8; y++)
     {
       for (x = 0; x <= 8; x++)
 	{
