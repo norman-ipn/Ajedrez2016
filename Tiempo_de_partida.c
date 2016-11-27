@@ -1,4 +1,4 @@
-//*Cronómetro que muestra al usuario el tiempo que lleva la partida después de que el usuario ingrese el movimiento deseado y posterior a ello la partida continuara normalmente. Se colocara cronómetro con función de inicio de partida y se hará printf en tablero.c después de que se ingrese la coordenada del movimiento por parte del usuario*/
+/*Cronómetro que muestra al usuario el tiempo que lleva la partida después de que el usuario ingrese el movimiento deseado y posterior a ello la partida continuara normalmente. Se colocara cronómetro con función de inicio de partida y se hará printf en tablero.c después de que se ingrese la coordenada del movimiento por parte del usuario*/
 
 #include<stdio.h>
 #include<stdlib.h>
