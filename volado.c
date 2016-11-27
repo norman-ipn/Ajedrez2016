@@ -17,3 +17,6 @@ volado ()
     }
   return;
 }
+
+/*Ya existen como 3 funciones para elegir un jugador al azar, no borrare la función pero consideren eso, leer las funciones que ya estan y 
+no subir repetidas*/
