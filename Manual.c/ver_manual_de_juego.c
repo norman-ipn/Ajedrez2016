@@ -1,4 +1,18 @@
+
+/*=============================================
+======   Manual de Juego (intrucciones    =====
+=============================================*/
+
+/*
+README:
+Genera una funcion que agrupa a todas las demas, permite mostrar al jugador todas
+las instrucciones que necesite mediante un pequeño meu propio
+*/
+
+
 #include <stdio.h>
+
+
 void
 instrucciones (char tablero[8][8])
 { char comando= '0';
