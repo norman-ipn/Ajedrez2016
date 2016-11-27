@@ -1,3 +1,4 @@
+#include "validar_enroques.h"
 /* 
   archivo: enrocar.c
 
@@ -5,9 +6,6 @@
      Jorge Mendez 
      Carlos Ochoa
 */
-
-#include "validaciones.h"
-
 void
 enrocar_corto (char tablero[8][8])
 {

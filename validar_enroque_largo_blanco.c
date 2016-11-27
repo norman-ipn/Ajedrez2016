@@ -1,4 +1,4 @@
-
+#include "validar_enroques.h"
 /*
    Función para verificar que el enroque se puede hacer
    donde mov_torre es el contador de veces que se ha movido torre
