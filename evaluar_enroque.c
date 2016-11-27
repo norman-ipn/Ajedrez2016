@@ -1,4 +1,4 @@
-#include "turno.h"
+#include "validar_enroques.h"
 
 /*
   la variable turno viene desde un contador del main, que indica el número de turno
