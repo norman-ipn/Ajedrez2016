@@ -1,4 +1,4 @@
-
+#include<stdio.h>
 /*
 *********************
 COMO USAR ESTE CODIGO
@@ -9,6 +9,7 @@ El ultimo cambio fue propiedad de AcardiaWolfman y asocidos
 
 
 */
+
 void
 Igualarletra (char letra[7][5], char array[7][5])
 {
