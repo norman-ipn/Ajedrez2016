@@ -5,16 +5,16 @@ int main(){
 char tablero[8][8];
   int a = 0;
   int x = 0;			/* variable de control de la posición del tablero en x */
-  int y = 0;
-  int f = 8;			/* variable de control de la posición del tablero en y */
+  int y = 0;                    /* variable de control de la posición del tablero en y */
+  int f = 8;			
   int i = 0;
   int turno = 0;
   int movimiento[1][1];
   int m,n,o,p;
   int juego = 1;
-  int tablerob[8][8];
+
 while (y <= 8)
-    {				/*Se inicializa tablero con caracteres nulos, para no tener basura */
+    {				/*Se inicializa tablero con espacios para no tener basura y que en la impresion salga correcto */
       while (x <= 8)
 	{
 	  tablero[x][y] = ' ';
@@ -76,6 +76,7 @@ while (y <= 8)
 				printf("  %d ",f);
 				while (a<8){
 				printf("\u2503 %c ",tablero[y][x]);
+					/*\u2503 corresponde a una linea vertical*/
 				a= a +1; 
 				x = x +1;
 				
@@ -106,10 +107,11 @@ while (y <= 8)
 		printf("    ");
 	a = 0;
 	while (a < 8){
-		printf("  %c  ",65 + a);
+		printf("  %c ",65 + a);
 		a = a +1;
 	}
-	/* Estas son pruebas para comprobar que el tablero se actualiza segun las coordenadas que mande el usuario*/
+	/* Estas son pruebas para comprobar que el tablero se actualiza segun las coordenadas que mande el usuario,, el sistema de coordenadas
+	no sera este*/
 	printf("\nTurno de blancas\n Ingrese su movimiento");
 
 	scanf("%d %d %d %d",&n,&m,&p,&o);
@@ -119,19 +121,13 @@ while (y <= 8)
 	if (tablero [m][n] != ' '){
 	tablero[o][p] = tablero [m][n];
 	tablero [m][n] = ' ';
-
 	printf("\n");}
 	printf("\n");
 	a = 0; 
-
 	x = 0;
-
 	y = 0;
-
 	f = 8;
-
 	printf("    ");
-
 }
 }
 
