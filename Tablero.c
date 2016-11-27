@@ -1,5 +1,67 @@
 #include <stdio.h>
 
+int
+main ()
+{
+  int i = 0;
+  int j = 0;
+  int l = 0;
+  int a = 95;
+
+  char tablero[8][8];
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  tablero[i][j] = ' ';
+	}
+    }
+  for (i = 0; i < 8; i = i + 1)
+    {
+      tablero[1][i] = 'P';
+    }
+  for (i = 0; i < 8; i = i + 1)
+    {
+      tablero[6][i] = 'p';
+    }
+
+
+  tablero[0][0] = 'T';
+  tablero[0][1] = 'C';
+  tablero[0][2] = 'A';
+  tablero[0][3] = 'R';
+  tablero[0][4] = 'D';
+  tablero[0][5] = 'A';
+  tablero[0][6] = 'C';
+  tablero[0][7] = 'T';
+
+  tablero[7][0] = 't';
+  tablero[7][1] = 'c';
+  tablero[7][2] = 'a';
+  tablero[7][3] = 'r';
+  tablero[7][4] = 'd';
+  tablero[7][5] = 'a';
+  tablero[7][6] = 'c';
+  tablero[7][7] = 't';
+
+  for (i = 0; i < 8; i++)
+    {
+      for (l = 0; l < 17; l++)
+	printf ("%c%c", a, a);
+      printf ("\n");
+      for (j = 0; j < 8; j++)
+	{
+	  printf ("| %c ", tablero[i][j]);
+	}
+      printf ("|\n");
+    }
+  for (l = 0; l < 17; l++)
+    printf ("%c%c", a, a);
+  printf ("\n");
+  return 0;
+}
+
+/*
 void
 main (void)
 {
@@ -14,8 +76,9 @@ main (void)
       printf (" ");
       printf ("%c", tablero[i][j]);
     }
+*/
 /*-------------------------------------*/
-  printf ("\n");
+  /*printf ("\n");
   i = 0;
   while (j < 8)
     {
@@ -44,7 +107,7 @@ main (void)
 	  tablero[1][1] = 'T2';
 	  */
 		//no se si aqui va otro de espacio
-	  printf ("%c", tablero[8][1]);
+/*	  printf ("%c", tablero[8][1]);
 	  printf (" ");
 	  printf ("%c", tablero[7][1]);
 	  printf (" ");
@@ -89,7 +152,7 @@ main (void)
 	  tablero[1][1] = 'T2';
 	  */
 	/*no se si aqui va otro de espacio */
-	  printf ("%c", tablero[8][7]);
+/*	  printf ("%c", tablero[8][7]);
 	  printf (" ");
 	  printf ("%c", tablero[7][7]);
 	  printf (" ");
@@ -120,17 +183,18 @@ main (void)
          }
          e = 0; */
 
-      tablero[i][j] = '*';
+ /*     tablero[i][j] = '*';
       printf ("%c \n", tablero[i][j]);
       j = j + 1;
     }
   /*-------------------------------------*/
-  i = 0;
+/*  i = 0;
   for (i = 0; i < 9; i = i + 1)
     {
       tablero[i][9] = '*';
       printf ("%c", tablero[i][9]);
     }
 /*-------------------------------------*/
-  printf ("\n");
+ /* printf ("\n");
+*/
 }
