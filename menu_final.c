@@ -1,4 +1,4 @@
-
+/*Este menu no tiene ningun sentido, comenta aqui su función si no tendra que ser borrado, solo le estas dando pie al menu normal*/
 #include "menu_final.h"
 
 int
