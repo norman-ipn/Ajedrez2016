@@ -15,18 +15,18 @@ struct variables {
 }
 
 int
-tiempo (void) /*Recuerda que solo existe un solo main*/
+tiempo_partida (void) 
 {
   struct variables V;
   
 /* Diferencia del tiempo de inicio de partida con el tiempo transcurrido desde 1970 como marca time */
-  V.inicial = time(0);
+  inicial = time(0);
 
   while(1)
   {
-    V.tiempo = time(0) - V.inicial;
+    tiempo = time(0) - inicial;
      		  
-    printf(" %d min, %d seg\n", V.tiempo/60, V.tiempo%60 );		  
+    printf(" %d min, %d seg\n", tiempo/60, tiempo%60 );		  
   }
 /* Aquí se ingresara la función de partidas, para que se contabilice el tiempo de la partida*/
 
