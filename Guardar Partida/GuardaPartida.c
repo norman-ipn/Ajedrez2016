@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 /* Devuelve 1 si se guarda correctamente, 0 en otro caso. Si existia una partida anterior, se sobreescribe */
 int
 guarda_partida (char tablero[8][8])
