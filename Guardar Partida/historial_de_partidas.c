@@ -11,17 +11,13 @@ ES UN ENTERO:
 	4=tablas.
 -EL OTRO PARÁMETRO ES DE SALIDA Y ES UNA CADENA DE LONGITUD 100 EN LA CUAL SE ESCRIBIRÁ
  EL ESTADO FINAL DE LA FUNCIÓN.
--LA FUNCIÓN SERÁ LLAMADA AL FINAL DE LA PARTIDA
+-LA FUNCIÓN SERÁ LLAMADA AL FINAL DE LA PARTIDA.
 -EL NOMBRE DE LA FUNCIÓN ES "Actualizar_historial".
--SOLO REQUIERE EL RESULTADO DE LA PARTIDA COMO PARÁMETRO DE ENTRADA
--SE APOYA DE LA FUNCIÓN "Obten_hora" PARA INCLUIR LA HORA EN LA QUE SE ACABÓ LA PARTIDA.
+-SOLO REQUIERE EL RESULTADO DE LA PARTIDA COMO PARÁMETRO DE ENTRADA.
+-SE APOYA DE LA FUNCIÓN "Obten_hora" PARA INCLUIR LA HORA EN LA QUE SE ACABÓ LA PARTIDA. (SERÁ CREADA POR Bryan González).
 -PENDIENTE:
 	*NOMBRE PERSONALIZADO PARA JUGADOR 1 Y 2.
 */
-
-#include <stdio.h>
-#include <stdlib.h>
-#include "funciones.h"
 
 void
 actualiza_historial (int resultado, char mensaje_salida[100])
@@ -110,19 +106,4 @@ actualiza_historial (int resultado, char mensaje_salida[100])
     }
   mensaje_salida = "Historial actualizado correctamente";
   fclose (historial);
-  return;
-}
-
-/*------------------FUNCION MAIN (MODO DE INVOCAR A LA FUNCIÓN)---------------------*/
-void
-main (void)
-{
-
-  char mensaje_salida[100];
-  int resultado = 0;
-
-  actualiza_historial (resultado, mensaje_salida);
-
-  printf ("%s", mensaje_salida);
-  return;
 }
