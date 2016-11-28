@@ -63,3 +63,4 @@ Lista de Alumnos
 |**CubeXtreme**|Castro Reyna Roberto Armando|
 |**alex2201**|López Cedillo Alexander|
 |**rammendozaa**|Mendoza Ramírez Álvaro|
+|**JorgeMendezcm1**|Mendez Alvarez Jorge Luis|
