@@ -1,5 +1,8 @@
 #include "guardar_movimientos.h"
-
+/*
+SUGERENCIA: 
+  DESCRIPCIÓN EN EL OBJETIVO DE LA FUNCIÓN Y EN LOS PARÁMETROS DE LA MISMA. :)
+*/
 void
 guardar_mov (char a[5], int i)
 {
