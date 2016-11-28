@@ -1,6 +1,6 @@
 /* Devuelve 1 si se lee correctamente, 0 en otro caso. Si no habia partida anterior, el tablero no se modifica */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 
 int
 recupera_partida (char tablero[8][8])
