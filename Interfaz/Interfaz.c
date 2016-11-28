@@ -122,15 +122,6 @@ inicializar (char tablero[8][8])
 
 /*--------------------------------------------------------------------*/
 
-void menu_jugador(void)
-{
-    printf("\n");
-    printf("1- Continuar partida \n");
-    printf("2- Nueva partida vs player 2 \n");
-    printf("3- Nueva partida vs computer \n");
-    printf("4- Score \n\n");
-}
-
 void manual(void)
 {
     char retorno = 0;
