@@ -14,8 +14,6 @@ otra_funcion (void);
 void
 inicializar (char tablero[8][8]);
 
-void 
-menu_jugador(void);
 
 void manual(void);
 
