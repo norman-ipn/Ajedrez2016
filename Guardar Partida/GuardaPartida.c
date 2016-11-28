@@ -2,7 +2,7 @@
 
 /* Devuelve 1 si se guarda correctamente, 0 en otro caso. Si existia una partida anterior, se sobreescribe */
 int
-GuardaPartida (char tablero[8][8])
+guarda_partida (char tablero[8][8])
 {
   FILE *fp = fopen ("tablero.tab", "w");
   int resultado = 0;
