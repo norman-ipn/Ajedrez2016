@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 int
-RecuperaPartida (char tablero[8][8])
+recupera_partida (char tablero[8][8])
 {
   FILE *fp = fopen ("tablero.tab", "r");
   int resultado = 0;
