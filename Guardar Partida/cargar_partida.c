@@ -2,7 +2,7 @@
 FUNCIÓN QUE ABRE UNA PARTIDA PREVIAMENTE GUARDADA.
 */
 
-#include <stdio.h>
+/*#include <stdio.h>*/
 void
 continuar_partida (char archivo[100])
 {
