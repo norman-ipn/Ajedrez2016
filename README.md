@@ -13,7 +13,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
 |**AlejandroH1cm1**| |Interfaz|
 |**alex2201**| |Interfaz|
-|**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
+|**AlexHrdRck**| |Interfaz|
 |**AlexMex2412**| |Interfaz|
 |**alfmemije**| |Interfaz|
 |**Alichos**| |Piezas|
@@ -33,7 +33,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Edrasen**| |Tablero|
 |**Emm79**| |Tablero|
 |**erickvazquez**| |Tablero|
-|**HackerManchister**| |Tablero|
+|**HackerManchister**|Quintana Ruiz Ajitzi Ricardo |Tablero|
 |**IrvingLucky27**|Bautista Neyra Irving M.|Persistencia|
 |**IsamDavid**| |Persistencia|
 |**Ivone98**| |Persistencia|
