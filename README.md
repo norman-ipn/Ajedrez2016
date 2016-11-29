@@ -38,7 +38,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**IsamDavid**| |Persistencia|
 |**Ivone98**| |Persistencia|
 |**jaroramos**| |Persistencia|
-|**JoaksIPN**| |Persistencia|
+|**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
 |**JorgeMendezcm1**| |Persistencia|
 |**JoseRivera12**| |Persistencia|
 |**KarlaSilva**| |Persistencia|
@@ -131,3 +131,4 @@ Lista de Alumnos ETAPA 1
 |**alex2201**|López Cedillo Alexander|
 |**rammendozaa**|Mendoza Ramírez Álvaro|
 |**JorgeMendezcm1**|Mendez Alvarez Jorge Luis|
+**JoaksIPN**|Domímguez Moran Joaquín|
