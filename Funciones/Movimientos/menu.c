@@ -209,6 +209,94 @@ guardar_partida (char a[8][8])
   pausa ();
 
 }
+/*Esta funcion senala cuando el peon es coronado*/
+int
+coronacion_peon (char a[8][8])
+{
+  int i = 0, j = 0;
+  char opc;
+  while (i < 8)
+    {
+      if (a[0][i] == 'p')
+	{
+	  printf
+	    ("\nSu peon ha sido coronado. Elija la pieza en la que desee convertir a su peon:\n");
+	  printf ("Escriba t para convertirlo en torre\n");
+	  printf ("Escriba a para convertirlo en alfil\n");
+	  printf ("Escriba c para convertirlo en caballo\n");
+	  printf ("Escriba d para convertirlo en dama\n");
+	  scanf ("%c", &opc);
+	  switch (opc)
+	    {
+	    case 't':
+	      a[0][i] = 't';
+	      pausa ();
+	      break;
+
+	    case 'a':
+	      a[0][i] = 'a';
+	      pausa ();
+	      break;
+
+	    case 'c':
+	      a[0][i] = 'c';
+	      pausa ();
+	      break;
+
+	    case 'd':
+	      a[0][i] = 'd';
+	      pausa ();
+	      break;
+
+	    default:
+	      printf ("\nOpcion no valida, vuelva a ingresar su opcion: ");
+	      scanf ("%c", &opc);
+	      break;
+	    }
+	  return 0;
+	}
+
+      if (a[7][i] == 'P')
+	{
+	  printf
+	    ("\nSu peon ha sido coronado. Elija la pieza en la que desee convertir a su peon:\n");
+	  printf ("Escriba t para convertirlo en torre\n");
+	  printf ("Escriba a para convertirlo en alfil\n");
+	  printf ("Escriba c para convertirlo en caballo\n");
+	  printf ("Escriba d para convertirlo en dama\n");
+	  scanf ("%c", &opc);
+	  switch (opc)
+	    {
+	    case 't':
+	      a[7][i] = 'T';
+	      pausa ();
+	      break;
+
+	    case 'a':
+	      a[7][i] = 'A';
+	      pausa ();
+	      break;
+
+	    case 'c':
+	      a[7][i] = 'C';
+	      pausa ();
+	      break;
+
+	    case 'd':
+	      a[7][i] = 'D';
+	      pausa ();
+	      break;
+
+	    default:
+	      printf ("\nOpcion no valida, vuelva a ingresar su opcion: \n");
+	      scanf ("%c", &opc);
+	      break;
+	    }
+	  return 1;
+	}
+      i++;
+    }
+}
 /*Esta función es la que rige todo el juego. Aquí deben estar las funciones
 que permitan el movimiento de las piezas.*/
 int
@@ -222,6 +310,7 @@ jugar (char a[8][8])
 
   while (i != 1)
     {
+      coronacion_peon(a);
       imprimir_tablero (a);
 
       printf ("¿Qué desea hacer a continuación?\n\n");
