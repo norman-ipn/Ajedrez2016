@@ -50,7 +50,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**mauricioww**| |Red|
 |**Meowstic**| |Red|
 |**Om3Ga-Z**| |Red|
-|**Omar6re**| |Red|
+|**Omar6re**| Rojas Espinoza Omar |Red|
 |**OscarSTK**| |Red|
 |**PedroLuisMoOr**| |Red|
 |**rammendozaa**| Mendoza Ramírez Álvaro |Red|
