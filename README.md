@@ -66,6 +66,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
 |**WholeCharlygold**| |IA|
 |**Yael-Estrada**| |IA|
+|**manuel-ramirez**| |IA|
 
 
 
