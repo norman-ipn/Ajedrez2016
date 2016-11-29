@@ -8,7 +8,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 | Usuario | Nombre | Módulo asignado |
 |---------|--------|-----------------|
 |**AcardiaWolfman**|Guzmán Pérez Oscar |Interfaz|
-|**alaneos777**| |Interfaz|
+|**alaneos777**| Ontiveros Salazar Alan Enrique|Interfaz|
 |**AlanKev117**| |Interfaz|
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
 |**AlejandroH1cm1**| |Interfaz|
