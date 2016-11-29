@@ -29,7 +29,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**cgvrcarlos**| |Tablero|
 |**CharlieC57**| |Tablero|
 |**CubeXtreme**| |Tablero|
-|**Drazen420**| |Tablero|
+|**Drazen420**|González Armas Dylan Arturo|Tablero|
 |**Edrasen**| |Tablero|
 |**Emm79**| |Tablero|
 |**erickvazquez**| |Tablero|
