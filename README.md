@@ -35,7 +35,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**erickvazquez**| |Tablero|
 |**HackerManchister**|Quintana Ruiz Ajitzi Ricardo |Tablero|
 |**IrvingLucky27**|Bautista Neyra Irving M.|Persistencia|
-|**IsamDavid**| |Persistencia|
+|**IsamDavid**|Espinosa Flores Isam David|Persistencia|
 |**Ivone98**| |Persistencia|
 |**jaroramos**| |Persistencia|
 |**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
