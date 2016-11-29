@@ -3,7 +3,74 @@
 Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
-Lista de Alumnos
+# Lista de Alumnos ETAPA 2
+
+| Usuario | Nombre | Módulo asignado |
+|---------|--------|-----------------|
+|**AcardiaWolfman**| |Interfaz|
+|**alaneos777**| |Interfaz|
+|**AlanKev117**| |Interfaz|
+|**albertosilva123**| |Interfaz|
+|**AlejandroH1cm1**| |Interfaz|
+|**alex2201**| |Interfaz|
+|**AlexHrdRck**| |Interfaz|
+|**AlexMex2412**| |Interfaz|
+|**alfmemije**| |Interfaz|
+|**Alichos**| |Piezas|
+|**andrei148831**| |Piezas|
+|**angel-rosas**| |Piezas|
+|**arturock127**| |Piezas|
+|**ArturoRR97**| |Piezas|
+|**atziripe**| |Piezas|
+|**begv**| |Piezas|
+|**Bucketh**| |Piezas|
+|**carlos-ochoa**| |Piezas|
+|**CelestePMM**| |Tablero|
+|**cgvrcarlos**| |Tablero|
+|**CharlieC57**| |Tablero|
+|**CubeXtreme**| |Tablero|
+|**Drazen420**| |Tablero|
+|**Edrasen**| |Tablero|
+|**Emm79**| |Tablero|
+|**erickvazquez**| |Tablero|
+|**HackerManchister**| |Tablero|
+|**IrvingLucky27**| |Persistencia|
+|**IsamDavid**| |Persistencia|
+|**Ivone98**| |Persistencia|
+|**jaroramos**| |Persistencia|
+|**JoaksIPN**| |Persistencia|
+|**JorgeMendezcm1**| |Persistencia|
+|**JoseRivera12**| |Persistencia|
+|**KarlaSilva**| |Persistencia|
+|**Lalaandrea**| |Persistencia|
+|**leafar5645**| |Red|
+|**Leonelney**| |Red|
+|**LittleBigMarty**| |Red|
+|**LuisVitax**| |Red|
+|**mauricioww**| |Red|
+|**Meowstic**| |Red|
+|**Om3Ga-Z**| |Red|
+|**Omar6re**| |Red|
+|**OscarSTK**| |Red|
+|**PedroLuisMoOr**| |Red|
+|**rammendozaa**| |Red|
+|**rash240719**| |IA|
+|**RCErik**| |IA|
+|**RV411**| |IA|
+|**SaidSoria**| |IA|
+|**SaulFloresCortes**| |IA|
+|**ShazellCrail**| |IA|
+|**SoyOscarRH**| |IA|
+|**TafnesJ**| |IA|
+|**TyrZephyroth**| |IA|
+|**WholeCharlygold**| |IA|
+|**Yael-Estrada**| |IA|
+
+
+
+
+
+Lista de Alumnos ETAPA 1
 
 | Usuario github | Nombre |
 |----------------|--------|
