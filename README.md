@@ -13,7 +13,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
 |**AlejandroH1cm1**| |Interfaz|
 |**alex2201**| |Interfaz|
-|**AlexHrdRck**| |Interfaz|
+|**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
 |**AlexMex2412**| |Interfaz|
 |**alfmemije**| |Interfaz|
 |**Alichos**| |Piezas|
