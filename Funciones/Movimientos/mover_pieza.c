@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+//ete programa sirve para que se mueva una pieza, en el caso de que la casilla a donde se quiere mover la pieza esta ocupada por una pieza tuya o de la otr persona, lo indicará
+//NOTA: no toma en cuenta que haya piezas estorbando en el camino.
 
 
 char
@@ -57,7 +58,7 @@ amigo_o_enemigo(char i, char j)
 		
 }
 
-
+//eta primera parte es solamente el tablero
 int
 mover_pieza ()
 {
@@ -74,9 +75,9 @@ mover_pieza ()
   int j=0;
   
 	
-	for(i=0; i<8; i++)
+	for(i=0; i<8; i=i+1)
 	{
-		for(j=0; j<8; j++)
+		for(j=0; j<8; j=j+1)
 		{
 			if( i == 1)
 			{
@@ -135,16 +136,16 @@ mover_pieza ()
 					}
 		}
 	}
-		for (i=0; i<8; i++)
-				{
-					printf("\n");
-					for(j=0; j<8; j++)
-					{
+		for (i=0; i<8; i=i+1)
+		{
+			printf("\n");
+			for(j=0; j<8; j=j+1)
+			{
 						
-						printf("%c", tablero[i][j],"\n");
+				printf("%c", tablero[i][j],"\n");
 						
-					}
-				}
+			}
+		}
  	
 	 
 	 
@@ -162,16 +163,16 @@ mover_pieza ()
   
   tablero[fila][columna] = '*';
   	
-for (i=0; i<8; i++)
-				{
-					printf("\n");
-					for(j=0; j<8; j++)
-					{
+		for (i=0; i<8; i=i+1)
+		{
+			printf("\n");
+			for(j=0; j<8; j=j+1)
+			{
 						
-						printf("%c", tablero[i][j],"\n");
+				printf("%c", tablero[i][j],"\n");
 						
-					}
-				}
+			}
+		}
 				
 				
 
@@ -185,21 +186,20 @@ for (i=0; i<8; i++)
 
   aux2 = tablero[fila_2][columna_2];
   
-  if (aux2 == '*')
+  	if (aux2 == '*')
  	{
- 		
  		tablero[fila_2][columna_2] = aux; 
  		
- 		  for (i=0; i<8; i++)
-				{
-					printf("\n");
-					for(j=0; j<8; j++)
-					{
+ 		  for (i=0; i<8; i=i+1)
+		  {
+			printf("\n");
+			for(j=0; j<8; j=j+1)
+			{
 						
-						printf("%c", tablero[i][j],"\n");
+				printf("%c", tablero[i][j],"\n");
 						
-					}
-				} 
+			}
+		  } 
  	 
   		printf ("\nTu pieza ha sido movida exitosamente\n\n"); 
   		
@@ -214,17 +214,17 @@ for (i=0; i<8; i++)
 		 tablero[fila_2][columna_2]=res;
    		
    		
-   		  for (i=0; i<8; i++)
-				{
+   		  for (i=0; i<8; i=i+1)
+		  {
 					printf("\n");
-					for(j=0; j<8; j++)
+					for(j=0; j<8; j=j+1)
 					{
 						
 						printf("%c", tablero[i][j],"\n");
 						
 					}
 				} 
-   	}
+   	   	  }
    	
 	
   
