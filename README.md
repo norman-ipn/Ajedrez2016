@@ -24,7 +24,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**atziripe**| |Piezas|
 |**begv**| |Piezas|
 |**Bucketh**|Loretto Estrada Galilea América|Piezas|
-|**carlos-ochoa**| |Piezas|
+|**carlos-ochoa**|Ochoa Ginera Carlos Armando |Piezas|
 |**CelestePMM**| |Tablero|
 |**cgvrcarlos**| |Tablero|
 |**CharlieC57**|Contreras Casas Carlos Enrique |Tablero|
