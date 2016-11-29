@@ -2,6 +2,7 @@
 ======= PROGRAMA PRINCIPAL AJEDREZ     ========
 =============================================*/
 #include <stdio.h>
+#include "guardar_partida.h"
 
 struct variables
 {
@@ -12,11 +13,16 @@ struct variables
   int manual = 0;
 }
 
+struct fin_juego
+{
+  int resultadof = 0;
+}
+
 int
 main (void)
 {
   struct variables V;
-
+  struct fin_juego F;
   /* ===== Bienvenida al Jugador */
   printf (" == BIENVENIDO A AJEDREZ ==\n");
   printf
@@ -62,7 +68,8 @@ main (void)
      y despues se renicie el tablero para jugar de nuevo"
      EN CONSTRUCCION 
      */
-	
-
+  
+  actualiza_historial(F.resultadof);
+  
   return 0;
 }
