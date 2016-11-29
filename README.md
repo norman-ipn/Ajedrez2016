@@ -23,7 +23,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**ArturoRR97**| |Piezas|
 |**atziripe**| |Piezas|
 |**begv**| |Piezas|
-|**Bucketh**| |Piezas|
+|**Bucketh**|Loretto Estrada Galilea América|Piezas|
 |**carlos-ochoa**| |Piezas|
 |**CelestePMM**| |Tablero|
 |**cgvrcarlos**| |Tablero|
