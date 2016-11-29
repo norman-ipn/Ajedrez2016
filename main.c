@@ -59,7 +59,10 @@ main (void)
   /*Estas líneas de código son una propuesta para
      incluír la funcion reiniciar (tablero)
      la cual pudiera mandar un printf que diga "Jaque Mate. Ganaron las (blancas/negras)
-     y despues se renicie el tablero para jugar de nuevo" */
+     y despues se renicie el tablero para jugar de nuevo"
+     EN CONSTRUCCION 
+     */
+	
 
   return 0;
 }
