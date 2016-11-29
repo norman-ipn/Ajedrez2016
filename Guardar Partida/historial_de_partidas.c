@@ -9,18 +9,18 @@ ES UN ENTERO:
 	2=victoria de jugador 2 con blancas.
 	3=victoria de jugador 2 con negras.
 	4=tablas.
--EL OTRO PARÁMETRO ES DE SALIDA Y ES UNA CADENA DE LONGITUD 100 EN LA CUAL SE ESCRIBIRÁ
- EL ESTADO FINAL DE LA FUNCIÓN.
 -LA FUNCIÓN SERÁ LLAMADA AL FINAL DE LA PARTIDA.
--EL NOMBRE DE LA FUNCIÓN ES "Actualizar_historial".
+-EL NOMBRE DE LA FUNCIÓN ES "actualiza_historial".
 -SOLO REQUIERE EL RESULTADO DE LA PARTIDA COMO PARÁMETRO DE ENTRADA.
--SE APOYA DE LA FUNCIÓN "Obten_hora" PARA INCLUIR LA HORA EN LA QUE SE ACABÓ LA PARTIDA. (SERÁ CREADA POR Bryan González).
--PENDIENTE:
-	*NOMBRE PERSONALIZADO PARA JUGADOR 1 Y 2.
+-SE APOYA DE LA FUNCIÓN "obten_hora" PARA INCLUIR LA HORA EN LA QUE SE ACABÓ LA PARTIDA.
 */
 
+#include "obten_hora.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 void
-actualiza_historial (int resultado, char mensaje_salida[100])
+actualiza_historial (int resultado)
 {
   FILE *historial = NULL;
   FILE *t_partidas = NULL;
@@ -45,7 +45,7 @@ actualiza_historial (int resultado, char mensaje_salida[100])
 
   if (t_partidas == NULL)
     {
-      mensaje_salida = "Error al obtener el número de partida\n";
+      printf("\nError al obtener el número de partida\n");
       return;
     }
 
@@ -57,7 +57,7 @@ actualiza_historial (int resultado, char mensaje_salida[100])
   hora = fopen ("hora.txt", "r");
   if (hora == NULL);
   {
-    mensaje_salida = "Error al obtener la hora actual";
+    printf("\nError al obtener la hora actual\n");
     return;
   }
 
@@ -68,7 +68,7 @@ actualiza_historial (int resultado, char mensaje_salida[100])
 
   if (historial == NULL)
     {
-      mensaje_salida = "Error al acceder al historial\n";
+      printf("\nError al acceder al historial\n");
       return;
     }
 
@@ -101,9 +101,9 @@ actualiza_historial (int resultado, char mensaje_salida[100])
 	       n_partidas, hora_obtenida);
       break;
     default:
-      mensaje_salida = "Error en resultado de la partida\n";
+      printf("\nError en resultado de la partida\n");
       return;
     }
-  mensaje_salida = "Historial actualizado correctamente";
+  printf("\nHistorial actualizado correctamente\n");
   fclose (historial);
 }
