@@ -1,7 +1,7 @@
 #include "interfaz.h"
-#include <stdio.h>
+
 void
-setUp ()
+setUp (void)
 {
   char confirmacion = ' ';
   printf ("Para mostrar las animaciones\n
