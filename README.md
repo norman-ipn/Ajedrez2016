@@ -34,7 +34,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Emm79**| |Tablero|
 |**erickvazquez**| |Tablero|
 |**HackerManchister**| |Tablero|
-|**IrvingLucky27**| |Persistencia|
+|**IrvingLucky27**|Bautista Neyra Irving M.|Persistencia|
 |**IsamDavid**| |Persistencia|
 |**Ivone98**| |Persistencia|
 |**jaroramos**| |Persistencia|
