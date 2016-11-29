@@ -1,8 +1,18 @@
 int
-validar_movimiento (char tablero[8][8], int posicion_ini_x int posicion_ini_y,
+validar_movimiento (char tablero[8][8], int posicion_ini_x, int posicion_ini_y,
 		    int posicion_x, int posicion_y, char pieza)
 {
 
+  if(coordenada_valida (posicion_ini_x, posicion_ini_y) == -1)
+  {
+    return -1;
+  }
+	
+  if(coordenada_valida (posicion_x, posicion_y) == -1)
+  {
+    return -1;
+  }
+  
   int resultado = 0;
   switch (pieza)
     {
