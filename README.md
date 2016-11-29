@@ -27,7 +27,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**carlos-ochoa**| |Piezas|
 |**CelestePMM**| |Tablero|
 |**cgvrcarlos**| |Tablero|
-|**CharlieC57**| |Tablero|
+|**CharlieC57**|Contreras Casas Carlos Enrique |Tablero|
 |**CubeXtreme**| |Tablero|
 |**Drazen420**|González Armas Dylan Arturo|Tablero|
 |**Edrasen**| |Tablero|
