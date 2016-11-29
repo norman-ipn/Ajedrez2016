@@ -41,7 +41,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
 |**JorgeMendezcm1**| |Persistencia|
 |**JoseRivera12**| |Persistencia|
-|**KarlaSilva**| |Persistencia|
+|**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
 |**leafar5645**| |Red|
 |**Leonelney**| |Red|
