@@ -62,7 +62,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**SaulFloresCortes**| |IA|
 |**ShazellCrail**| |IA|
 |**SoyOscarRH**|Rosas Hernandez Oscar Andres |IA|
-|**TafnesJ**| |IA|
+|**TafnesJ**| Tafnes Lorena Jiménez Aguilar |IA|
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
 |**WholeCharlygold**| |IA|
 |**Yael-Estrada**| |IA|
