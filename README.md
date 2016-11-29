@@ -54,6 +54,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**OscarSTK**| |Red|
 |**PedroLuisMoOr**| |Red|
 |**rammendozaa**| |Red|
+|**Smuuk**| Reyes Medrano Alexis Daniel |Red|
 |**rash240719**| |IA|
 |**RCErik**| |IA|
 |**RV411**| |IA|
