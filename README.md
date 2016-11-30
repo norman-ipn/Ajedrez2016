@@ -64,7 +64,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**SoyOscarRH**|Rosas Hernandez Oscar Andres |IA|
 |**TafnesJ**| Tafnes Lorena Jiménez Aguilar |IA|
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
-|**WholeCharlygold**| |IA|
+|**WholeCharlygold**| Albarran Cruz Carlos Alberto|IA|
 |**Yael-Estrada**| |IA|
 |**manuel-ramirez**| |IA|
 
