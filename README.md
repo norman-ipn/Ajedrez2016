@@ -9,7 +9,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |---------|--------|-----------------|
 |**AcardiaWolfman**|Guzmán Pérez Oscar |Interfaz|
 |**alaneos777**| Ontiveros Salazar Alan Enrique|Interfaz|
-|**AlanKev117**| |Interfaz|
+|**AlanKev117**| Fuentes García Alan Kevin|Interfaz|
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
 |**AlejandroH1cm1**| |Interfaz|
 |**alex2201**| |Interfaz|
