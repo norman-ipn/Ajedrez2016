@@ -16,7 +16,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro |Interfaz|
 |**alfmemije**| |Interfaz|
-|**Alichos**| |Piezas|
+|**Alichos**| Jiménez Vargas Carlos Alexis  |Piezas|
 |**andrei148831**| |Piezas|
 |**angel-rosas**| |Piezas|
 |**arturock127**| |Piezas|
