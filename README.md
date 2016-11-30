@@ -28,7 +28,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**CelestePMM**| |Tablero|
 |**cgvrcarlos**| |Tablero|
 |**CharlieC57**|Contreras Casas Carlos Enrique |Tablero|
-|**CubeXtreme**| |Tablero|
+|**CubeXtreme**|Castro Reyna Roberto Armando |Tablero|
 |**Drazen420**|González Armas Dylan Arturo|Tablero|
 |**Edrasen**| Ramos Mesas Edgar ALain|Tablero|
 |**Emm79**| |Tablero|
