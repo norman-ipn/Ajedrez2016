@@ -46,7 +46,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**leafar5645**| |Red|
 |**Leonelney**| |Red|
 |**LittleBigMarty**| |Red|
-|**LuisVitax**| |Red|
+|**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
 |**mauricioww**| |Red|
 |**Meowstic**| |Red|
 |**Om3Ga-Z**| |Red|
