@@ -21,7 +21,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**angel-rosas**| |Piezas|
 |**arturock127**| |Piezas|
 |**ArturoRR97**| |Piezas|
-|**atziripe**| |Piezas|
+|**atziripe**|Pérez García Atziri |Piezas|
 |**begv**| |Piezas|
 |**Bucketh**|Loretto Estrada Galilea América|Piezas|
 |**carlos-ochoa**|Ochoa Ginera Carlos Armando |Piezas|
