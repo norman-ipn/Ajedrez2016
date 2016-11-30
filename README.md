@@ -51,7 +51,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Meowstic**| |Red|
 |**Om3Ga-Z**| |Red|
 |**Omar6re**| Rojas Espinoza Omar |Red|
-|**OscarSTK**| |Red|
+|**OscarSTK**| Ortega Prieto Oscar David |Red|
 |**PedroLuisMoOr**| |Red|
 |**rammendozaa**| Mendoza Ramírez Álvaro |Red|
 |**Smuuk**| Reyes Medrano Alexis Daniel |Red|
