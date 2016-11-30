@@ -58,7 +58,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**rash240719**| |IA|
 |**RCErik**| |IA|
 |**RV411**| |IA|
-|**SaidSoria**| |IA|
+|**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
 |**SaulFloresCortes**| |IA|
 |**ShazellCrail**| |IA|
 |**SoyOscarRH**|Rosas Hernandez Oscar Andres |IA|
