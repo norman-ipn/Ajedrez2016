@@ -11,12 +11,13 @@ struct variables
   int jugador2 = 0;
   int estado = 1;
   int manual = 0;
-}
+};
 
 struct fin_juego
 {
   int resultadof = 0;
-}
+};
+/*No manchen, una Struct de una varibale, "10/10 :v"-IGN */
 
 int
 main (void)
