@@ -39,7 +39,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Ivone98**| |Persistencia|
 |**jaroramos**| |Persistencia|
 |**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
-|**JorgeMendezcm1**|Jorge Luis Mendez Alvarez |Persistencia|
+|**JorgeMendezcm1**| |Persistencia|
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
@@ -55,7 +55,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**PedroLuisMoOr**| |Red|
 |**rammendozaa**| Mendoza Ramírez Álvaro |Red|
 |**Smuuk**| Reyes Medrano Alexis Daniel |Red|
-|**rash240719**| |IA|
+|**rash240719**| Sánchez López Dylan Raúl |IA|
 |**RCErik**| Rodriguez Casas Erik |IA|
 |**RV411**| |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
