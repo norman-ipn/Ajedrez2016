@@ -60,7 +60,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**RV411**| |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
 |**SaulFloresCortes**| |IA|
-|**ShazellCrail**| |IA|
+|**ShazellCrail**|Crail Castro Brenda Shazell|IA|
 |**SoyOscarRH**|Rosas Hernandez Oscar Andres |IA|
 |**TafnesJ**| Tafnes Lorena Jiménez Aguilar |IA|
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
