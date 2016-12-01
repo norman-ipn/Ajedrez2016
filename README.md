@@ -43,7 +43,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
-|**leafar5645**| |Red|
+|**leafar5645**| Hernandez Ruiz Rafael|Red|
 |**Leonelney**| Olivares Conchillos Leonel |Red|
 |**LittleBigMarty**| |Red|
 |**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
