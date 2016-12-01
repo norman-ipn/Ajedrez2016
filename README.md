@@ -15,7 +15,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**alex2201**| |Interfaz|
 |**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro |Interfaz|
-|**alfmemije**| |Interfaz|
+|**alfmemije**|Memije Avila Alfredo Raymundo |Interfaz|
 |**Alichos**| Jiménez Vargas Carlos Alexis  |Piezas|
 |**andrei148831**| |Piezas|
 |**angel-rosas**| |Piezas|
@@ -44,7 +44,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
 |**leafar5645**| |Red|
-|**Leonelney**| Leonel Olivares Conchillos |Red|
+|**Leonelney**| |Red|
 |**LittleBigMarty**| |Red|
 |**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
 |**mauricioww**|Carpintero Mendoza Marcos Mauricio|Red|
