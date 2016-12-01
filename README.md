@@ -47,7 +47,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Leonelney**| |Red|
 |**LittleBigMarty**| |Red|
 |**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
-|**mauricioww**| |Red|
+|**mauricioww**|Carpintero Mendoza Marcos Mauricio|Red|
 |**Meowstic**| |Red|
 |**Om3Ga-Z**| |Red|
 |**Omar6re**| Rojas Espinoza Omar |Red|
