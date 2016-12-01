@@ -48,7 +48,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**LittleBigMarty**| |Red|
 |**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
 |**mauricioww**|Carpintero Mendoza Marcos Mauricio|Red|
-|**Meowstic**| |Red|
+|**Meowstic**| Jorge Andrés Hernánde García |Red|
 |**Om3Ga-Z**| |Red|
 |**Omar6re**| Rojas Espinoza Omar |Red|
 |**OscarSTK**| Ortega Prieto Oscar David |Red|
