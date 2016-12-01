@@ -56,7 +56,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**rammendozaa**| Mendoza Ramírez Álvaro |Red|
 |**Smuuk**| Reyes Medrano Alexis Daniel |Red|
 |**rash240719**| |IA|
-|**RCErik**| |IA|
+|**RCErik**| Rodriguez Casas Erik |IA|
 |**RV411**| |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
 |**SaulFloresCortes**| |IA|
