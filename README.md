@@ -39,7 +39,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Ivone98**| |Persistencia|
 |**jaroramos**| |Persistencia|
 |**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
-|**JorgeMendezcm1**| |Persistencia|
+|**JorgeMendezcm1**|Jorge Luis Mendez Alvarez |Persistencia|
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
