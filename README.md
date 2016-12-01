@@ -11,7 +11,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**alaneos777**| Ontiveros Salazar Alan Enrique|Interfaz|
 |**AlanKev117**| Fuentes García Alan Kevin|Interfaz|
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
-|**AlejandroH1cm1**| |Interfaz|
+|**AlejandroH1cm1**| Herrera Olmos Alejandro|Interfaz|
 |**alex2201**| |Interfaz|
 |**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro |Interfaz|
