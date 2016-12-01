@@ -20,7 +20,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**andrei148831**| |Piezas|
 |**angel-rosas**| |Piezas|
 |**arturock127**| |Piezas|
-|**ArturoRR97**| |Piezas|
+|**ArturoRR97**| Arturo Rivas Rojas |Piezas|
 |**atziripe**|Pérez García Atziri |Piezas|
 |**begv**| |Piezas|
 |**Bucketh**|Loretto Estrada Galilea América|Piezas|
