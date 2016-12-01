@@ -65,7 +65,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**TafnesJ**| Tafnes Lorena Jiménez Aguilar |IA|
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
 |**WholeCharlygold**| Albarran Cruz Carlos Alberto|IA|
-|**Yael-Estrada**| |IA|
+|**Yael-Estrada**| Estrada Estrada Jesse Yael |IA|
 |**manuel-ramirez**| |IA|
 
 
