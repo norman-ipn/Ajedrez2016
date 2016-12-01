@@ -59,7 +59,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**RCErik**| Rodriguez Casas Erik |IA|
 |**RV411**| |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
-|**SaulFloresCortes**| |IA|
+|**SaulFloresCortes**|Flores Cortes Saul Alejandro |IA|
 |**ShazellCrail**|Crail Castro Brenda Shazell|IA|
 |**SoyOscarRH**|Rosas Hernandez Oscar Andres |IA|
 |**TafnesJ**| Tafnes Lorena Jiménez Aguilar |IA|
