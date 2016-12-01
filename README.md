@@ -36,10 +36,10 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**HackerManchister**|Quintana Ruiz Ajitzi Ricardo |Tablero|
 |**IrvingLucky27**|Bautista Neyra Irving M.|Persistencia|
 |**IsamDavid**|Espinosa Flores Isam David|Persistencia|
-|**Ivone98**| |Persistencia|
+|**Ivone98**| Ivone Martínez Serrano |Persistencia|
 |**jaroramos**| |Persistencia|
 |**JoaksIPN**| Domínguez Moran Joaquín|Persistencia|
-|**JorgeMendezcm1**| |Persistencia|
+|**JorgeMendezcm1**|Jorge Luis Mendez Alvarez |Persistencia|
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| |Persistencia|
@@ -55,7 +55,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**PedroLuisMoOr**| |Red|
 |**rammendozaa**| Mendoza Ramírez Álvaro |Red|
 |**Smuuk**| Reyes Medrano Alexis Daniel |Red|
-|**rash240719**| Sánchez López Dylan Raúl |IA|
+|**rash240719**| |IA|
 |**RCErik**| Rodriguez Casas Erik |IA|
 |**RV411**| |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
