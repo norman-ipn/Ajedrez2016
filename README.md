@@ -58,7 +58,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Smuuk**| Reyes Medrano Alexis Daniel |Red|
 |**rash240719**| Sánchez López Dylan Raúl |IA|
 |**RCErik**| Rodriguez Casas Erik |IA|
-|**RV411**| |IA|
+|**RV411**|Rodríguez García Adán Iván |IA|
 |**SaidSoria**| Soria Zúñiga Osvaldo Said|IA|
 |**SaulFloresCortes**|Flores Cortes Saul Alejandro |IA|
 |**ShazellCrail**|Crail Castro Brenda Shazell|IA|
