@@ -42,7 +42,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**JorgeMendezcm1**|Jorge Luis Mendez Alvarez |Persistencia|
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
-|**Lalaandrea**| |Persistencia|
+|**Lalaandrea**| Morales López Laura Andrea |Persistencia|
 |**leafar5645**| Hernandez Ruiz Rafael|Red|
 |**Leonelney**| Olivares Conchillos Leonel |Red|
 |**LittleBigMarty**| |Red|
