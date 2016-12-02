@@ -43,6 +43,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**JoseRivera12**| Rivera Ramirez José Armando |Persistencia|
 |**KarlaSilva**| Silva Rojas Karla Lizbeth |Persistencia|
 |**Lalaandrea**| Morales López Laura Andrea |Persistencia|
+|**Om3Ga-Z**| Angel Lopez Manriquez | Red|
 |**leafar5645**| Hernandez Ruiz Rafael|Red|
 |**Leonelney**| Olivares Conchillos Leonel |Red|
 |**LittleBigMarty**| |Red|
@@ -111,7 +112,7 @@ Lista de Alumnos ETAPA 1
 |**AlanKev117**|Fuentes García Alan Kevin|
 |**JoseRivera12**|Rivera Ramirez Jose Armando|
 |**MartinIMR**| Mercado Rogel Martin Isauro |
-|**Om3Ga-Z**| Angel Lopez |
+|**Om3Ga-Z**| Angel Lopez Manriquez|
 |**SoyOscarRH**| Rosas Hernandez Oscar Andres |
 |**SaidSoria**|Soria Zúñiga Osvaldo Said|
 |**atziripe**|Pérez García Atziri|
