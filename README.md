@@ -22,7 +22,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**arturock127**| Arturo Bustos Guevara |Piezas|
 |**ArturoRR97**| Arturo Rivas Rojas |Piezas|
 |**atziripe**|Pérez García Atziri |Piezas|
-|**begv**| |Piezas|
+|**begv**| González Vélez Bryan Enrique |Piezas|
 |**Bucketh**|Loretto Estrada Galilea América|Piezas|
 |**carlos-ochoa**|Ochoa Ginera Carlos Armando |Piezas|
 |**CelestePMM**| |Tablero|
