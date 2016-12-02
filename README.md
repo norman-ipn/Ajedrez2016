@@ -19,7 +19,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Alichos**| Jiménez Vargas Carlos Alexis  |Piezas|
 |**andrei148831**| |Piezas|
 |**angel-rosas**| |Piezas|
-|**arturock127**| |Piezas|
+|**arturock127**| Arturo Bustos Guevara |Piezas|
 |**ArturoRR97**| Arturo Rivas Rojas |Piezas|
 |**atziripe**|Pérez García Atziri |Piezas|
 |**begv**| |Piezas|
