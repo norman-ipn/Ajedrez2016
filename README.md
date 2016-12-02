@@ -66,7 +66,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |IA|
 |**WholeCharlygold**| Albarran Cruz Carlos Alberto|IA|
 |**Yael-Estrada**| Estrada Estrada Jesse Yael |IA|
-|**manuel-ramirez**| |IA|
+|**manuel-ramirez**| Ramirez Vives Jose Manuel|IA|
 
 
 
