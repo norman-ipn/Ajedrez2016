@@ -2,7 +2,7 @@
 void
 Guardar_Partida (void)
 {
-  /*Crear archivo para guardar jugadas */
+/*Crear archivo para guardar jugadas */
   int Numero_Partida = 1;
   FILE *fichero = 0;
   int x_inicial = 0;
@@ -53,4 +53,101 @@ Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
          al final mandar el arreglo a Guardar_Partida() para agregar las coordenas al archivo */
     }
 
+}
+
+/* Esta función guarda/atualiza el registro de vistorias de cada jugador en un archivo diferente.
+-Se requiere una función del modulo de tablero, que indique que jugador a ganado y con que piezas (blancas o negras)
+-Podemos asumir que el tipo de dato que indica el resultado de la partida es un entero y que representa siguiente
+	0=victoria de jugador 1 con blancas.
+	1=victoria de jugador 1 con negras.
+	2=victoria de jugador 2 con blancas.
+	3=victoria de jugador 2 con negras.
+	4=tablas.
+*/
+
+void
+actualiza_historial (int resultado)
+{
+  FILE *historial = NULL;
+  FILE *t_partidas = NULL;
+  FILE *hora = NULL;
+  int n_partidas = 0;
+  char hora_obtenida[10] = "12:34:56";
+
+/* Arhivo que contiene el número de partidas jugadasi*/
+  t_partidas = fopen ("total_partidas.txt", "r");
+
+  if (t_partidas == NULL)
+
+    {
+      t_partidas = fopen ("total_partidas.txt", "w+");
+    }
+
+  fscanf (t_partidas, "%d", &n_partidas);
+  n_partidas = n_partidas + 1;
+  t_partidas = fopen ("total_partidas.txt", "w");
+  fprintf (t_partidas, "%d", n_partidas);
+
+  if (t_partidas == NULL)
+    {
+      printf ("\nError al obtener el número de partida\n");
+      return;
+    }
+
+  fclose (t_partidas);
+
+/*Archivo que contiene el historial de  resultado*/
+  obten_hora ();
+  hora = fopen ("hora.txt", "r");
+  if (hora == NULL);
+  {
+    printf ("\nError al obtener la hora actual\n");
+    return;
+  }
+
+  fscanf (hora, "%s", hora_obtenida);
+  fclose (hora);
+
+  historial = fopen ("historial.txt", "a+");
+
+  if (historial == NULL)
+    {
+      printf ("\nError al acceder al historial\n");
+      return;
+    }
+
+  switch (resultado)
+
+    {
+    case 0:
+      fprintf (historial,
+	       "\nFIN DE PARTIDA %d A LAS %s. RESULTADO: VICTORIA DEL JUGADOR 1 CON BLANCAS\n",
+	       n_partidas, hora_obtenida);
+      break;
+    case 1:
+      fprintf (historial,
+	       "\nFIN DE PARTIDA %d A LAS %s. RESULTADO: VICTORIA DEL JUGADOR 1 CON NEGRAS\n",
+	       n_partidas, hora_obtenida);
+      break;
+    case 2:
+      fprintf (historial,
+	       "\nFIN DE PARTIDA %d A LAS %s. RESULTADO: VICTORIA DEL JUGADOR 2 CON BLANCAS\n",
+	       n_partidas, hora_obtenida);
+      break;
+    case 3:
+      fprintf (historial,
+	       "\nFIN DE PARTIDA %d A LAS %s. RESULTADO: VICTORIA DEL JUGADOR 2 CON NEGRAS\n",
+	       n_partidas, hora_obtenida);
+      break;
+    case 4:
+      fprintf (historial,
+	       "\nFIN DE PARTIDA %d A LAS %s. RESULTADO: TABLAS\n",
+	       n_partidas, hora_obtenida);
+      break;
+    default:
+      printf ("\nError en resultado de la partida\n");
+      return;
+    }
+  printf ("\nHistorial actualizado correctamente\n");
+  fclose (historial);
 }
