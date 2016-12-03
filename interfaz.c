@@ -4,12 +4,15 @@ void
 setUp (void)
 {
   char confirmacion = ' ';
+  char buffer[4];
   printf ("Para mostrar las animaciones\n
 	necesitamos que instales un programa por nosotros,\n
 	su nombre es figlet, puedes instalarlo usando:\n\n
 	sudo apt-get install figlet\n\n
 	o bien podemos hacerlo por ti, presiona s para instalar\n
 	o cualquier otra para no hacerlo, podras hacerlo despues.");
+  fgets (buffer, 4, stdin);
+  sscanf (buffer, "%c", &confirmacion);
   if (confirmacion == 's' || confirmacion == 'S')
     {
       system ("sudo apt-get install figlet");
