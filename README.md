@@ -32,7 +32,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Drazen420**|González Armas Dylan Arturo|Tablero|
 |**Edrasen**| Ramos Mesas Edgar ALain|Tablero|
 |**Emm79**| Maya Rocha Luis Emmanuel |Tablero|
-|**erickvazquez**| |Tablero|
+|**erickvazquez**| Vázquez Núñez Erick Francisco|Tablero|
 |**HackerManchister**|Quintana Ruiz Ajitzi Ricardo |Tablero|
 |**IrvingLucky27**|Bautista Neyra Irving M.|Persistencia|
 |**IsamDavid**|Espinosa Flores Isam David|Persistencia|
