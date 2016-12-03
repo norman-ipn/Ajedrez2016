@@ -1,6 +1,5 @@
 #include "persistencia.h"
-
-int
+void
 Guardar_Partida (void)
 {
   /*Crear archivo para guardar jugadas */
@@ -27,11 +26,10 @@ Guardar_Partida (void)
      fichero);
   fclose (fichero);
   printf ("Archivo Guardado\n");
-  return 0;
 }
 
 /*Propongo que reciba el jugador para guardar las jugadas de cada juguador por separado y las coordenadas para despues guardarlas en el archivo*/
-int
+void
 Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
 		       int y_final)
 {
