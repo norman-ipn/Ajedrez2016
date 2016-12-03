@@ -46,7 +46,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**Om3Ga-Z**| Angel Lopez Manriquez | Red|
 |**leafar5645**| Hernandez Ruiz Rafael|Red|
 |**Leonelney**| Olivares Conchillos Leonel |Red|
-|**LittleBigMarty**| |Red|
+|**LittleBigMarty**| Martín Eduardo Barriga Vargas |Red|
 |**LuisVitax**| Gonzalez Velez Luis Fernando|Red|
 |**mauricioww**|Carpintero Mendoza Marcos Mauricio|Red|
 |**Meowstic**| Jorge Andrés Hernández García |Red|
