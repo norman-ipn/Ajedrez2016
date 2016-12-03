@@ -1,1 +1,0 @@
-void obten_hora();
