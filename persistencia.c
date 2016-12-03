@@ -28,6 +28,42 @@ Guardar_Partida (void)
   printf ("Archivo Guardado\n");
 }
 
+void
+continuar_partida (char archivo[100])
+{
+/*Función que abre una partida ya guardada*/
+  FILE *fichero = 0;
+
+  char tablero[8][8];
+  size_t n = 0;
+  fichero = fopen ("PartidasGuardada.txt", "r");
+
+  if (fp == 0)
+
+    {
+
+      printf ("No se pudo abrir el archivo");
+
+    }
+
+
+
+  n = fread (tablero, sizeof (char), 64, fichero);
+
+  if (n == 64)
+
+    {
+
+      printf ("Se leyeron los datos correctamente");
+
+    }
+
+
+
+  fclose (fichero);
+
+}
+
 /*Propongo que reciba el jugador para guardar las jugadas de cada juguador por separado y las coordenadas para despues guardarlas en el archivo*/
 void
 Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
