@@ -32,6 +32,9 @@ main (void)
           }
         
         close (packet_socket);
+  
+        printf ("\n");
+        return 0;
 }
         
         
