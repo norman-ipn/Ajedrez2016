@@ -55,19 +55,38 @@ Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
 
 }
 
-/* Esta función guarda/atualiza el registro de vistorias de cada jugador en un archivo diferente.
--Se requiere una función del modulo de tablero, que indique que jugador a ganado y con que piezas (blancas o negras)
--Podemos asumir que el tipo de dato que indica el resultado de la partida es un entero y que representa siguiente
-	0=victoria de jugador 1 con blancas.
-	1=victoria de jugador 1 con negras.
-	2=victoria de jugador 2 con blancas.
-	3=victoria de jugador 2 con negras.
-	4=tablas.
-*/
+
+void
+obten_hora (void)
+{
+  /* Esta función obtiene la hora en que se salvo la partida */
+  FILE *archivo = fopen ("hora.txt", "w+");
+
+  time_t tiempo = time (0);
+  struct tm *tiempo_local = localtime (&tiempo);
+  char hora[9];
+  strftime (hora, 9, "%H:%M:%S", tiempo_local);
+
+  fwrite (hora, sizeof (char), 9, archivo);
+
+  fclose (archivo);
+}
+
 
 void
 actualiza_historial (int resultado)
 {
+
+/* Esta función guarda/atualiza el registro de vistorias de cada jugador en un archivo diferente.
+-Se requiere una función del modulo de tablero, que indique que jugador a ganado y con que piezas (blancas o negras)
+-Podemos asumir que el tipo de dato que indica el resultado de la partida es un entero y que representa siguiente
+        0=victoria de jugador 1 con blancas.
+        1=victoria de jugador 1 con negras.
+        2=victoria de jugador 2 con blancas.
+        3=victoria de jugador 2 con negras.
+        4=tablas.
+*/
+
   FILE *historial = NULL;
   FILE *t_partidas = NULL;
   FILE *hora = NULL;
