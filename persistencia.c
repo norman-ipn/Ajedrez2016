@@ -1,16 +1,23 @@
 #include "persistencia.h"
 
 int
-Guardar_Partida ()
+Guardar_Partida (void)
 {
   /*Crear archivo para guardar jugadas */
   int Numero_Partida = 1;
-  FILE *fichero;
-  fichero = fopen ("PartidasGuardadas.txt", "w+");
+  FILE *fichero = 0;
   int x_inicial = 0;
   int y_inicial = 0;
   int x_final = 0;
   int y_final = 0;
+
+  fichero = fopen ("PartidasGuardadas.txt", "w+");
+  if (fichero == 0)
+    {
+      /* no se pudo abrir el archivo */
+      return -1;
+    }
+
   fprintf (fichero, "Partida numero:%d\n", Numero_Partida);
   fputs ("x inicial  y inicial  x final  y final   Jugador 1\n", fichero);
   fprintf (fichero, "%d             %d          %d         %d\n", x_inicial,
