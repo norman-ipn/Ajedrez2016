@@ -1,5 +1,6 @@
 /* En el arreglo "direccion" deben ir todos los posibles movimientos de la pieza */
 /* Esta funcion esta para la ficha de rey y caballo */
+#include "validar_movimientos_instantaneos.h"
 
 int
 validar_movimientos_instantaneos (char tablero[8][8], int direccion[8][2],
