@@ -56,5 +56,34 @@ tirar_ai(struct tablero *un_tablero)
     ataca(*un_tablero)
 }
 
+/* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACION ============================*/
+/* ============================== Podemos comer ======================= */ 
+int
+podemosComer(struct tablero *un_tablero)
+{
+  int valor;
+  return valor;
+}
 
 
+/* ============================== Podemos comer ======================= */ 
+int
+podemosSerComidos(struct tablero *un_tablero)
+{
+  int valor;
+  return valor;
+}
+
+/* =========== FUNCIONES EN LAS QUE ACTUAMOS ==============================================*/
+/* ============================== Escapar ======================= */ 
+void
+escapar(struct tablero *un_tablero)
+{
+}
+
+
+/* ============================== Escapar ======================= */ 
+void
+atacar(struct tablero *un_tablero)
+{
+}
