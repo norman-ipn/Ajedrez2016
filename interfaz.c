@@ -72,6 +72,7 @@ animaciones (int n)
     }
 }
 
+
 void
 letreros (int n)
 {
@@ -85,6 +86,25 @@ letreros (int n)
     default:
       break;
     }
+}
+
+//x y y es la resolucion de la pantalla, las podemos pedir en configuracion
+void
+tranciciones (int n, char p, int x, int y)
+{
+  char pantalla[y][x];
+  int i = 0;
+  int j = 0;
+  for (j = 0; j < y; j = j + 1)
+    {
+      for (i = 0; i < x; i = i + 2)
+	{
+	  pantalla[j][i] = p;
+	  pantalla[j][i + 1] = ' ';
+	}
+
+    }
+
 }
 
 void
@@ -103,7 +123,7 @@ menu ()
   sscanf (buffer, "%c", &o);
   switch (o)
     {
-    case '1':
+    case '3':
       setUp ();
       system ("clear");
       break;
