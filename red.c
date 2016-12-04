@@ -1,11 +1,5 @@
 #include "red.h"
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <linux/if_packet.h>
-#include <net/ethernet.h>
 
 /* 
   importante, los socket siempre deben correrse en modo root, para estar
