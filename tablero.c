@@ -4,7 +4,7 @@
 void
 iniciar_tablero (struct tablero *un_tablero)
 {
-  int columa = 0;
+  int columna = 0;
   int fila = 0;
 
   /* piezas blancas */
