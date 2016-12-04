@@ -41,9 +41,6 @@ int coordenadaDePiezaAmover = 0;
 void
 tirar_ai(struct tablero *un_tablero)
 {
-  /* Genera una semilla Random */
-  srand (time(NULL));
-  
   /* Revisa si podemos comer y cuanto ganariamos*/
   int comer = podemosComer(*un_tablero);
 	
@@ -51,10 +48,20 @@ tirar_ai(struct tablero *un_tablero)
   int comidos = podemosSerComidos(*un_tablero);
 	
   /* Es aqui donde toma la desicion de que hacer */
+  /* Si no podemos ni comer nada ni estamos por ser comidos pues mueve algo random*/
+  if(comer == 0 && comidos == 0)
+  {
+    MovimientoRandom(*un_tablero);
+    return;
+  }
+
+  /* Si  podemos comer o ser comido decide que es lo mejor y hazlo*/
   if(comer <= comidos)
     escapar(*un_tablero);
   else
-    ataca(*un_tablero)
+    ataca(*un_tablero);
+	
+return;
 }
 
 /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACION ============================*/
@@ -93,11 +100,12 @@ podemosSerComidos(struct tablero *un_tablero)
 /* =========== FUNCIONES EN LAS QUE ACTUAMOS ==============================================*/
 /* ============================== Escapar =======================
 - ¿Que hace?
-- Se va a encargar de tomando las coordenadas de la pieza que esta por ser comida, moverla a una posicion segura
+- Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
 */
 void
-escapar(struct tablero *un_tablero)
+MovimientoRandom(struct tablero *un_tablero)
 {
+	
 }
 
 
@@ -108,4 +116,16 @@ escapar(struct tablero *un_tablero)
 void
 atacar(struct tablero *un_tablero)
 {
+}
+
+
+/* ============================== Escapar =======================
+- ¿Que hace?
+- Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la accion de comerla
+*/
+void
+MovimientoRandom(struct tablero *un_tablero)
+{
+    /* Genera una semilla Random */
+    srand (time(NULL));
 }
