@@ -12,7 +12,7 @@ setUp (void)
   system ("clear");
   if (confirmacion == 's' || confirmacion == 'S')
     {
-      printf ("Gracias, se isntalara a continuacion");
+      printf ("Gracias, se instalará a continuación");
       system ("sudo apt-get install figlet");
     }
   system ("clear");
@@ -88,31 +88,14 @@ letreros (int n)
     }
 }
 
-//x y y es la resolucion de la pantalla, las podemos pedir en configuracion
-void
-tranciciones (int n, char p, int x, int y)
-{
-  char pantalla[y][x];
-  int i = 0;
-  int j = 0;
-  for (j = 0; j < y; j = j + 1)
-    {
-      for (i = 0; i < x; i = i + 2)
-	{
-	  pantalla[j][i] = p;
-	  pantalla[j][i + 1] = ' ';
-	}
-
-    }
-
-}
 
 void
-menu ()
+menu (void)
 {
   /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
   char o = ' ';
   char buffer[4];
+
   system ("clear");
   animaciones (7);
   letreros (1);
@@ -138,7 +121,7 @@ menu ()
 }
 
 int
-main (int c, char **arg)
+main_temporal (int c, char **arg)
 {
   menu ();
   return 0;
