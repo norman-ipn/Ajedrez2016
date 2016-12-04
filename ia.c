@@ -16,9 +16,28 @@ Peon = 1
 
 */
 
-/* Variables Globales */
+/* ============ Variables Globales ============== */
+
+/* Aqui estaran las coodenadas que el sistema determine son 
+las de la pieza del adversario que esta apunto de comer una pieza importante
+asi como las de nuestra pieza a ser comida */
+
+int coordenadaDeAtacanteX = 0;
+int coordenadaDeAtacanteY = 0;
+int coordenadaDePiezaAserComidaX = 0;
+int coordenadaDePiezaAserComidaY = 0;
 
 
+/* Aqui estaran las coodenadas que el sistema determine son a la que deberiamos movernos para comer una pieza*/
+
+int coordenadaAAtacarX = 0;
+int coordenadaAAtacarY = 0;
+int coordenadaDePiezaAmover = 0;
+int coordenadaDePiezaAmover = 0;
+
+
+
+/* ============================== FUNCION PRINCIPAL ======================= */ 
 void
 tirar_ai(struct tablero *un_tablero)
 {
@@ -31,9 +50,10 @@ tirar_ai(struct tablero *un_tablero)
   /* Revisa si nos pueden comer y cuanto perderiamos*/
   int comidos = podemosSerComidos(*un_tablero);
 	
-  if(comer<comidos){
-    come
-  }
+  if(comer <= comidos)
+    escapar(*un_tablero);
+  else
+    ataca(*un_tablero)
 }
 
 
