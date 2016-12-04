@@ -49,13 +49,13 @@
   }
 
 
-   ============================== Podemos ser Comidos ======================= 
+ /*  ============================== Podemos ser Comidos ======================= 
   - ¿Que hace?
   - Se va a encargar de revisar el tablero y ver si estamos apunto de ser comidos, de ser no ser a si regresa 0
     y si es posible regresa el valor asignado (8 por ejemplo si nos van a comer a un caballo)
     
     tambien va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a 
-    poner las coordenadas de nuestro acante
+    poner las coordenadas de nuestro acante*/
   
   int
   podemosSerComidos(struct tablero *un_tablero)
