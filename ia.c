@@ -1,4 +1,4 @@
-/*#include "ia.h"
+#include "ia.h"
 #include "time.h"
 
 
@@ -70,13 +70,13 @@
   - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
   */
   void
-  MovimientoRandom(struct tablero *un_tablero)
+  escapar(struct tablero *un_tablero)
   {
     
   }
 
 
-  /* ============================== Escapar =======================
+  /* ============================== Atacar =======================
   - ¿Que hace?
   - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la accion de comerla
   */
@@ -86,9 +86,9 @@
   }
 
 
-  /* ============================== Escapar =======================
+  /* ============================== Movimiento Aleatorio =======================
   - ¿Que hace?
-  - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la accion de comerla
+  - Se va a encargar de generar un movimiento de pieza aleatorio si no vamos a comer o ser comidos
   */
   void
   MovimientoRandom(struct tablero *un_tablero)
