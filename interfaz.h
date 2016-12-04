@@ -3,4 +3,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+void setUp (void);
+
 #endif/*__INTERFAZ_H__*/
