@@ -2,7 +2,7 @@
 ======= PROGRAMA PRINCIPAL AJEDREZ     ========
 =============================================*/
 #include <stdio.h>
-#include "guardar_partida.h"
+#include "persistencia.h"
 
 struct variables
 {
