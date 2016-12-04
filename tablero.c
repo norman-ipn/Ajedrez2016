@@ -1,44 +1,173 @@
 #include "tablero.h"
 /* Agregué funcion inicializar aunque no estoy seguro si sea lo correcto, de todas formas guardé el código original escrito al inicio de la etapa */
 /* Si estuvo mal agregar la función, hagánmelo saber y vuelvo a escribir el código inicial como lo tenía el profe */
+int
+paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas cordenas y regresa 1 si en ese posición hay una casilla blanca o negra( esta vacio) y 0 si no*/
+{
+  if (un_tablero->casillas[fila][columna] == 'X')
+    {
+      return 1;
+    }
+  if (un_tablero->casillas[fila][columna] == ' ')
+    {
+      return 1;
+    }
+  return 0;
+
+}
+
+void
+invertir_tablero (struct tablero *un_tablero)/*Esta función invierte el tablero como si se girara 180° grados */
+{
+  char tempo[8][8];
+  int i = 0;
+  int j = 0;
+  int c_i = 7;
+  int f_i = 7;
+  while (i < 8)
+    {
+      while (j < 8)
+	{
+	  tempo[i][j] = un_tablero->casillas[i][j];
+	  j = j + 1;
+	}
+      i = i + 1;
+      j = 0;
+    }
+  i = 0;
+  j = 0;
+  while (f_i >= 0)
+    {
+      while (c_i >= 0)
+	{
+	  un_tablero->casillas[i][j] = tempo[f_i][c_i];
+	  j = j + 1;
+	  c_i = c_i - 1;
+	}
+      c_i = 7;
+      j = 0;
+      i = i + 1;
+      f_i = f_i - 1;
+    }
+  return;
+}
+
+int
+obtener_posicion (int Columna, int Fila)	/* esta funcion transforma la columna y la fila a un valor de 1 a 64, columa y fila tienen valor del 0 al 7(por ser de un arreglo de 8x8) */
+{
+  int i = 0;
+  int cuadrante = 0;
+  Fila = Fila + 1;
+  while (Columna != 0 + i)
+    {
+      i = i + 1;
+    }
+  cuadrante = (8 * (Fila - 1)) + (i + 1);
+  return cuadrante;
+}
+
+char
+color_remplazo (int columna, int fila)	/* Esta funcion regresa un caracter del color sobre el cual la pieza se encontraba antes de desplazarce */
+{
+  int alterno = 0;
+  int cuadrante = 0;
+  int j = 1;
+  char color = 'X';
+  cuadrante = obtener_posicion (columna, fila);
+  while (j <= 64)
+    {
+      if (cuadrante == j)
+	{
+	  return color;
+	}
+      if (alterno != 8)
+	{
+	  switch (color)
+	    {
+	    case 'X':
+	      color = ' ';
+	      break;
+	    case ' ':
+	      color = 'X';
+	      break;
+	    }
+	}
+      if (alterno == 8)
+	{
+	  alterno = 0;
+	}
+      alterno = alterno + 1;
+      j = j + 1;
+    }
+  return color;
+}
+
 void
 iniciar_tablero (struct tablero *un_tablero)
 {
   int columna = 0;
   int fila = 0;
-  int i = 0;  
+  int i = 0;
+  int j = 0;
+  char VACIA = 'X';
+  int alterno = 0;
 
   /* piezas blancas sin contar al peón */
-  un_tablero.casillas[7][0] = 'T';
-  un_tablero.casillas[7][1] = 'C';
-  un_tablero.casillas[7][2] = 'A';
-  un_tablero.casillas[7][3] = 'Q';
-  un_tablero.casillas[7][4] = 'K';
-  un_tablero.casillas[7][5] = 'A';
-  un_tablero.casillas[7][6] = 'C';
-  un_tablero.casillas[7][7] = 'T';
+  un_tablero->casillas[7][0] = 'T';
+  un_tablero->casillas[7][1] = 'C';
+  un_tablero->casillas[7][2] = 'A';
+  un_tablero->casillas[7][3] = 'Q';
+  un_tablero->casillas[7][4] = 'K';
+  un_tablero->casillas[7][5] = 'A';
+  un_tablero->casillas[7][6] = 'C';
+  un_tablero->casillas[7][7] = 'T';
 
-  /* piezas negras sin contar al peón*/
-  un_tablero.casillas[0][0] = 't';
-  un_tablero.casillas[0][1] = 'c';
-  un_tablero.casillas[0][2] = 'a';
-  un_tablero.casillas[0][3] = 'q';
-  un_tablero.casillas[0][4] = 'k';
-  un_tablero.casillas[0][5] = 'a';
-  un_tablero.casillas[0][6] = 'c';
-  un_tablero.casillas[0][7] = 't';
-	
+  /* piezas negras sin contar al peón */
+  un_tablero->casillas[0][0] = 't';
+  un_tablero->casillas[0][1] = 'c';
+  un_tablero->casillas[0][2] = 'a';
+  un_tablero->casillas[0][3] = 'q';
+  un_tablero->casillas[0][4] = 'k';
+  un_tablero->casillas[0][5] = 'a';
+  un_tablero->casillas[0][6] = 'c';
+  un_tablero->casillas[0][7] = 't';
+
   /* Inicialización de peones, de acuerdo al orden asignado, negras se ven arriba y blancas abajo (ultimas filas). */
   while (i < 8)
     {
-      un_tablero.casillas[6][i] = 'P';
-      un_tablero.casillas[1][i] = 'p';
+      un_tablero->casillas[6][i] = 'P';
+      un_tablero->casillas[1][i] = 'p';
       i = i + 1;
     }
-
+  i = 2;
   /* espacios vacios */
-  un_tablero->casillas[COLUMA_A][FILA_3] = VACIA;
-
+  while (i < 6)
+    {
+      while (j < 8)
+	{
+	  un_tablero->casillas[i][j] = VACIA;
+	  j = j + 1;
+	  if (alterno != 8)
+	    {
+	      switch (VACIA)
+		{
+		case 'X':
+		  VACIA = ' ';
+		  break;
+		case ' ':
+		  VACIA = 'X';
+		  break;
+		}
+	    }
+	  if (alterno == 8)
+	    {
+	      alterno = 0;
+	    }
+	  alterno = alterno + 1;
+	}
+      j = 0;
+      i = i + 1;
+    }
 
   /* movimiento: 0 no se movió, 1 si se movió */
   for (fila = 0; fila < 8; fila++)
