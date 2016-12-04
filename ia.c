@@ -50,6 +50,7 @@ tirar_ai(struct tablero *un_tablero)
   /* Revisa si nos pueden comer y cuanto perderiamos*/
   int comidos = podemosSerComidos(*un_tablero);
 	
+  /* Es aqui donde toma la desicion de que hacer */
   if(comer <= comidos)
     escapar(*un_tablero);
   else
@@ -57,7 +58,15 @@ tirar_ai(struct tablero *un_tablero)
 }
 
 /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACION ============================*/
-/* ============================== Podemos comer ======================= */ 
+
+/* ============================== Podemos comer ======================= 
+- ¿Que hace?
+- Se va a encargar de revisar el tablero y ver si podemos comer una pieza, de ser no ser asi regresa 0
+  y si es posible regresa el valor asignado (8 por ejemplo si podemos comernos un caballo)
+  
+  tambien va a modificar las coordenadas para que apunten a la pieza podemos comer y las coordenas de la peiza que
+  tenemos que mover para lograrlo
+*/ 
 int
 podemosComer(struct tablero *un_tablero)
 {
@@ -66,7 +75,14 @@ podemosComer(struct tablero *un_tablero)
 }
 
 
-/* ============================== Podemos comer ======================= */ 
+/* ============================== Podemos ser Comidos ======================= 
+- ¿Que hace?
+- Se va a encargar de revisar el tablero y ver si estamos apunto de ser comidos, de ser no ser a si regresa 0
+  y si es posible regresa el valor asignado (8 por ejemplo si nos van a comer a un caballo)
+  
+  tambien va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a 
+  poner las coordenadas de nuestro acante
+*/
 int
 podemosSerComidos(struct tablero *un_tablero)
 {
@@ -75,14 +91,20 @@ podemosSerComidos(struct tablero *un_tablero)
 }
 
 /* =========== FUNCIONES EN LAS QUE ACTUAMOS ==============================================*/
-/* ============================== Escapar ======================= */ 
+/* ============================== Escapar =======================
+- ¿Que hace?
+- Se va a encargar de tomando las coordenadas de la pieza que esta por ser comida, moverla a una posicion segura
+*/
 void
 escapar(struct tablero *un_tablero)
 {
 }
 
 
-/* ============================== Escapar ======================= */ 
+/* ============================== Escapar =======================
+- ¿Que hace?
+- Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la accion de comerla
+*/
 void
 atacar(struct tablero *un_tablero)
 {
