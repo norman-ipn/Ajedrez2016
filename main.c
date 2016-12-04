@@ -3,6 +3,7 @@
 =============================================*/
 #include <stdio.h>
 #include "persistencia.h"
+#include "tablero.h"
 
 struct variables
 {
@@ -17,13 +18,18 @@ struct fin_juego
 {
   int resultadof = 0;
 };
-/*No manchen, una Struct de una varibale, "10/10 :v"-IGN */
 
 int
 main (void)
 {
   struct variables V;
   struct fin_juego F;
+
+  struct tablero el_tablero;
+
+  iniciar_tablero( &el_tablero );
+
+ 
   /* ===== Bienvenida al Jugador */
   printf (" == BIENVENIDO A AJEDREZ ==\n");
   printf
