@@ -4,16 +4,11 @@
 int
 paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas cordenas y regresa 1 si en ese posición hay una casilla blanca o negra( esta vacio) y 0 si no*/
 {
-  if (un_tablero->casillas[fila][columna] == 'X')
-    {
-      return 1;
-    }
-  if (un_tablero->casillas[fila][columna] == ' ')
-    {
+  if (un_tablero->casillas[fila][columna] == 'X' || un_tablero->casillas[fila][columna] == ' ')/*Reescribí la condición con un ||*/
+    {												/*Si no se puede usar simplemente regresarlo al código anterior*/
       return 1;
     }
   return 0;
-
 }
 
 void
@@ -48,8 +43,7 @@ invertir_tablero (struct tablero *un_tablero)/*Esta función invierte el tablero
       j = 0;
       i = i + 1;
       f_i = f_i - 1;
-    }
-  return;
+    }	/*Aquí quite el 'return' pues es una funcion de tipo void*/
 }
 
 int
