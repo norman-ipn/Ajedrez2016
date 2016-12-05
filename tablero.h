@@ -18,7 +18,20 @@ struct tablero
   char se_movio[8][8];
 };
 
-void iniciar_tablero (struct tablero *un_tablero);
+void 
+iniciar_tablero (struct tablero *un_tablero);
+
+int
+paso (struct tablero *un_tablero, int columna, int fila);
+  
+void
+invertir_tablero (struct tablero *un_tablero);
+  
+int
+obtener_posicion (int Columna, int Fila);
+  
+char
+color_remplazo (int columna, int fila);
 
 
 #endif/*__TABLERO_H__*/
