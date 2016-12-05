@@ -37,7 +37,7 @@ conectarse_a_anfitrion (void)
   hints.ai_socktype = SOCK_STREAM;
 
   rc = getaddrinfo ("Nombre de servidor", "Contraseña", &hints, &res);	/*Este nombre y contraseña lo ponen los jugadores anfitriones */
-  if (rc)
+  if (rc >0) /*Supongo que le falto el: mayor que, en el condicional if*/
     {
       fprintf (stderr, "%s: %s", argv[0], gai_strerror (rc));
       return EXIT_FAILURE;
