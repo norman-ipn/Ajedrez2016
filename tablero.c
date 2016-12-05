@@ -1,7 +1,7 @@
 #include "tablero.h"
 
 int
-paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas cordenas y regresa 1 si en ese posición hay una casilla blanca o negra( esta vacio) y 0 si no*/
+paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas coordenadas y regresa 1 si en ese posición hay una casilla blanca o negra( está vacío) y 0 si no*/
 {
   if (un_tablero->casillas[fila][columna] == 'X' || un_tablero->casillas[fila][columna] == ' ')/*Reescribí la condición con un ||*/
     {												/*Si no se puede usar simplemente regresarlo al código anterior*/
@@ -46,7 +46,7 @@ invertir_tablero (struct tablero *un_tablero)/*Esta función invierte el tablero
 }
 
 int
-obtener_posicion (int Columna, int Fila)	/* esta funcion transforma la columna y la fila a un valor de 1 a 64, columa y fila tienen valor del 0 al 7(por ser de un arreglo de 8x8) */
+obtener_posicion (int Columna, int Fila)	/* esta función transforma la columna y la fila a un valor de 1 a 64, columna y fila tienen valor del 0 al 7(por ser de un arreglo de 8x8) */
 {
   int i = 0;
   int cuadrante = 0;
