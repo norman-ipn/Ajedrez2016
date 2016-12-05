@@ -45,7 +45,7 @@
   podemosComer(struct tablero *un_tablero)
   {
     int valor;
-    return valor;
+A    return valor;
   }
 
 
@@ -96,5 +96,3 @@
     /* Genera una semilla Random */
     srand (time(NULL));
   }
-
-*/
