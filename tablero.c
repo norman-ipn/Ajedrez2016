@@ -1,6 +1,5 @@
 #include "tablero.h"
-/* Agregué funcion inicializar aunque no estoy seguro si sea lo correcto, de todas formas guardé el código original escrito al inicio de la etapa */
-/* Si estuvo mal agregar la función, hagánmelo saber y vuelvo a escribir el código inicial como lo tenía el profe */
+
 int
 paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas cordenas y regresa 1 si en ese posición hay una casilla blanca o negra( esta vacio) y 0 si no*/
 {
