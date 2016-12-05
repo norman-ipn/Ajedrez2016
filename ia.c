@@ -38,14 +38,14 @@
   - Se va a encargar de revisar el tablero y ver si podemos comer una pieza, de ser no ser asi regresa 0
     y si es posible regresa el valor asignado (8 por ejemplo si podemos comernos un caballo)
     
-    tambien va a modificar las coordenadas para que apunten a la pieza podemos comer y las coordenas de la peiza que
+    tambien va a modificar las coordenadas para que apunten a la pieza podemos comer y las coordenas de la pieza que
     tenemos que mover para lograrlo
   */ 
   int
   podemosComer(struct tablero *un_tablero)
   {
     int valor;
-A    return valor;
+    return valor;
   }
 
 
