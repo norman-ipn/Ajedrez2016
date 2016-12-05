@@ -80,27 +80,22 @@ main_temporal (void)
   return 0;
 }
 
-
 /* ---------------POSIBLE SERVIDOR ------------------------*/
-#include<stdio.h>
-#include<string.h>
-#include<sys/types.h>
-#include<sys/socket.h>
-#include<netinet/in.h>
-#include<arpa/inet.h>
 main ()
 {
-  int server_sockfd, client_sockfd;	/* descriptores de sockets */
-  int server_len, client_len;	/*tamaños de las estructuras */
+  int server_sockfd = 0;	/* descriptores de sockets */
+  int client_sockfd = 0;
+  int server_len = 0;		/*tamaños de las estructuras */
+  int client_len = 0;
   struct sockaddr_in server_address;	/*declaracion de estructuras */
   struct sockaddr_in client_address;
   char c[1024];			/*cadena del cliente */
   char ch[1024];		/*cadena del servidor */
   int inicio = 0;		/*determina el inicio de sesion */
   char cs[1024];		/*cadena del servidor */
-  int bufs;			/*almacenamiento del tamanio cadena server */
+  int bufs = 0;			/*almacenamiento del tamanio cadena server */
   int ciclo = 1;		/*variable para ciclo de lectura escritura */
-  int puerto;			/*variable para el puerto */
+  int puerto = 0;		/*variable para el puerto */
   system ("clear");
   printf ("La direccion del servidor es 127.0.0.1\n\n");
   printf ("Por favor introduzca el puerto de escucha: \n\n");
