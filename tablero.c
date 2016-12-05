@@ -60,7 +60,7 @@ obtener_posicion (int Columna, int Fila)	/* esta función transforma la columna 
 }
 
 char
-color_remplazo (int columna, int fila)	/* Esta funcion regresa un caracter del color sobre el cual la pieza se encontraba antes de desplazarce */
+color_remplazo (int columna, int fila)	/* Esta función regresa un carácter del color sobre el cual la pieza se encontraba antes de desplazarse */
 {
   int alterno = 0;
   int cuadrante = 0;
@@ -125,7 +125,7 @@ iniciar_tablero (struct tablero *un_tablero)
   un_tablero->casillas[0][6] = 'c';
   un_tablero->casillas[0][7] = 't';
 
-  /* Inicialización de peones, de acuerdo al orden asignado, negras se ven arriba y blancas abajo (ultimas filas). */
+  /* Inicialización de peones, de acuerdo al orden asignado, negras se ven arriba y blancas abajo (últimas filas). */
   while (i < 8)
     {
       un_tablero->casillas[6][i] = 'P';
