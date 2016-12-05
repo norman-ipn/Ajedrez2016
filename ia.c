@@ -95,4 +95,43 @@
   {
     /* Genera una semilla Random */
     srand (time(NULL));
+    
+    int i, j, k;
+    for(i=0;i<8;i++)
+    {
+      for(j=0;j<8;i++)
+      {
+        if(un_tablero == 'T')
+        {
+          //Horizontal
+          for(k=i;k<8;k++)
+          {
+            //validaMovimiento() 
+          }
+     
+          //Vertical
+          //Horizontal
+          for(k=i;k<8;k++)
+          {
+            //validaMovimiento() 
+          }
+        }
+        if(un_tablero == 'A')
+        {
+        }
+        if(un_tablero == 'P')
+        {
+        }
+        if(un_tablero == 'C')
+        {
+        }
+      }
+    }
+    
   }
+
+  /* ============================== Funciones AUXILIARES =======================
+  /* ============================== Busca movimiento Valido =======================
+  - ¿Que hace?
+  - Se encarga de ver que movimientos posibles tiene nuestras piezas
+  */
