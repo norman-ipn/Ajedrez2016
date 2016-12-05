@@ -111,7 +111,7 @@ main ()
 /*decimos al server que quede escuchando*/
   listen (server_sockfd, 5);
   printf ("SERVIDOR EN ESPERA...\n");
-  while (ciclo)
+  while (ciclo = 1)
     {
 /*acepta la conexion con el cliente actual*/
       client_sockfd =
