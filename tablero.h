@@ -2,6 +2,13 @@
 #define __TABLERO_H__
 
 #include "piezas.h"
+#include "tablero_negro.c"
+#include "tablero_verde.c"
+#include "tablero_rojo.c"
+#include "tablero_amarillo.c"
+#include "tablero_azul.c"
+#include "tablero_magenta.c"
+#include "tablero_cyan.c"
 
 enum filas
 { FILA_1 = 0, FILA_2, FILA_3, FILA_4, FILA_5, FILA_6, FILA_7, FILA_8 };
@@ -33,5 +40,25 @@ obtener_posicion (int Columna, int Fila);
 char
 color_remplazo (int columna, int fila);
 
+int
+tablero_negro (void);
+
+int
+tablero_verde (void);
+
+int
+tablero_rojo (void);
+
+int
+tablero_amarillo (void);
+
+int
+tablero_azul (void);
+
+int
+tablero_magenta (void);
+
+int
+tablero_cyan (void);
 
 #endif/*__TABLERO_H__*/

@@ -9,6 +9,26 @@ paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe 
     }
   return 0;
 }
+int
+conocer_turno_jugador (int turno)       /*Esta funcion podria complementar la funcion girar tablero */
+{
+int mueve=0;
+  if ((turno % 2) == 0)
+    {
+      mueve = 0;
+      printf ("\nMueven blancas");
+      /*Aqui se usaria la funcion invertir tablero */
+      return mueve;
+
+    }
+  if ((turno % 2) == 1)
+    {
+      printf ("\nMueven negras");
+      mueve = 1;
+      /*Aqui se usaria la funcion invertir tablero */
+      return mueve;
+    }
+}
 
 void
 invertir_tablero (struct tablero *un_tablero)/*Esta función invierte el tablero como si se girara 180° grados */
