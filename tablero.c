@@ -191,3 +191,81 @@ iniciar_tablero (struct tablero *un_tablero)
 	}
     }
 }
+
+#define Negro    "\x1b[30m"
+#define RESET   "\x1b[0m"
+int
+tablero_negro (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Rojo    "\x1b[31m"
+#define RESET   "\x1b[0m"
+int
+tablero_rojo (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Verde    "\x1b[32m"
+#define RESET   "\x1b[0m"
+int
+tablero_verde (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Amarillo    "\x1b[33m"
+#define RESET   "\x1b[0m"
+int
+tablero_amarillo (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Azul    "\x1b[34m"
+#define RESET   "\x1b[0m"
+int
+tablero_azul (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Magenta    "\x1b[35m"
+#define RESET   "\x1b[0m"
+int
+tablero_magenta (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
+#define Cyan    "\x1b[36m"
+#define RESET   "\x1b[0m"
+int
+tablero_cyan (void)
+{
+  char tablero[8][8];
+  int i = 0;
+  int j = 0;
+  int e = 0;             
+}	  
+
