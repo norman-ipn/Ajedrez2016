@@ -45,237 +45,282 @@ inicializar(a[8][8])
  +    }
  +}
 
+int
+validar_enroque_largo_negro(int mov_torre, int mov_rey, char tablero[8][8])
+{
+	 int se_puede = 1;
+	 int posini_x = 4;
+ 	int posini_y = 0;
+ 	int pos1_x = 3;
+ 	int pos1_y = 0;
+ 	int pos2_x = 2;
+ 	int pos2_y = 0;
+ 	if ((mov_torre != 0) || (mov_rey != 0))
+	 {
+		  se_puede = 0;
+	 }
+	 se_puede = casilla_atacada(tablero, posini_x, posini_y, pos1_x, pos1_y);
+	 /* Función para verificar que con el enroque el rey no se ve amenazado */
+	 if (se_puede != -1)
+	 {
+		  se_puede = casilla_atacada(tablero, posini_x, posini_y, pos2_x, pos2_y);
+		  /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
+		  if (se_puede != -1)
+		  {
+			   se_puede = revisar_casilla_vacia(tablero, pos1_y, pos1_x);
+			   /*verificar que la primera casilla del enroque este vacia */
+			   if (se_puede != -1)
+			   {
+				    se_puede = revisar_casilla_vacia(tablero, pos2_y, pos1_x);
+			   }
+			   else
+			   {
+				    return -1;
+			   }
+		  }
+		  else
+		  {
+			   return -1:
+		  }
+	 }
+	 else
+	 {
+		  return -1;
+	 }
+	 return se_puede;
+}
+
+
+int
+validar_enroque_largo_blanco (int mov_TD, int mov_R, char tablero[8][8])
+{
+  int se_puede = 0;
+  int posini_x = 4;
+  int posini_y = 7;
+  int pos1_x = 3;
+  int pos1_y = 7;
+  int pos2_x = 2;
+  int pos2_y = 7;
+
+  if ((mov_TD != 0) || (mov_R != 0))
+    {
+      se_puede = -1;
+    }
+  se_puede = casilla_atacada (tablero, posini_x, posini_y, pos1_x, pos1_y);
+  /* Función para verificar que con el enroque el rey no se ve amenazado */
+  if (se_puede != -1)
+    {
+      se_puede = casilla_atacada (tablero, posini_x, posini_y, pos2_x, pos2_y);
+      /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
+      if (se_puede != -1)   
+	     {
+	       se_puede = revisar_casilla_vacia (tablero, pos1_y, pos1_x);
+	       /*verificar que la primera casilla del enroque este vacia */
+	       if (se_puede != -1)
+	       {
+	         se_puede = revisar_casilla_vacia (tablero, pos2_y, pos1_x);
+	       }
+	       else
+	       {
+	         return -1;
+	       }
+      }
+      else
+	     {
+		      return -1;
+	     }
+    }
+    else
+    {
+      return -1;
+    }
+  return se_puede;
+}
+
+int
+validar_enroque_corto_negro(int mov_torre, int mov_rey, char tablero[8][8])
+{
+ 	int se_puede = 1;
+ 	int posini_x = 4;
+ 	int posini_y = 0;
+ 	int pos1_x = 7;
+ 	int pos1_y = 0;
+ 	int pos2_x = 6;
+ 	int pos2_y = 0;
+
+ 	if ((mov_torre != 0) || (mov_rey != 0))
+ 	{
+	  	se_puede = 0;
+	 }
+	 se_puede = casilla_atacada(tablero, posini_x, posini_y, pos1_x, pos1_y);
+	 /* Función para verificar que con el enroque el rey no se ve amenazado */
+	 if (se_puede != -1)
+	 {
+		  se_puede = casilla_atacada(tablero, posini_x, posini_y, pos2_x, pos2_y);
+		  /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
+		  if (se_puede != -1)
+		  {
+			   se_puede = revisar_casilla_vacia(tablero, pos1_y, pos1_x);
+			   /*verificar que la primera casilla del enroque este vacia */
+			   if (se_puede != -1)
+			   {
+				    se_puede = revisar_casilla_vacia(tablero, pos2_y, pos1_x);
+			   }
+			   else
+			   {
+				    return -1;
+			   }
+		  }
+		  else
+		  {
+			   return -1:
+		  }
+ 	}
+	 else
+	 { 
+		  return -1;
+	 }
+	 return se_puede;
+}
+
+int
+validar_enroque_corto_blanco(int mov_torre, int mov_rey, char tablero[8][8])
+{
+ 	int se_puede = 1;
+ 	int posini_x = 7;
+ 	int posini_y = 7;
+ 	int pos1_x = 6;
+ 	int pos1_y = 7;
+ 	int pos2_x = 5;
+ 	int pos2_y = 7;
+
+	 if ((mov_torre != 0) || (mov_rey != 0))
+	 {
+		  se_puede = 0;
+	 }
+	 se_puede = casilla_atacada(tablero, posini_x, posini_y, pos1_x, pos1_y);
+	 /* Función para verificar que con el enroque el rey no se ve amenazado */
+	 if (se_puede != -1)
+ 	{
+		  se_puede = casilla_atacada(tablero, posini_x, posini_y, pos2_x, pos2_y);
+		  /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
+		  if (se_puede != -1)
+		  {
+			   se_puede = revisar_casilla_vacia(tablero, pos1_y, pos1_x);
+			   /*verificar que la primera casilla del enroque este vacia */
+			   if (se_puede != -1)
+			   {
+				    se_puede = revisar_casilla_vacia(tablero, pos2_y, pos1_x);
+			   }
+			   else
+			   {
+				  return -1;
+			   }
+		  }
+		  else
+		  {
+			   return -1:
+		  }
+	 }
+	 else
+	 {
+		  return -1;
+	 }
+	 return se_puede;
+}
+
+/*
+  la variable turno se recibe desde el main
+  cuenta los turnos jugados hasta el momento dentro del ciclo while principal
+  esta función retorna 0 si es turno de blancas
+  retorna 1 en turno de negras
+  
+  si soy sincero no se si esta función encaja bien aquí o en otro módulo, pero dado que se ocupa para varias funciones de
+  movimiento la dejo aquí
+*/
+
+int
+conocer_turno_jugador(int turno)
+{
+  int contador_turno = turno;
+  if((turno % 2) == 0)
+  {
+    return 0;
+  }
+  if((turno % 2) == 1)
+  {
+    return 1;
+  }
+}
+
+/*
+  función que permite indicar el tipo de enroque que será ejecutado
+*/
+
+void 
+evaluar_enroque(char tablero[8][8], int turno, int pos_torre_x, int pos_torre_y)
+{
+  int mov_valido = 0;
+  int turno_jug = conocer_turno_jugador(turno);     
+  if(turno == 0)
+  {
+	   if ((pos_torre_x == 0) && (pos_torre_y == 0))
+	   {
+	     mov_valido = validar_enroque_largo_blanco(tablero);
+	     if (mov_valido == 0)
+		      enrocar(0, 7, 4, 7, 3, 2, tablero);
+	   }
+	   if ((pos_torre_x == 0) && (pos_torre_y == 7))
+	   {
+	     mov_valido = validar_enroque_corto_blanco(mov_torre, mov_rey, tablero);
+	     if (mov_valido == 0)
+	       enrocar(7, 7, 4, 7, 5, 6, tablero);
+	   }
+  }
+    
+  if(turno == 1)
+  {
+	   if ((pos_torre_x == 7) && (pos_torre_y == 0))
+	   {
+	     mov_valido = validar_enroque_corto_negro(tablero);
+	     if (mov_valido == 0)
+	       enrocar(7, 0, 4, 0, 5, 6, tablero);
+	   }
+	   if ((pos_torre_x == 7) && (pos_torre_y == 7))
+	   {
+	     mov_valido = validar_enroque_largo_negro(tablero);
+	     if (mov_valido == 0)
+	       enrocar(0, 0, 4, 0, 3, 2, tablero);
+	   }
+  }
+} 
+
+/* 
+  función que realiza el intercambio de lugares para el movimiento de las piezas
+*/
+
+void
+enrocar(int pos_torre_x, int pos_torre_y, int pos_rey_x, , int pos_rey_y, int fin_torre, int fin_rey, char tablero[8][8])
+{
+  char aux_torre;
+  char aux_rey;
+  /*
+    parte de la función que mueve a la torre de sitio
+  */
+  aux_torre = tablero[pos_torre_x][pos_torre_y];
+  tablero[pos_torre_x][pos_torre_y] = tablero[fin_torre][pos_torre_y];
+  tablero[fin_torre][pos_torre_y] = aux_torre;
+  /*
+    parte de la función que mueve al rey de sitio
+  */
+  aux_rey = tablero[pos_rey_x][pos_rey_y];
+  tablero[pos_rey_x][pos_rey_y] = tablero[fin_rey][pos_rey_y];
+  tablero[fin_rey][pos_rey_y] = aux_rey;
+}
+
 void
 main (void)
 {
   char tablero[8][8];
   incializar (tablero);
 }
-
-void
-alfil_inferior_izquierdo ()
-{
-
-  int a = 0;
-
-  int b = 0;
-
-  char alfil[0][2];
-
-  for (a = 0; a <= 8; a++)
-    {
-
-      for (b = 0; b <= 8; b++)
-	{
-
-	  char alfil[a][b];
-
-
-
-
-
-	  switch (alfil[a][b])
-
-	    {
-
-	    case 1:
-
-	      alfil[0][2];
-
-	      break;
-
-	    case 2:
-
-	      alfil[0][0];
-
-	      break;
-
-	    case 3:
-
-	      alfil[0][4];
-
-	      break;
-
-	    case 4:
-
-	      alfil[0][6];
-
-	      break;
-
-	    case 5:
-
-	      alfil[1][1];
-
-	      break;
-
-	    case 6:
-
-	      alfil[1][3];
-
-	      break;
-
-	    case 7:
-
-	      alfil[1][5];
-
-	      break;
-
-	    case 8:
-
-	      alfil[1][7];
-
-	      break;
-
-	    case 9:
-
-	      alfil[2][0];
-
-	      break;
-
-	    case 10:
-
-	      alfil[2][2];
-
-	      break;
-
-	    case 11:
-
-	      alfil[2][4];
-
-	      break;
-
-	    case 12:
-
-	      alfil[2][6];
-
-	      break;
-
-	    case 13:
-
-	      alfil[3][1];
-
-	      break;
-
-	    case 14:
-
-	      alfil[3][3];
-
-	      break;
-
-	    case 15:
-
-	      alfil[3][5];
-
-	      break;
-
-	    case 16:
-
-	      alfil[3][7];
-
-	      break;
-
-	    case 17:
-
-	      alfil[4][0];
-
-	      break;
-
-	    case 18:
-
-	      alfil[4][2];
-
-	      break;
-
-	    case 19:
-
-	      alfil[4][4];
-
-	      break;
-
-	    case 20:
-
-	      alfil[4][6];
-
-	      break;
-
-	    case 21:
-
-	      alfil[5][1];
-
-	      break;
-
-	    case 22:
-
-	      alfil[5][3];
-
-	      break;
-
-	    case 23:
-
-	      alfil[5][5];
-
-	      break;
-
-	    case 24:
-
-	      alfil[5][7];
-
-	      break;
-
-	    case 25:
-
-	      alfil[6][0];
-
-	      break;
-
-	    case 26:
-
-	      alfil[6][2];
-
-	      break;
-
-	    case 27:
-
-	      alfil[6][4];
-
-	      break;
-
-	    case 28:
-
-	      alfil[6][6];
-
-	      break;
-
-	    case 29:
-
-	      alfil[7][1];
-
-	      break;
-
-	    case 30:
-
-	      alfil[7][3];
-
-	      break;
-
-	    case 31:
-
-	      alfil[7][5];
-
-	      break;
-
-	    case 32:
-
-	      alfil[7][7];
-
-	      break;
-
-	    }
-
-	}
-    }
-
-
-
-}
-
