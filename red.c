@@ -361,3 +361,25 @@ main_servi(void)
       close (server_sockfd);
     }
 }
+/* ---------------OTRA OPCIÓN PARA UN SERVIDOR------------------------*/
+int 
+main_servidor2(int argc, char **argv)
+{
+	
+  struct sockaddr_in server;
+  struct sockaddr_in client;
+  int fd,fd2,longitud_cliente,numbytes,puerto;
+  char buf[1024]; // Se usará prara recibir el mensaje
+  char enviar[1024]; //Se usará para enviar mensaje
+  char enviar2[1024]; //Se usará para enviar un segundo mensaje
+ 
+  system("clear");
+  printf("La direccion del servidor es 127.0.0.1\n\n");
+  printf("Por favor introduzca el puerto de escucha: \n\n");
+  scanf("%d",&puerto);
+	
+  server.sin_family= AF_INET;
+  server.sin_port = htons(puerto);
+  server.sin_addr.s_addr = INADDR_ANY;
+  bzero(&(server.sin_zero),8);
+}
