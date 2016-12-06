@@ -230,21 +230,73 @@ actualiza_historial (int resultado)
 int
 turno_jugador (void)
 {
-  char respuesta[10] = "\0";
+  char respuesta[5] = "Si";
   int player = 0;
-  printf ("¿Es tu turno?, Si o No \n");
-  scanf ("%s", &*(respuesta));
+  int i = 0;
+  while (i < 5)
+    {
+      if (respuesta[i] == 'S')
+	{
+	  if (respuesta[i + 1] == 'i')
+	    {
+	      player = 1;
+	      return player;
+	    }
+	}
+      if (respuesta[i] == 'S')
+	{
+	  if (respuesta[i + 1] == 'I')
+	    {
+	      player = 1;
+	      return player;
+	    }
+	}
+      if (respuesta[i] == 's')
+	{
+	  if (respuesta[i + 1] == 'i')
+	    {
+	      player = 1;
+	      return player;
+	    }
+	}
+      i = i + 1;
+    }
 
-  if ((respuesta == "Si") && (respuesta=="SI") && (respuesta=="si"))
+  i = 0;
+  while (i < 5)
     {
-      player = 1;
+      if (respuesta[i] == 'N')
+	{
+	  if (respuesta[i + 1] == 'o')
+	    {
+	      player = 2;
+	      return player;
+	    }
+	}
+
+      if (respuesta[i] == 'N')
+	{
+	  if (respuesta[i + 1] == 'O')
+	    {
+	      player = 2;
+	      return player;
+	    }
+	}
+
+      if (respuesta[i] == 'n')
+	{
+	  if (respuesta[i + 1] == 'o')
+	    {
+	      player = 2;
+	      return player;
+	    }
+	  i = i + 1;
+	}
+/*error por si no hubo coincidencias*/
+      return -1;
     }
-  if ((respuesta == "No") && (respuesta == "NO") && (respuesta == "no"))
-    {
-      player = 2;
-    }
-   return player;
-  /*printf ("Al jugador que le toca tirar es al numero: %d \n", player);*/
 }
+  /*printf ("Al jugador que le toca tirar es al numero: %d \n", player);*/
+
 
 
