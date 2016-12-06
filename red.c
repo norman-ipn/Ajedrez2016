@@ -382,4 +382,34 @@ main_servidor2(int argc, char **argv)
   server.sin_port = htons(puerto);
   server.sin_addr.s_addr = INADDR_ANY;
   bzero(&(server.sin_zero),8);
+
+  //Definicion de socket
+  if ((fd==socket(AF_INET,SOCK_STREAM,0)) <0)
+    {
+      perror("Error de apertura de socket");
+      exit(-1);
+    }
+ 
+  //Avisar al sistema que se creo un socket
+  if (bind(fd,(struct sockaddr*)&server, sizeof(struct sockaddr))==-1)
+    {
+      printf("error en bind() \n");
+      exit(-1);
+    }
+	
+ //Establecer el socket en modo escucha
+  if (listen(fd,5) == -1) 
+    {
+      printf("error en listen()\n");
+      exit(-1);
+    }
+ 
+  printf("SERVIDOR EN ESPERA...\n");
+  longitud_cliente= sizeof(struct sockaddr_in);
+	
+  if ((fd2 = accept(fd,(struct sockaddr *)&client,&longitud_cliente))==-1) 
+    {
+      printf("error en accept()\n");
+      exit(-1);
+    }
 }
