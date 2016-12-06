@@ -1,4 +1,13 @@
 #include "interfaz.h"
+#include "tablero.h"
+#define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
+#define Negro     "\x1b[30m"
+#define Rojo      "\x1b[31m"
+#define Verde     "\x1b[32m"
+#define Amarillo  "\x1b[33m"
+#define Azul      "\x1b[34m"
+#define Magenta   "\x1b[35m"
+#define Cyan      "\x1b[36m"
 void
 setUp (void)
 {
@@ -88,6 +97,49 @@ letreros (int n)
     }
 }
 
+
+void
+seleccionar_color_de_tablero ()
+{
+  int opcion;
+  printf ("Seleccione el color del tablero:\n");
+  printf ("1.Predeterminado\n");
+  printf (Negro "2.Negro\n" Reset);
+  printf (Rojo "3.Rojo\n" Reset);
+  printf (Verde "4.Verde\n" Reset);
+  printf (Amarillo "5.Amarillo\n" Reset);
+  printf (Azul "6.Azul\n" Reset);
+  printf (Magenta "7.Magenta\n" Reset);
+  printf (Cyan "8.Cyan\n" Reset);
+  scanf ("%d", &opcion);
+  switch (opcion)
+    {
+    case 1:
+      tablero ();		/* Ya le pedí a unos compañeros del módulo de tablero que agregaran las funciones de los case con colores para que puedan llamarse desde aquí. Debido a eso también incluyo la cabecera "tablero.h" para que no haya errores. Ya compila, sólo hace falta agregar las funciones que ya mencioné */
+      break;
+    case 2:
+      tablero_negro ();
+      break;
+    case 3:
+      tablero_rojo ();
+      break;
+    case 4:
+      tablero_verde ();
+      break;
+    case 5:
+      tablero_amarillo ();
+      break;
+    case 6:
+      tablero_azul ();
+      break;
+    case 7:
+      tablero_magenta ();
+      break;
+    case 8:
+      tablero_cyan ();
+      break;
+    }
+}
 
 void
 menu (void)
