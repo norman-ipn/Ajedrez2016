@@ -344,6 +344,51 @@ evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
 	}
     }
 }
+void 
+CoronacionPeon(char tablero, char pieza, int x, int y) 
+{
+  if(tablero[x][y]=='P') 
+  {
+    switch(pieza)
+    {
+      case 'Q':
+        tablero[x][y]='Q';
+        break;
+      case 'T':
+        tablero[x][y]='T';
+        break;
+      case 'A':
+        tablero[x][y]='A';
+        break;
+      case 'C':
+        tablero[x][y]='C';
+        break;
+      default:
+        printf("\n Pieza no válida\n");
+    }    
+  }
+  
+  else if (tablero[x][y]=='p') 
+  {
+    switch(pieza)
+    {
+      case 'q':
+        tablero[x][y]='q';
+        break;
+      case 't':
+        tablero[x][y]='t';
+        break;
+      case 'a':
+        tablero[x][y]='a';
+        break;
+      case 'c':
+        tablero[x][y]='c';
+        break;
+      default:
+        printf("\n Pieza no válida\n");
+    }
+  }
+}
 
 /* 
   función que realiza el intercambio de lugares para el movimiento de las piezas
