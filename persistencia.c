@@ -225,3 +225,26 @@ actualiza_historial (int resultado)
   printf ("\nHistorial actualizado correctamente\n");
   fclose (historial);
 }
+
+/*funcion para conocer a quien le tocaba tirar cuando se guardo el archivo*/
+int
+turno_jugador (void)
+{
+  char respuesta[10] = "\0";
+  int player = 0;
+  printf ("¿Es tu turno?, Si o No \n");
+  scanf ("%s", &*(respuesta));
+
+  if ((respuesta == "Si") && (respuesta=="SI") && (respuesta=="si"))
+    {
+      player = 1;
+    }
+  if ((respuesta == "No") && (respuesta == "NO") && (respuesta == "no"))
+    {
+      player = 2;
+    }
+   return player;
+  /*printf ("Al jugador que le toca tirar es al numero: %d \n", player);*/
+}
+
+
