@@ -81,7 +81,63 @@ animaciones (int n)
     }
 }
 
-
+void
+piezas_comidas (int a)
+{
+  char TorreN[] = "\u265C";
+  char AlfilB[] = "\u2657";
+  char AlfilN[] = "\u265E";
+  char CaballoB[] = "\u2658";	/* Piezas de ajedrez en unicode para imprimirlas cuando se coman */
+  char CaballoN[] = "\u265D";
+  char ReynaB[] = "\u2655";
+  char ReynaN[] = "\u265B";
+  char ReyB[] = "\u2654";
+  char ReyN[] = "\u265A";
+  char PeonB[] = "\u2659";
+  char PeonN[] = "\u265F";
+  char TorreB[] = "\u2656";
+  switch (a)
+    {
+    case 1:
+      printf (" %s ", TorreN);
+      break;
+    case 2:
+      printf (" %s ", TorreB);
+      break;
+    case 3:
+      printf (" %s ", AlfilN);
+      break;
+    case 4:
+      printf (" %s ", AlfilB);
+      break;
+    case 5:
+      printf (" %s ", CaballoN);
+      break;
+    case 6:
+      printf (" %s ", CaballoB);
+      break;
+    case 7:
+      printf (" %s ", PeonN);
+      break;
+    case 8:
+      printf (" %s ", PeonB);
+      break;
+    case 9:
+      printf (" %s ", ReyN);
+      break;
+    case 10:
+      printf (" %s ", ReyB);
+      break;
+    case 11:
+      printf (" %s ", ReynaN);
+      break;
+    case 12:
+      printf (" %s ", ReynaB);
+      break;
+    default:
+      break;
+    }
+}
 void
 letreros (int n)
 {
@@ -97,7 +153,7 @@ letreros (int n)
     }
 }
 
-
+/* ESto lo comente porque no compilaba
 void
 seleccionar_color_de_tablero ()
 {
@@ -115,7 +171,7 @@ seleccionar_color_de_tablero ()
   switch (opcion)
     {
     case 1:
-      tablero ();		/* Ya le pedí a unos compañeros del módulo de tablero que agregaran las funciones de los case con colores para que puedan llamarse desde aquí. Debido a eso también incluyo la cabecera "tablero.h" para que no haya errores. Ya compila, sólo hace falta agregar las funciones que ya mencioné */
+      tablero ();		 Ya le pedí a unos compañeros del módulo de tablero que agregaran las funciones de los case con colores para que puedan llamarse desde aquí. Debido a eso también incluyo la cabecera "tablero.h" para que no haya errores. Ya compila, sólo hace falta agregar las funciones que ya mencioné 
       break;
     case 2:
       tablero_negro ();
@@ -140,7 +196,7 @@ seleccionar_color_de_tablero ()
       break;
     }
 }
-
+*/
 void
 menu (void)
 {
@@ -173,7 +229,7 @@ menu (void)
 }
 
 int
-main_temporal (int c, char **arg)
+main(int c, char **arg) /*temporal*/
 {
   menu ();
   return 0;
