@@ -18,6 +18,8 @@ struct tablero
   char se_movio[8][8];
 };
 
+int verificar_jaque( struct tablero *un_tablero);
+
 void 
 iniciar_tablero (struct tablero *un_tablero);
 

@@ -1,6 +1,14 @@
 #include "tablero.h"
 
 int
+verificar_jaque( struct tablero *un_tablero)
+{
+
+  
+
+}
+
+int
 paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas coordenadas y regresa 1 si en ese posición hay una casilla blanca o negra( está vacío) y 0 si no*/
 {
   if (un_tablero->casillas[fila][columna] == 'X' || un_tablero->casillas[fila][columna] == ' ')/*Reescribí la condición con un ||*/
