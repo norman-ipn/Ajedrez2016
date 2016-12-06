@@ -418,24 +418,25 @@ main_servidor2(int argc, char **argv)
   send(fd2, enviar, 1024,0);
  
   //Ciclo para enviar y recibir mensajes, el ciclo será infinito hasta que se use el break
-  while(1){
-    //El servidor espera el primer mensaje
-    recv(fd2,buf,1024,0);
-    if(strcmp(&buf,"salir")==0)
-      {
-        break;
-      }
-    printf("Cliente: %s\n",buf);
- 
-    //El cliente recibe el mensaje del servidor
-    printf("Escribir mensaje: ");
-    scanf("%*c%[^\n]",enviar2);
-    send(fd2,enviar2,1024,0);
-    if(strcmp(enviar2,"salir")==0)
-      {
-        break;
-      }
-  }
+  while(1)
+    {
+      //El servidor espera el primer mensaje
+      recv(fd2,buf,1024,0);
+      if(strcmp(&buf,"salir")==0)
+        {
+          break;
+        }
+      printf("Cliente: %s\n",buf);
+	  
+      //El cliente recibe el mensaje del servidor
+      printf("Escribir mensaje: ");
+      scanf("%*c%[^\n]",enviar2);
+      send(fd2,enviar2,1024,0);
+      if(strcmp(enviar2,"salir")==0)
+        {
+          break;
+        }
+    }
   close(fd2);
   close(fd);
   return 0;	
