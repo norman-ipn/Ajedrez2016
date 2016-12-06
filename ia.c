@@ -93,6 +93,7 @@
   void
   MovimientoRandom(struct tablero *un_tablero)
   {
+  
     /* Genera una semilla Random */
     srand (time(NULL));
     
@@ -103,6 +104,12 @@
       {
         if(un_tablero == 'T')
         {
+          /*A las coordenadas se les va a asignar la semilla rand para que mueva en un numero no mayor a 8 y verificar la casilla*/
+         /* Es un Ejemplo por que no se usar el rand xd :*/
+          int x2,y2;
+          x2=rand()%7;
+          y2=rand()%7;
+          validar_movimiento_torre(tablero,x1,y1,x2,y2);
           //Horizontal
           for(k=i;k<8;k++)
           {
@@ -110,6 +117,9 @@
           }
      
           //Vertical
+
+/* NO se necesita volver a hacer ciclos y evaluar movimientos, para eso se hicieron las funciones de movimientos antes*/
+          
           //Horizontal
           for(k=i;k<8;k++)
           {
@@ -125,6 +135,7 @@
         if(un_tablero == 'C')
         {
         }
+        if(un_tablero == 'D')
       }
     }
     

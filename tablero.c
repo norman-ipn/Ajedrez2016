@@ -60,7 +60,7 @@ obtener_posicion (int Columna, int Fila)	/* esta función transforma la columna 
 }
 
 char
-color_remplazo (int columna, int fila)	/* Esta función regresa un carácter del color sobre el cual la pieza se encontraba antes de desplazarse */
+color_remplazo (int columna, int fila)	/* Esta función regresa un caracter del color sobre el cual la pieza se encontraba antes de desplazarse */
 {
   int alterno = 0;
   int cuadrante = 0;
