@@ -230,9 +230,12 @@ actualiza_historial (int resultado)
 int
 turno_jugador (void)
 {
-  char respuesta[5] = "Si";
+  char respuesta[5] = " ";
   int player = 0;
   int i = 0;
+  printf ("¿Es tu turno? Si o No \n");
+  scanf ("%s", &respuesta[0]);
+	
   while (i < 5)
     {
       if (respuesta[i] == 'S')
@@ -296,7 +299,7 @@ turno_jugador (void)
       return -1;
     }
 }
-  /*printf ("Al jugador que le toca tirar es al numero: %d \n", player);*/
+ 
 
 
 
