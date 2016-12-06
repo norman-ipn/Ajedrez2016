@@ -1,6 +1,52 @@
 #include "tablero.h"
 #include "piezas.h"
 #define __TABLERO_H___
+/* Asumiendo que minusculas son las blancas */
+/*  R es para rey */
+/*  Q es para reina */
+/*  A es para alfil */
+/*  T es para torre */
+/*  C es para caballo */
+/*  P es para peon */
+
+/*DEVUELVE -1 SI ES INVALIDO, 1 SI ES VALIDO */
+/* Necesitamos una biblioteca con todas las funciones de validados */
+
+/* Asumire que ya esta incluida, por favor incluir */
+int
+movimiento_valido (char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+  char piezaActual = ' ';
+  piezaActual = tablero[x1][y2];
+
+  if (piezaActual == 'R' || piezaActual == 'r')
+    {
+      return validar_movimiento_rey (tablero, x1, y1, x2, y2);
+    }
+
+  if (piezaActual == 'Q' || piezaActual == 'q')
+    {
+      return validar_movimiento_reina (tablero, x1, y1, x2, y2);
+    }
+
+  if (piezaActual == 'A' || piezaActual == 'a')
+    {
+      return validar_movimiento_alfil (tablero, x1, y1, x2, y2);
+    }
+
+  if (piezaActual == 'T' || piezaActual == 't')
+    {
+      return validar_movimiento_torre (tablero, x1, y1, x2, y2);
+    }
+
+  if (piezaActual == 'C' || piezaActual == 'c')
+    {
+      return validar_movimiento_caballo (tablero, x1, y1, x2, y2);
+    }
+
+  return validar_movimiento_peon (tablero, tablero[x1][y1], x1, y1, x2, y2);
+}
+
 
 // recorte el codigo de inicializar y solo lo coloque en tablero.h
 void
