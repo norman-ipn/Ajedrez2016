@@ -11,6 +11,6 @@ enum piezas
   REY_BLANCO, REY_NEGRO,
   VACIA
 };
-void +inicializar (char a[8][8]);
-+
+void inicializar (char a[8][8]);
+
 #endif	/*__PIEZAS_H_*/

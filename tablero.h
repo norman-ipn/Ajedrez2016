@@ -2,13 +2,6 @@
 #define __TABLERO_H__
 
 #include "piezas.h"
-#include "tablero_negro.c"
-#include "tablero_verde.c"
-#include "tablero_rojo.c"
-#include "tablero_amarillo.c"
-#include "tablero_azul.c"
-#include "tablero_magenta.c"
-#include "tablero_cyan.c"
 
 enum filas
 { FILA_1 = 0, FILA_2, FILA_3, FILA_4, FILA_5, FILA_6, FILA_7, FILA_8 };
