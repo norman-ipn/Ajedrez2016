@@ -17,7 +17,7 @@ int chatcliente(int client)
 {
 
 
-    int client;
+
     int portNum = 1500;
     bool isExit = false;
     int bufsize = 1024;
@@ -102,7 +102,7 @@ int chatservidor(int client,int server)
 {
 
 
-    int client, server;
+    
     int portNum = 1500;
     bool isExit = false;
     int bufsize = 1024;
