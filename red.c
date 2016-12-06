@@ -12,6 +12,209 @@
 /*Aparte de que esten en la misma RED ya que se hara en LAN*/
 
 
+/*CHAT DEL CLIENTE*/
+int chatcliente(int client)
+{
+
+
+    int client;
+    int portNum = 1500;
+    bool isExit = false;
+    int bufsize = 1024;
+    char buffer[bufsize];
+    char* ip = "127.0.0.1";
+
+    struct sockaddr_in server_addr;
+
+    client = socket(AF_INET, SOCK_STREAM, 0); /* Client()*/
+
+    /* Estebleciendo conexion*/
+
+
+    if (client < 0)
+    {
+        printf("Error");
+        exit(1);
+    }
+
+
+    printf("El cliente se creo con exito");
+
+
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_port = htons(portNum);
+
+
+    /* Conectando */
+
+
+    connect(client, (struct sockaddr*)&server_addr, sizeof(server_addr)); /*Conectar() */
+
+
+    printf("Esperando respuesta de servidor");
+    recv(client, buffer, bufsize, 0);
+    printf("Conexion establecida");
+
+
+    do
+    {
+        printf("Cliente");
+        do
+        {
+            scanf("%s", &buffer);
+            send(client, buffer, bufsize, 0);
+            if (*buffer == '#')
+            {
+                send(client, buffer, bufsize, 0);
+                *buffer = '*';
+                isExit = true;
+            }
+        } while (*buffer != 42);
+
+        printf("Servidor");
+        do
+        {
+            recv(client, buffer, bufsize, 0);
+            scanf("%s", &buffer);
+            if (*buffer == '#')
+            {
+                *buffer = '*';
+                isExit = true;
+            }
+
+        } while (*buffer != 42);
+
+
+    } while (!isExit);
+
+
+    /*Terminar llamada*/
+    printf("Conexion termina");
+
+    close(client);
+    return 0;
+}
+
+
+
+/*CHAT DEL SERVIDOR*/
+int chatservidor(int client,int server)
+{
+
+
+    int client, server;
+    int portNum = 1500;
+    bool isExit = false;
+    int bufsize = 1024;
+    char buffer[bufsize];
+
+    struct sockaddr_in server_addr;
+    socklen_t size;
+
+    /* ESTABLECER CONEXION */
+    client = socket(AF_INET, SOCK_STREAM, 0); /* Cliente ()*/
+
+    if (client < 0)
+    {
+        printf("Error");
+        exit(1);
+    }
+
+
+    printf("El servidor se creo con exito");
+
+
+    server_addr.sin_family = AF_INET;
+    server_addr.sin_addr.s_addr = htons(INADDR_ANY);
+    server_addr.sin_port = htons(portNum);
+
+
+    /* Vinculando con sockect */
+    if ((bind(client, (struct sockaddr*)&server_addr, sizeof(server_addr))) < 0) /* Vinculacion ()*/
+    {
+        printf("Error de vinculacion");
+        return -1;
+    }
+
+
+    size = sizeof(server_addr);
+    printf("Buscando...");
+
+
+    listen(client, 1); /*LLamada*/
+
+
+    int clientCount = 1;
+    server = accept(client, (struct sockaddr*)&server_addr, &size); /*Aceptar ()*/
+
+
+    if (server < 0)
+    {
+
+        printf("ocurrio un problema");
+    }
+
+    while (server > 0)
+    {
+        strcpy(buffer, "Servidor conectado\n");
+        send(server, buffer, bufsize, 0);
+        printf("conectado");
+
+
+        do
+        {
+            recv(server, buffer, bufsize, 0);
+            scanf("%s", &buffer);
+            if (*buffer == '#')
+            {
+                *buffer = '*';
+                isExit = true;
+            }
+        } while (*buffer != '*');
+
+        do
+        {
+            printf("Servidor");
+            do
+            {
+                scanf("%s", &buffer);
+                send(server, buffer, bufsize, 0);
+                if (*buffer == '#')
+                {
+                    send(server, buffer, bufsize, 0);
+                    *buffer = '*';
+                    isExit = true;
+                }
+            } while (*buffer != '*');
+
+            printf("Cliente");
+            do
+            {
+                recv(server, buffer, bufsize, 0);
+                scanf("%s", &buffer);
+                if (*buffer == '#')
+                {
+                    *buffer == '*';
+                    isExit = true;
+                }
+            } while (*buffer != '*');
+        } while (!isExit);
+
+
+        /* FIN */
+
+        close(server);
+        printf("Transmison temrinada");
+        isExit = false;
+        exit(1);
+    }
+
+    close(client);
+    return 0;
+}
+
+
+
 void *
 atender_cliente (void *arg)	/* metodo para aceptar al jugador */
 {
@@ -83,6 +286,8 @@ main_temporal (void)
 /* ---------------POSIBLE SERVIDOR ------------------------*/
 main ()
 {
+  int chats=0;
+  int chatc=0;
   int server_sockfd = 0;	/* descriptores de sockets */
   int client_sockfd = 0;
   int server_len = 0;		/*tamaños de las estructuras */
@@ -124,7 +329,16 @@ main ()
 	  strcpy (ch, "SERVIDOR CONECTADO...");
 	  send (client_sockfd, ch, 1024, 0);
 	  inicio = 1;
+	      
+	  chats=chatservidor(int client,int server);   
+	  chatc=chatcliente(int client);   
+	      
+	   if(chats==0 && chatc==0){
+		   printf("El chat se realizo con exito 7u7");
 	}
+	      else{
+	      printf("Error al cargar el chat");
+	      }
       recv (client_sockfd, cs, 1024, 0);
       printf ("El cliente dijo: %s\n", cs);
       printf ("ingrese una cadena: \n");
