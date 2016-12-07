@@ -1,6 +1,6 @@
 #include "interfaz.h"
 #include "tablero.h"
-#include "guardar_partida.h" /*Bibloteca que se requiere para la opción de cargar partida*/
+#include "guardar_partida.h"	/*Bibloteca que se requiere para la opción de cargar partida */
 #define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
 #define Negro     "\x1b[30m"
 #define Rojo      "\x1b[31m"
@@ -26,8 +26,8 @@ imprimir_tablero (struct tablero *tablero)
 	{
 	  printf (" %c ||", (aux + (j - 1)));
 	}
-     printf ("  %c  |", tablero->casillas[j - 1][i]);
-     i = i + 1;
+      printf ("  %c  |", tablero->casillas[j - 1][i]);
+      i = i + 1;
 
       if (i == 8)
 	{
@@ -77,6 +77,395 @@ imprimir_tablero (struct tablero *tablero)
     }
   printf ("\n\n");
 }
+
+/* Inicio de la sección del manual */
+void
+reglas_alfil (void)
+{
+
+  printf
+    ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'O');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', ' ', 'X', ' ', 'O',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'O', ' ', 'X', ' ', 'O', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', ' ', 'O', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'A', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', ' ', 'O', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'O', ' ', 'X', ' ', 'O', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', ' ', 'X', ' ', 'O',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_basicas (void)
+{
+  printf
+    ("\n El Ajedrez es un juego de estrategia en el que dos jugadores hacen uso de piezas con distintos tipos de movimiento para capturar (comer) a las del rival. El objetivo del juego es acorralar al rey de tal modo que este no pueda moverse a ningún lugar sin ser amenazado \n ");
+  while (getchar () != '\n');
+  printf
+    ("\n El juego comienza en un tablero de 8 x 8 casillas en las que los jugadores deben de mover sus piezas con el fin de capturar las del oponente y darle el jaque mate al rey adversario.\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_caballo (void)
+{
+  printf
+    ("\n El caballo es una pieza útil para pasar lineas defensivas del oponente, se mueve caminando 3 casillas trazando L's en su camino.\n");
+  printf
+    ("\n Tiene la ventaja de que puede saltar las piezas, ya sean aliadas o enemigas. \n");
+
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', 'O', 'X', 'O', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', 'O', 'X', ' ', 'X', 'O', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'C', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', 'O', 'X', ' ', 'X', 'O', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', 'O', 'X', 'O', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_enroque (void)
+{
+
+  printf
+    ("\n El Enroque un movimiento que realiza una torre y el rey en el que cambian de posicion de manera conjunta. El rey se movera 2 casillas hacia la dirreción\n");
+  printf
+    ("\n de la torre con la que enroca y la torre pasará a colocarse al lado del rey en la casilla inversa a la dirección a la cual el rey se haya desplazado.\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'T', ' ', 'X', ' ', 'K', ' ', 'X',
+	  'T');
+  printf (" |================|\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'K', 'T', 'X', ' ', 'X',
+	  'T');
+
+  printf
+    ("\n El rey se desplaza dos casillas a la izquierda y la torre se pone a su lado derecho. \n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'T', ' ', 'X', ' ', 'X', 'T', 'K',
+	  ' ');
+
+  printf
+    ("\n El rey se desplaza dos casillas a la derecha y la torre se pone a su lado izquierdo.  \n");
+
+  printf
+    ("\n Cabe decir que el Enroque solo se podrá realizar cuando se cumplan todas estas condiciones:  \n");
+  printf
+    ("\n 1:Tanto el Rey como la Torre no deberán haberse movido hasta el momento en el que se ejecute el enroque. \n");
+  printf
+    ("\n 2:Solo se podrá realizar si ninguna de las piezas está amenazada por una del rival. \n");
+  printf
+    ("\n 3:Ninguna de las casillas por las que pasen deberá estar amenazada por una pieza enemiga.\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_jaque (void)
+{
+  printf
+    ("\n Para dar un jaque el rey deberá ser amenzado por una pieza rival provocando que el jugador esté obligado a salir de esta situacion, para salir del jaque el jugador puede mover al rey a una nueva posicion o, mover una pieza con el fin de obstruir la amenaza y que el rey deje de estar en jaque. \n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'C', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'K', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 't', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_jaque_mate (void)
+{
+  printf
+    ("\n En este caso, el Rey se encuentra amenazado por la torre y al no poder moverse a otra posición sin ser amenazado debido a la Dama, esto es el fin de la partida.\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'k', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'T');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'Q', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'K', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_peon (void)
+{
+
+  printf
+    ("Los peones son las principales unidades para cubrir terreno, no son muy fuertes y están pensados más para ocupar posiciones que para capturar, se mueven de la siguiente forma: \n");
+  printf
+    ("\n El peon puede avanzar 2 casillas y terminar en el caracter # solo si se encuentra en su casilla de arranque. Después de esto, tendrá que avanzar 1 casilla a la vez \n");
+  printf
+    (" O puede hacerlo desde el inicio. Los 'O' representan las posiciones en las que si una pieza enemiga se encuentra ahá, esta puede ser capturada.\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', '#', ' ', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', '%', 'O', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'P', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+  printf
+    ("\n NOTA: Si un peon consigue llegar hasta la linea del fondo del adversario, este podrá convertirse en cualquier unidad que se desee, excepto el rey. \n");
+  getchar ();
+  return;
+}
+
+void
+reglas_rey (void)
+{
+
+  printf
+    ("El Rey es la pieza más importante de un jugador, si es acorralado significará la derrota para el jugador, su movimiento es igual al de la reina con la particularidad de que solo se moverá 1 casilla a la vez.\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', 'O', 'O', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', 'O', 'K', 'O', 'X', ' ',
+	  'X');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', 'O', 'O', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'X', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', ' ', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_reyna (void)
+{
+  printf
+    ("\n La Reina o Dama es la pieza más poderosa de un jugador, combina la forma de movimiento de la torre y el alfil, y al igual que estas dos, puede moverse cuanto quiera.\n");
+
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'O', ' ', 'X', ' ',
+	  'O');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', 'O', 'X', ' ', 'O',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'O', ' ', 'O', ' ', 'O', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', 'O', 'O', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', 'O', 'O', 'R', 'O', 'O', 'O',
+	  'O');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'O', 'O', 'O', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'O', ' ', 'O', ' ', 'O', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', 'O', 'X', ' ', 'O',
+	  ' ');
+  printf (" |================|\n");
+  getchar ();
+  return;
+}
+
+void
+reglas_torre (void)
+{
+
+  printf
+    ("\n Las Torres son de las unidades más importantes. Se mueven horizontal y verticalmente cuanto quieran y pueden hacer un movimiento con el rey conocido como Enroque. \n");
+  printf ("  A B C D E F G H  \n");
+  printf (" |================|\n");
+  printf ("8|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'O', ' ', 'X', ' ',
+	  'X');
+  printf ("7|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', 'O', 'X', ' ', 'X',
+	  ' ');
+  printf ("6|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'O', ' ', 'X', ' ',
+	  'X');
+  printf ("5|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', 'O', 'X', ' ', 'X',
+	  ' ');
+  printf ("4|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', 'O', 'O', 'T', 'O', 'O', 'O',
+	  'O');
+  printf ("3|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', 'O', 'X', ' ', 'X',
+	  ' ');
+  printf ("2|%c|%c|%c|%c|%c|%c|%c|%c|\n", ' ', 'X', ' ', 'O', ' ', 'X', ' ',
+	  'X');
+  printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'X', ' ', 'X', 'O', 'X', ' ', 'X',
+	  ' ');
+  printf (" |================|\n");
+
+  getchar ();
+  return;
+}
+
+void
+manual (void)
+{
+  char comando = '0';
+  char orden = '0';
+
+  //Bienvenida a Instrucciones 
+  printf
+    ("\n ¡Bienvenido a Ajedrez-ESCOM!, A continuación se presentarán las instrucciones del juego por si eres nuevo en el ajedrez y deseas aprender las reglas básicas de juego. \n");
+  printf
+    ("Presiona Enter cada vez que termine una explicación para continuar\n");
+
+  //Vamos a repetir este codigo hasta que el usuario quiera
+  do
+    {
+      printf
+	("\n\n\n\n\nSelecciona una opción de la que quieras saber: 1:Desplegar todas las instrucciones\n2:Caballo\n3:Torre\n4:Peon\n5:Reyna\n6:Alfil\n7:Rey\n8:Enroque\n9:Condiciones de jaque\n0:Condiciones de Jaque-Mate. \n");
+      comando = getchar ();
+
+      switch (comando)
+	{
+	case '1':
+	  reglas_basicas ();
+	  reglas_torre ();
+	  reglas_enroque ();
+	  reglas_peon ();
+	  reglas_caballo ();
+	  reglas_alfil ();
+	  reglas_reyna ();
+	  reglas_rey ();
+	  reglas_jaque ();
+	  reglas_jaque_mate ();
+	  break;
+	case '2':
+	  reglas_caballo ();
+	  break;
+	case '3':
+	  reglas_torre ();
+	  break;
+	case '4':
+	  reglas_peon ();
+	  break;
+	case '5':
+	  reglas_reyna ();
+	  break;
+	case '6':
+	  reglas_alfil ();
+	  break;
+	case '7':
+	  reglas_rey ();
+	  break;
+	case '8':
+	  reglas_enroque ();
+	  break;
+	case '9':
+	  reglas_jaque ();
+	  break;
+	case '0':
+	  reglas_jaque_mate ();
+	  break;
+	case '\n':
+	  break;
+	default:
+	  printf ("\n Opción inválida.\n");
+	  break;
+	}
+
+      //Se le da la opcion de volver y ver mas instrucciones
+      printf
+	("\n Si quieres ver otra información presiona cualquier tecla\n");
+      printf
+	("\n Si esa es toda la informacion que necesitas y quieres salir de las intrucciones presiona ENTER\n");
+
+      orden = getchar ();
+    }
+  while (orden != '\n');
+
+}
+
+/* Fin de la sección del manual */
 
 void
 setUp (void)
@@ -208,6 +597,7 @@ piezas_comidas (int a)
       break;
     }
 }
+
 void
 letreros (int n)
 {
@@ -270,58 +660,60 @@ seleccionar_color_de_tablero ()
 void
 menu (void)
 {
- /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
+  /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
   char o = '\0';
   char buffer[4];
 
   system ("clear");
   animaciones (7);
   letreros (1);
-  
-  while(1 == 1)
-  {
-    system("clear");
-    printf ("Escoge el numero de opcion\n");
-    printf("1) Nueva Partida\n2) Cargar Partida\n3)Manual del juego\n4) Configuracion\n5) Salir\n\n");
-    fflush(stdin);
-    fgets (buffer, 4, stdin);
-    sscanf (buffer, "%c", &o);
-    switch (o)
-      {
-      case '1':
-	system("clear");
-        printf("Aquí va la función que inicia el juego");
-        break;
 
-      case '2':
-	system("clear");
-        printf("Aquí va la función que carga una partida");
-        break;
+  while (1 == 1)
+    {
+      system ("clear");
+      printf ("Escoge el numero de opcion\n");
+      printf
+	("1) Nueva Partida\n2) Cargar Partida\n3)Manual del juego\n4) Configuracion\n5) Salir\n\n");
+      fflush (stdin);
+      fgets (buffer, 4, stdin);
+      sscanf (buffer, "%c", &o);
+      switch (o)
+	{
+	case '1':
+	  system ("clear");
+	  printf ("Aquí va la función que inicia el juego");
+	  break;
 
-      case '3':
-	system("clear");
-        printf("Aquí va la función que abre los manuales del juego");
-        break;
-      case '4':
-	system("clear");
-        setUp ();
-        system ("clear");
-        break;
-      case '5':
-        animaciones (6);
-        system ("clear");
-        return;
-        break;
-      default:
-        printf("\nNo ha introducido una opción válida. Intente de nuevo por favor.\n");
-        o = '\0';
-        break;
-      }
-  }
+	case '2':
+	  system ("clear");
+	  printf ("Aquí va la función que carga una partida");
+	  break;
+
+	case '3':
+	  system ("clear");
+	  printf ("Aquí va la función que abre los manuales del juego");
+	  break;
+	case '4':
+	  system ("clear");
+	  setUp ();
+	  system ("clear");
+	  break;
+	case '5':
+	  animaciones (6);
+	  system ("clear");
+	  return;
+	  break;
+	default:
+	  printf
+	    ("\nNo ha introducido una opción válida. Intente de nuevo por favor.\n");
+	  o = '\0';
+	  break;
+	}
+    }
 }
 
 int
-main(int c, char **arg) /*temporal*/
+main (int c, char **arg)	/*temporal */
 {
   menu ();
   return 0;
