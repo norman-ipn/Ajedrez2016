@@ -1,5 +1,6 @@
 #include "interfaz.h"
 #include "tablero.h"
+#include "guardar_partida.h" /*Bibloteca que se requiere para la opción de cargar partida*/
 #define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
 #define Negro     "\x1b[30m"
 #define Rojo      "\x1b[31m"
@@ -203,6 +204,7 @@ menu (void)
   /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
   char o = ' ';
   char buffer[4];
+  char tablero[8][8];
 
   system ("clear");
   animaciones (7);
@@ -214,6 +216,10 @@ menu (void)
   sscanf (buffer, "%c", &o);
   switch (o)
     {
+    case '2':
+      recupera_partida (tablero); /*Se copia la informacion de un archivo de texto en el tablero para ser usado por los demás módulos*/
+      system ("clear");
+      break;
     case '3':
       setUp ();
       system ("clear");
