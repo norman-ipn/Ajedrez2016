@@ -149,7 +149,7 @@
 
 /*  #include <tablero.h> */
 
- /* Sólo es un testing, de aquí se sacarán las jugadas que irán en las condicionales, se sigue trabajando en condicionales con la función principaly tablero, se trabaja en función principal, la función recibirá las coordenadasm en cuanto se tenga la función solicitada se ingresará en el testing, por lo tanto, se coloca función en void, en espera de las demás funciones */
+ /* Sólo es un testing, de aquí se sacarán las jugadas que irán en las condicionales, se sigue trabajando en condicionales con la función principaly tablero, se trabaja en función principal, la función recibirá las coordenadasm en cuanto se tenga la función solicitada se ingresará en el testing, por lo tanto, se coloca función en void, en espera de las demás funciones, se solicita ayuda de interfaz para el testing y el printf */
 
 /*
 void
@@ -157,74 +157,74 @@ testing ()
 
   if (tablero[6][4] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[0][1] = 'c';)
     {
-    printf}
+    }
 
    if (tablero[4][4] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[2][2] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[7][1] = 'C';)
     {
-    printf}
+    }
 
   if (tablero[0][6] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[5][0] = 'C';)
     {
-    printf}
+    }
 
   if (tablero[2][7] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[6][3] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[3][4] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[3][1] = 'C';)
     {
-    printf}
+    }
 
   if (tablero[4][2] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[6][1] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[1][6] = 'p';)
     {
-    printf}
+    }
 
   if (tablero[6][6] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[4][6] = 'c';)
     {
-    printf}
+    }
 
   if (tablero[6][2] = 'P';)
     {
-    printf}
+    }
 
   if (tablero[0][5] = 'a';)
     {
-    printf}
+    }
  */
 
