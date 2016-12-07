@@ -4,17 +4,17 @@
 
 
   
-  /* ============================== FUNCION PRINCIPAL ======================= */ 
+  /* ============================== FUNCIÓN PRINCIPAL ======================= */ 
   void
   tirar_ai(struct tablero *un_tablero)
   {
-    /* Revisa si podemos comer y cuanto ganariamos*/
+    /* Revisa si podemos comer y cuanto ganaríamos*/
     int comer = podemosComer(un_tablero);
     
-    /* Revisa si nos pueden comer y cuanto perderiamos*/
+    /* Revisa si nos pueden comer y cuanto perderíamos*/
     int comidos = podemosSerComidos(un_tablero);
     
-    /* Es aqui donde toma la desicion de que hacer */
+    /* Es aquí donde toma la decisión de que hacer */
     /* Si no podemos ni comer nada ni estamos por ser comidos pues mueve algo random*/
     if(comer == 0 && comidos == 0)
     {
@@ -31,14 +31,14 @@
   return;
   }
 
-  /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACION ============================*/
+  /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACIÓN ============================*/
 
   /* ============================== Podemos comer ======================= 
-  - ¿Que hace?
+  - ¿Qué hace?
   - Se va a encargar de revisar el tablero y ver si podemos comer una pieza, de ser no ser asi regresa 0
     y si es posible regresa el valor asignado (8 por ejemplo si podemos comernos un caballo)
     
-    tambien va a modificar las coordenadas para que apunten a la pieza podemos comer y las coordenas de la pieza que
+    También va a modificar las coordenadas para que apunten a la pieza podemos comer y las coordenas de la pieza que
     tenemos que mover para lograrlo
   */ 
   int
@@ -50,12 +50,12 @@
 
 
  /*  ============================== Podemos ser Comidos ======================= 
-  - ¿Que hace?
-  - Se va a encargar de revisar el tablero y ver si estamos apunto de ser comidos, de ser no ser a si regresa 0
+  - ¿Qué hace?
+  - Se va a encargar de revisar el tablero y ver si estamos a punto de ser comidos, de ser no ser a si regresa 0
     y si es posible regresa el valor asignado (8 por ejemplo si nos van a comer a un caballo)
     
-    tambien va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a 
-    poner las coordenadas de nuestro acante*/
+    También va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a 
+    poner las coordenadas de nuestro atacante*/
   
   int
   podemosSerComidos(struct tablero *un_tablero)
@@ -66,7 +66,7 @@
 
   /* =========== FUNCIONES EN LAS QUE ACTUAMOS ==============================================*/
   /* ============================== Escapar =======================
-  - ¿Que hace?
+  - ¿Qué hace?
   - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
   */
   void
@@ -77,8 +77,8 @@
 
 
   /* ============================== Atacar =======================
-  - ¿Que hace?
-  - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la accion de comerla
+  - ¿Qué hace?
+  - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la acción de comerla
   */
   void
   atacar(struct tablero *un_tablero)
@@ -87,7 +87,7 @@
 
 
   /* ============================== Movimiento Aleatorio =======================
-  - ¿Que hace?
+  - ¿Qué hace?
   - Se va a encargar de generar un movimiento de pieza aleatorio si no vamos a comer o ser comidos
   */
   void
@@ -104,7 +104,7 @@
       {
         if(un_tablero == 'T')
         {
-          /*A las coordenadas se les va a asignar la semilla rand para que mueva en un numero no mayor a 8 y verificar la casilla*/
+          /*A las coordenadas se les va a asignar la semilla rand para que mueva en un número no mayor a 8 y verificar la casilla*/
          /* Es un Ejemplo por que no se usar el rand xd :*/
           int x2,y2;
           x2=rand()%7;
@@ -143,13 +143,13 @@
 
   /* ============================== Funciones AUXILIARES =======================
   /* ============================== Busca movimiento Valido =======================
-  - ¿Que hace?
+  - ¿Qué hace?
   - Se encarga de ver que movimientos posibles tiene nuestras piezas
   */
 
 /*  #include <tablero.h> */
 
- /* Sólo es un testing, de aquí se sacarán las jugadas que irán en las condicionales, se sigue trabajando en condicionales con la función principaly tablero, se trabaja en función principal, la función recibirá las coordenadasm en cuanto se tenga la función solicitada se ingresará en el testing, por lo tanto, se coloca función en void, en espera de las demás funciones, se solicita ayuda de interfaz para el testing y el printf */
+ /* Sólo es un testing, de aquí se sacarán las jugadas que irán en las condicionales, se sigue trabajando en condicionales con la función principal y tablero, se trabaja en función principal, la función recibirá las coordenadas en cuanto se tenga la función solicitada se ingresará en el testing, por lo tanto, se coloca función en void, en espera de las demás funciones, se solicita ayuda de interfaz para el testing y el printf */
 
 /*
 void
