@@ -1,6 +1,6 @@
 #include "interfaz.h"
 #include "tablero.h"
-#include "guardar_partida.h"	/*Bibloteca que se requiere para la opción de cargar partida */
+#include "persistencia.h"	/*Bibloteca que se requiere para la opción de cargar partida */
 #define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
 #define Negro     "\x1b[30m"
 #define Rojo      "\x1b[31m"
