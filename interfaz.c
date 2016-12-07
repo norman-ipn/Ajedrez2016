@@ -9,6 +9,75 @@
 #define Azul      "\x1b[34m"
 #define Magenta   "\x1b[35m"
 #define Cyan      "\x1b[36m"
+
+/*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
+void
+imprimir_tablero (struct tablero *tablero)
+{
+  int i = 0;
+  int j = 8;
+  char aux = 'A';
+
+  printf ("\n\n");
+
+  while (j > 0)
+    {
+      if (i == 0)
+	{
+	  printf (" %c ||", (aux + (j - 1)));
+	}
+     printf ("  %c  |", tablero->casillas[j - 1][i]);
+     i = i + 1;
+
+      if (i == 8)
+	{
+	  if (j != 1)
+	    {
+	      printf ("\n");
+	      printf ("----");
+
+	      i = 0;
+
+	      while (i < 8)
+		{
+		  printf ("------");
+
+		  i = i + 1;
+		}
+	    }
+	  if (j == 1)
+	    {
+	      printf ("\n");
+	      printf ("=====");
+
+	      i = 0;
+
+	      while (i < 8)
+		{
+		  printf ("======");
+
+		  i = i + 1;
+		}
+	    }
+	  printf ("\n");
+	  i = 0;
+	  j = j - 1;
+	}
+    }
+
+  j = 8;
+  i = 0;
+  printf (">:v|| ");
+  while (j > 0)
+    {
+      aux = '1';
+      printf (" %c  | ", (aux + i));
+      j = j - 1;
+      i = i + 1;
+    }
+  printf ("\n\n");
+}
+
 void
 setUp (void)
 {
@@ -201,37 +270,54 @@ seleccionar_color_de_tablero ()
 void
 menu (void)
 {
-  /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
-  char o = ' ';
+ /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
+  char o = '\0';
   char buffer[4];
-  char tablero[8][8];
 
   system ("clear");
   animaciones (7);
   letreros (1);
-  printf ("Escoge el numero de opcion\n");
-  printf
-    ("1) Nueva Partida\n2) Cargar Partida\n3) Configuracion\n4) Salir\n");
-  fgets (buffer, 4, stdin);
-  sscanf (buffer, "%c", &o);
-  switch (o)
-    {
-    case '2':
-      recupera_partida (tablero); /*Se copia la informacion de un archivo de texto en el tablero para ser usado por los demás módulos*/
-      system ("clear");
-      break;
-    case '3':
-      setUp ();
-      system ("clear");
-      break;
-    case '4':
-      animaciones (6);
-      system ("clear");
-      break;
-    default:
-      break;
-    }
+  
+  while(1 == 1)
+  {
+    system("clear");
+    printf ("Escoge el numero de opcion\n");
+    printf("1) Nueva Partida\n2) Cargar Partida\n3)Manual del juego\n4) Configuracion\n5) Salir\n\n");
+    fflush(stdin);
+    fgets (buffer, 4, stdin);
+    sscanf (buffer, "%c", &o);
+    switch (o)
+      {
+      case '1':
+	system("clear");
+        printf("Aquí va la función que inicia el juego");
+        break;
 
+      case '2':
+	system("clear");
+        printf("Aquí va la función que carga una partida");
+        break;
+
+      case '3':
+	system("clear");
+        printf("Aquí va la función que abre los manuales del juego");
+        break;
+      case '4':
+	system("clear");
+        setUp ();
+        system ("clear");
+        break;
+      case '5':
+        animaciones (6);
+        system ("clear");
+        return;
+        break;
+      default:
+        printf("\nNo ha introducido una opción válida. Intente de nuevo por favor.\n");
+        o = '\0';
+        break;
+      }
+  }
 }
 
 int
