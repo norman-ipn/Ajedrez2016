@@ -554,6 +554,8 @@ setUp (void)
 void
 animaciones (int n)
 {
+  int i = 0;
+	
   switch (n)
     {
     case 1:
