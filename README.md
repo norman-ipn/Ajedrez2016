@@ -3,6 +3,18 @@
 Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
+# Coordinadores ETAPA 3
+
+| Usuario | Módulo que coordina | Grupo |
+|---------|---------------------|-------|
+|**Emm79**| Tablero | 1CM1 |
+|**mauricioww**| Red | 1CM1 |
+|**JoaksIPN**| Persistencia | 1CM2 |
+|**Alichos**| Piezas | 1CM2 |
+|**TafnesJ**| IA | 1CM5 |
+|**AcadiaWolfman** | Interfaz | 1CM5 |
+
+
 # Lista de Alumnos ETAPA 2
 
 | Usuario | Nombre | Módulo asignado |
