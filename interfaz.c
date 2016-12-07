@@ -9,6 +9,75 @@
 #define Azul      "\x1b[34m"
 #define Magenta   "\x1b[35m"
 #define Cyan      "\x1b[36m"
+
+/*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
+void
+imprimir_tablero (struct tablero *tablero)
+{
+  int i = 0;
+  int j = 8;
+  char aux = 'A';
+
+  printf ("\n\n");
+
+  while (j > 0)
+    {
+      if (i == 0)
+	{
+	  printf (" %c ||", (aux + (j - 1)));
+	}
+     printf ("  %c  |", tablero->casillas[j - 1][i]);
+     i = i + 1;
+
+      if (i == 8)
+	{
+	  if (j != 1)
+	    {
+	      printf ("\n");
+	      printf ("----");
+
+	      i = 0;
+
+	      while (i < 8)
+		{
+		  printf ("------");
+
+		  i = i + 1;
+		}
+	    }
+	  if (j == 1)
+	    {
+	      printf ("\n");
+	      printf ("=====");
+
+	      i = 0;
+
+	      while (i < 8)
+		{
+		  printf ("======");
+
+		  i = i + 1;
+		}
+	    }
+	  printf ("\n");
+	  i = 0;
+	  j = j - 1;
+	}
+    }
+
+  j = 8;
+  i = 0;
+  printf (">:v|| ");
+  while (j > 0)
+    {
+      aux = '1';
+      printf (" %c  | ", (aux + i));
+      j = j - 1;
+      i = i + 1;
+    }
+  printf ("\n\n");
+}
+
 void
 setUp (void)
 {
