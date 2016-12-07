@@ -20,9 +20,9 @@ chatcliente (int client)
 
 
   int portNum = 1500;
-  bool isExit = false;
+  int isExit = 0;
   int bufsize = 1024;
-  char buffer[bufsize];
+  char buffer[1024];
   char *ip = "127.0.0.1";
 
   struct sockaddr_in server_addr;
@@ -62,13 +62,13 @@ chatcliente (int client)
       printf ("Cliente");
       do
 	{
-	  scanf ("%s", &buffer);
+	  scanf ("%s", buffer);
 	  send (client, buffer, bufsize, 0);
 	  if (*buffer == '#')
 	    {
 	      send (client, buffer, bufsize, 0);
 	      *buffer = '*';
-	      isExit = true;
+	      isExit = 1;
 	    }
 	}
       while (*buffer != 42);
@@ -77,11 +77,11 @@ chatcliente (int client)
       do
 	{
 	  recv (client, buffer, bufsize, 0);
-	  scanf ("%s", &buffer);
+	  scanf ("%s", buffer);
 	  if (*buffer == '#')
 	    {
 	      *buffer = '*';
-	      isExit = true;
+	      isExit = 1;
 	    }
 
 	}
@@ -109,9 +109,9 @@ chatservidor (int client, int server)
 
 
   int portNum = 1500;
-  bool isExit = false;
+  int isExit = 0;
   int bufsize = 1024;
-  char buffer[bufsize];
+  char buffer[1024];
 
   struct sockaddr_in server_addr;
   socklen_t size;
@@ -169,11 +169,11 @@ chatservidor (int client, int server)
       do
 	{
 	  recv (server, buffer, bufsize, 0);
-	  scanf ("%s", &buffer);
+	  scanf ("%s", buffer);
 	  if (*buffer == '#')
 	    {
 	      *buffer = '*';
-	      isExit = true;
+	      isExit = 1;
 	    }
 	}
       while (*buffer != '*');
@@ -183,13 +183,13 @@ chatservidor (int client, int server)
 	  printf ("Servidor");
 	  do
 	    {
-	      scanf ("%s", &buffer);
+	      scanf ("%s", buffer);
 	      send (server, buffer, bufsize, 0);
 	      if (*buffer == '#')
 		{
 		  send (server, buffer, bufsize, 0);
 		  *buffer = '*';
-		  isExit = true;
+		  isExit = 1 ;
 		}
 	    }
 	  while (*buffer != '*');
@@ -198,11 +198,11 @@ chatservidor (int client, int server)
 	  do
 	    {
 	      recv (server, buffer, bufsize, 0);
-	      scanf ("%s", &buffer);
+	      scanf ("%s", buffer);
 	      if (*buffer == '#')
 		{
 		  *buffer == '*';
-		  isExit = true;
+		  isExit = 1;
 		}
 	    }
 	  while (*buffer != '*');
@@ -214,7 +214,7 @@ chatservidor (int client, int server)
 
       close (server);
       printf ("Transmison temrinada");
-      isExit = false;
+      isExit = 0;
       exit (1);
     }
 
@@ -294,7 +294,7 @@ main_temporal (void)
 
 /* ---------------POSIBLE SERVIDOR ------------------------*/
 int
-main_servi(void)
+main_servidor2(void)
 {
   int chats = 0;
   int chatc = 0;
