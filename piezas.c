@@ -345,7 +345,7 @@ evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
     }
 }
 void 
-CoronacionPeon(char tablero, char pieza, int x, int y) 
+CoronacionPeon(char tablero[8][8], char pieza, int x, int y) 
 {
   if(tablero[x][y]=='P') 
   {
