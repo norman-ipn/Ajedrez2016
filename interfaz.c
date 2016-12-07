@@ -10,6 +10,69 @@
 #define Magenta   "\x1b[35m"
 #define Cyan      "\x1b[36m"
 
+/*Esta función despliega un menú de opciones durante la partida*/
+int
+jugar (void)
+{
+  char opc;
+	
+  printf ("Comienza el juego\n\n");
+  while(1 == 1)
+  {
+      system("clear");
+	  
+      printf ("¿Qué desea hacer a continuación?\n\n");
+
+      printf ("Para realizar un movimiento introduzca \"m\"\n");
+      printf ("Para guardar la partida introduzca \"g\"\n");
+      printf ("Para reiniciar la partida actual introduzca \"n\"\n");
+      printf ("Para cancelar el último movimiento introduzca \"c\"\n");
+      printf ("Para ver el registro de movimientos introduzca \"r\"\n");
+      printf ("Para salir de la partida actual introduzca \"s\"\n\n");
+
+      fgets(aux, sizeof(char) * 2, stdin);
+      fscanf (aux, "%c", &ajedrez->opc);
+
+      switch (ajedrez->opc)
+	{
+	case 'm':
+	  system ("clear");
+	  printf("\nAquí va una función que permite el movimiento de las piezas.\n\n");
+	  break;
+
+	case 'g':
+	  system ("clear");
+	  printf("\nAquí va una función que guarda la partida actual.\n\n");
+	  break;
+
+	case 'n':
+	  system ("clear");
+	  printf("\nAquí va una función que reinicia la partida actual.\n\n");;
+	  break;
+
+	case 'c':
+	  system ("clear");
+	  printf ("\nAquí va una función que cancela el último movimiento.\n\n");
+	  break;
+		      
+        case 'r':
+	  system ("clear");
+	  printf ("\nAquí se debe desplegar el registro de movimientos.\n\n");
+	  break;
+
+	case 's':
+	  system ("clear");
+	  printf ("Ha salido de la partida actual\n\n");
+	  return 0;
+	  break;
+
+	default:
+	  system ("clear");
+	  printf ("La opción no es válida\n\n");
+	  break;
+  }
+}
+
 /*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
 void
 imprimir_tablero (struct tablero *tablero)
@@ -681,7 +744,7 @@ menu (void)
 	{
 	case '1':
 	  system ("clear");
-	  printf ("Aquí va la función que inicia el juego");
+	  jugar();
 	  break;
 
 	case '2':
