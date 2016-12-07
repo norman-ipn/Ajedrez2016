@@ -14,7 +14,7 @@
 int
 jugar (void)
 {
-  char opc;
+  char opc = '0';
 	
   printf ("Comienza el juego\n\n");
   while(1 == 1)
