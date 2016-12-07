@@ -557,28 +557,40 @@ animaciones (int n)
   switch (n)
     {
     case 1:
-      system ("clear");
-      system ("figlet 'Jaque!!'");
-      sleep (2);
-      system ("clear");
+      for (i = 0; i < 2; i++)
+        {
+          system ("clear");
+          system ("figlet 'Jaque!!'");
+          sleep (1);
+          system ("clear");
+        }
       break;
     case 2:
-      system ("clear");
-      system ("figlet 'JaqueMate!!'");
-      sleep (2);
-      system ("clear");
+      for (i = 0; i < 4; i++)
+        {
+          system ("clear");
+          system ("figlet 'JaqueMate!!'");
+          sleep (1);
+          system ("clear");
+        }
       break;
     case 3:
-      system ("clear");
-      system ("figlet 'Jugador 1 Gano!!'");
-      sleep (2);
-      system ("clear");
+      for (i = 0; i < 3; i++)
+        {
+          system ("clear");
+          system ("figlet 'Jugador 1 Gano!!'");
+          sleep (1);
+          system ("clear");
+        }
       break;
     case 4:
-      system ("clear");
-      system ("figlet 'Jugador 2 Gano!!'");
-      sleep (2);
-      system ("clear");
+      for (i = 0; i < 3; i++)
+        {
+          system ("clear");
+          system ("figlet 'Jugador 2 Gano!!'");
+          sleep (1);
+          system ("clear");
+        }
       break;
     case 5:
       system ("clear");
@@ -597,6 +609,15 @@ animaciones (int n)
       system ("figlet '.:Bienvenido:.'");
       sleep (2);
       system ("clear");
+      break;
+    case 8:
+      for (i = 0; i < 5; i++)
+        {
+          system ("clear");
+          system ("figlet 'Cargando'");
+          sleep (1);
+          system ("clear");
+        }
       break;
     default:
       break;
@@ -749,6 +770,7 @@ menu (void)
 
 	case '2':
 	  system ("clear");
+	  animaciones (8);
 	  printf ("Aquí va la función que carga una partida");
 	  break;
 
