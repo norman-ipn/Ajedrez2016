@@ -12,7 +12,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**AlanKev117**| Fuentes García Alan Kevin|Interfaz|
 |**albertosilva123**|Silva Cazares Luis Alberto |Interfaz|
 |**AlejandroH1cm1**| Herrera Olmos Alejandro|Interfaz|
-|**alex2201**| |Interfaz|
+|**alex2201**| López Cedillo Alexander|Interfaz|
 |**AlexHrdRck**| De los Santos Díaz Luis Alejandro|Interfaz|
 |**AlexMex2412**|Mexicano Ixtepan Alejandro |Interfaz|
 |**alfmemije**|Memije Avila Alfredo Raymundo |Interfaz|
