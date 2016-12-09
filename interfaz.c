@@ -778,7 +778,7 @@ menu (void)
 
 	case '3':
 	  system ("clear");
-	  printf ("Aquí va la función que abre los manuales del juego");
+          manual();
 	  break;
 	case '4':
 	  system ("clear");
