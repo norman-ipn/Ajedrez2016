@@ -4,8 +4,6 @@ int
 verificar_jaque( struct tablero *un_tablero)
 {
 
-  
-
 }
 
 int
