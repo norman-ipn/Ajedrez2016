@@ -1,5 +1,6 @@
 #include "interfaz.h"
 #include "tablero.h"
+#include "piezas.h"
 #include "persistencia.h"	/*Bibloteca que se requiere para la opción de cargar partida */
 #define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
 #define Negro     "\x1b[30m"
@@ -10,17 +11,95 @@
 #define Magenta   "\x1b[35m"
 #define Cyan      "\x1b[36m"
 
+void
+imprimir ()
+{
+  int x1 = 0;
+  int x2 = 0;
+  int y1 = 0;
+  int y2 = 0;
+  int a = 0;
+  int x = 0;			/* variable de control de la posición del tablero en x */
+  int y = 0;			/* variable de control de la posición del tablero en y */
+  int f = 8;
+  int i = 0;
+  int juego = 1;
+  char Partesuperior[] =
+    "\u250F\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2513";
+  char cuerpo[] =
+    "\u2523\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u252B ";
+  char parteinferior[] =
+    "\u2517\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u251b";
+
+/* impresion del tablero de ajedrez*/
+  printf ("\n");
+  printf ("    ");
+    {
+      printf ("%s", Partesuperior);
+      while (y < 7)
+	{
+	  printf ("\n");
+	  printf ("  %d ", f);
+	  while (a < 8)
+	    {
+	      printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+	      /*\u2503 corresponde a una linea vertical */
+	      a = a + 1;
+	      x = x + 1;
+
+	    }
+	  printf ("\u2503");
+	  printf ("\n");
+	  printf ("   ");
+	  a = 0;
+	  printf (" %s ", cuerpo);
+	  a = 0;
+	  x = 0;
+	  y = y + 1;
+	  f = f - 1;
+	}
+      printf ("\n");
+      printf ("  %d ", f);
+      while (a < 8)
+	{
+	  printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+	  a = a + 1;
+	  x = x + 1;
+	}
+      printf ("\u2503");
+      printf ("\n");
+      printf ("    ");
+      a = 0;
+      printf ("%s", parteinferior);
+      printf ("\n");
+      printf ("    ");
+      a = 0;
+      while (a < 8)
+	{
+	  printf ("  %c ", 65 + a);
+	  a = a + 1;
+	}
+      /*printf                Esto lo dejo por si acaso 
+	("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y2   x2 y2");
+
+      scanf ("%d %d %d %d", &x1, &y1, &x2, &y2);
+      movimiento_valido (un_tablero.casillas, x1, y1, x2, y2);
+*/ 
+    }
+
+
+
 /*Esta función despliega un menú de opciones durante la partida*/
 int
 jugar (void)
 {
   char opc = '0';
-	
+ 
   printf ("Comienza el juego\n\n");
   while(1 == 1)
   {
       system("clear");
-	  
+      imprimir();
       printf ("¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
@@ -72,7 +151,7 @@ jugar (void)
 	  break;
   }
 }
-
+}
 /*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
 void
 imprimir_tablero (struct tablero *tablero)
