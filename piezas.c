@@ -50,46 +50,46 @@ movimiento_valido (char tablero[8][8], int x1, int y1, int x2, int y2)
 
 // recorte el codigo de inicializar y solo lo coloque en tablero.h
 void
-inicializar (a[8][8])
+inicializar (char a[8][8])
 {
-  +int x = 0;
-  +int y = 0;
-  +int i = 0;
-  + +while (y <= 8)
-    +
+  int x = 0;
+  int y = 0;
+  int i = 0;
+  while (y <= 8)
+
     {
-      +while (x <= 8)
-	+
+      while (x <= 8)
+
 	{
-	  +a[x][y] = '\0';
-	  +x = x + 1;
-	+}
+	  a[x][y] = '\0';
+	  x = x + 1;
+	}
       y = y + 1;
-    +}
-  + +a[0][0] = 't';
-  +a[0][1] = 'c';
-  +a[0][2] = 'a';
-  +a[0][3] = 'd';
-  +a[0][4] = 'r';
-  +a[0][5] = 'a';
-  +a[0][6] = 'c';
-  +a[0][7] = 't';
-  +a[7][0] = 'T';
-  +a[7][1] = 'C';
-  +a[7][2] = 'A';
-  +a[7][3] = 'D';
-  +a[7][4] = 'R';
-  +a[7][5] = 'A';
-  +a[7][6] = 'C';
-  +a[7][7] = 'T';
-  + +while (i <= 7)
-    +
+    }
+  a[0][0] = 't';
+  a[0][1] = 'c';
+  a[0][2] = 'a';
+  a[0][3] = 'd';
+  a[0][4] = 'r';
+  a[0][5] = 'a';
+  a[0][6] = 'c';
+  a[0][7] = 't';
+  a[7][0] = 'T';
+  a[7][1] = 'C';
+  a[7][2] = 'A';
+  a[7][3] = 'D';
+  a[7][4] = 'R';
+  a[7][5] = 'A';
+  a[7][6] = 'C';
+  a[7][7] = 'T';
+  while (i <= 7)
+
     {
-      +a[1][i] = 'p';
-      +a[6][i] = 'P';
-      +i = i + 1;
-    +}
-+}
+      a[1][i] = 'p';
+      a[6][i] = 'P';
+      i = i + 1;
+    }
+}
 
 int
 validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8])
@@ -344,50 +344,51 @@ evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
 	}
     }
 }
-void 
-CoronacionPeon(char tablero[8][8], char pieza, int x, int y) 
+
+void
+CoronacionPeon (char tablero[8][8], char pieza, int x, int y)
 {
-  if(tablero[x][y]=='P') 
-  {
-    switch(pieza)
+  if (tablero[x][y] == 'P')
     {
-      case 'Q':
-        tablero[x][y]='Q';
-        break;
-      case 'T':
-        tablero[x][y]='T';
-        break;
-      case 'A':
-        tablero[x][y]='A';
-        break;
-      case 'C':
-        tablero[x][y]='C';
-        break;
-      default:
-        printf("\n Pieza no válida\n");
-    }    
-  }
-  
-  else if (tablero[x][y]=='p') 
-  {
-    switch(pieza)
-    {
-      case 'q':
-        tablero[x][y]='q';
-        break;
-      case 't':
-        tablero[x][y]='t';
-        break;
-      case 'a':
-        tablero[x][y]='a';
-        break;
-      case 'c':
-        tablero[x][y]='c';
-        break;
-      default:
-        printf("\n Pieza no válida\n");
+      switch (pieza)
+	{
+	case 'Q':
+	  tablero[x][y] = 'Q';
+	  break;
+	case 'T':
+	  tablero[x][y] = 'T';
+	  break;
+	case 'A':
+	  tablero[x][y] = 'A';
+	  break;
+	case 'C':
+	  tablero[x][y] = 'C';
+	  break;
+	default:
+	  printf ("\n Pieza no válida\n");
+	}
     }
-  }
+
+  else if (tablero[x][y] == 'p')
+    {
+      switch (pieza)
+	{
+	case 'q':
+	  tablero[x][y] = 'q';
+	  break;
+	case 't':
+	  tablero[x][y] = 't';
+	  break;
+	case 'a':
+	  tablero[x][y] = 'a';
+	  break;
+	case 'c':
+	  tablero[x][y] = 'c';
+	  break;
+	default:
+	  printf ("\n Pieza no válida\n");
+	}
+    }
 }
 
 /* 
@@ -395,7 +396,7 @@ CoronacionPeon(char tablero[8][8], char pieza, int x, int y)
 */
 
 void
-enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x,, int pos_rey_y,
+enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x, int pos_rey_y,
 	 int fin_torre, int fin_rey, char tablero[8][8])
 {
   char aux_torre;
@@ -412,11 +413,4 @@ enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x,, int pos_rey_y,
   aux_rey = tablero[pos_rey_x][pos_rey_y];
   tablero[pos_rey_x][pos_rey_y] = tablero[fin_rey][pos_rey_y];
   tablero[fin_rey][pos_rey_y] = aux_rey;
-}
-
-void
-main (void)
-{
-  char tablero[8][8];
-  incializar (tablero);
 }

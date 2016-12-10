@@ -5,9 +5,30 @@
 #include <unistd.h>
 #include "tablero.h"
 
+enum animaciones
+{
+  ANIMACION_JAQUE,
+  ANIMACION_JAQUE_MATE,
+  ANIMACION_GANA_JUGADOR_1,
+  ANIMACION_GANA_JUGADOR_2,
+  ANIMACION_BIENVENIDA,
+  ANIMACION_DESPEDIDA
+};
+
+enum opciones
+{
+  OPCION_INICIAR_PARTIDA = 1,
+  OPCION_CONTINUAR_PARTIDA,
+  OPCION_MOSTRAR_MANUAL,
+  OPCION_CONFIGURAR,
+  OPCION_SALIR
+};
+
+char capturar_caracter (void);
 void setUp (void);
 void manual (void);
-void animaciones (int n);
+void mostrar_animacion (int n);
+void mostrar_opciones (void);
 void piezas_comidas (int a);
 void letreros (int n);
 void mostrar_menu (struct tablero t);

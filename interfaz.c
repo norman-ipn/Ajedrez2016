@@ -89,8 +89,7 @@ imprimir (struct tablero un_tablero)
 int
 jugar (struct tablero un_tablero)
 {
-  char opcion = '0';
-  char aux[128];
+  char opcion = '\0';
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
@@ -106,8 +105,7 @@ jugar (struct tablero un_tablero)
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
 
-      fgets (aux, sizeof (char) * 2, stdin);
-      sscanf (aux, "%c", &opcion);
+      opcion = capturar_caracter ();
 
       switch (opcion)
 	{
@@ -641,7 +639,7 @@ mostrar_animacion (int n)
 
   switch (n)
     {
-    case 1:
+    case ANIMACION_JAQUE:
       for (i = 0; i < 2; i++)
 	{
 	  system ("clear");
@@ -650,7 +648,7 @@ mostrar_animacion (int n)
 	  system ("clear");
 	}
       break;
-    case 2:
+    case ANIMACION_JAQUE_MATE:
       for (i = 0; i < 4; i++)
 	{
 	  system ("clear");
@@ -659,7 +657,7 @@ mostrar_animacion (int n)
 	  system ("clear");
 	}
       break;
-    case 3:
+    case ANIMACION_GANA_JUGADOR_1:
       for (i = 0; i < 3; i++)
 	{
 	  system ("clear");
@@ -668,7 +666,7 @@ mostrar_animacion (int n)
 	  system ("clear");
 	}
       break;
-    case 4:
+    case ANIMACION_GANA_JUGADOR_2:
       for (i = 0; i < 3; i++)
 	{
 	  system ("clear");
@@ -677,13 +675,13 @@ mostrar_animacion (int n)
 	  system ("clear");
 	}
       break;
-    case 5:
+    case ANIMACION_BIENVENIDA:
       system ("clear");
       system ("figlet 'Bienvenido'");
       sleep (2);
       system ("clear");
       break;
-    case 6:
+    case ANIMACION_DESPEDIDA:
       system ("clear");
       system ("figlet 'Adios :)'");
       sleep (2);
@@ -827,57 +825,76 @@ seleccionar_color_de_tablero ()
 }
 */
 
+char
+capturar_caracter (void)
+{
+  char buffer[128];
+  char opcion = '\0';
+
+  fflush (stdin);
+  fgets (buffer, 4, stdin);
+  sscanf (buffer, "%c", &opcion);
+
+  return opcion;
+}
+
+void
+mostrar_opciones (void)
+{
+  system ("clear");
+  printf ("Escoge el número de opción\n");
+  printf ("1) Nueva Partida\n");
+  printf ("2) Cargar Partida\n");
+  printf ("3) Manual del juego\n");
+  printf ("4) Configuración\n");
+  printf ("5) Salir\n\n");
+}
 
 void
 mostrar_menu (struct tablero un_tablero)
 {
-  char o = '\0';
-  char buffer[4];
+  char opcion = '\0';
 
   system ("clear");
-  mostrar_animacion (7);
+  mostrar_animacion (ANIMACION_BIENVENIDA);
   letreros (1);
 
   while (1 == 1)
     {
-      system ("clear");
-      printf ("Escoge el numero de opcion\n");
-      printf
-	("1) Nueva Partida\n2) Cargar Partida\n3)Manual del juego\n4) Configuracion\n5) Salir\n\n");
-      fflush (stdin);
-      fgets (buffer, 4, stdin);
-      sscanf (buffer, "%c", &o);
-      switch (o)
+      mostrar_opciones ();
+      opcion = capturar_caracter ();
+
+      switch (opcion)
 	{
-	case '1':
+	case OPCION_INICIAR_PARTIDA:
 	  system ("clear");
 	  jugar (un_tablero);
 	  break;
 
-	case '2':
+	case OPCION_CONTINUAR_PARTIDA:
 	  system ("clear");
-	  mostrar_animacion (8);
+	  mostrar_animacion (ANIMACION_BIENVENIDA);
 	  printf ("Aquí va la función que carga una partida");
 	  break;
 
-	case '3':
+	case OPCION_MOSTRAR_MANUAL:
 	  system ("clear");
 	  manual ();
 	  break;
-	case '4':
+	case OPCION_CONFIGURAR:
 	  system ("clear");
 	  setUp ();
 	  system ("clear");
 	  break;
-	case '5':
-	  mostrar_animacion (6);
+	case OPCION_SALIR:
+	  mostrar_animacion (ANIMACION_DESPEDIDA);
 	  system ("clear");
 	  return;
 	  break;
 	default:
 	  printf
 	    ("\nNo ha introducido una opción válida. Intente de nuevo por favor.\n");
-	  o = '\0';
+	  opcion = '\0';
 	  break;
 	}
     }
