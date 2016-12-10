@@ -27,9 +27,11 @@ main (void)
 
   struct tablero el_tablero;
 
-  iniciar_tablero( &el_tablero );
+  iniciar_tablero (&el_tablero);
 
- 
+  mostrar_menu ();
+
+
   /* ===== Bienvenida al Jugador */
   printf (" == BIENVENIDO A AJEDREZ ==\n");
   printf
@@ -74,9 +76,9 @@ main (void)
      la cual pudiera mandar un printf que diga "Jaque Mate. Ganaron las (blancas/negras)
      y despues se renicie el tablero para jugar de nuevo"
      EN CONSTRUCCION 
-     */
-  
-  actualiza_historial(F.resultadof);
-  
+   */
+
+  actualiza_historial (F.resultadof);
+
   return 0;
 }
