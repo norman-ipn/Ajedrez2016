@@ -90,6 +90,8 @@ int
 jugar (struct tablero un_tablero)
 {
   char opcion = '\0';
+  FILE *registro = NULL;
+  int letra = 0;
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
@@ -135,9 +137,24 @@ jugar (struct tablero un_tablero)
 
 	case 'r':
 	  system ("clear");
-	  printf
-	    ("\nAquí se debe desplegar el registro de movimientos.\n\n");
+	  /*printf
+	    ("\nAquí se debe desplegar el registro de movimientos.\n\n");*/
+	  
+	  registro = fopen("PartidasGuardadas.txt","r");
+	  if (registro==NULL)
+	  {
+		printf("Error al obtener el registro de movimientos");
+		break;
+	  }
+	  else
+	  {
+	  while (letra != EOF)
+	  {
+		letra = fgetc(registro);
+		putchar(letra);
+	  }
 	  break;
+	  }
 
 	case 's':
 	  system ("clear");
