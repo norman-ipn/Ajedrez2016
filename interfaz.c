@@ -633,8 +633,9 @@ setUp (void)
   sleep (3);
 }
 
+
 void
-animaciones (int n)
+mostrar_animacion (int n)
 {
   int i = 0;
 
@@ -825,15 +826,16 @@ seleccionar_color_de_tablero ()
     }
 }
 */
+
+
 void
-menu (struct tablero un_tablero)
+mostrar_menu (struct tablero un_tablero)
 {
-  /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
   char o = '\0';
   char buffer[4];
 
   system ("clear");
-  animaciones (7);
+  mostrar_animacion (7);
   letreros (1);
 
   while (1 == 1)
@@ -854,7 +856,7 @@ menu (struct tablero un_tablero)
 
 	case '2':
 	  system ("clear");
-	  animaciones (8);
+	  mostrar_animacion (8);
 	  printf ("Aquí va la función que carga una partida");
 	  break;
 
@@ -868,7 +870,7 @@ menu (struct tablero un_tablero)
 	  system ("clear");
 	  break;
 	case '5':
-	  animaciones (6);
+	  mostrar_animacion (6);
 	  system ("clear");
 	  return;
 	  break;
@@ -881,10 +883,12 @@ menu (struct tablero un_tablero)
     }
 }
 
+/*
 int
-main_para_pruebas (int c, char **arg)	/*temporal */
+main_para_pruebas (int c, char **arg)
 {
   struct tablero un_tablero;
   menu (un_tablero);
   return 0;
 }
+*/

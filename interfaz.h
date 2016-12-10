@@ -10,7 +10,7 @@ void manual (void);
 void animaciones (int n);
 void piezas_comidas (int a);
 void letreros (int n);
-void menu (struct tablero t);
+void mostrar_menu (struct tablero t);
 void imprimir_tablero (struct tablero *t);
 void reglas_alfil (void);
 void reglas_basicas (void);
