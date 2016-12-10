@@ -7,7 +7,7 @@ verificar_jaque( struct tablero *un_tablero)
 }
 
 int
-paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe unas coordenadas y regresa 1 si en ese posición hay una casilla blanca o negra( está vacío) y 0 si no*/
+paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe las coordenadas de posición y regresa 1 si en ese posición hay una casilla blanca o negra (está vacío) y 0 si no*/
 {
   if (un_tablero->casillas[fila][columna] == 'X' || un_tablero->casillas[fila][columna] == ' ')/*Reescribí la condición con un ||*/
     {												/*Si no se puede usar simplemente regresarlo al código anterior*/
@@ -16,14 +16,14 @@ paso (struct tablero *un_tablero, int columna, int fila)/* Esta función recibe 
   return 0;
 }
 int
-conocer_turno_jugador (int turno)       /*Esta funcion podria complementar la funcion girar tablero */
+conocer_turno_jugador (int turno, struct tablero *un_tablero)       /*Esta función podria complementar la funcion girar tablero */
 {
 int mueve=0;
   if ((turno % 2) == 0)
     {
       mueve = 0;
       printf ("\nMueven blancas");
-      /*Aqui se usaria la funcion invertir tablero */
+      invertir_tablero(un_tablero);/*Aquí se requiere la función invertir tablero */
       return mueve;
 
     }
@@ -31,7 +31,7 @@ int mueve=0;
     {
       printf ("\nMueven negras");
       mueve = 1;
-      /*Aqui se usaria la funcion invertir tablero */
+       invertir_tablero(un_tablero);/*Aquí se requiere la función invertir tablero */
       return mueve;
     }
 }
@@ -68,11 +68,11 @@ invertir_tablero (struct tablero *un_tablero)/*Esta función invierte el tablero
       j = 0;
       i = i + 1;
       f_i = f_i - 1;
-    }	/*Aquí quite el 'return' pues es una funcion de tipo void*/
+    }	
 }
 
 int
-obtener_posicion (int Columna, int Fila)	/* esta función transforma la columna y la fila a un valor de 1 a 64, columna y fila tienen valor del 0 al 7(por ser de un arreglo de 8x8) */
+obtener_posicion (int Columna, int Fila) /* Esta función transforma la columna y la fila a un valor de 1 a 64, columna y fila tienen valor del 0 al 7(por ser de un arreglo de 8x8) */
 {
   int i = 0;
   int cuadrante = 0;
