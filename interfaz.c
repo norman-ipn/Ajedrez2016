@@ -138,23 +138,23 @@ jugar (struct tablero un_tablero)
 	case 'r':
 	  system ("clear");
 	  /*printf
-	    ("\nAquí se debe desplegar el registro de movimientos.\n\n");*/
-	  
-	  registro = fopen("PartidasGuardadas.txt","r");
-	  if (registro==NULL)
-	  {
-		printf("Error al obtener el registro de movimientos");
-		break;
-	  }
+	     ("\nAquí se debe desplegar el registro de movimientos.\n\n"); */
+
+	  registro = fopen ("PartidasGuardadas.txt", "r");
+	  if (registro == NULL)
+	    {
+	      printf ("Error al obtener el registro de movimientos");
+	      break;
+	    }
 	  else
-	  {
-	  while (letra != EOF)
-	  {
-		letra = fgetc(registro);
-		putchar(letra);
-	  }
-	  break;
-	  }
+	    {
+	      while (letra != EOF)
+		{
+		  letra = fgetc (registro);
+		  putchar (letra);
+		}
+	      break;
+	    }
 
 	case 's':
 	  system ("clear");
