@@ -47,8 +47,207 @@ movimiento_valido (char tablero[8][8], int x1, int y1, int x2, int y2)
   return validar_movimiento_peon (tablero, tablero[x1][y1], x1, y1, x2, y2);
 }
 
+/*-----FUNCIONES AUXILIARES PAR VALIDAR EL MOVIMIENTO DE CADA PIEZA*/
 
-// recorte el codigo de inicializar y solo lo coloque en tablero.h
+
+/* Recibe dos enteros, representando una coordenada,
+   devolvera el numero 1 si la coordenada esta dentro del tablero,
+   devolvera el numero -1 si la coordenada esta fuera del tablero. */
+int
+coordenada_valida (int x, int y)
+{
+  if (x < 0 || y < 0)
+    {
+      return -1;
+    }
+
+  if (x >= 8 || y >= 8)
+    {
+      return -1;
+    }
+
+  return 1;
+}
+
+
+/*Asumirr que los caracteres en mayuscula son las piezas negras
+y los caracteres en minuscula son piezas blancas*/
+char
+color_pieza (char pieza)
+{
+  /* B=Blanca, N=Negra, 0=Caracter invalido */
+  if ('a' <= pieza && pieza <= 'z')
+    {
+      return 'B';
+    }
+  else if ('A' <= pieza && pieza <= 'Z')
+    {
+      return 'N';
+    }
+  else
+    {
+      return '\0';
+    }
+}
+
+/* Regresa 1 si es valido, -1 si no lo es*/
+int
+validar_movimientos_continuos (char tablero[8][8], int direccion[4][2],
+			       int x1, int y1, int x2, int y2)
+{
+  int i = 0;
+  int siguiente_x = 0;
+  int siguiente_y = 0;
+
+  while (i < 4)
+    {
+      siguiente_x = x1 + direccion[i][0];
+      siguiente_y = y1 + direccion[i][1];
+      while (coordenada_valida (siguiente_x, siguiente_y) &&
+	     (tablero[siguiente_x][siguiente_y] == ' '
+	      || color_pieza (tablero[x1][y1]) !=
+	      color_pieza (tablero[siguiente_x][siguiente_y])))
+	{
+
+	  if (siguiente_x == x2 && siguiente_y == y2)
+	    {
+	      return 1;
+	    }
+
+	  siguiente_x = siguiente_x + direccion[i][0];
+	  siguiente_y = siguiente_y + direccion[i][1];
+	}
+      i = i + 1;
+    }
+  return -1;
+}
+
+int
+validar_movimiento_lineal(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	int direccion[4][2] = {  {0,1}, {0,-1}, {1,0}, {-1,0} };
+	return validar_movimientos_continuos(tablero, direccion, x1, y1, x2, y2);
+}
+
+
+/*La funcion va a ser invalida si no revisas si cuando se va a mover la funcion da lugar a un jaque*/
+/*Devuelve 1 si es valido, -1 si no lo es*/
+int
+validar_movimiento_diagonal(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	int direccion[4][2] = {  {1,1}, {1,-1}, {-1,1}, {-1,-1} };
+	return validar_movimientos_continuos(tablero, direccion, x1, y1, x2, y2);
+}
+
+
+/* En el arreglo "direccion" deben ir todos los posibles movimientos de la pieza */
+/* Esta funcion esta para la ficha de rey y caballo */
+
+int
+validar_movimientos_instantaneos (char tablero[8][8], int direccion[8][2],
+				  int x1, int y1, int x2, int y2)
+{
+  int i = 0;
+  int siguiente_x = 0;
+  int siguiente_y = 0;
+
+  while (i < 8)
+    {
+      siguiente_x = x1 + direccion[i][0];
+      siguiente_y = y1 + direccion[i][1];
+      if (coordenada_valida (siguiente_x, siguiente_y) &&
+	  (tablero[siguiente_x][siguiente_y] == ' '
+	   || color_pieza (tablero[x1][y1]) !=
+	   color_pieza (tablero[siguiente_x][siguiente_y])))
+	{
+
+	  if (siguiente_x == x2 && siguiente_y == y2)
+	    {
+	      return 1;
+	    }
+	}
+      i = i + 1;
+    }
+  return -1;
+}
+
+
+/*-------FUNCIONES PARA VALIDAR EL MOVIMIENTO DE CADA PIEZA-------*/
+int
+validar_movimiento_torre(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+  return validar_movimiento_lineal(tablero, x1, y1, x2, y2);
+}
+
+int
+validar_movimiento_alfil(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	return validar_movimiento_diagonal(tablero, x1, y1, x2, y2);
+}
+
+int
+validar_movimiento_caballo(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	int direccion[8][2] = { {2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {-1, 2}, {-1, -2}, {1, -2} };
+	return validar_movimientos_instantaneos(tablero, direccion, x1, y1, x2, y2);
+}
+
+int
+validar_movimiento_reina (char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+  if (x2 == x1 || y2 == y1)
+    {
+      return validar_movimiento_lineal (tablero, x1, y1, x2, y2);
+    }
+  else
+    {
+      return validar_movimiento_diagonal (tablero, x1, y1, x2, y2);
+    }
+}
+
+int
+validar_movimiento_rey(char tablero[8][8], int x1, int y1, int x2, int y2)
+{
+	int direccion[8][2] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
+	return validar_movimientos_instanteos(tablero, direccion, x1, y1, x2, y2);
+}
+
+/* 1 para valido, -1 para invalido */
+int
+validar_peon(char tablero[8][8], char negro_blanco, int x1, int y1, int x2, int y2)
+{
+  if(coordenada_valida(x2, y2) != 1 || y1 != y2) return -1;
+
+  int un_paso = 0;
+  int sentido = 0;
+  int dos_pasos = 0;
+  int paso_extra = 0;
+
+  sentido = (negro_blanco == 'p')? 1 : -1;
+
+  //Eje inicial en x de los peones
+  if( (negro_blanco == 'p' && x1 == 1) || (negro_blanco == 'P' && x1 == 6))
+  {
+  	paso_extra= sentido;
+  }
+
+  un_paso = x1 + sentido;
+  dos_pasos = x1 + sentido + paso_extra;	
+
+  if(un_paso == x2 && coordenada_valida(un_paso, y1) == 1 && tablero[un_paso][y1] == ' ')
+  {
+    return 1;
+  }
+
+  if(dos_pasos == x2 && coordenada_valida(dos_pasos, y1) == 1 && tablero[dos_pasos][y1] == ' ')
+  {
+    return 1;
+  }
+
+  return -1;
+}
+
+
 void
 inicializar (char a[8][8])
 {
