@@ -3,13 +3,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "tablero.h"
+
 void setUp (void);
 void manual (void);
 void animaciones (int n);
 void piezas_comidas (int a);
 void letreros (int n);
-void menu (void);
-void imprimir_tablero (struct tablero *tablero);
+void menu (struct tablero t);
+void imprimir_tablero (struct tablero *t);
 void reglas_alfil (void);
 void reglas_basicas (void);
 void reglas_caballo (void);

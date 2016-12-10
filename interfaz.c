@@ -12,18 +12,13 @@
 #define Cyan      "\x1b[36m"
 
 void
-imprimir ()
+imprimir (struct tablero un_tablero)
 {
-  int x1 = 0;
-  int x2 = 0;
-  int y1 = 0;
-  int y2 = 0;
   int a = 0;
   int x = 0;			/* variable de control de la posición del tablero en x */
   int y = 0;			/* variable de control de la posición del tablero en y */
   int f = 8;
-  int i = 0;
-  int juego = 1;
+
   char Partesuperior[] =
     "\u250F\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2513";
   char cuerpo[] =
@@ -34,72 +29,74 @@ imprimir ()
 /* impresion del tablero de ajedrez*/
   printf ("\n");
   printf ("    ");
-    {
-      printf ("%s", Partesuperior);
-      while (y < 7)
-	{
-	  printf ("\n");
-	  printf ("  %d ", f);
-	  while (a < 8)
-	    {
-	      printf ("\u2503 %c ", un_tablero.casillas[y][x]);
-	      /*\u2503 corresponde a una linea vertical */
-	      a = a + 1;
-	      x = x + 1;
 
-	    }
-	  printf ("\u2503");
-	  printf ("\n");
-	  printf ("   ");
-	  a = 0;
-	  printf (" %s ", cuerpo);
-	  a = 0;
-	  x = 0;
-	  y = y + 1;
-	  f = f - 1;
-	}
+
+  printf ("%s", Partesuperior);
+  while (y < 7)
+    {
       printf ("\n");
       printf ("  %d ", f);
       while (a < 8)
 	{
 	  printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+	  /*\u2503 corresponde a una linea vertical */
 	  a = a + 1;
 	  x = x + 1;
+
 	}
       printf ("\u2503");
       printf ("\n");
-      printf ("    ");
+      printf ("   ");
       a = 0;
-      printf ("%s", parteinferior);
-      printf ("\n");
-      printf ("    ");
+      printf (" %s ", cuerpo);
       a = 0;
-      while (a < 8)
-	{
-	  printf ("  %c ", 65 + a);
-	  a = a + 1;
-	}
-      /*printf                Esto lo dejo por si acaso 
-	("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y2   x2 y2");
-
-      scanf ("%d %d %d %d", &x1, &y1, &x2, &y2);
-      movimiento_valido (un_tablero.casillas, x1, y1, x2, y2);
-*/ 
+      x = 0;
+      y = y + 1;
+      f = f - 1;
     }
+  printf ("\n");
+  printf ("  %d ", f);
+  while (a < 8)
+    {
+      printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+      a = a + 1;
+      x = x + 1;
+    }
+  printf ("\u2503");
+  printf ("\n");
+  printf ("    ");
+  a = 0;
+  printf ("%s", parteinferior);
+  printf ("\n");
+  printf ("    ");
+  a = 0;
+  while (a < 8)
+    {
+      printf ("  %c ", 65 + a);
+      a = a + 1;
+    }
+  /*printf                Esto lo dejo por si acaso 
+     ("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y2   x2 y2");
+
+     scanf ("%d %d %d %d", &x1, &y1, &x2, &y2);
+     movimiento_valido (un_tablero.casillas, x1, y1, x2, y2);
+   */
+}
 
 
 
 /*Esta función despliega un menú de opciones durante la partida*/
 int
-jugar (void)
+jugar (struct tablero un_tablero)
 {
-  char opc = '0';
- 
+  char opcion = '0';
+  char aux[128];
+
   printf ("Comienza el juego\n\n");
-  while(1 == 1)
-  {
-      system("clear");
-      imprimir();
+  while (1 == 1)
+    {
+      system ("clear");
+      imprimir (un_tablero);
       printf ("¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
@@ -109,34 +106,39 @@ jugar (void)
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
 
-      fgets(aux, sizeof(char) * 2, stdin);
-      fscanf (aux, "%c", &ajedrez->opc);
+      fgets (aux, sizeof (char) * 2, stdin);
+      sscanf (aux, "%c", &opcion);
 
-      switch (ajedrez->opc)
+      switch (opcion)
 	{
 	case 'm':
 	  system ("clear");
-	  printf("\nAquí va una función que permite el movimiento de las piezas.\n\n");
+	  printf
+	    ("\nAquí va una función que permite el movimiento de las piezas.\n\n");
 	  break;
 
 	case 'g':
 	  system ("clear");
-	  printf("\nAquí va una función que guarda la partida actual.\n\n");
+	  printf
+	    ("\nAquí va una función que guarda la partida actual.\n\n");
 	  break;
 
 	case 'n':
 	  system ("clear");
-	  printf("\nAquí va una función que reinicia la partida actual.\n\n");;
+	  printf
+	    ("\nAquí va una función que reinicia la partida actual.\n\n");;
 	  break;
 
 	case 'c':
 	  system ("clear");
-	  printf ("\nAquí va una función que cancela el último movimiento.\n\n");
+	  printf
+	    ("\nAquí va una función que cancela el último movimiento.\n\n");
 	  break;
-		      
-        case 'r':
+
+	case 'r':
 	  system ("clear");
-	  printf ("\nAquí se debe desplegar el registro de movimientos.\n\n");
+	  printf
+	    ("\nAquí se debe desplegar el registro de movimientos.\n\n");
 	  break;
 
 	case 's':
@@ -149,9 +151,10 @@ jugar (void)
 	  system ("clear");
 	  printf ("La opción no es válida\n\n");
 	  break;
-  }
+	}
+    }
 }
-}
+
 /*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
 void
 imprimir_tablero (struct tablero *tablero)
@@ -634,44 +637,44 @@ void
 animaciones (int n)
 {
   int i = 0;
-	
+
   switch (n)
     {
     case 1:
       for (i = 0; i < 2; i++)
-        {
-          system ("clear");
-          system ("figlet 'Jaque!!'");
-          sleep (1);
-          system ("clear");
-        }
+	{
+	  system ("clear");
+	  system ("figlet 'Jaque!!'");
+	  sleep (1);
+	  system ("clear");
+	}
       break;
     case 2:
       for (i = 0; i < 4; i++)
-        {
-          system ("clear");
-          system ("figlet 'JaqueMate!!'");
-          sleep (1);
-          system ("clear");
-        }
+	{
+	  system ("clear");
+	  system ("figlet 'JaqueMate!!'");
+	  sleep (1);
+	  system ("clear");
+	}
       break;
     case 3:
       for (i = 0; i < 3; i++)
-        {
-          system ("clear");
-          system ("figlet 'Jugador 1 Gano!!'");
-          sleep (1);
-          system ("clear");
-        }
+	{
+	  system ("clear");
+	  system ("figlet 'Jugador 1 Gano!!'");
+	  sleep (1);
+	  system ("clear");
+	}
       break;
     case 4:
       for (i = 0; i < 3; i++)
-        {
-          system ("clear");
-          system ("figlet 'Jugador 2 Gano!!'");
-          sleep (1);
-          system ("clear");
-        }
+	{
+	  system ("clear");
+	  system ("figlet 'Jugador 2 Gano!!'");
+	  sleep (1);
+	  system ("clear");
+	}
       break;
     case 5:
       system ("clear");
@@ -693,12 +696,12 @@ animaciones (int n)
       break;
     case 8:
       for (i = 0; i < 5; i++)
-        {
-          system ("clear");
-          system ("figlet 'Cargando'");
-          sleep (1);
-          system ("clear");
-        }
+	{
+	  system ("clear");
+	  system ("figlet 'Cargando'");
+	  sleep (1);
+	  system ("clear");
+	}
       break;
     default:
       break;
@@ -823,7 +826,7 @@ seleccionar_color_de_tablero ()
 }
 */
 void
-menu (void)
+menu (struct tablero un_tablero)
 {
   /*hola aqui pondremos el menu, si ven que faltan opciones agreguenlas, por cierto, verifiquen que su editor no agregue nada más, en otras palabras, verifiquen que compile, el editor del ultimo que lo subio incerto diagonales de mas para que se visualizara el salto de linea, pero evitaba que compilara, ademas hay que pedir a los de archivos que nos creen persistencia para no ejecutar todo el tiempo el setup */
   char o = '\0';
@@ -846,7 +849,7 @@ menu (void)
 	{
 	case '1':
 	  system ("clear");
-	  jugar();
+	  jugar (un_tablero);
 	  break;
 
 	case '2':
@@ -857,7 +860,7 @@ menu (void)
 
 	case '3':
 	  system ("clear");
-          manual();
+	  manual ();
 	  break;
 	case '4':
 	  system ("clear");
@@ -879,8 +882,9 @@ menu (void)
 }
 
 int
-main (int c, char **arg)	/*temporal */
+main_para_pruebas (int c, char **arg)	/*temporal */
 {
-  menu ();
+  struct tablero un_tablero;
+  menu (un_tablero);
   return 0;
 }

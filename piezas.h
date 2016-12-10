@@ -30,6 +30,6 @@ evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x, int pos_torre_y
 void 
 CoronacionPeon(char tablero[8][8], char pieza, int x, int y);
 void
-enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x,, int pos_rey_y, int fin_torre, int fin_rey, char tablero[8][8]);
+enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x, int pos_rey_y, int fin_torre, int fin_rey, char tablero[8][8]);
 
 #endif	/*__PIEZAS_H_*/
