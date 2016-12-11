@@ -291,6 +291,18 @@ inicializar (char a[8][8])
 }
 
 int
+revisar_casilla_vacia (char tablero[8][8], int i, int j)
+{
+  /* Se verifica si la casilla introducida está vacía, si es así, se regresa el entero 1 */
+  if (tablero[i][j] != '\0')
+    {
+      return -1;
+    }
+  return 1;
+}
+
+
+int
 validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8])
 {
   int se_puede = 1;
