@@ -110,32 +110,35 @@
           x2=rand()%7;
           y2=rand()%7;
           validar_movimiento_torre(tablero,x1,y1,x2,y2);
-          //Horizontal
-          for(k=i;k<8;k++)
-          {
-            //validaMovimiento() 
-          }
-     
-          //Vertical
-
-/* NO se necesita volver a hacer ciclos y evaluar movimientos, para eso se hicieron las funciones de movimientos antes*/
-          
-          //Horizontal
-          for(k=i;k<8;k++)
-          {
-            //validaMovimiento() 
-          }
         }
         if(un_tablero == 'A')
         {
+          int x2,y2;
+          x2=rand()%7;
+          y2=rand()%7;
+          validar_movimiento_alfil(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'P')
         {
+          int x2,y2;
+          x2=rand()%7;
+          y2=rand()%7;
+          validar_movimiento_peon(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'C')
         {
+          int x2,y2;
+          x2=rand()%7;
+          y2=rand()%7;
+          validar_movimiento_caballo(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'D')
+        {
+          int x2,y2;
+          x2=rand()%7;
+          y2=rand()%7;
+          validar_movimiento_reina(tablero,x1,y1,x2,y2);
+        }
       }
     }
     
