@@ -17,9 +17,14 @@ struct tablero
   char casillas[8][8];
   char se_movio[8][8];
 };
+int
+buscar_atacantes_negros (int fila_K, int columna_K, char pieza, struct tablero *un_tablero);
+
+int buscar_atacantes_blancos (int fila_k, int columna_k,struct tablero *un_tablero);
 
 int verificar_jaque( struct tablero *un_tablero);
 
+int verificar_jaque_mate( struct tablero *un_tablero);
 void 
 iniciar_tablero (struct tablero *un_tablero);
 
