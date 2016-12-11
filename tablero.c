@@ -5,8 +5,8 @@ buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
 			 struct tablero *un_tablero)
 {
   int i = 0;
-  int valor_de_jaque = 0;
   int j = 0;
+  int valor_de_jaque = 0;
   while (i < 8)
     {
       while (j < 8)
@@ -183,8 +183,8 @@ verificar_jaque_mate (struct tablero *un_tablero)
 	}
       i = i + 1;
     }
-  estado_blancas = verificar_jaque (struct tablero *un_tablero);
-  estado_negras = verificar_jaque (struct tablero *un_tablero);
+  estado_blancas = verificar_jaque (un_tablero);
+  estado_negras = verificar_jaque (un_tablero);
   while (i < 8)
     {
 
@@ -193,7 +193,7 @@ verificar_jaque_mate (struct tablero *un_tablero)
 	  estado_blancas =
 	    estado_blancas +
 	    (validar_movimiento_rey
-	     (struct tablero *un_tablero, fila_K, columna_K,
+	     (un_tablero, fila_K, columna_K,
 	      (fila_K + direccion[i][0]), (columna_K + direccion[i][1])));
 	  if (estado_blancas == 0)
 	    {
@@ -206,7 +206,7 @@ verificar_jaque_mate (struct tablero *un_tablero)
 	  estado_negras =
 	    estado_negras +
 	    (validar_movimiento_rey
-	     (struct tablero *un_tablero, fila_k, columna_k,
+	     (un_tablero, fila_k, columna_k,
 	      (fila_k + direccion[i][0]), (columna_k + direccion[i][1])));
 	  if (estado_negras == 0)
 	    {
@@ -247,6 +247,7 @@ conocer_turno_jugador (int turno, struct tablero *un_tablero)	/*Esta función po
       invertir_tablero (un_tablero);	/*Aquí se requiere la función invertir tablero */
       return mueve;
     }
+  return 0;
 }
 
 void
@@ -411,6 +412,8 @@ iniciar_tablero (struct tablero *un_tablero)
     }
 }
 
+/*
+
 #define Negro    "\x1b[30m"
 #define RESET   "\x1b[0m"
 int
@@ -486,4 +489,4 @@ tablero_cyan (void)
   int i = 0;
   int j = 0;
   int e = 0;
-}
+}*/

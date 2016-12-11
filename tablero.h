@@ -18,47 +18,37 @@ struct tablero
   char se_movio[8][8];
 };
 int
-buscar_atacantes_negros (int fila_K, int columna_K, char pieza, struct tablero *un_tablero);
+buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
+			 struct tablero *un_tablero);
 
-int buscar_atacantes_blancos (int fila_k, int columna_k,struct tablero *un_tablero);
+int buscar_atacantes_blancos (int fila_k, int columna_k,
+			      struct tablero *un_tablero);
 
-int verificar_jaque( struct tablero *un_tablero);
+int verificar_jaque (struct tablero *un_tablero);
 
-int verificar_jaque_mate( struct tablero *un_tablero);
-void 
-iniciar_tablero (struct tablero *un_tablero);
+int verificar_jaque_mate (struct tablero *un_tablero);
+void iniciar_tablero (struct tablero *un_tablero);
 
-int
-paso (struct tablero *un_tablero, int columna, int fila);
-  
-void
-invertir_tablero (struct tablero *un_tablero);
-  
-int
-obtener_posicion (int Columna, int Fila);
-  
-char
-color_remplazo (int columna, int fila);
+int paso (struct tablero *un_tablero, int columna, int fila);
 
-int
-tablero_negro (void);
+void invertir_tablero (struct tablero *un_tablero);
 
-int
-tablero_verde (void);
+int obtener_posicion (int Columna, int Fila);
 
-int
-tablero_rojo (void);
+char color_remplazo (int columna, int fila);
 
-int
-tablero_amarillo (void);
+int tablero_negro (void);
 
-int
-tablero_azul (void);
+int tablero_verde (void);
 
-int
-tablero_magenta (void);
+int tablero_rojo (void);
 
-int
-tablero_cyan (void);
+int tablero_amarillo (void);
+
+int tablero_azul (void);
+
+int tablero_magenta (void);
+
+int tablero_cyan (void);
 
 #endif/*__TABLERO_H__*/

@@ -1,6 +1,4 @@
-#include "tablero.h"
 #include "piezas.h"
-#define __TABLERO_H___
 /* Asumiendo que minusculas son las blancas */
 /*  R es para rey */
 /*  Q es para reina */
@@ -14,37 +12,32 @@
 
 /* Asumire que ya esta incluida, por favor incluir */
 int
-movimiento_valido (char tablero[8][8], int x1, int y1, int x2, int y2)
+movimiento_valido (struct tablero *un_tablero, int x1, int y1, int x2, int y2)
 {
   char piezaActual = ' ';
-  piezaActual = tablero[x1][y2];
+  piezaActual = un_tablero->casillas[x1][y2];
 
   if (piezaActual == 'R' || piezaActual == 'r')
     {
-      return validar_movimiento_rey (tablero, x1, y1, x2, y2);
+      return validar_movimiento_rey (un_tablero, x1, y1, x2, y2);
     }
-
   if (piezaActual == 'Q' || piezaActual == 'q')
     {
-      return validar_movimiento_reina (tablero, x1, y1, x2, y2);
+      return validar_movimiento_reina (un_tablero, x1, y1, x2, y2);
     }
-
   if (piezaActual == 'A' || piezaActual == 'a')
     {
-      return validar_movimiento_alfil (tablero, x1, y1, x2, y2);
+      return validar_movimiento_alfil (un_tablero, x1, y1, x2, y2);
     }
-
   if (piezaActual == 'T' || piezaActual == 't')
     {
-      return validar_movimiento_torre (tablero, x1, y1, x2, y2);
+      return validar_movimiento_torre (un_tablero, x1, y1, x2, y2);
     }
-
   if (piezaActual == 'C' || piezaActual == 'c')
     {
-      return validar_movimiento_caballo (tablero, x1, y1, x2, y2);
+      return validar_movimiento_caballo (un_tablero, x1, y1, x2, y2);
     }
-
-  return validar_movimiento_peon (tablero, tablero[x1][y1], x1, y1, x2, y2);
+  return validar_movimiento_peon (un_tablero, x1, y1, x2, y2);
 }
 
 /*-----FUNCIONES AUXILIARES PAR VALIDAR EL MOVIMIENTO DE CADA PIEZA*/
@@ -70,8 +63,10 @@ coordenada_valida (int x, int y)
 }
 
 
-/*Asumirr que los caracteres en mayuscula son las piezas negras
-y los caracteres en minuscula son piezas blancas*/
+/*
+ Piezas negras en mayúsculas
+ Piezas blancas en minúsculas
+*/
 char
 color_pieza (char pieza)
 {
@@ -84,16 +79,16 @@ color_pieza (char pieza)
     {
       return 'N';
     }
-  else
-    {
-      return '\0';
-    }
+  return '\0';
 }
 
-/* Regresa 1 si es valido, -1 si no lo es*/
+/* 
+ Regresa 1 si es valido, -1 si no lo es
+*/
 int
-validar_movimientos_continuos (char tablero[8][8], int direccion[4][2],
-			       int x1, int y1, int x2, int y2)
+validar_movimientos_continuos (struct tablero *un_tablero,
+			       int direccion[4][2], int x1, int y1, int x2,
+			       int y2)
 {
   int i = 0;
   int siguiente_x = 0;
@@ -104,9 +99,9 @@ validar_movimientos_continuos (char tablero[8][8], int direccion[4][2],
       siguiente_x = x1 + direccion[i][0];
       siguiente_y = y1 + direccion[i][1];
       while (coordenada_valida (siguiente_x, siguiente_y) &&
-	     (tablero[siguiente_x][siguiente_y] == ' '
-	      || color_pieza (tablero[x1][y1]) !=
-	      color_pieza (tablero[siguiente_x][siguiente_y])))
+	     (un_tablero->casillas[siguiente_x][siguiente_y] == ' '
+	      || color_pieza (un_tablero->casillas[x1][y1]) !=
+	      color_pieza (un_tablero->casillas[siguiente_x][siguiente_y])))
 	{
 
 	  if (siguiente_x == x2 && siguiente_y == y2)
@@ -123,20 +118,22 @@ validar_movimientos_continuos (char tablero[8][8], int direccion[4][2],
 }
 
 int
-validar_movimiento_lineal(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_lineal (struct tablero *un_tablero, int x1, int y1, int x2,
+			   int y2)
 {
-	int direccion[4][2] = {  {0,1}, {0,-1}, {1,0}, {-1,0} };
-	return validar_movimientos_continuos(tablero, direccion, x1, y1, x2, y2);
+  int direccion[4][2] = { {0, 1}, {0, -1}, {1, 0}, {-1, 0} };
+  return validar_movimientos_continuos (tablero, direccion, x1, y1, x2, y2);
 }
 
 
 /*La funcion va a ser invalida si no revisas si cuando se va a mover la funcion da lugar a un jaque*/
 /*Devuelve 1 si es valido, -1 si no lo es*/
 int
-validar_movimiento_diagonal(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_diagonal (struct tablero *un_tablero, int x1, int y1,
+			     int x2, int y2)
 {
-	int direccion[4][2] = {  {1,1}, {1,-1}, {-1,1}, {-1,-1} };
-	return validar_movimientos_continuos(tablero, direccion, x1, y1, x2, y2);
+  int direccion[4][2] = { {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
+  return validar_movimientos_continuos (tablero, direccion, x1, y1, x2, y2);
 }
 
 
@@ -144,8 +141,9 @@ validar_movimiento_diagonal(char tablero[8][8], int x1, int y1, int x2, int y2)
 /* Esta funcion esta para la ficha de rey y caballo */
 
 int
-validar_movimientos_instantaneos (char tablero[8][8], int direccion[8][2],
-				  int x1, int y1, int x2, int y2)
+validar_movimientos_instantaneos (struct tablero *un_tablero,
+				  int direccion[8][2], int x1, int y1, int x2,
+				  int y2)
 {
   int i = 0;
   int siguiente_x = 0;
@@ -174,26 +172,34 @@ validar_movimientos_instantaneos (char tablero[8][8], int direccion[8][2],
 
 /*-------FUNCIONES PARA VALIDAR EL MOVIMIENTO DE CADA PIEZA-------*/
 int
-validar_movimiento_torre(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_torre (struct tablero *un_tablero, int x1, int y1, int x2,
+			  int y2)
 {
-  return validar_movimiento_lineal(tablero, x1, y1, x2, y2);
+  return validar_movimiento_lineal (tablero, x1, y1, x2, y2);
 }
 
 int
-validar_movimiento_alfil(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_alfil (struct tablero *un_tablero, int x1, int y1, int x2,
+			  int y2)
 {
-	return validar_movimiento_diagonal(tablero, x1, y1, x2, y2);
+  return validar_movimiento_diagonal (tablero, x1, y1, x2, y2);
 }
 
 int
-validar_movimiento_caballo(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_caballo (struct tablero *un_tablero, int x1, int y1,
+			    int x2, int y2)
 {
-	int direccion[8][2] = { {2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {-1, 2}, {-1, -2}, {1, -2} };
-	return validar_movimientos_instantaneos(tablero, direccion, x1, y1, x2, y2);
+  int direccion[8][2] =
+    { {2, 1}, {2, -1}, {-2, 1}, {-2, -1}, {1, 2}, {-1, 2}, {-1, -2}, {1,
+								      -2}
+  };
+  return validar_movimientos_instantaneos (tablero, direccion, x1, y1, x2,
+					   y2);
 }
 
 int
-validar_movimiento_reina (char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_reina (struct tablero *un_tablero, int x1, int y1, int x2,
+			  int y2)
 {
   if (x2 == x1 || y2 == y1)
     {
@@ -206,95 +212,62 @@ validar_movimiento_reina (char tablero[8][8], int x1, int y1, int x2, int y2)
 }
 
 int
-validar_movimiento_rey(char tablero[8][8], int x1, int y1, int x2, int y2)
+validar_movimiento_rey (struct tablero *un_tablero, int x1, int y1, int x2,
+			int y2)
 {
-	int direccion[8][2] = { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
-	return validar_movimientos_instanteos(tablero, direccion, x1, y1, x2, y2);
+  int direccion[8][2] =
+    { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
+  return validar_movimientos_instanteos (tablero, direccion, x1, y1, x2, y2);
 }
 
 /* 1 para valido, -1 para invalido */
 int
-validar_peon(char tablero[8][8], char negro_blanco, int x1, int y1, int x2, int y2)
+validar_peon (struct tablero *un_tablero, char negro_blanco, int x1, int y1,
+	      int x2, int y2)
 {
-  if(coordenada_valida(x2, y2) != 1 || y1 != y2) return -1;
-
   int un_paso = 0;
   int sentido = 0;
   int dos_pasos = 0;
   int paso_extra = 0;
 
-  sentido = (negro_blanco == 'p')? 1 : -1;
+  if (coordenada_valida (x2, y2) != 1 || y1 != y2)
+    {
+      return -1;
+    }
 
-  //Eje inicial en x de los peones
-  if( (negro_blanco == 'p' && x1 == 1) || (negro_blanco == 'P' && x1 == 6))
-  {
-  	paso_extra= sentido;
-  }
+  sentido = (negro_blanco == 'p') ? 1 : -1;
+
+  /*Eje inicial en x de los peones */
+  if ((negro_blanco == 'p' && x1 == 1) || (negro_blanco == 'P' && x1 == 6))
+    {
+      paso_extra = sentido;
+    }
 
   un_paso = x1 + sentido;
-  dos_pasos = x1 + sentido + paso_extra;	
+  dos_pasos = x1 + sentido + paso_extra;
 
-  if(un_paso == x2 && coordenada_valida(un_paso, y1) == 1 && tablero[un_paso][y1] == ' ')
-  {
-    return 1;
-  }
+  if (un_paso == x2 && coordenada_valida (un_paso, y1) == 1
+      && tablero[un_paso][y1] == ' ')
+    {
+      return 1;
+    }
 
-  if(dos_pasos == x2 && coordenada_valida(dos_pasos, y1) == 1 && tablero[dos_pasos][y1] == ' ')
-  {
-    return 1;
-  }
+  if (dos_pasos == x2 && coordenada_valida (dos_pasos, y1) == 1
+      && tablero[dos_pasos][y1] == ' ')
+    {
+      return 1;
+    }
 
   return -1;
 }
 
 
-void
-inicializar (char a[8][8])
-{
-  int x = 0;
-  int y = 0;
-  int i = 0;
-  while (y <= 8)
-
-    {
-      while (x <= 8)
-
-	{
-	  a[x][y] = '\0';
-	  x = x + 1;
-	}
-      y = y + 1;
-    }
-  a[0][0] = 't';
-  a[0][1] = 'c';
-  a[0][2] = 'a';
-  a[0][3] = 'd';
-  a[0][4] = 'r';
-  a[0][5] = 'a';
-  a[0][6] = 'c';
-  a[0][7] = 't';
-  a[7][0] = 'T';
-  a[7][1] = 'C';
-  a[7][2] = 'A';
-  a[7][3] = 'D';
-  a[7][4] = 'R';
-  a[7][5] = 'A';
-  a[7][6] = 'C';
-  a[7][7] = 'T';
-  while (i <= 7)
-
-    {
-      a[1][i] = 'p';
-      a[6][i] = 'P';
-      i = i + 1;
-    }
-}
 
 int
-revisar_casilla_vacia (char tablero[8][8], int i, int j)
+revisar_casilla_vacia (struct tablero *un_tablero, int i, int j)
 {
   /* Se verifica si la casilla introducida está vacía, si es así, se regresa el entero 1 */
-  if (tablero[i][j] != '\0')
+  if (un_tablero->casillas[i][j] != '\0')
     {
       return -1;
     }
@@ -303,7 +276,8 @@ revisar_casilla_vacia (char tablero[8][8], int i, int j)
 
 
 int
-validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8])
+validar_enroque_largo_negro (struct tablero *un_tablero, int mov_torre,
+			     int mov_rey)
 {
   int se_puede = 1;
   int posini_x = 4;
@@ -350,7 +324,8 @@ validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8])
 
 
 int
-validar_enroque_largo_blanco (int mov_TD, int mov_R, char tablero[8][8])
+validar_enroque_largo_blanco (struct tablero *un_tablero, int mov_TD,
+			      int mov_R)
 {
   int se_puede = 0;
   int posini_x = 4;
@@ -397,7 +372,8 @@ validar_enroque_largo_blanco (int mov_TD, int mov_R, char tablero[8][8])
 }
 
 int
-validar_enroque_corto_negro (int mov_torre, int mov_rey, char tablero[8][8])
+validar_enroque_corto_negro (struct tablero *un_tablero, int mov_torre,
+			     int mov_rey)
 {
   int se_puede = 1;
   int posini_x = 4;
@@ -444,7 +420,8 @@ validar_enroque_corto_negro (int mov_torre, int mov_rey, char tablero[8][8])
 }
 
 int
-validar_enroque_corto_blanco (int mov_torre, int mov_rey, char tablero[8][8])
+validar_enroque_corto_blanco (struct tablero *un_tablero, int mov_torre,
+			      int mov_rey)
 {
   int se_puede = 1;
   int posini_x = 7;
@@ -489,40 +466,16 @@ validar_enroque_corto_blanco (int mov_torre, int mov_rey, char tablero[8][8])
   return se_puede;
 }
 
-/*
-  la variable turno se recibe desde el main
-  cuenta los turnos jugados hasta el momento dentro del ciclo while principal
-  esta función retorna 0 si es turno de blancas
-  retorna 1 en turno de negras
-  
-  si soy sincero no se si esta función encaja bien aquí o en otro módulo, pero dado que se ocupa para varias funciones de
-  movimiento la dejo aquí
-*/
-
-int
-conocer_turno_jugador (int turno)
-{
-  int contador_turno = turno;
-  if ((turno % 2) == 0)
-    {
-      return 0;
-    }
-  if ((turno % 2) == 1)
-    {
-      return 1;
-    }
-}
 
 /*
   función que permite indicar el tipo de enroque que será ejecutado
 */
 
 void
-evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
+evaluar_enroque (struct tablero *un_tablero, int turno, int pos_torre_x,
 		 int pos_torre_y)
 {
   int mov_valido = 0;
-  int turno_jug = conocer_turno_jugador (turno);
   if (turno == 0)
     {
       if ((pos_torre_x == 0) && (pos_torre_y == 0))
@@ -557,44 +510,44 @@ evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
 }
 
 void
-CoronacionPeon (char tablero[8][8], char pieza, int x, int y)
+CoronacionPeon (struct tablero *un_tablero, char pieza, int x, int y)
 {
-  if (tablero[x][y] == 'P')
+  if (tablero->casillas[x][y] == 'P')
     {
       switch (pieza)
 	{
 	case 'Q':
-	  tablero[x][y] = 'Q';
+	  tablero->casillas[x][y] = 'Q';
 	  break;
 	case 'T':
-	  tablero[x][y] = 'T';
+	  tablero->casillas[x][y] = 'T';
 	  break;
 	case 'A':
-	  tablero[x][y] = 'A';
+	  tablero->casillas[x][y] = 'A';
 	  break;
 	case 'C':
-	  tablero[x][y] = 'C';
+	  tablero->casillas[x][y] = 'C';
 	  break;
 	default:
 	  printf ("\n Pieza no válida\n");
 	}
     }
 
-  else if (tablero[x][y] == 'p')
+  else if (tablero->casillas[x][y] == 'p')
     {
       switch (pieza)
 	{
 	case 'q':
-	  tablero[x][y] = 'q';
+	  tablero->casillas[x][y] = 'q';
 	  break;
 	case 't':
-	  tablero[x][y] = 't';
+	  tablero->casillas[x][y] = 't';
 	  break;
 	case 'a':
-	  tablero[x][y] = 'a';
+	  tablero->casillas[x][y] = 'a';
 	  break;
 	case 'c':
-	  tablero[x][y] = 'c';
+	  tablero->casillas[x][y] = 'c';
 	  break;
 	default:
 	  printf ("\n Pieza no válida\n");
@@ -607,11 +560,11 @@ CoronacionPeon (char tablero[8][8], char pieza, int x, int y)
 */
 
 void
-enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x, int pos_rey_y,
-	 int fin_torre, int fin_rey, char tablero[8][8])
+enrocar (struct tablero *un_tablero, int pos_torre_x, int pos_torre_y,
+	 int pos_rey_x, int pos_rey_y, int fin_torre, int fin_rey)
 {
-  char aux_torre;
-  char aux_rey;
+  char aux_torre = '\0';
+  char aux_rey = '\0';
   /*
      parte de la función que mueve a la torre de sitio
    */

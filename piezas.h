@@ -2,6 +2,7 @@
 #define __PIEZAS_H__
 
 #include <stdio.h>
+#include "tablero.h"
 
 enum piezas
 {
@@ -13,22 +14,24 @@ enum piezas
   REY_BLANCO, REY_NEGRO,
   VACIA
 };
-void inicializar (char a[8][8]);
-int movimiento_valido (char tablero[8][8], int x1, int y1, int x2, int y2);
-int
-validar_enroque_largo_negro (int mov_torre, int mov_rey, char tablero[8][8]);
-int validar_enroque_largo_blanco (int mov_TD, int mov_R, char tablero[8][8]);
-int
-validar_enroque_corto_negro (int mov_torre, int mov_rey, char tablero[8][8]);
-int
-validar_enroque_corto_blanco (int mov_torre, int mov_rey, char tablero[8][8]);
-int conocer_turno_jugador (int turno);
+int movimiento_valido (struct tablero *, int, int, int, int);
+int validar_movimiento_rey (struct tablero *, int, int, int, int);
+int validar_movimiento_reina (struct tablero *, int, int, int, int);
+int validar_movimiento_alfil (struct tablero *, int, int, int, int);
+int validar_movimiento_torre (struct tablero *, int, int, int, int);
+int validar_movimiento_caballo (struct tablero *, int, int, int, int);
+int validar_movimiento_peon (struct tablero *, int, int, int, int);
+
+int validar_enroque_largo_negro (struct tablero *, int, int);
+int validar_enroque_largo_blanco (struct tablero *, int, int);
+int validar_enroque_corto_negro (struct tablero *, int, int);
+int validar_enroque_corto_blanco (struct tablero *, int, int);
 void
-evaluar_enroque (char tablero[8][8], int turno, int pos_torre_x,
+evaluar_enroque (struct tablero *, int turno, int pos_torre_x,
 		 int pos_torre_y);
-void CoronacionPeon (char tablero[8][8], char pieza, int x, int y);
+void CoronacionPeon (struct tablero *, char pieza, int x, int y);
 void
-enrocar (int pos_torre_x, int pos_torre_y, int pos_rey_x, int pos_rey_y,
-	 int fin_torre, int fin_rey, char tablero[8][8]);
+enrocar (struct tablero *, int pos_torre_x, int pos_torre_y, int pos_rey_x,
+	 int pos_rey_y, int fin_torre, int fin_rey);
 
 #endif	/*__PIEZAS_H_*/
