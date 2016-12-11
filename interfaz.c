@@ -119,14 +119,13 @@ jugar (struct tablero un_tablero)
 
 	case 'g':
 	  system ("clear");
-	  printf
-	    ("\nAquí va una función que guarda la partida actual.\n\n");
+	  Guardar_Partida();//Falta agregar los argumentos.
 	  break;
 
 	case 'n':
 	  system ("clear");
 	  printf
-	    ("\nAquí va una función que reinicia la partida actual.\n\n");;
+	  iniciar_tablero(el_tablero);
 	  break;
 
 	case 'c':
@@ -891,7 +890,7 @@ mostrar_menu (struct tablero un_tablero)
 	case OPCION_CONTINUAR_PARTIDA:
 	  system ("clear");
 	  mostrar_animacion (ANIMACION_BIENVENIDA);
-	  printf ("Aquí va la función que carga una partida");
+	  Guardar_Partida();/*No entendí que recibe de argumento*/
 	  break;
 
 	case OPCION_MOSTRAR_MANUAL:
