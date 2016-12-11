@@ -8,37 +8,7 @@
 /*  P es para peon */
 
 /*DEVUELVE -1 SI ES INVALIDO, 1 SI ES VALIDO */
-/* Necesitamos una biblioteca con todas las funciones de validados */
 
-/* Asumire que ya esta incluida, por favor incluir */
-int
-movimiento_valido (struct tablero *un_tablero, int x1, int y1, int x2, int y2)
-{
-  char piezaActual = ' ';
-  piezaActual = un_tablero->casillas[x1][y2];
-
-  if (piezaActual == 'R' || piezaActual == 'r')
-    {
-      return validar_movimiento_rey (un_tablero, x1, y1, x2, y2);
-    }
-  if (piezaActual == 'Q' || piezaActual == 'q')
-    {
-      return validar_movimiento_reina (un_tablero, x1, y1, x2, y2);
-    }
-  if (piezaActual == 'A' || piezaActual == 'a')
-    {
-      return validar_movimiento_alfil (un_tablero, x1, y1, x2, y2);
-    }
-  if (piezaActual == 'T' || piezaActual == 't')
-    {
-      return validar_movimiento_torre (un_tablero, x1, y1, x2, y2);
-    }
-  if (piezaActual == 'C' || piezaActual == 'c')
-    {
-      return validar_movimiento_caballo (un_tablero, x1, y1, x2, y2);
-    }
-  return validar_movimiento_peon (un_tablero, x1, y1, x2, y2);
-}
 
 /*-----FUNCIONES AUXILIARES PAR VALIDAR EL MOVIMIENTO DE CADA PIEZA*/
 
@@ -261,7 +231,34 @@ validar_peon (struct tablero *un_tablero, char negro_blanco, int x1, int y1,
   return -1;
 }
 
+int
+movimiento_valido (struct tablero *un_tablero, int x1, int y1, int x2, int y2)
+{
+  char piezaActual = ' ';
+  piezaActual = un_tablero->casillas[x1][y2];
 
+  if (piezaActual == 'R' || piezaActual == 'r')
+    {
+      return validar_movimiento_rey (un_tablero, x1, y1, x2, y2);
+    }
+  if (piezaActual == 'Q' || piezaActual == 'q')
+    {
+      return validar_movimiento_reina (un_tablero, x1, y1, x2, y2);
+    }
+  if (piezaActual == 'A' || piezaActual == 'a')
+    {
+      return validar_movimiento_alfil (un_tablero, x1, y1, x2, y2);
+    }
+  if (piezaActual == 'T' || piezaActual == 't')
+    {
+      return validar_movimiento_torre (un_tablero, x1, y1, x2, y2);
+    }
+  if (piezaActual == 'C' || piezaActual == 'c')
+    {
+      return validar_movimiento_caballo (un_tablero, x1, y1, x2, y2);
+    }
+  return validar_movimiento_peon (un_tablero, x1, y1, x2, y2);
+}
 
 int
 revisar_casilla_vacia (struct tablero *un_tablero, int i, int j)
@@ -409,7 +406,7 @@ validar_enroque_corto_negro (struct tablero *un_tablero, int mov_torre,
 	}
       else
 	{
-	return -1:
+	return -1;
 	}
     }
   else
@@ -456,7 +453,7 @@ validar_enroque_corto_blanco (struct tablero *un_tablero, int mov_torre,
 	}
       else
 	{
-	return -1:
+	return -1;
 	}
     }
   else
