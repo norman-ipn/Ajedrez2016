@@ -1,12 +1,10 @@
 #include "ia.h"
 #include "time.h"
 
-
-
   
   /* ============================== FUNCIÓN PRINCIPAL ======================= */ 
   void
-  tirar_ai(struct tablero *un_tablero)
+  responder_jugada(struct tablero *el_tablero, int turno, char *respuesta)
   {
     /* Revisa si podemos comer y cuanto ganaríamos*/
     int comer = podemosComer(un_tablero);
@@ -18,17 +16,17 @@
     /* Si no podemos ni comer nada ni estamos por ser comidos pues mueve algo random*/
     if(comer == 0 && comidos == 0)
     {
-      MovimientoRandom(un_tablero);
+      int movimientoIndicado = MovimientoRandom(un_tablero);
       return;
     }
 
     /* Si  podemos comer o ser comido decide que es lo mejor y hazlo*/
     if(comer <= comidos)
-      escapar(un_tablero);
+      int movimientoIndicado = escapar(un_tablero);
     else
-      ataca(un_tablero);
+      int movimientoIndicado = ataca(un_tablero);
     
-  return;
+  return movimientoIndicado;
   }
 
   /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACIÓN ============================*/
@@ -69,10 +67,10 @@
   - ¿Qué hace?
   - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
   */
-  void
+  int
   escapar(struct tablero *un_tablero)
   {
-    
+    return movimiento;
   }
 
 
@@ -80,9 +78,10 @@
   - ¿Qué hace?
   - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la acción de comerla
   */
-  void
+  int
   atacar(struct tablero *un_tablero)
   {
+    return movimiento;
   }
 
 
@@ -90,7 +89,7 @@
   - ¿Qué hace?
   - Se va a encargar de generar un movimiento de pieza aleatorio si no vamos a comer o ser comidos
   */
-  void
+  int
   MovimientoRandom(struct tablero *un_tablero)
   {
   
@@ -141,7 +140,7 @@
         }
       }
     }
-    
+    return movimiento;
   }
 
   /* ============================== Funciones AUXILIARES =======================
