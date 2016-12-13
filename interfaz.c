@@ -89,9 +89,22 @@ imprimir (struct tablero un_tablero)
 int
 jugar (struct tablero un_tablero)
 {
+  int i = 0;
   char opcion = '\0';
   FILE *registro = NULL;
   int letra = 0;
+  char x_pieza = '0';
+  int y_pieza = 0;
+  char x_objetivo = '0';
+  int y_objetivo = '0';
+  int jugador = 0;
+  char columnas[16] =
+    { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
+    'g', 'h'
+  };
+  char entrada[2] = "0";
+  int x_piezad = 0;
+  int x_objetivod = 0;
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
@@ -113,19 +126,54 @@ jugar (struct tablero un_tablero)
 	{
 	case 'm':
 	  system ("clear");
+/*------SOLICITUD DE DATOS DE LAS PIEZAS------*/
 	  printf
-	    ("\nAquí va una función que permite el movimiento de las piezas.\n\n");
+	    ("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
+	  fgets (entrada, 1, stdin);
+	  sscanf (entrada, "%c", &x_pieza);
+	  printf ("\nINGRESE LA -FILA- DE LA PIEZA QUE DESEA MOVER [1-8]: ");
+	  fgets (entrada, 1, stdin);
+	  sscanf (entrada, "%d", &y_pieza);
+	  printf ("\nINGRESE LA -COLUMNA- DEL LUGAR OBJETIVO  [A-H]: ");
+	  fgets (entrada, 1, stdin);
+	  sscanf (entrada, "%c", &x_objetivo);
+	  printf ("\nINGRESE LA -FILA- DEL LUGAR OBJETIVO [1-8]: ");
+	  fgets (entrada, 1, stdin);
+	  sscanf (entrada, "%d", &y_objetivo);
+	  printf ("\nCONFIRME CON SU MUNERO DE JUGADOR [1 o 2]:  ");
+	  fgets (entrada, 1, stdin);
+	  sscanf (entrada, "%d", &jugador);
+
+/*--------TRATAMIENTO DE LOS DATOS--------*/
+	  for (i = 0; i < 8; i++)
+	    {
+	      if (x_pieza == columnas[i] || x_pieza == columnas[i + 8])
+		{
+		  x_piezad = i;
+		}
+
+	      if (x_objetivo == columnas[i] || x_objetivo == columnas[i + 8])
+		{
+		  x_objetivod = i;
+		}
+	    }
+
+	  y_pieza = y_pieza - 1;
+	  y_objetivo = y_objetivo - 1;
+
+	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
+			   y_objetivo);
+
 	  break;
 
 	case 'g':
 	  system ("clear");
-	  Guardar_Partida();//Falta agregar los argumentos.
+	  Guardar_Partida ();	//Falta agregar los argumentos.
 	  break;
 
 	case 'n':
 	  system ("clear");
-	  printf
-	  iniciar_tablero(el_tablero);
+	  printf iniciar_tablero (el_tablero);
 	  break;
 
 	case 'c':
@@ -136,9 +184,6 @@ jugar (struct tablero un_tablero)
 
 	case 'r':
 	  system ("clear");
-	  /*printf
-	     ("\nAquí se debe desplegar el registro de movimientos.\n\n"); */
-
 	  registro = fopen ("PartidasGuardadas.txt", "r");
 	  if (registro == NULL)
 	    {
@@ -890,7 +935,7 @@ mostrar_menu (struct tablero un_tablero)
 	case OPCION_CONTINUAR_PARTIDA:
 	  system ("clear");
 	  mostrar_animacion (ANIMACION_BIENVENIDA);
-	  Guardar_Partida();/*No entendí que recibe de argumento*/
+	  Guardar_Partida ();	/*No entendí que recibe de argumento */
 	  break;
 
 	case OPCION_MOSTRAR_MANUAL:
