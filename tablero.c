@@ -1,5 +1,5 @@
 #include "tablero.h"
-#include "piezas.h"
+
 void				/* Esta función busca a los reyes en la estructura tablero y necesita direcciones de memoria a las que les asignara un valor para que desde donde se haya llamado, se puedan trabajar */
 buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
 	      struct tablero *un_tablero)
@@ -60,7 +60,7 @@ buscar_atacantes_negros (int fila_K, int columna_K,
 	      break;
 	    case 't':
 	      valor_de_jaque =
-		validar_movimiento_torre (&(un_tablero), j, i, fila_K,
+		validar_movimiento_torre (un_tablero, j, i, fila_K,
 					  columna_K);
 	      if (valor_de_jaque == 1)
 		{
@@ -78,7 +78,7 @@ buscar_atacantes_negros (int fila_K, int columna_K,
 	      break;
 	    case 'q':
 	      valor_de_jaque =
-		validar_movimiento_reyna (un_tablero, j, i, fila_K,
+		validar_movimiento_reina (un_tablero, j, i, fila_K,
 					  columna_K);
 	      if (valor_de_jaque == 1)
 		{
@@ -147,7 +147,7 @@ buscar_atacantes_blancos (int fila_k, int columna_k,
 	      break;
 	    case 'Q':
 	      valor_de_jaque =
-		validar_movimiento_reyna (un_tablero, j, i, fila_k,
+		validar_movimiento_reina (un_tablero, j, i, fila_k,
 					  columna_k);
 	      if (valor_de_jaque == 1)
 		{
@@ -169,8 +169,6 @@ buscar_atacantes_blancos (int fila_k, int columna_k,
 int				/*Verifica si existe jaque para blancos o negros , regresa 0 si ninguna esta en jaque, 1 para blancos, 2 para negros */
 verificar_jaque (struct tablero *un_tablero)
 {
-  int i = 0;
-  int j = 0;
   int columna_k = 0;
   int fila_k = 0;
   int columna_K = 0;

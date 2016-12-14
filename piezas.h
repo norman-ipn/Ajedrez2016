@@ -1,6 +1,5 @@
 #ifndef __PIEZAS_H__
 #define __PIEZAS_H__
-
 #include <stdio.h>
 #include "tablero.h"
 
@@ -14,8 +13,8 @@ enum piezas
   REY_BLANCO, REY_NEGRO,
   VACIA
 };
-int movimiento_valido (struct tablero *a, int, int, int, int);
 
+int movimiento_valido (struct tablero *, int, int, int, int);
 int validar_movimiento_rey (struct tablero *, int, int, int, int);
 int validar_movimiento_reina (struct tablero *, int, int, int, int);
 int validar_movimiento_alfil (struct tablero *, int, int, int, int);

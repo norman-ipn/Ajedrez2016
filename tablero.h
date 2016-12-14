@@ -1,6 +1,12 @@
 #ifndef __TABLERO_H__
 #define __TABLERO_H__
 
+struct tablero
+{
+  char casillas[8][8];
+  char se_movio[8][8];
+};
+
 #include "piezas.h"
 
 enum filas
@@ -13,11 +19,6 @@ enum columnas
 };
 
 
-struct tablero
-{
-  char casillas[8][8];
-  char se_movio[8][8];
-};
 
 void
 buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,

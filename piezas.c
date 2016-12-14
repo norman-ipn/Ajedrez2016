@@ -1,4 +1,5 @@
 #include "piezas.h"
+
 /* Asumiendo que minusculas son las blancas */
 /*  R es para rey */
 /*  Q es para reina */
