@@ -6,7 +6,6 @@
   /* ============================== FUNCIÓN PRINCIPAL ======================= */ 
   void
   responder_jugada(struct tablero *el_tablero, int turno, char *respuesta)
-   /*Aquí es donde colocarán sus condicionales en el formato "A2A4" es decir, columna fila inicial, columna fila final. */
   {
     /* Revisa si podemos comer y cuanto ganaríamos*/
     int comer = podemosComer(un_tablero);
@@ -79,10 +78,45 @@
   /* ============================== Atacar =======================
   - ¿Qué hace?
   - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la acción de comerla
+  x1=Posición x Inicial   y1=Posición y inicial
   */
+  int revisar_casilla_peon(int x1,int y1)
+  {
+    int i=x1,j=y1;
+    if(tablero[i+1][j+1]!=' ')
+    {
+      return -1;
+    }
+    if(tablero[i-1][j+1]!=' ')
+    {
+      return -1;
+    }
+    return 0;
+  }
+/* FAVOR DE REVISAR LA FUNCION
+Funcion para revisar la casilla cuando escogemos un peón, revisa si sus dos esquinas superiores están amenazadas, si regresa -1
+quiere decir que hay una pieza en una de las esquinas.*/
   int
   atacar(struct tablero *un_tablero)
   {
+   
+    if(un_tablero=='P')
+    {
+      if(revisar_casilla_peon(x1,y1)==-1)
+      {
+        if(tablero[x1+1][y1+1]!=' ')
+        {
+          tablero[x1+1][y1+1]=tablero[x1][y1];
+          tablero[x1][y1]=' ';
+        }
+        else
+        {
+          tablero[x1-1][y1+1]=tablero[x1][y1];
+          tablero[x1][y1]=' ';
+        }
+      }
+      return movimiento;
+    }
     return movimiento;
   }
 
