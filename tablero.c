@@ -1,7 +1,35 @@
 #include "tablero.h"
 #include "piezas.h"
-int
-buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
+void				/* Esta función busca a los reyes en la estructura tablero y necesita direcciones de memoria a las que les asignara un valor para que desde donde se haya llamado, se puedan trabajar */
+buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
+	      struct tablero *un_tablero)
+{
+  int i = 0;
+  int j = 0;
+  while (i < 8)
+    {
+      while (j < 8)
+	{
+	  if (un_tablero->casillas[i][j] == 'K')
+	    {
+	      *(columna_K) = j;
+	      *(fila_K) = i;
+	    }
+	  if (un_tablero->casillas[i][j] == 'k')
+	    {
+	      *(columna_k) = j;
+	      *(fila_k) = i;
+	    }
+	  j = j + 1;
+	}
+      j = 0;
+      i = i + 1;
+    }
+  return;
+}
+
+int				/*Busca si hay alguna pieza negra que amenaze al rey blanco y si es valido regresa 1 si no hay ninguna pieza que lo amenaze regresa 0 */
+buscar_atacantes_negros (int fila_K, int columna_K,
 			 struct tablero *un_tablero)
 {
   int i = 0;
@@ -14,35 +42,44 @@ buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
 	  switch (un_tablero->casillas[i][j])
 	    {
 	    case 'p':
-	      valor_de_jaque = validar_movimiento_peon (fila_K, columna_K);
+	      valor_de_jaque =
+		validar_movimiento_peon (un_tablero, j, i, fila_K, columna_K);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'c':
-	      valor_de_jaque = validar_movimiento_caballo (fila_K, columna_K);
+	      valor_de_jaque =
+		validar_movimiento_caballo (un_tablero, j, i, fila_K,
+					    columna_K);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 't':
-	      valor_de_jaque = valiidar_movimiento_torre (fila_K, columna_K);
+	      valor_de_jaque =
+		validar_movimiento_torre (&(un_tablero), j, i, fila_K,
+					  columna_K);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'a':
-	      valor_de_jaque = validar_movimiento_alfil (fila_K, columna_K);
+	      valor_de_jaque =
+		validar_movimiento_alfil (un_tablero, j, i, fila_K,
+					  columna_K);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'q':
-	      valor_de_jaque = validar_movimiento_reyna (fila_K, columna_K);
+	      valor_de_jaque =
+		validar_movimiento_reyna (un_tablero, j, i, fila_K,
+					  columna_K);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
@@ -53,12 +90,13 @@ buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
 	    }
 	  j = j + 1;
 	}
+      j = 0;
       i = i + 1;
     }
   return 0;
 }
 
-int
+int				/*Busca si hay alguna pieza blanca que amenaze al rey negro y si es valido regresa 1 si no hay ninguna pieza que lo amenaze regresa 0 */
 buscar_atacantes_blancos (int fila_k, int columna_k,
 			  struct tablero *un_tablero)
 {
@@ -73,35 +111,44 @@ buscar_atacantes_blancos (int fila_k, int columna_k,
 	  switch (un_tablero->casillas[i][j])
 	    {
 	    case 'P':
-	      valor_de_jaque = validar_movimiento_peon (fila_k, columna_k);
+	      valor_de_jaque =
+		validar_movimiento_peon (un_tablero, j, i, fila_k, columna_k);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'C':
-	      valor_de_jaque = validar_movimiento_caballo (fila_k, columna_k);
+	      valor_de_jaque =
+		validar_movimiento_caballo (un_tablero, j, i, fila_k,
+					    columna_k);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'T':
-	      valor_de_jaque = valiidar_movimiento_torre (fila_k, columna_k);
+	      valor_de_jaque =
+		validar_movimiento_torre (un_tablero, j, i, fila_k,
+					  columna_k);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'A':
-	      valor_de_jaque = validar_movimiento_alfil (fila_k, columna_k);
+	      valor_de_jaque =
+		validar_movimiento_alfil (un_tablero, j, i, fila_k,
+					  columna_k);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
 		}
 	      break;
 	    case 'Q':
-	      valor_de_jaque = validar_movimiento_reyna (fila_k, columna_k);
+	      valor_de_jaque =
+		validar_movimiento_reyna (un_tablero, j, i, fila_k,
+					  columna_k);
 	      if (valor_de_jaque == 1)
 		{
 		  return 1;
@@ -111,14 +158,15 @@ buscar_atacantes_blancos (int fila_k, int columna_k,
 	      break;
 
 	    }
-	  i = i + 1;
+	  j = j + 1;
 	}
-      return valor_de_jaque;
+      j = 0;
+      i = i + 1;
     }
   return 0;
 }
 
-int
+int				/*Verifica si existe jaque para blancos o negros , regresa 0 si ninguna esta en jaque, 1 para blancos, 2 para negros */
 verificar_jaque (struct tablero *un_tablero)
 {
   int i = 0;
@@ -129,34 +177,24 @@ verificar_jaque (struct tablero *un_tablero)
   int fila_K = 0;
   int valor_de_jaque1 = 0;
   int valor_de_jaque2 = 0;
-  while (i < 8)
+  buscar_reyes (&(columna_K), &(fila_K), &(columna_k), &(fila_k), un_tablero);
+  valor_de_jaque1 = buscar_atacantes_negros (fila_K, columna_K, un_tablero);
+  valor_de_jaque2 = buscar_atacantes_blancos (fila_k, columna_k, un_tablero);
+  if (valor_de_jaque1 == 1)
     {
-      while (j < 8)
-	{
-	  if (un_tablero->casillas[i][j] == 'K')
-	    {
-	      columna_K = j;
-	      fila_K = i;
-	    }
-	  if (un_tablero->casillas[i][j] == 'k')
-	    {
-	      columna_k = j;
-	      fila_k = i;
-	    }
-	  j = j + 1;
-	}
-      i = i + 1;
+      return 1;
     }
-  valor_de_jaque1 = buscar_atacantes_negros (columna_K, fila_K);
-  valor_de_jaque2 = buscar_atacantes_blancos (columna_k, fila_k);
+  if (valor_de_jaque2 == 1)
+    {
+      return 2;
+    }
   return 0;
 }
 
-int
+int				/*Verifica si existe jaque_mate para blancos o negros , regresa 0 si ninguna esta en jaque, 1 para blancos, 2 para negros */
 verificar_jaque_mate (struct tablero *un_tablero)
 {
   int i = 0;
-  int j = 0;
   int columna_K = 0;
   int fila_K = 0;
   int columna_k = 0;
@@ -165,55 +203,43 @@ verificar_jaque_mate (struct tablero *un_tablero)
   int estado_negras = 0;
   int direccion[8][2] =
     { 1, 0, -1, 0, 0, 1, 0, -1, 1, 1, 1, -1, -1, 1, -1, -1 };
-  while (i < 8)
-    {
-      while (j < 8)
-	{
-	  if (un_tablero->casillas[i][j] == 'K')
-	    {
-	      columna_K = j;
-	      fila_K = i;
-	    }
-	  if (un_tablero->casillas[i][j] == 'k')
-	    {
-	      columna_k = j;
-	      fila_k = i;
-	    }
-	  j = j + 1;
-	}
-      i = i + 1;
-    }
+
+  buscar_reyes (&(columna_K), &(fila_K), &(columna_k), &(fila_k), un_tablero);
+
   estado_blancas = verificar_jaque (un_tablero);
   estado_negras = verificar_jaque (un_tablero);
-  while (i < 8)
+
+  if (estado_blancas == 1)
+    while (i < 8)
+      {
+	estado_blancas =
+	  estado_blancas +
+	  (validar_movimiento_rey
+	   (un_tablero, columna_K, fila_K, (columna_K + direccion[i][1]),
+	    (fila_K + direccion[i][0])));
+	if (estado_blancas == -7)
+	  {
+	    return 1;
+	  }
+	i = i + 1;
+      }
+  i = 0;
+  if (estado_negras == 1)
     {
 
-      if (estado_blancas == 1)
-	{
-	  estado_blancas =
-	    estado_blancas +
-	    (validar_movimiento_rey
-	     (un_tablero, fila_K, columna_K,
-	      (fila_K + direccion[i][0]), (columna_K + direccion[i][1])));
-	  if (estado_blancas == 0)
-	    {
-	      return estado_blancas;
-	    }
-
-	}
-      if (estado_negras == 1)
+      while (i < 8)
 	{
 	  estado_negras =
 	    estado_negras +
 	    (validar_movimiento_rey
-	     (un_tablero, fila_k, columna_k,
-	      (fila_k + direccion[i][0]), (columna_k + direccion[i][1])));
-	  if (estado_negras == 0)
+	     (un_tablero, fila_k, columna_k, (fila_k + direccion[i][0]),
+	      (columna_k + direccion[i][1])));
+	  if (estado_negras == -7)
 	    {
-	      return estado_negras;
+	      return 2;
 	    }
+	  i = i + 1;
 	}
-      j = j + 1;
     }
   return 0;
 }
