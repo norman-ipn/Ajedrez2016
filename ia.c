@@ -1,5 +1,6 @@
 #include "ia.h"
 #include "time.h"
+#include "stdlib.h"
 
   
   /* ============================== FUNCIÓN PRINCIPAL ======================= */ 
@@ -104,38 +105,37 @@
         if(un_tablero == 'T')
         {
           /*A las coordenadas se les va a asignar la semilla rand para que mueva en un número no mayor a 8 y verificar la casilla*/
-         /* Es un Ejemplo por que no se usar el rand xd :*/
           int x2,y2;
-          x2=rand()%7;
-          y2=rand()%7;
+          x2=rand()%9;
+          y2=rand()%(N+1);
           validar_movimiento_torre(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'A')
         {
           int x2,y2;
-          x2=rand()%7;
-          y2=rand()%7;
+          x2=rand()%9;
+          y2=rand()%(N+1);
           validar_movimiento_alfil(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'P')
         {
           int x2,y2;
-          x2=rand()%7;
-          y2=rand()%7;
+          x2=rand()%9;
+          y2=rand()%(N+1);
           validar_movimiento_peon(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'C')
         {
           int x2,y2;
-          x2=rand()%7;
-          y2=rand()%7;
+         x2=rand()%9;
+          y2=rand()%(N+1);
           validar_movimiento_caballo(tablero,x1,y1,x2,y2);
         }
         if(un_tablero == 'D')
         {
           int x2,y2;
-          x2=rand()%7;
-          y2=rand()%7;
+          x2=rand()%9;
+          y2=rand()%(N+1);
           validar_movimiento_reina(tablero,x1,y1,x2,y2);
         }
       }
