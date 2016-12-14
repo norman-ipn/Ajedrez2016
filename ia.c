@@ -10,6 +10,9 @@
     /* Revisa si podemos comer y cuanto ganaríamos*/
     int comer = podemosComer(un_tablero);
     
+  
+  
+    
     /* Revisa si nos pueden comer y cuanto perderíamos*/
     int comidos = podemosSerComidos(un_tablero);
     
@@ -64,23 +67,8 @@
   }
 
   /* =========== FUNCIONES EN LAS QUE ACTUAMOS ==============================================*/
-  /* ============================== Escapar =======================
-  - ¿Qué hace?
-  - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
-  */
-  int
-  escapar(struct tablero *un_tablero)
-  {
-    return movimiento;
-  }
 
-
-  /* ============================== Atacar =======================
-  - ¿Qué hace?
-  - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la acción de comerla
-  x1=Posición x Inicial   y1=Posición y inicial
-  */
-  int revisar_casilla_peon(int x1,int y1)
+int revisar_casilla_peon(int x1,int y1)
   {
     int i=x1,j=y1;
     if(tablero[i+1][j+1]!=' ')
@@ -93,9 +81,33 @@
     }
     return 0;
   }
-/* FAVOR DE REVISAR LA FUNCION
-Funcion para revisar la casilla cuando escogemos un peón, revisa si sus dos esquinas superiores están amenazadas, si regresa -1
+/*Funcion para revisar la casilla cuando escogemos un peón, revisa si sus dos esquinas superiores están amenazadas, si regresa -1
 quiere decir que hay una pieza en una de las esquinas.*/
+
+  /* ============================== Escapar =======================
+  - ¿Qué hace?
+  - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
+  */
+  int
+  escapar(struct tablero *un_tablero)
+  {
+    if(un_tablero=='P')
+    {
+    if(revisar_casilla_peon==-1)
+    {
+      tablero[x1][y1]=tablero[x1][y1+1];
+    }
+    }
+      
+    return movimiento;
+  }
+
+
+  /* ============================== Atacar =======================
+  - ¿Qué hace?
+  - Se va a encargar de tomando las coordenadas de la pieza que podemos comer, realizar la acción de comerla
+  x1=Posición x Inicial   y1=Posición y inicial
+  */
   int
   atacar(struct tablero *un_tablero)
   {
