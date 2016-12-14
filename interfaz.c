@@ -105,7 +105,6 @@ jugar (struct tablero *un_tablero)
   char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
-  int aux = 0;
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
@@ -168,7 +167,7 @@ jugar (struct tablero *un_tablero)
 
 	case 'g':
 	  system ("clear");
-	  if (jugador = 0)
+	  if (jugador == 0)
 	    {
 	      printf
 		("\n----------------**No se han realizado jugadas**------------------\n");
@@ -189,11 +188,9 @@ jugar (struct tablero *un_tablero)
 
 	case 'c':
 	  system ("clear");
-	  aux = x_piezad;
 	  x_piezad = x_objetivod;
 	  x_objetivod = x_piezad;
 
-	  aux = y_pieza;
 	  y_pieza = y_objetivo;
 	  y_objetivo = y_pieza;
 
