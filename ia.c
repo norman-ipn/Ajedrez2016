@@ -6,6 +6,7 @@
   /* ============================== FUNCIÓN PRINCIPAL ======================= */ 
   void
   responder_jugada(struct tablero *el_tablero, int turno, char *respuesta)
+   /*Aquí es donde colocarán sus condicionales en el formato "A2A4" es decir, columna fila inicial, columna fila final. */
   {
     /* Revisa si podemos comer y cuanto ganaríamos*/
     int comer = podemosComer(un_tablero);
