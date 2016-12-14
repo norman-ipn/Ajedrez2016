@@ -17,8 +17,12 @@ struct tablero
   char casillas[8][8];
   char se_movio[8][8];
 };
+void
+buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
+              struct tablero *un_tablero)
+
 int
-buscar_atacantes_negros (int fila_K, int columna_K, char pieza,
+buscar_atacantes_negros (int fila_K, int columna_K,
 			 struct tablero *un_tablero);
 
 int buscar_atacantes_blancos (int fila_k, int columna_k,
