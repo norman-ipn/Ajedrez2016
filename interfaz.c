@@ -12,7 +12,7 @@
 #define Cyan      "\x1b[36m"
 
 void
-imprimir (struct tablero un_tablero)
+imprimir (struct tablero *un_tablero)
 {
   int a = 0;
   int x = 0;			/* variable de control de la posición del tablero en x */
@@ -38,7 +38,7 @@ imprimir (struct tablero un_tablero)
       printf ("  %d ", f);
       while (a < 8)
 	{
-	  printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+	  printf ("\u2503 %c ", un_tablero->casillas[y][x]);
 	  /*\u2503 corresponde a una linea vertical */
 	  a = a + 1;
 	  x = x + 1;
@@ -58,7 +58,7 @@ imprimir (struct tablero un_tablero)
   printf ("  %d ", f);
   while (a < 8)
     {
-      printf ("\u2503 %c ", un_tablero.casillas[y][x]);
+      printf ("\u2503 %c ", un_tablero->casillas[y][x]);
       a = a + 1;
       x = x + 1;
     }
@@ -87,7 +87,7 @@ imprimir (struct tablero un_tablero)
 
 /*Esta función despliega un menú de opciones durante la partida*/
 int
-jugar (struct tablero un_tablero)
+jugar (struct tablero *un_tablero)
 {
   int i = 0;
   char opcion = '\0';
@@ -96,7 +96,7 @@ jugar (struct tablero un_tablero)
   char x_pieza = '0';
   int y_pieza = 0;
   char x_objetivo = '0';
-  int y_objetivo = '0';
+  int y_objetivo = 0;
   int jugador = 0;
   char columnas[16] =
     { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
@@ -105,12 +105,12 @@ jugar (struct tablero un_tablero)
   char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
+  int aux = 0;
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
     {
       system ("clear");
-      imprimir (un_tablero);
       printf ("¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
@@ -168,18 +168,38 @@ jugar (struct tablero un_tablero)
 
 	case 'g':
 	  system ("clear");
-	  Guardar_Partida ();	//Falta agregar los argumentos.
+	  if (jugador = 0)
+	    {
+	      printf
+		("\n----------------**No se han realizado jugadas**------------------\n");
+	    }
+	  else
+	    {
+	      Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
+			       y_objetivo);
+	      printf
+		("\n--------------Último movimiento guardado :D-------------\n");
+	    }
 	  break;
 
 	case 'n':
 	  system ("clear");
-	  printf iniciar_tablero (el_tablero);
+	  iniciar_tablero (un_tablero);
 	  break;
 
 	case 'c':
 	  system ("clear");
-	  printf
-	    ("\nAquí va una función que cancela el último movimiento.\n\n");
+	  aux = x_piezad;
+	  x_piezad = x_objetivod;
+	  x_objetivod = x_piezad;
+
+	  aux = y_pieza;
+	  y_pieza = y_objetivo;
+	  y_objetivo = y_pieza;
+
+	  invertir_tablero (un_tablero);
+	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
+			   y_objetivo);
 	  break;
 
 	case 'r':
@@ -211,6 +231,8 @@ jugar (struct tablero un_tablero)
 	  printf ("La opción no es válida\n\n");
 	  break;
 	}
+
+      imprimir (un_tablero);
     }
 }
 
@@ -912,7 +934,7 @@ mostrar_opciones (void)
 }
 
 void
-mostrar_menu (struct tablero un_tablero)
+mostrar_menu (struct tablero *un_tablero)
 {
   char opcion = '\0';
 
@@ -935,7 +957,7 @@ mostrar_menu (struct tablero un_tablero)
 	case OPCION_CONTINUAR_PARTIDA:
 	  system ("clear");
 	  mostrar_animacion (ANIMACION_BIENVENIDA);
-	  Guardar_Partida ();	/*No entendí que recibe de argumento */
+	  /* Guardar_Partida ();        No entendí que recibe de argumento */
 	  break;
 
 	case OPCION_MOSTRAR_MANUAL:
