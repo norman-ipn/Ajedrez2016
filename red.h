@@ -8,8 +8,9 @@
 #include <linux/if_packet.h>
 #include <net/ethernet.h>
 #include <string.h>
-#include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
+#include <sys/types.h>
+#include <netdb.h>
 
 #endif/*__RED_H__*/

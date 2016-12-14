@@ -202,7 +202,7 @@ verificar_jaque_mate (struct tablero *un_tablero)
   int estado_blancas = 0;
   int estado_negras = 0;
   int direccion[8][2] =
-    { 1, 0, -1, 0, 0, 1, 0, -1, 1, 1, 1, -1, -1, 1, -1, -1 };
+    { {1, 0}, {-1, 0}, {0, 1}, {0, -1}, {1, 1}, {1, -1}, {-1, 1}, {-1, -1} };
 
   buscar_reyes (&(columna_K), &(fila_K), &(columna_k), &(fila_k), un_tablero);
 

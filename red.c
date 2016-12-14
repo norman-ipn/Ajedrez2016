@@ -251,7 +251,7 @@ conectarse_a_anfitrion (void)
   rc = getaddrinfo ("Nombre de servidor", "Contraseña", &hints, &res);	/*Este nombre y contraseña lo ponen los jugadores anfitriones */
   if (rc > 0)			/*Supongo que le falto el: mayor que, en el condicional if */
     {
-      fprintf (stderr, "%s: %s", argv[0], gai_strerror (rc));
+      fprintf (stderr, ": %s", gai_strerror (rc));
       return EXIT_FAILURE;
     }
 
@@ -340,8 +340,8 @@ main_servidor2 (void)
 	  send (client_sockfd, ch, 1024, 0);
 	  inicio = 1;
 
-	  chats = chatservidor (int client, int server);
-	  chatc = chatcliente (int client);
+	  chats = chatservidor (client, server);
+	  chatc = chatcliente (client);
 
 	  if (chats == 0 && chatc == 0)
 	    {

@@ -2,11 +2,11 @@
 /*Recibe cada movimiento de los jugadores para guardarlos en el archivo*/
 void
 Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
-		       int y_final)
+		 int y_final)
 {
 /*Crear archivo para guardar jugadas */
   FILE *fichero = 0;
-  /*Cambie w a 'a' para poder escribir al final de la jugada anterior*/
+  /*Cambie w a 'a' para poder escribir al final de la jugada anterior */
   fichero = fopen ("PartidasGuardadas.txt", "a");
   if (fichero == 0)
     {
@@ -15,18 +15,20 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
     }
 
   fputs ("Paritdas Guardadas\n", fichero);
-  if(jugador==1){
-  fputs ("Movimiento Jugador 1\n",fichero);
-  fputs("x inicial  y inicial  x final  y final\n", fichero);
-  fprintf (fichero, "%d             %d          %d         %d\n", x_inicial,
-	   y_inicial, x_final, y_final);
-   }
-   if(jugador==2){
-     fputs ("Movimiento Jugador 2\n",fichero);
-     fputs("x inicial  y inicial  x final  y final\n", fichero);
-     fprintf (fichero, "%d             %d          %d         %d\n", x_inicial,
-   	   y_inicial, x_final, y_final);
-     }
+  if (jugador == 1)
+    {
+      fputs ("Movimiento Jugador 1\n", fichero);
+      fputs ("x inicial  y inicial  x final  y final\n", fichero);
+      fprintf (fichero, "%d             %d          %d         %d\n",
+	       x_inicial, y_inicial, x_final, y_final);
+    }
+  if (jugador == 2)
+    {
+      fputs ("Movimiento Jugador 2\n", fichero);
+      fputs ("x inicial  y inicial  x final  y final\n", fichero);
+      fprintf (fichero, "%d             %d          %d         %d\n",
+	       x_inicial, y_inicial, x_final, y_final);
+    }
   fclose (fichero);
   printf ("Archivo Guardado\n");
 }
@@ -41,15 +43,12 @@ continuar_partida (char archivo[100])
   size_t n = 0;
   fichero = fopen ("PartidasGuardada.txt", "r");
 
-  if (fp == 0)
-
+  if (fichero == 0)
     {
 
       printf ("No se pudo abrir el archivo");
 
     }
-
-
 
   n = fread (tablero, sizeof (char), 64, fichero);
 
@@ -70,33 +69,37 @@ continuar_partida (char archivo[100])
 /*Propongo que reciba el jugador para guardar las jugadas de cada juguador por separado y las coordenadas para despues guardarlas en el archivo*/
 void
 Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
-		       int y_fin al)
+		       int y_final)
 {
 /*En el arreglo use 160 ya que no se puede saber cuantas jugadas va a tener cada partida*/
-  int coordenadas [2][160][4];	/*Propongo que en coordenadas[1][][] sean las jugadas del jugador 1 y en coordenadas[2][][] las del 2 */
+  int coordenadas[2][160][4];	/*Propongo que en coordenadas[1][][] sean las jugadas del jugador 1 y en coordenadas[2][][] las del 2 */
   if (jugador == 1)
     {
-      for (int i = 0; i < 160; i++) {
-        for (int j = 0; j < 4; j++) {
-          printf("\nCoordenada Guardada en: %d|%d: ", i+1,j+1);
-            coordenadas[0][i][j]=x_inicial;
-            coordenadas[0][i][j]=y_inicial;
-            coordenadas[0][i][j]=x_final;
-            coordenadas[0][i][j]=y_final;
-        }
-      }
+      for (int i = 0; i < 160; i++)
+	{
+	  for (int j = 0; j < 4; j++)
+	    {
+	      printf ("\nCoordenada Guardada en: %d|%d: ", i + 1, j + 1);
+	      coordenadas[0][i][j] = x_inicial;
+	      coordenadas[0][i][j] = y_inicial;
+	      coordenadas[0][i][j] = x_final;
+	      coordenadas[0][i][j] = y_final;
+	    }
+	}
     }
   if (jugador == 2)
     {				/*Cuando la partida es contra IA se tomaria como jugador 2 */
-      for (int i = 0; i < 160; i++) {
-        for (int j = 0; j < 4; j++) {
-          printf("\nCoordenada Guardada en: %d|%d: ", i+1,j+1);
-            coordenadas[1][i][j]=x_inicial;
-            coordenadas[1][i][j]=y_inicial;
-            coordenadas[1][i][j]=x_final;
-            coordenadas[1][i][j]=y_final;
-          }
-        }
+      for (int i = 0; i < 160; i++)
+	{
+	  for (int j = 0; j < 4; j++)
+	    {
+	      printf ("\nCoordenada Guardada en: %d|%d: ", i + 1, j + 1);
+	      coordenadas[1][i][j] = x_inicial;
+	      coordenadas[1][i][j] = y_inicial;
+	      coordenadas[1][i][j] = x_final;
+	      coordenadas[1][i][j] = y_final;
+	    }
+	}
     }
   else
     {
@@ -235,7 +238,7 @@ turno_jugador (void)
   int i = 0;
   printf ("¿Es tu turno? Si o No \n");
   scanf ("%s", &respuesta[0]);
-	
+
   while (i < 5)
     {
       if (respuesta[i] == 'S')
@@ -299,7 +302,3 @@ turno_jugador (void)
       return -1;
     }
 }
- 
-
-
-

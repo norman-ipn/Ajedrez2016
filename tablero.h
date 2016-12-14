@@ -5,6 +5,7 @@
 
 enum filas
 { FILA_1 = 0, FILA_2, FILA_3, FILA_4, FILA_5, FILA_6, FILA_7, FILA_8 };
+
 enum columnas
 {
   COLUMNA_A = 0, COLUMNA_B, COLUMNA_C, COLUMNA_D,
@@ -17,9 +18,10 @@ struct tablero
   char casillas[8][8];
   char se_movio[8][8];
 };
+
 void
 buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
-              struct tablero *un_tablero)
+	      struct tablero *un_tablero);
 
 int
 buscar_atacantes_negros (int fila_K, int columna_K,
