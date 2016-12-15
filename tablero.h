@@ -41,7 +41,7 @@ int paso (struct tablero *un_tablero, int columna, int fila);
 void invertir_tablero (struct tablero *un_tablero);
 
 int obtener_posicion (int Columna, int Fila);
-
+/*
 char color_remplazo (int columna, int fila);
 
 int tablero_negro (void);
@@ -57,5 +57,5 @@ int tablero_azul (void);
 int tablero_magenta (void);
 
 int tablero_cyan (void);
-
+*/
 #endif/*__TABLERO_H__*/
