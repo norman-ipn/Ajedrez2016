@@ -294,7 +294,7 @@ main_temporal (void)
 
 /* ---------------POSIBLE SERVIDOR ------------------------*/
 int
-main_servidor2 (void)
+main_servidor (void)
 {
   int chats = 0;
   int chatc = 0;
