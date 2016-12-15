@@ -1,6 +1,4 @@
 #include "ia.h"
-#include "time.h"
-#include "stdlib.h"
 
 typedef struct tablero Tablero;
 int revisar_casilla_peon (Tablero * board, int x1, int y1);
