@@ -6,10 +6,12 @@ int escapar (Tablero * board, int x1, int y1);
 int atacar (Tablero * board, int x, int y);
 int podemosComer (Tablero * board);
 int podemosSerComidos (Tablero * board);
-int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2);
-int validar_movimiento_torre (Tablero *board, int x0, int y0, int x, int y);
-int validar_peon (Tablero *board, int x1, int y1, int x2, int y2);
-int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2, int y2);
+int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
+		      int y1, int x2, int y2);
+int validar_movimiento_torre (Tablero * board, int x0, int y0, int x, int y);
+int validar_peon (Tablero * board, int x1, int y1, int x2, int y2);
+int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2,
+				int y2);
 int movimiento;
 /* ============================== FUNCIÓN PRINCIPAL ======================= */
 int
@@ -27,7 +29,7 @@ responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
   /* Si no podemos ni comer nada ni estamos por ser comidos pues mueve algo random */
   if (comer == 0 && comidos == 0)
     {
-      movimientoIndicado = MovimientoRandom (board);
+      movimientoIndicado = MovimientoRandom (board, 0, 0, 0, 0, 0, 0, 0, 0);
     }
 
   /* Si  podemos comer o ser comido decide que es lo mejor y hazlo */
@@ -59,16 +61,12 @@ responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
 int
 revisar_casilla_peon (Tablero * board, int x1, int y1)
 {
-  int i = x1, j = y1;
   char pieza = 't';
 
-  //pieza = board[i'][j'];
-  //pieza = board[i + 1][j + 1];
   if (pieza != ' ')
     {
       return -1;
     }
-  ////pieza = board[i - 1][j + 1];
   if (pieza != ' ')
     {
       return -1;
@@ -139,14 +137,14 @@ atacar (Tablero * board, int x, int y)
    */
 
   /* ============================== Funciones AUXILIARES =======================
-     /* ============================== Busca movimiento Valido =======================
+     ============================== Busca movimiento Valido =======================
      - ¿Qué hace?
      - Se encarga de ver que movimientos posibles tiene nuestras piezas
    */
 int
 podemosComer (Tablero * tablero)
 {
-  int valor;
+  int valor = 0;
   return valor;
 }
 
@@ -162,21 +160,23 @@ podemosComer (Tablero * tablero)
 int
 podemosSerComidos (Tablero * un_tablero)
 {
-  int valor;
+  int valor = 0;
   return valor;
 }
 
 int
-MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2)
+MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
+		  int y1, int x2, int y2)
 {
 
   /* Genera una semilla Random */
   srand (time (NULL));
-	
-  char pieza = '\0';		//a esta variable se le asignará un valor por cada coordenada tal como aparece un poco más abajo
-  int N;
 
-  int i, j, k;
+  char pieza = '\0';		//a esta variable se le asignará un valor por cada coordenada tal como aparece un poco más abajo
+  int N = 0;
+  int i = 0;
+  int j = 0;
+
   for (i = 0; i < 8; i++)
     {
       for (j = 0; j < 8; i++)
@@ -186,35 +186,30 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1,
 	  if (pieza == 'T')
 	    {
 	      /*A las coordenadas se les va a asignar la semilla rand para que mueva en un número no mayor a 8 y verificar la casilla */
-	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
 	      validar_movimiento_torre (board, x0, y0, x, y);
 	    }
 	  if (pieza == 'A')
 	    {
-	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
 	      validar_movimiento_alfil (board, x0, y0, x, y);
 	    }
 	  if (pieza == 'P')
 	    {
-	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
-	      validar_movimiento_peon (board, x1, y1, x2, y2); 
+	      validar_movimiento_peon (board, x1, y1, x2, y2);
 	    }
 	  if (pieza == 'C')
 	    {
-	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
 	      validar_movimiento_caballo (board, x1, y1, x2, y2);
 	    }
 	  if (pieza == 'D')
 	    {
-	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
 	      validar_movimiento_reina (board, x1, y1, x2, y2);
