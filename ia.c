@@ -174,6 +174,7 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y)
 
   /* Genera una semilla Random */
   srand (time (NULL));
+	int N = rand();
 
   char pieza = '\0';		//a esta variable se le asignará un valor por cada coordenada tal como aparece un poco más abajo
   int N;
