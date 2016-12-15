@@ -371,3 +371,64 @@ main_servidor (void)
       close (server_sockfd);
     }
 }
+
+/* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
+
+
+void
+cliente_conexion_mensaje (void)
+{
+  int sockfd;
+  int len;
+  struct sockaddr_in address;
+  int result;
+  char ch[1024];
+  char c[1024];
+
+  int inicio = 0;
+  char cs[1024];
+
+  int ciclo = 1;
+  char ipserver[10];
+  int puerto;
+  char buffer[10];
+
+
+
+  printf ("ingrese la ip del servidor\n");
+  fgets (buffer, 10, stdin);
+  sscanf (buffer, "%s", ipserver);
+  __fpurge (stdin);
+  printf ("ingrese el puerto de conexion\n");
+  fgets (buffer, 10, stdin);
+  sscanf (buffer, "%d", &puerto);
+  __fpurge (stdin);
+  while (ciclo)
+    {
+      sockfd = socket (AF_INET, SOCK_STREAM, 0);
+      /*llenado de la estructura de datos */
+      address.sin_family = AF_INET;
+      address.sin_addr.s_addr = inet_addr (ipserver);
+      address.sin_port = puerto;
+      len = sizeof (address);
+
+/*conectar con el servidor */
+      result = connect (sockfd, (struct sockaddr *) &address, len);
+      if (result == -1)
+        {
+          perror ("ERROR EN LA CONEXION\n");
+          close (sockfd);
+        }
+
+
+      printf ("ingrese una cadena para enviar al servidor: ");
+
+      fgets (ch, 1024, stdin);
+      sscanf (ch, "%s", c);
+      send (sockfd, c, 1024, 0);
+
+    }
+
+  close (sockfd);
+
+}
