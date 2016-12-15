@@ -2,15 +2,13 @@
 /*Recibe cada movimiento de los jugadores para guardarlos en el archivo*/
 void
 Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
-
 		 int y_final, int i)
-
 {
-    FILE *fichero;
-    fichero = fopen("PartidasGuardadas.txt","a");
+  FILE *fichero = 0;
+  fichero = fopen ("PartidasGuardadas.txt", "a");
 
-    if (fichero == 0)
-    {/* no se pudo abrir el archivo */
+  if (fichero == 0)
+    {				/* no se pudo abrir el archivo */
       return -1;
     }
   fputs ("Partidas Guardadas\n", fichero);
@@ -29,319 +27,320 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
       fprintf (fichero, "%d             %d          %d         %d\n",
 	       x_inicial, y_inicial, x_final, y_final);
     }
-    fclose(fichero);
-    if(i==1)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas1.txt")==0)
-                {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    if(i==2)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas2.txt")==0)
-                {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                printf("No se pudo guardar el archivo\n");
-                return i;
-
-                }
-    if(i==3)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas3.txt")==0)
-                {/*Renombramos el archivo*/
-
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-
-
-        }
-    if(i==4)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas4.txt")==0)
-                {/*Renombramos el archivo*/
-
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-            {
-                printf("No se pudo guardar el archivo\n");
-                return i;
-            }
-        }
-    if(i==5)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas5.txt")==0)
-                {// Renombramos el archivo
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-
-        }
-    if(i==6)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas6.txt")==0)
-                {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    if(i==7)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas7.txt")==0)
-              {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    if(i==8)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas8.txt")==0)
-               {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    if(i==9)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas9.txt")==0)
-                {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    if(i==10)
-        {
-            if(rename("PartidasGuardadas.txt","PartidasGuardadas10.txt")==0)
-                {/*Renombramos el archivo*/
-                    printf ("Archivo Guardado\n");
-                    printf ("Numero de archivo; %d\n",i);
-                    i++;
-                    return i;
-                }
-            else
-                {
-                    printf("No se pudo guardar el archivo\n");
-                    return i;
-                }
-        }
-    else
+  fclose (fichero);
+  if (i == 1)
     {
-        printf("Memoria llena");
-        return i;
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas1.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 2)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas2.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	printf ("No se pudo guardar el archivo\n");
+      return i;
+
+    }
+  if (i == 3)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas3.txt") == 0)
+	{			/*Renombramos el archivo */
+
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+
+
+    }
+  if (i == 4)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas4.txt") == 0)
+	{			/*Renombramos el archivo */
+
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 5)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas5.txt") == 0)
+	{			// Renombramos el archivo
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+
+    }
+  if (i == 6)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas6.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 7)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas7.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 8)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas8.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 9)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas9.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  if (i == 10)
+    {
+      if (rename ("PartidasGuardadas.txt", "PartidasGuardadas10.txt") == 0)
+	{			/*Renombramos el archivo */
+	  printf ("Archivo Guardado\n");
+	  printf ("Numero de archivo; %d\n", i);
+	  i++;
+	  return i;
+	}
+      else
+	{
+	  printf ("No se pudo guardar el archivo\n");
+	  return i;
+	}
+    }
+  else
+    {
+      printf ("Memoria llena");
+      return i;
     }
 
 }
+
 void
-continuar_partida (char archivo[100],int num)
+continuar_partida (char archivo[100], int num)
 {
 /*Función que abre una partida ya guardada */
 
   FILE *fichero = 0;
   char tablero[8][8];
   size_t n = 0;
-  if(num==1)
+  if (num == 1)
     {
-        fichero = fopen ("PartidasGuardadas1.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas1.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
 
     }
-  if(num==2)
+  if (num == 2)
     {
-        fichero = fopen ("PartidasGuardadas2.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas2.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
 
     }
-  if(num==3)
+  if (num == 3)
     {
-        fichero = fopen ("PartidasGuardadas3.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas3.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==4)
+  if (num == 4)
     {
-        fichero = fopen ("PartidasGuardadas4.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas4.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
 
     }
-  if(num==5)
+  if (num == 5)
     {
-        fichero = fopen ("PartidasGuardadas5.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas5.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==6)
+  if (num == 6)
     {
-        fichero = fopen ("PartidasGuardadas6.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas6.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==7)
+  if (num == 7)
     {
-        fichero = fopen ("PartidasGuardadas7.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas7.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==8)
+  if (num == 8)
     {
-        fichero = fopen ("PartidasGuardadas8.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas8.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==9)
+  if (num == 9)
     {
-        fichero = fopen ("PartidasGuardadas9.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas9.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
-  if(num==10)
+  if (num == 10)
     {
-        fichero = fopen ("PartidasGuardadas10.txt", "r");
-        if (fichero == 0)
-            {
-                printf ("4No se pudo abrir el archivo");
-            }
-        n = fread (tablero, sizeof (char), 64, fichero);
-        if (n == 64)
-            {
-                printf ("Se leyeron los datos correctamente");
-            }
-        fclose (fichero);
+      fichero = fopen ("PartidasGuardadas10.txt", "r");
+      if (fichero == 0)
+	{
+	  printf ("4No se pudo abrir el archivo");
+	}
+      n = fread (tablero, sizeof (char), 64, fichero);
+      if (n == 64)
+	{
+	  printf ("Se leyeron los datos correctamente");
+	}
+      fclose (fichero);
     }
 
 }

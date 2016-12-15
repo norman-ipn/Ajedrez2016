@@ -161,7 +161,7 @@ jugar (struct tablero *un_tablero)
 	  y_objetivo = y_objetivo - 1;
 
 	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
-			   y_objetivo);
+			   y_objetivo, 1);
 
 	  break;
 
@@ -175,7 +175,7 @@ jugar (struct tablero *un_tablero)
 	  else
 	    {
 	      Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
-			       y_objetivo);
+			       y_objetivo, 1);
 	      printf
 		("\n--------------Último movimiento guardado :D-------------\n");
 	    }
@@ -196,7 +196,7 @@ jugar (struct tablero *un_tablero)
 
 	  invertir_tablero (un_tablero);
 	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
-			   y_objetivo);
+			   y_objetivo, 1);
 	  break;
 
 	case 'r':
