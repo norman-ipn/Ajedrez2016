@@ -6,9 +6,10 @@ int escapar (Tablero * board, int x1, int y1);
 int atacar (Tablero * board, int x, int y);
 int podemosComer (Tablero * board);
 int podemosSerComidos (Tablero * board);
-int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y);
+int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2);
 int validar_movimiento_torre (Tablero *board, int x0, int y0, int x, int y);
-// int validar_peon (Tablero *board, int x1, int y1, int x2, int y2); /*Función de no definida por piezas, validar_peon */
+int validar_peon (Tablero *board, int x0, int y0, int x1, int y1);
+int validar_movimiento_caballo (Tablero * board, int x0, int y0, int x1, int y1);
 int movimiento;
 /* ============================== FUNCIÓN PRINCIPAL ======================= */
 int
@@ -166,7 +167,7 @@ podemosSerComidos (Tablero * un_tablero)
 }
 
 int
-MovimientoRandom (Tablero * board, int x0, int y0, int x, int y)
+MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2)
 {
 
   /* Genera una semilla Random */
@@ -197,26 +198,26 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y)
 	      y2 = rand () % (N + 1);
 	      validar_movimiento_alfil (board, x0, y0, x, y);
 	    }
-	 /* if (pieza == 'P')
+	  if (pieza == 'P')
 	    {
 	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
-	      validar_movimiento_peon (tablero, x1, y1, x2, y2); //Función está incorrecta por parte de piezas
-	    } */
+	      validar_movimiento_peon (board, x1, y1, x2, y2); 
+	    }
 	  if (pieza == 'C')
 	    {
 	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
-	      validar_movimiento_caballo (tablero, x1, y1, x2, y2);
+	      validar_movimiento_caballo (board, x1, y1, x2, y2);
 	    }
 	  if (pieza == 'D')
 	    {
 	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
-	      validar_movimiento_reina (tablero, x1, y1, x2, y2);
+	      validar_movimiento_reina (board, x0, y0, x1, y2);
 	    }
 	}
     }
