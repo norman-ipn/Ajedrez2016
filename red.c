@@ -24,7 +24,6 @@ chatcliente (int client)
   int isExit = 0;
   int bufsize = 1024;
   char buffer[1024];
-  char *ip = "127.0.0.1";
 
   struct sockaddr_in server_addr;
 
@@ -150,7 +149,6 @@ chatservidor (int client, int server)
   listen (client, 1);		/*LLamada */
 
 
-  int clientCount = 1;
   server = accept (client, (struct sockaddr *) &server_addr, &size);	/*Aceptar () */
 
 
@@ -202,7 +200,7 @@ chatservidor (int client, int server)
 	      scanf ("%s", buffer);
 	      if (*buffer == '#')
 		{
-		  *buffer == '*';
+		  *buffer = '*';
 		  isExit = 1;
 		}
 	    }
@@ -243,8 +241,6 @@ conectarse_a_anfitrion (void)
   struct addrinfo *res = 0;	/*Struct para leer dirección */
   int rc = 0;
   int s = 0;
-  char buf[8192];		/*Buffer */
-  ssize_t n = 0;
 
   memset (&hints, 0, sizeof (hints));
   hints.ai_socktype = SOCK_STREAM;
@@ -265,6 +261,7 @@ conectarse_a_anfitrion (void)
 
   /* Liberamos "res", ya no lo necesitamos */
   freeaddrinfo (res);
+  return 0;
 }
 
 int
@@ -297,21 +294,20 @@ main_temporal (void)
 int
 main_servidor (void)
 {
-  int server;
-  int client;
+  int server = 0;
+  int client = 0;
   int chats = 0;
   int chatc = 0;
   int server_sockfd = 0;	/* descriptores de sockets */
   int client_sockfd = 0;
   int server_len = 0;		/*tamaños de las estructuras */
-  int client_len = 0;
+  unsigned int client_len = 0;
   struct sockaddr_in server_address;	/*declaracion de estructuras */
   struct sockaddr_in client_address;
   char c[1024];			/*cadena del cliente */
   char ch[1024];		/*cadena del servidor */
   int inicio = 0;		/*determina el inicio de sesion */
   char cs[1024];		/*cadena del servidor */
-  int bufs = 0;			/*almacenamiento del tamanio cadena server */
   int ciclo = 1;		/*variable para ciclo de lectura escritura */
   int puerto = 0;		/*variable para el puerto */
   system ("clear");
@@ -363,6 +359,7 @@ main_servidor (void)
 	}
       close (server_sockfd);
     }
+  return 9;
 }
 
 /* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
@@ -371,16 +368,12 @@ main_servidor (void)
 void
 cliente_conexion_mensaje (void)
 {
-  int sockfd;
-  int len;
+  int sockfd = 0;
+  int len = 0;
   struct sockaddr_in address;
   int result;
   char ch[1024];
   char c[1024];
-
-  int inicio = 0;
-  char cs[1024];
-
   int ciclo = 1;
   char ipserver[10];
   int puerto;
