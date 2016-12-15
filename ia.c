@@ -58,7 +58,7 @@ responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
   /* =========== FUNCIONES EN LAS QUE ACTUAMOS ============================================== */
 
 int
-revisar_casilla_peon (Tablero * board, int x1, int y1)
+revisar_casilla_peon (Tablero * board, int x1, int y1, int x2, int y2)
 {
   int i = x1, j = y1;
   char pieza = 't';
