@@ -10,8 +10,7 @@ int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
 		      int y1, int x2, int y2);
 int validar_movimiento_torre (Tablero * board, int x0, int y0, int x, int y);
 int validar_peon (Tablero * board, int x1, int y1, int x2, int y2);
-int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2,
-				int y2);
+int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2, int y2);
 int movimiento;
 /* ============================== FUNCIÓN PRINCIPAL ======================= */
 int
