@@ -12,13 +12,6 @@
 /*Aparte de que esten en la misma RED ya que se hara en LAN*/
 
 
-int main()
-{
-
-
-return 0;
-
-}
 
 /*CHAT DEL CLIENTE*/
 int
@@ -415,10 +408,10 @@ cliente_conexion_mensaje (void)
 /*conectar con el servidor */
       result = connect (sockfd, (struct sockaddr *) &address, len);
       if (result == -1)
-        {
-          perror ("ERROR EN LA CONEXION\n");
-          close (sockfd);
-        }
+	{
+	  perror ("ERROR EN LA CONEXION\n");
+	  close (sockfd);
+	}
 
 
       printf ("ingrese una cadena para enviar al servidor: ");

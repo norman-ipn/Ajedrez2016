@@ -20,8 +20,8 @@ int validar_movimiento_reina (struct tablero *, int, int, int, int);
 int validar_movimiento_alfil (struct tablero *, int, int, int, int);
 int validar_movimiento_torre (struct tablero *, int, int, int, int);
 int validar_movimiento_caballo (struct tablero *, int, int, int, int);
-int validar_movimiento_peon (struct tablero *, int, int, int, int);
 
+int validar_movimiento_peon (struct tablero *, int, int, int, int);
 int validar_enroque_largo_negro (struct tablero *, int, int);
 int validar_enroque_largo_blanco (struct tablero *, int, int);
 int validar_enroque_corto_negro (struct tablero *, int, int);
