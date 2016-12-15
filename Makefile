@@ -16,6 +16,6 @@ ia.o: ia.c
 	gcc -c ia.c -Wall
 
 clean:
-	rm main.o tablero.o piezas.o persistencia.o interfaz.o red.o ia.o
+	rm main.o tablero.o piezas.o persistencia.o interfaz.o red.o ia.o a.out
 run: a.out
 	./a.out
