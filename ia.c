@@ -6,7 +6,7 @@ int escapar (Tablero * board, int x1, int y1);
 int atacar (Tablero * board, int x, int y);
 int podemosComer (Tablero * board);
 int podemosSerComidos (Tablero * board);
-int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2);
+int MovimientoRandom (Tablero *board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2);
 int validar_movimiento_torre (Tablero *board, int x0, int y0, int x, int y);
 int validar_peon (Tablero *board, int x1, int y1, int x2, int y2);
 int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2, int y2);
@@ -167,7 +167,7 @@ podemosSerComidos (Tablero * un_tablero)
 }
 
 int
-MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2)
+MovimientoRandom (Tablero *board, int x0, int y0, int x, int y, int x1, int y1, int x2, int y2)
 {
 
   /* Genera una semilla Random */
