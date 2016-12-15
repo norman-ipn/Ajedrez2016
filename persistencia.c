@@ -1,6 +1,6 @@
 #include "persistencia.h"
 /*Recibe cada movimiento de los jugadores para guardarlos en el archivo*/
-void
+int
 Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
 		 int y_final, int i)
 {
@@ -383,14 +383,14 @@ Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
     }
   else
     {
-      return 0;
+      return;
       /*Guardar las coordenas de la siguiente manera
          Jugador 1:
          x_inicial y_inicial  x_final  y_final
          posicion arreglo     [0]       [1]       [2]      [3]
          al final mandar el arreglo a Guardar_Partida() para agregar las coordenas al archivo */
     }
-
+  coordenadas[0][0][0]++;
 }
 
 
@@ -581,4 +581,5 @@ turno_jugador (void)
 /*error por si no hubo coincidencias*/
       return -1;
     }
+  return 0;
 }
