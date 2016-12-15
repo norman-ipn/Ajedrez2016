@@ -1,5 +1,4 @@
-#include "red.h"
-
+#include "red.h"/*concuerdo con wl que dijo que está bien*/
 /* 
   importante, los socket siempre deben correrse en modo root, para estar
   para estar en modo root simplemente escribe:
