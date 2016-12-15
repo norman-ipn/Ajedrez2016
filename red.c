@@ -12,6 +12,14 @@
 /*Aparte de que esten en la misma RED ya que se hara en LAN*/
 
 
+int main()
+{
+
+
+return 0;
+
+}
+
 /*CHAT DEL CLIENTE*/
 int
 chatcliente (int client)
@@ -235,7 +243,7 @@ atender_cliente (void *arg)	/* metodo para aceptar al jugador */
 }
 
 /*Creación del cliente (Jugador que busca partida) (Llamar esta función cuando para conectarse a un anfitrion)*/
-void
+int
 conectarse_a_anfitrion (void)
 {
   struct addrinfo hints;
@@ -296,6 +304,8 @@ main_temporal (void)
 int
 main_servidor (void)
 {
+  int server;
+  int client;
   int chats = 0;
   int chatc = 0;
   int server_sockfd = 0;	/* descriptores de sockets */
@@ -360,147 +370,4 @@ main_servidor (void)
 	}
       close (server_sockfd);
     }
-}
-
-/* ---------------OTRA OPCIÓN PARA UN SERVIDOR------------------------*/
-int
-main_servidor2 (int argc, char **argv)
-{
-
-  struct sockaddr_in server;
-  struct sockaddr_in client;
-  int fd, fd2, longitud_cliente, numbytes, puerto;
-  char buf[1024];		// Se usará prara recibir el mensaje
-  char enviar[1024];		//Se usará para enviar mensaje
-  char enviar2[1024];		//Se usará para enviar un segundo mensaje
-
-  system ("clear");
-  printf ("La direccion del servidor es 127.0.0.1\n\n");
-  printf ("Por favor introduzca el puerto de escucha: \n\n");
-  scanf ("%d", &puerto);
-
-  server.sin_family = AF_INET;
-  server.sin_port = htons (puerto);
-  server.sin_addr.s_addr = INADDR_ANY;
-  bzero (&(server.sin_zero), 8);
-
-  //Definicion de socket
-  if ((fd == socket (AF_INET, SOCK_STREAM, 0)) < 0)
-    {
-      perror ("Error de apertura de socket");
-      exit (-1);
-    }
-
-  //Avisar al sistema que se creo un socket
-  if (bind (fd, (struct sockaddr *) &server, sizeof (struct sockaddr)) == -1)
-    {
-      printf ("Error en bind() \n");
-      exit (-1);
-    }
-
-  //Establecer el socket en modo escucha
-  if (listen (fd, 5) == -1)
-    {
-      printf ("Error en listen()\n");
-      exit (-1);
-    }
-
-  printf ("SERVIDOR EN ESPERA...\n");
-  longitud_cliente = sizeof (struct sockaddr_in);
-  if ((fd2 =
-       accept (fd, (struct sockaddr *) &client, &longitud_cliente)) == -1)
-    {
-      printf ("Error en accept()\n");
-      exit (-1);
-    }
-
-  printf ("------SESION INICIADA------\n");
-  printf ("CLIENTE CONECTADO\n");
-  strcpy (enviar, "SERVIDOR CONECTADO...");
-  send (fd2, enviar, 1024, 0);
-
-  //Ciclo para enviar y recibir mensajes, el ciclo será infinito hasta que se use el break
-  while (1)
-    {
-      //El servidor espera el primer mensaje
-      recv (fd2, buf, 1024, 0);
-      if (strcmp (&buf, "salir") == 0)
-	{
-	  break;
-	}
-      printf ("Cliente: %s\n", buf);
-
-      //El cliente recibe el mensaje del servidor
-      printf ("Escribir mensaje: ");
-      scanf ("%*c%[^\n]", enviar2);
-      send (fd2, enviar2, 1024, 0);
-      if (strcmp (enviar2, "salir") == 0)
-	{
-	  break;
-	}
-    }
-  close (fd2);
-  close (fd);
-  return 0;
-}
-
-/* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
-
-
-void
-cliente_conexion_mensaje (void)
-{
-  int sockfd;
-  int len;
-  struct sockaddr_in address;
-  int result;
-  char ch[1024];
-  char c[1024];
-
-  int inicio = 0;
-  char cs[1024];
-
-  int ciclo = 1;
-  char ipserver[10];
-  int puerto;
-  char buffer[10];
-
-
-
-  printf ("ingrese la ip del servidor\n");
-  fgets (buffer, 10, stdin);
-  sscanf (buffer, "%s", ipserver);
-  __fpurge (stdin);
-  printf ("ingrese el puerto de conexion\n");
-  fgets (buffer, 10, stdin);
-  sscanf (buffer, "%d", &puerto);
-  __fpurge (stdin);
-  while (ciclo)
-    {
-      sockfd = socket (AF_INET, SOCK_STREAM, 0);
-      /*llenado de la estructura de datos */
-      address.sin_family = AF_INET;
-      address.sin_addr.s_addr = inet_addr (ipserver);
-      address.sin_port = puerto;
-      len = sizeof (address);
-
-/*conectar con el servidor */
-      result = connect (sockfd, (struct sockaddr *) &address, len);
-      if (result == -1)
-	{
-	  perror ("ERROR EN LA CONEXION\n");
-	  close (sockfd);
-	}
-
-
-      printf ("ingrese una cadena para enviar al servidor: ");
-
-      fgets (ch, 1024, stdin);
-      sscanf (ch, "%s", c);
-      send (sockfd, c, 1024, 0);
-
-    }
-
-  close (sockfd);
-
 }
