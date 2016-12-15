@@ -6,7 +6,7 @@
           $sudo su
    ;)
 */
-
+/* Creo que esta bien */
 
 /*Para hacer una conexión entre las dos computadoras es necesario hacer tener un cliente y un servidor*/
 /*Aparte de que esten en la misma RED ya que se hara en LAN*/
