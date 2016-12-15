@@ -203,7 +203,7 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y)
 	      int x2, y2;
 	      x2 = rand () % 8;
 	      y2 = rand () % (N + 1);
-	      validar_peon (tablero, x1, y1, x2, y2); //Función está incorrecta por parte de piezas
+	      validar_movimiento_peon (tablero, x1, y1, x2, y2); //Función está incorrecta por parte de piezas
 	    }
 	  if (pieza == 'C')
 	    {
