@@ -22,8 +22,8 @@ main (void)
 
   do
     {
-      mostrar_menu (el_tablero);
-      opcion = obtener_caracter ();
+      mostrar_menu (&el_tablero);
+      opcion = capturar_caracter ();
 
       switch (opcion)
 	{
