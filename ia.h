@@ -4,4 +4,5 @@
 #include "stdlib.h"
 #include "piezas.h"
 #include "persistencia.h"   
+#include "tablero.h"
 #endif/*__IA_H__*/
