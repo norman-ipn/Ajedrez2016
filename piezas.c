@@ -246,14 +246,97 @@ validar_peon (struct tablero *un_tablero, char negro_blanco, int x1, int y1,
 }
 
 int
+validar_enroque_blanco (struct tablero *un_tablero, int x1, int y1, int x2,
+			int y2)
+{
+  int mov_rey = 0;
+  int mov_torre = 0;
+
+  mov_rey = un_tablero->se_movio[x1][y1];
+
+  if (x2 == 2)
+    {
+      //es largo
+      if (un_tablero->casillas[0][7] != 'T')
+	{
+	  return -1;
+	}
+      mov_torre = un_tablero->se_movio[0][7];
+      validar_enroque_largo_blanco (un_tablero, mov_torre, mov_rey);
+    }
+  else if (x2 == 6)
+    {
+      //es corto
+      if (un_tablero->casillas[7][7] != 'T')
+	{
+	  return -1;
+	}
+      mov_torre = un_tablero->se_movio[7][7];
+      validar_enroque_corto_blanco (un_tablero, mov_torre, mov_rey);
+    }
+  else
+    {
+      //no es enroque
+      return -1;
+    }
+}
+
+int
+validar_enroque_negro (struct tablero *un_tablero, int x1, int y1, int x2,
+		       int y2)
+{
+  int mov_rey = 0;
+  int mov_torre = 0;
+
+  mov_rey = un_tablero->se_movio[x1][y1];
+
+  if (x2 == 2)
+    {
+      //es largo
+      if (un_tablero->casillas[0][0] != 'T')
+	{
+	  return -1;
+	}
+      mov_torre = un_tablero->se_movio[0][0];
+      validar_enroque_largo_negro (un_tablero, mov_torre, mov_rey);
+    }
+  else if (x2 == 6)
+    {
+      //es corto
+      if (un_tablero->casillas[7][0] != 'T')
+	{
+	  return -1;
+	}
+      mov_torre = un_tablero->se_movio[7][0];
+      validar_enroque_corto_negro (un_tablero, mov_torre, mov_rey);
+    }
+  else
+    {
+      //no es enroque
+      return -1;
+    }
+}
+
+int
 movimiento_valido (struct tablero *un_tablero, int x1, int y1, int x2, int y2)
 {
   char piezaActual = ' ';
-  piezaActual = un_tablero->casillas[x1][y2];
+  piezaActual = un_tablero->casillas[x1][y1];
 
   if (piezaActual == 'R' || piezaActual == 'r')
     {
-      return validar_movimiento_rey (un_tablero, x1, y1, x2, y2);
+      if (validar_movimiento_rey (un_tablero, x1, y1, x2, y2) == -1)
+	{
+	  if (piezaActual == 'R')
+	    {
+	      return validar_enroque_negro (un_tablero, x1, y1, x2, y2);
+	    }
+	  return validar_enroque_blanco (un_tablero, x1, y1, x2, y2);
+	}
+      else
+	{
+	  return 1;
+	}
     }
   if (piezaActual == 'Q' || piezaActual == 'q')
     {
@@ -271,7 +354,7 @@ movimiento_valido (struct tablero *un_tablero, int x1, int y1, int x2, int y2)
     {
       return validar_movimiento_caballo (un_tablero, x1, y1, x2, y2);
     }
-  return validar_movimiento_peon (un_tablero, x1, y1, x2, y2);
+  return validar_peon (un_tablero, piezaActual, x1, y1, x2, y2);
 }
 
 int
