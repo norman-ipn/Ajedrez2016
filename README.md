@@ -9,8 +9,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**ArturoRR97**| Arturo Rivas Rojas | 1CM1 |
 |**AlejandroH1cm1**| Herrera Olmos Alejandro|1CM1|
 |**JorgeMendezcm1**| Mendez Alvarez Jorge Luis|1CM1|
-
-
+|**CubeXtreme**| Castro Reyna Roberto Armando|1CM1|
 # Coordinadores ETAPA 3
 
 | Usuario | Módulo que coordina | Grupo |
