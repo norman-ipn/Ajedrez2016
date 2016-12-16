@@ -4,7 +4,7 @@ Proyecto final para la materia de Algoritmia y Programación Estructurada
 Semestre 2016-2017-1 (Julio-Diciembre 2016)
 
 # ETAPA 4 (Extraordinario)
-| Usuario | Módulo que coordina | Grupo |
+| Usuario | Nombre | Grupo |
 |---------|---------------------|-------|
 |**ArturoRR97**| Arturo Rivas Rojas |Piezas|
 |**AlejandroH1cm1**| Herrera Olmos Alejandro|Interfaz|
