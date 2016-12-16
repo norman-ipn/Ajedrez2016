@@ -6,8 +6,8 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 # ETAPA 4 (Extraordinario)
 | Usuario | Nombre | Grupo |
 |---------|---------------------|-------|
-|**ArturoRR97**| Arturo Rivas Rojas |Piezas|
-|**AlejandroH1cm1**| Herrera Olmos Alejandro|Interfaz|
+|**ArturoRR97**| Arturo Rivas Rojas | 1CM1 |
+|**AlejandroH1cm1**| Herrera Olmos Alejandro|1CM1|
 
 
 # Coordinadores ETAPA 3
