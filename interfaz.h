@@ -25,10 +25,10 @@ enum opciones
 };
 
 char capturar_caracter (void);
-void setUp (void);
-void manual (void);
 void mostrar_animacion (int n);
 void mostrar_opciones (void);
+void manual (void);
+void setUp (void);
 void piezas_comidas (int a);
 void letreros (int n);
 void mostrar_menu (struct tablero *t);
