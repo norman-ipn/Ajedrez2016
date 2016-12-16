@@ -279,6 +279,7 @@ validar_enroque_blanco (struct tablero *un_tablero, int x1, int y1, int x2,
       //no es enroque
       return -1;
     }
+  return 0;
 }
 
 int
@@ -315,6 +316,7 @@ validar_enroque_negro (struct tablero *un_tablero, int x1, int y1, int x2,
       //no es enroque
       return -1;
     }
+  return 0;
 }
 
 int
