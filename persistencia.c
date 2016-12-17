@@ -353,11 +353,13 @@ Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
 {
 /*En el arreglo use 160 ya que no se puede saber cuantas jugadas va a tener cada partida*/
   int coordenadas[2][160][4];	/*Propongo que en coordenadas[1][][] sean las jugadas del jugador 1 y en coordenadas[2][][] las del 2 */
+  int i = 0;
+  int j = 0;
   if (jugador == 1)
     {
-      for (int i = 0; i < 160; i++)
+      for (i = 0; i < 160; i++)
 	{
-	  for (int j = 0; j < 4; j++)
+	  for (j = 0; j < 4; j++)
 	    {
 	      printf ("\nCoordenada Guardada en: %d|%d: ", i + 1, j + 1);
 	      coordenadas[0][i][j] = x_inicial;
@@ -369,9 +371,9 @@ Coordenadas_Recibidas (int jugador, int x_inicial, int y_inicial, int x_final,
     }
   if (jugador == 2)
     {				/*Cuando la partida es contra IA se tomaria como jugador 2 */
-      for (int i = 0; i < 160; i++)
+      for (i = 0; i < 160; i++)
 	{
-	  for (int j = 0; j < 4; j++)
+	  for (j = 0; j < 4; j++)
 	    {
 	      printf ("\nCoordenada Guardada en: %d|%d: ", i + 1, j + 1);
 	      coordenadas[1][i][j] = x_inicial;
