@@ -14,6 +14,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**kikerique**| Romero Godinez José Enrique|1CM1|
 |**Leonelney**| Olivares Conchillos Leonel|1CM1|
 |**MartinIMR**| Mercado Rogel Martin Isauro|1CM2|
+|**alex2201**| López Cedillo Alexander|1CM2|
 
 # Coordinadores ETAPA 3
 
