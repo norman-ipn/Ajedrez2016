@@ -105,11 +105,22 @@ jugar (struct tablero *un_tablero, int tipo_juego)
   char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
+  char *respuesta = 0;
+  int turno = 1;
 
   printf ("Comienza el juego\n\n");
   while (1 == 1)
     {
       system ("clear");
+      if(turno % 2 == 1)
+        {
+          printf("Es turno de las blancas\n\n");
+        }
+      else
+        {
+          printf("Es turno de las negras\n\n");
+        }
+	  
       printf ("¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
@@ -119,28 +130,42 @@ jugar (struct tablero *un_tablero, int tipo_juego)
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
 
-      opcion = capturar_caracter ();
+      if(turno % 2 == 0 && tipo_juego == 2)
+        {
+	   opcion = 'm';      
+        }
+      else
+      {
+        opcion = capturar_caracter ();
+      }
 
       switch (opcion)
 	{
 	case 'm':
 	  system ("clear");
+	  if(tipo_juego == 2)
+	    { 
+              responder_jugada(&un_tablero, turno, respuesta, x_piezad, y_pieza);
+	      turno++;
+	      break;
+	    }
 /*------SOLICITUD DE DATOS DE LAS PIEZAS------*/
 	  printf
 	    ("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
-	  fgets (entrada, 1, stdin);
-	  sscanf (entrada, "%c", &x_pieza);
+          x_pieza = capturar_caracter();
 	  printf ("\nINGRESE LA -FILA- DE LA PIEZA QUE DESEA MOVER [1-8]: ");
-	  fgets (entrada, 1, stdin);
+	  fflush(stdin);
+	  fgets (entrada, 2, stdin);
 	  sscanf (entrada, "%d", &y_pieza);
 	  printf ("\nINGRESE LA -COLUMNA- DEL LUGAR OBJETIVO  [A-H]: ");
-	  fgets (entrada, 1, stdin);
-	  sscanf (entrada, "%c", &x_objetivo);
+          x_objetivo = capturar_caracter();
 	  printf ("\nINGRESE LA -FILA- DEL LUGAR OBJETIVO [1-8]: ");
-	  fgets (entrada, 1, stdin);
+	  fflush(stdin);
+	  fgets (entrada, 2, stdin);
 	  sscanf (entrada, "%d", &y_objetivo);
 	  printf ("\nCONFIRME CON SU MUNERO DE JUGADOR [1 o 2]:  ");
-	  fgets (entrada, 1, stdin);
+	  fflush(stdin);
+	  fgets (entrada, 2, stdin);
 	  sscanf (entrada, "%d", &jugador);
 
 /*--------TRATAMIENTO DE LOS DATOS--------*/
@@ -163,6 +188,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
 			   y_objetivo, 1);
 
+	  turno++;
 	  break;
 
 	case 'g':
