@@ -12,6 +12,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**CubeXtreme**| Castro Reyna Roberto Armando|1CM1|
 |**SaulFloresCortes**| Flores Cortes Saul Alejandro|1CM1|
 |**kikerique**| Romero Godinez José Enrique|1CM1|
+|**Leonelney**| Olivares Conchillos Leonel|1CM1|
 
 # Coordinadores ETAPA 3
 
