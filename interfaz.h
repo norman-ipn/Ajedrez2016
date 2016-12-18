@@ -43,5 +43,7 @@ void reglas_peon (void);
 void reglas_rey (void);
 void reglas_reyna (void);
 void reglas_torre (void);
+int modo (void);
+int jugar (struct tablero *un_tablero, int tipo_juego);
 
 #endif/*__INTERFAZ_H__*/
