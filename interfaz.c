@@ -87,7 +87,7 @@ imprimir (struct tablero *un_tablero)
 
 /*Esta función despliega un menú de opciones durante la partida*/
 int
-jugar (struct tablero *un_tablero)
+jugar (struct tablero *un_tablero, int tipo_juego)
 {
   int i = 0;
   char opcion = '\0';
@@ -930,10 +930,33 @@ mostrar_opciones (void)
   printf ("5) Salir\n\n");
 }
 
+int
+modo (void)
+{
+  int opcion = 0;
+  char buffer[4];
+  
+  do
+    {
+      system("clear");
+
+      printf("¿Qué modo de juego desea jugar?\n\n");
+      printf("1) Jugador vs Jugador\n2)Jugador vs IA\n\n");
+
+      fflush(stdin);
+      fgets(buffer, 4, stdin);
+      sscanf(buffer, "%i%", &opcion);
+    }
+  while (opcion < 1 || opcion > 2);
+
+  return opcion;
+}
+
 void
 mostrar_menu (struct tablero *un_tablero)
 {
   char opcion = '\0';
+  int tipo_juego = 0;
 
   system ("clear");
   mostrar_animacion (ANIMACION_BIENVENIDA);
@@ -947,8 +970,8 @@ mostrar_menu (struct tablero *un_tablero)
       switch (opcion)
 	{
 	case OPCION_INICIAR_PARTIDA:
-	  system ("clear");
-	  jugar (un_tablero);
+          tipo_juego = modo();
+	  jugar (un_tablero, tipo_juego);
 	  break;
 
 	case OPCION_CONTINUAR_PARTIDA:
