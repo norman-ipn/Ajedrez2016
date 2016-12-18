@@ -13,6 +13,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**SaulFloresCortes**| Flores Cortes Saul Alejandro|1CM1|
 |**kikerique**| Romero Godinez José Enrique|1CM1|
 |**Leonelney**| Olivares Conchillos Leonel|1CM1|
+|**MartinIMR**| Mercado Rogel Martin Isauro|1CM2|
 
 # Coordinadores ETAPA 3
 
