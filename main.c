@@ -33,7 +33,7 @@ main (void)
 	imprimir_tablero(&el_tablero);
 	
       
-break;
+	break;
 	}
     return 0;
 }
