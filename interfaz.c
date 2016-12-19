@@ -11,6 +11,22 @@
 #define Magenta   "\x1b[35m"
 #define Cyan      "\x1b[36m"
 
+char 
+capturar_caracter (void) 
+{
+  
+char buffer[128];
+  
+fflush (stdin);
+  
+fgets (buffer, 4, stdin);
+  
+    //sscanf (buffer, "%c", &opcion);
+    
+return buffer[0];
+
+}
+
 void
 imprimir (struct tablero *un_tablero)
 {
@@ -932,18 +948,7 @@ seleccionar_color_de_tablero ()
 }
 */
 
-char
-capturar_caracter (void)
-{
-  char buffer[128];
-  char opcion = '\0';
 
-  fflush (stdin);
-  fgets (buffer, 4, stdin);
-  sscanf (buffer, "%c", &opcion);
-
-  return opcion;
-}
 
 void
 mostrar_opciones (void)
@@ -994,29 +999,29 @@ mostrar_menu (struct tablero *un_tablero)
       mostrar_opciones ();
       opcion = capturar_caracter ();
 
-      switch (opcion)
+      switch ((int)opcion)
 	{
-	case OPCION_INICIAR_PARTIDA:
+	case 49:
           tipo_juego = modo();
 	  jugar (un_tablero, tipo_juego);
 	  break;
 
-	case OPCION_CONTINUAR_PARTIDA:
+	case 50:
 	  system ("clear");
 	  mostrar_animacion (ANIMACION_BIENVENIDA);
 	  /* Guardar_Partida ();        No entendí que recibe de argumento */
 	  break;
 
-	case OPCION_MOSTRAR_MANUAL:
+	case 51:
 	  system ("clear");
 	  manual ();
 	  break;
-	case OPCION_CONFIGURAR:
+	case 52:
 	  system ("clear");
 	  setUp ();
 	  system ("clear");
 	  break;
-	case OPCION_SALIR:
+	case 53:
 	  mostrar_animacion (ANIMACION_DESPEDIDA);
 	  system ("clear");
 	  return;

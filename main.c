@@ -20,20 +20,24 @@ main (void)
 
   iniciar_tablero (&el_tablero);
 
-  do
-    {
+  
       mostrar_menu (&el_tablero);
       opcion = capturar_caracter ();
 
-      switch (opcion)
+      switch ((int)opcion)
 	{
-	case OPCION_INICIAR_PARTIDA:
-	  iniciar_partida_normal ();
-	  break;
+	case 49:
+      
+    iniciar_partida_normal ();
+      
+	imprimir_tablero(&el_tablero);
+	
+      
+break;
 	}
 
     }
-  while (opcion != OPCION_SALIR);
+  
 
 
   return 0;
