@@ -438,7 +438,6 @@ reglas_enroque (void)
 
   printf
     ("\n El rey se desplaza dos casillas a la derecha y la torre se pone a su lado izquierdo.  \n");
-
   printf
     ("\n Cabe decir que el Enroque solo se podrá realizar cuando se cumplan todas estas condiciones:  \n");
   printf
@@ -447,6 +446,8 @@ reglas_enroque (void)
     ("\n 2:Solo se podrá realizar si ninguna de las piezas está amenazada por una del rival. \n");
   printf
     ("\n 3:Ninguna de las casillas por las que pasen deberá estar amenazada por una pieza enemiga.\n");
+  printf
+    ("\n 4:No debe de ver ninguna pieza en las casillas donde se va hacer el enroque, tiene de estar despejado.\n");
   getchar ();
   return;
 }
