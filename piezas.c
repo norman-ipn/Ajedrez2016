@@ -388,7 +388,7 @@ int
 revisar_casilla_vacia (struct tablero *un_tablero, int i, int j)
 {
   /* Se verifica si la casilla introducida está vacía, si es así, se regresa el entero 1 */
-  if (un_tablero->casillas[i][j] != ' ')
+  if (un_tablero->casillas[i][j] != ' '&& un_tablero->casillas[i][j] != 'X')
     {
       return -1;
     }
