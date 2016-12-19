@@ -17,6 +17,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**alex2201**| López Cedillo Alexander|1CM2|
 |**atziripe**| Pérez García Atziri|1CM2|
 |**JoaksIPN**| Domínguez Moran Joaquín|1CM2|
+|**Bucketh**| Loretto Estrada Galilea América|1CM2|
 
 # Coordinadores ETAPA 3
 
