@@ -150,8 +150,8 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	      break;
 	    }
 /*------SOLICITUD DE DATOS DE LAS PIEZAS------*/
-	  printf
-	    ("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
+
+	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
           x_pieza = capturar_caracter();
 	  printf ("\nINGRESE LA -FILA- DE LA PIEZA QUE DESEA MOVER [1-8]: ");
 	  fflush(stdin);
