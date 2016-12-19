@@ -510,6 +510,75 @@ actualiza_historial (int resultado)
   printf ("\nHistorial actualizado correctamente\n");
   fclose (historial);
 }
+/*Funcion para undo y redo cuando se este jugando  */
+struct E_Stack{
+	
+	char tablero[8][8];
+	struct E_Stack *sig;
+	struct E_Stack *ant;
+
+};
+
+struct Stack{
+
+	struct E_Stack *act;
+};
+
+void Agrega_Stack(struct Stack *S , char tablero[][8]){
+
+	int i;
+	int j;
+
+	 struct E_Stack *E_Act = (struct E_Stack*)malloc(sizeof(struct E_Stack));		
+	 E_Act -> ant = S -> act;
+	 E_Act -> sig = NULL;
+	 for(i = 0 ; i < 8 ; i++)
+	 	for(j = 0 ; j < 8 ; j ++)
+	 		E_Act -> tablero[i][j] = tablero[i][j];
+	 if(S -> act != NULL )
+	 	(S -> act) -> sig = E_Act;
+	 S -> act = E_Act;
+}
+
+void Anterior(struct Stack *S){
+	if(S -> act == NULL ){
+		printf("La pila esta vacia\n");
+		return;
+	}
+	if((S -> act) -> ant == NULL ){
+		printf("Operacion invalida, no hay elemento anterior\n");
+		return;
+	}
+	S -> act = ( S -> act) -> ant;
+}
+
+void Siguiente(struct Stack *S){
+	if(S -> act == NULL ){
+		printf("La pila esta vacia\n");
+		return;
+	}
+	if(( S -> act )-> sig == NULL){
+		printf("Operacion invalida, no hay elemento siguiente\n");
+		return ;
+	}
+	S -> act =( S -> act) -> sig;
+}
+
+void Imprime(struct Stack *S){		
+	int i,j;
+	if(S -> act == NULL ){
+		printf("La pila esta vacia\n");
+		return;
+	}
+	for(i = 0 ; i < 8; i ++){
+		for(j = 0 ; j < 8 ; j++)
+			printf("%c ",(S -> act) -> tablero[i][j]);
+		printf("\n");
+	}
+}
+
+
+
 
 /*funcion para conocer a quien le tocaba tirar cuando se guardo el archivo*/
 int
