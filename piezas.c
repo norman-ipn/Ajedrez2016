@@ -1,4 +1,5 @@
 #include "piezas.h"
+#include "tablero.h"
 
 /* Asumiendo que minusculas son las blancas */
 /*  R es para rey */
@@ -18,8 +19,33 @@ validar_movimiento_peon (struct tablero *t, int a, int b, int c, int d)
 
 /*-----FUNCIONES AUXILIARES PAR VALIDAR EL MOVIMIENTO DE CADA PIEZA*/
 int
-casilla_atacada (struct tablero *tab, int x, int y, int x1, int y1)
+casilla_atacada (struct tablero *tab, int x, int y, int x1, int y1, char a)
 {
+  int atacada = 0;
+  int i = 0;
+  while (i < 3)
+    {
+      if ((x - x1) < 0)
+	{
+	  x = x + i;
+	}
+      if ((x - x1) > 0)
+	{
+	  x = x - i;
+	}
+      if (a == 'b')
+	{
+	  atacada = buscar_atacantes_negros (x, y, tab);
+	}
+      if (a == 'n')
+	{
+	  atacada = buscar_atacantes_blancos (x, y, tab);
+	}
+      if (atacada == 1)
+	{
+	  return -1;
+	}
+    }
   return 0;
 }
 
@@ -251,7 +277,6 @@ validar_enroque_blanco (struct tablero *un_tablero, int x1, int y1, int x2,
 {
   int mov_rey = 0;
   int mov_torre = 0;
-
   mov_rey = un_tablero->se_movio[x1][y1];
 
   if (x2 == 2)
@@ -363,7 +388,7 @@ int
 revisar_casilla_vacia (struct tablero *un_tablero, int i, int j)
 {
   /* Se verifica si la casilla introducida está vacía, si es así, se regresa el entero 1 */
-  if (un_tablero->casillas[i][j] != ' ')
+  if (un_tablero->casillas[i][j] != ' '&& un_tablero->casillas[i][j] != 'X')
     {
       return -1;
     }
@@ -382,16 +407,18 @@ validar_enroque_largo_negro (struct tablero *un_tablero, int mov_torre,
   int pos1_y = 0;
   int pos2_x = 2;
   int pos2_y = 0;
+  char a = 'n';
   if ((mov_torre != 0) || (mov_rey != 0))
     {
       se_puede = 0;
     }
-  se_puede = casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y);
+  se_puede =
+    casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y, a);
   /* Función para verificar que con el enroque el rey no se ve amenazado */
   if (se_puede != -1)
     {
       se_puede =
-	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y);
+	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y, a);
       /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
       if (se_puede != -1)
 	{
@@ -430,17 +457,19 @@ validar_enroque_largo_blanco (struct tablero *un_tablero, int mov_TD,
   int pos1_y = 7;
   int pos2_x = 2;
   int pos2_y = 7;
+  char a = 'b';
 
   if ((mov_TD != 0) || (mov_R != 0))
     {
       se_puede = -1;
     }
-  se_puede = casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y);
+  se_puede =
+    casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y, a);
   /* Función para verificar que con el enroque el rey no se ve amenazado */
   if (se_puede != -1)
     {
       se_puede =
-	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y);
+	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y, a);
       /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
       if (se_puede != -1)
 	{
@@ -478,17 +507,19 @@ validar_enroque_corto_negro (struct tablero *un_tablero, int mov_torre,
   int pos1_y = 0;
   int pos2_x = 6;
   int pos2_y = 0;
+  char a = 'n';
 
   if ((mov_torre != 0) || (mov_rey != 0))
     {
       se_puede = 0;
     }
-  se_puede = casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y);
+  se_puede =
+    casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y, a);
   /* Función para verificar que con el enroque el rey no se ve amenazado */
   if (se_puede != -1)
     {
       se_puede =
-	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y);
+	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y, a);
       /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
       if (se_puede != -1)
 	{
@@ -526,16 +557,18 @@ validar_enroque_corto_blanco (struct tablero *un_tablero, int mov_torre,
   int pos1_y = 7;
   int pos2_x = 5;
   int pos2_y = 7;
+  char a = 'b';
   if ((mov_torre != 0) || (mov_rey != 0))
     {
       se_puede = 0;
     }
-  se_puede = casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y);
+  se_puede =
+    casilla_atacada (un_tablero, posini_x, posini_y, pos1_x, pos1_y, a);
   /* Función para verificar que con el enroque el rey no se ve amenazado */
   if (se_puede != -1)
     {
       se_puede =
-	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y);
+	casilla_atacada (un_tablero, posini_x, posini_y, pos2_x, pos2_y, a);
       /*verificar si en la segunda posicion del enroque el rey no esta en jaque */
       if (se_puede != -1)
 	{
