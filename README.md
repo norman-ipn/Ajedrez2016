@@ -19,6 +19,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**JoaksIPN**| Domínguez Moran Joaquín|1CM2|
 |**Bucketh**| Loretto Estrada Galilea América|1CM2|
 |**Omar6re**| Rojas Espinoza Omar|1CM2|
+|**JoseRivera12**| Rivera Ramirez José Armando|1CM1|
 
 # Coordinadores ETAPA 3
 
