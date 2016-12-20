@@ -350,9 +350,22 @@ main_servidor (void)
 	      printf ("Error al cargar el chat");
 	    }
 	  recv (client_sockfd, cs, 1024, 0);
+	  read (client_sockfd, c, 1024); 	/*Lee el mensaje del cliente*/
 	  printf ("El cliente dijo: %s\n", cs);
-	  printf ("ingrese una cadena: \n");
-	  scanf ("%*c%[^\n]", c);
+	  printf ("ingrese una cadena para enviar al cliente: ");
+          fgets (cs, 1024, stdin);
+          sscanf (cs, "%s", c);
+          send (sockfd, c, 1024, 0);
+	  bufs = srtlen(cs); 			/* Obtiene el tamaño de la cadena */
+	  if [(cs[0] == 'A' && cs[1] == 'D' && cs[2] == 'I' && cs[3] == 'O' && cs[4] == 'S' && cs [5] == '\0' || (cs[0] == 'a' && cs[1] == 'd' && cs[2] == 'i' && cs[3] == 'o' && cs[4] == 's' && cs [5] == '\0')]
+	    {
+	      printf("Servidor finalizado\n");
+	      printf("\n--------------SESION FINALIZADA--------------\n");
+	      close(client_sockfd);
+	      break;
+	    }
+
+	  write(client_sockfd, cs, bufs = 1); /* Envío de la infromación al servidor */
 	  send (client_sockfd, c, 1024, 0);
 	  close (client_sockfd);
 	}
@@ -367,18 +380,21 @@ main_servidor (void)
 void
 cliente_conexion_mensaje (void)
 {
-  int sockfd = 0;
-  int len = 0;
+  int sockfd = 0;		/* Descriptor del socket */
+  int len = 0;			/* Tamaño de la estructura */
   struct sockaddr_in address;
-  int result;
-  char ch[1024];
-  char c[1024];
-  int ciclo = 1;
+  int result = 0;		/* Resultado de la conexión */
+  char ch[1024];		/* Cadena del servidor */
+  char c[1024];			/* Cadena del cliente */
+  int ciclo = 0;		/* Variable para control de lectura y escritura */
   char ipserver[10];
-  int puerto;
-  char buffer[10];
+  int puerto = 0;
+  int buffer = 0;
+  int bufs = 0; 
+  int inicio = 0;		/* Indicador de inicio de sesión */
+  char cs[1024];		/* Cadena del servidor */
 
-
+  system ("clear");
 
   printf ("ingrese la ip del servidor\n");
   fgets (buffer, 10, stdin);
@@ -388,7 +404,10 @@ cliente_conexion_mensaje (void)
   fgets (buffer, 10, stdin);
   sscanf (buffer, "%d", &puerto);
   __fpurge (stdin);
-  while (ciclo)
+	
+  system ("clear");	
+	
+  while (ciclo == 0)
     {
       sockfd = socket (AF_INET, SOCK_STREAM, 0);
       /*llenado de la estructura de datos */
@@ -403,15 +422,36 @@ cliente_conexion_mensaje (void)
 	{
 	  perror ("ERROR EN LA CONEXION\n");
 	  close (sockfd);
+	  break;
 	}
-
+	  
+      /* Validar el inicio de sesión */
+      if (inicio == 0)
+        {
+	 printf("-----------------SESION INICIADA-----------------\n");
+	 read (sockfd, ch, 1024);		 	/* Lee la cadena del servidor */
+	 printf ("%s\n", ch); 	 			/* Imprime la cadena */
+         inicio = 1;
+        }
+	  
+      if [(cs[0] == 'A' && cs[1] == 'D' && cs[2] == 'I' && cs[3] == 'O' && cs[4] == 'S' && cs [5] == '\0' || (cs[0] == 'a' && cs[1] == 'd' && cs[2] == 'i' && cs[3] == 'o' && cs[4] == 's' && cs [5] == '\0')]
+	{
+	 printf("Servidor finalizado\n");
+	 printf("\n--------------SESION FINALIZADA--------------\n");
+	 close(client_sockfd);
+	 break;
+	}
 
       printf ("ingrese una cadena para enviar al servidor: ");
 
       fgets (ch, 1024, stdin);
       sscanf (ch, "%s", c);
       send (sockfd, c, 1024, 0);
-
+      write(sockfd, 'El cliente se ha desconectado', 30); /* Envío de la infromación al servidor */
+      close (sockfd);
+      break;
+	}
+      close (server_sockfd);
     }
 
   close (sockfd);
