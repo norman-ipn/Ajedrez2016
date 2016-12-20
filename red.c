@@ -356,16 +356,16 @@ main_servidor (void)
 	  printf ("ingrese una cadena para enviar al cliente: ");
           fgets (cs, 1024, stdin);
           sscanf (cs, "%s", c);
-<<<<<<< HEAD
+
           send (client_sockfd, c, 1024, 0);
           int bufs=0;//Se agrega la declaracion de bufs que antes no estaba
 	  bufs = strlen(cs); 			/* Obtiene el tamaño de la cadena */
 	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I') && (cs[3] == 'O') && (cs[4] == 'S' ) && (cs [5] == '\0' )) || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i') && (cs[3] == 'o') && (cs[4] == 's') && (cs [5] == '\0')))
-=======
-          send (sockfd, c, 1024, 0);
-	  bufs = srtlen(cs); 			/* Obtiene el tamaño de la cadena */
-	  if (cs[0] == 'A' && cs[1] == 'D' && cs[2] == 'I' && cs[3] == 'O' && cs[4] == 'S' && cs [5] == '\0' || (cs[0] == 'a' && cs[1] == 'd' && cs[2] == 'i' && cs[3] == 'o' && cs[4] == 's' && cs [5] == '\0'))
->>>>>>> 3c51ad23d2f5a1834f6d4836e2cbf0077fd31531
+
+          send (client_sockfd, c, 1024, 0);
+	  bufs = strlen(cs); 			/* Obtiene el tamaño de la cadena */
+	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I') && (cs[3] == 'O') && (cs[4] == 'S') && (cs [5] == '\0')) || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i') && (cs[3] == 'o') && (cs[4] == 's') && (cs [5] == '\0')))
+
 	    {
 	      printf("Servidor finalizado\n");
 	      printf("\n--------------SESION FINALIZADA--------------\n");
@@ -456,7 +456,7 @@ cliente_conexion_mensaje (void)
       fgets (ch, 1024, stdin);
       sscanf (ch, "%s", c);
       send (sockfd, c, 1024, 0);
-      write(sockfd, 'cliente_ido',30); /* Envío de la infromación al servidor */
+      //write(sockfd,' ',30); /* Envío de la infromación al servidor */ //Poner el arreglo correspondiente en el parametro
       close (sockfd);
       break;
 	}
