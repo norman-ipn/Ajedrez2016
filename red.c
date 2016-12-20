@@ -461,7 +461,8 @@ cliente_conexion_mensaje (void)
       break;
 	}
       close (server_sockfd);
-    }
+    
+
 
   close (sockfd);
 
