@@ -41,6 +41,10 @@ int paso (struct tablero *un_tablero, int columna, int fila);
 void invertir_tablero (struct tablero *un_tablero);
 
 int obtener_posicion (int Columna, int Fila);
+
+void mover_piezas (struct tablero *un_tablero);
+
+int verificar_coordenada (char coordenada[3]);
 /*
 char color_remplazo (int columna, int fila);
 
