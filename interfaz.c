@@ -166,7 +166,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
     if (tiempo > 180000.0f)
        {
          printf("Te pasaste del tiempo asignado para ti, se hara una jugada al azar\n");
-	 jugada_al_azar(turno);
+	 jugada_al_azar(*un_tablero,turno);
          turno++;
 	 break;
        }
