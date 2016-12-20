@@ -1,20 +1,23 @@
 #include "ia.h"
 
 typedef struct tablero Tablero;
-int revisar_casilla_peon (Tablero * board, int x1, int y1);
-int escapar (Tablero * board, int x1, int y1);
-int atacar (Tablero * board, int x, int y);
-int podemosComer (Tablero * board);
-int podemosSerComidos (Tablero * board);
-int MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
-		      int y1, int x2, int y2);
-int validar_movimiento_torre (Tablero * board, int x0, int y0, int x, int y);
-int validar_peon (Tablero * board, int x1, int y1, int x2, int y2);
-int validar_movimiento_caballo (Tablero * board, int x1, int y1, int x2, int y2);
+int revisar_casilla_peon (struct tablero *board, int x1, int y1);
+int escapar (struct tablero *board, int x1, int y1);
+int atacar (struct tablero *board, int x, int y);
+int podemosComer (struct tablero *board);
+int podemosSerComidos (struct tablero *board);
+int MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y,
+		      int x1, int y1, int x2, int y2);
+int validar_movimiento_torre (struct tablero *board, int x0, int y0, int x,
+			      int y);
+int validar_peon (struct tablero *board, int x1, int y1, int x2, int y2);
+int validar_movimiento_caballo (struct tablero *board, int x1, int y1, int x2,
+				int y2);
 int movimiento;
 /* ============================== FUNCIÓN PRINCIPAL ======================= */
 int
-responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
+responder_jugada (struct tablero *board, int turno, char *respuesta, int x,
+		  int y)
 {
 
   int movimientoIndicado;
@@ -46,7 +49,7 @@ responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
 
   /* =========== FUNCIONES EN LAS QUE EVALUAMOS LA SITUACIÓN ============================ */
 
-  /* ============================== Podemos comer ======================= 
+  /* ============================== Podemos comer =======================
      - ¿Qué hace?
      - Se va a encargar de revisar el tablero y ver si podemos comer una pieza, de ser no ser asi regresa 0
      y si es posible regresa el valor asignado (8 por ejemplo si podemos comernos un caballo)
@@ -58,7 +61,7 @@ responder_jugada (Tablero * board, int turno, char *respuesta, int x, int y)
   /* =========== FUNCIONES EN LAS QUE ACTUAMOS ============================================== */
 
 int
-revisar_casilla_peon (Tablero * board, int x1, int y1)
+revisar_casilla_peon (struct tablero *board, int x1, int y1)
 {
   char pieza = 't';
 
@@ -81,7 +84,7 @@ quiere decir que hay una pieza en una de las esquinas.*/
      - Se va a encargar de encontrar una pieza y buscar un movimiento valido y hacerlo
    */
 int
-escapar (Tablero * board, int x1, int y1)
+escapar (struct tablero *board, int x1, int y1)
 {
   char pieza = 't';
   //pieza = board[x1][y1];
@@ -104,7 +107,7 @@ escapar (Tablero * board, int x1, int y1)
      x1=Posición x Inicial   y1=Posición y inicial
    */
 int
-atacar (Tablero * board, int x, int y)
+atacar (struct tablero *board, int x, int y)
 {
 
   char pieza = 't';
@@ -141,30 +144,30 @@ atacar (Tablero * board, int x, int y)
      - Se encarga de ver que movimientos posibles tiene nuestras piezas
    */
 int
-podemosComer (Tablero * tablero)
+podemosComer (struct tablero *board)
 {
   int valor = 0;
   return valor;
 }
 
 
- /*  ============================== Podemos ser Comidos ======================= 
+ /*  ============================== Podemos ser Comidos =======================
     - ¿Qué hace?
     - Se va a encargar de revisar el tablero y ver si estamos a punto de ser comidos, de ser no ser a si regresa 0
     y si es posible regresa el valor asignado (8 por ejemplo si nos van a comer a un caballo)
 
-    También va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a 
+    También va a modificar las coordenadas para que apunten a la pieza que esta por ser comida y va a
     poner las coordenadas de nuestro atacante */
 
 int
-podemosSerComidos (Tablero * un_tablero)
+podemosSerComidos (struct tablero *board)
 {
   int valor = 0;
   return valor;
 }
 
 int
-MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
+MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y, int x1,
 		  int y1, int x2, int y2)
 {
 
@@ -217,17 +220,16 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
     }
   return movimiento;
 }
+
 /* ============================== Aparte ======================= */
 
 void
-mover_peon (Tablero * board, char jugada[4])
+mover_peon (struct tablero *board, char jugada[4])
 {
   int i = 0;
   int j = 0;
   int aux = 0;
   int cont = 0;
-  char o;
-  int val_mov = 0;
   srand (time (NULL));
   while (aux < 9)
     {
@@ -236,135 +238,135 @@ mover_peon (Tablero * board, char jugada[4])
       j = 0;
       cont = 0;
       while (i < 8)
-        {
-          while (j < 8)
-            {
-              if (board[i][j] == 'p')
-                {
-                  cont = cont + 1;
-                }
-              if (cont == aux)
-                {
-                  if (board[i + 1][j] == 'X' || '-')
-                    {
-                      cambiar (i + 1, j, i, j, jugada);
-                      return ;
-                    }
-                }
-              j = j + 1;
-            }
-          j = 0;
-          i = i + 1;
-        }
+	{
+	  while (j < 8)
+	    {
+	      if (board->casillas[i][j] == 'p')
+		{
+		  cont = cont + 1;
+		}
+	      if (cont == aux)
+		{
+		  if (board->casillas[i + 1][j] == 'X' || '-')
+		    {
+		      cambiar (i + 1, j, i, j, jugada);
+		      return;
+		    }
+		}
+	      j = j + 1;
+	    }
+	  j = 0;
+	  i = i + 1;
+	}
       if (cont == 0)
-        {
-          return ;
-        }
+	{
+	  return;
+	}
     }
 }
 
 int
-arriba (tablero * board, int x, int y, char jugada[4], int valor)
+arriba (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x + v][y] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x + v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x + v, y, x, y, valor) == 1)
-            {
-              cambiar (x + v, y, x, y, jugada);
-              return calcularvalor (x + v, y, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x + v][y] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x + v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x + v, y, x, y, valor) == 1)
+	    {
+	      cambiar (x + v, y, x, y, jugada);
+	      return calcularvalor (x + v, y, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-abajo (tablero * board, int x, int y, char jugada[4], int valor)
+abajo (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x - v][y] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x - v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x - v, y, x, y, valor) == 1)
-            {
-              cambiar (x - v, y, x, y, jugada);
-              return calcularvalor (x - v, y, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x - v][y] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x - v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x - v, y, x, y, valor) == 1)
+	    {
+	      cambiar (x - v, y, x, y, jugada);
+	      return calcularvalor (x - v, y, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-izquierda (tablero * board, int x, int y, char jugada[4], int valor)
+izquierda (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x, y - v, x, y, valor) == 1)
-            {
-              cambiar (x, y - v, x, y, jugada);
-              return calcularvalor (x, y - v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x][y - v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x, y - v, x, y, valor) == 1)
+	    {
+	      cambiar (x, y - v, x, y, jugada);
+	      return calcularvalor (x, y - v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-derecha (tablero * board, int x, int y, char jugada[4], int valor)
+derecha (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x, y + v, x, y, valor) == 1)
-            {
-              cambiar (x, y + v, x, y, jugada);
-              return calcularvalor (x, y + v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x][y + v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x, y + v, x, y, valor) == 1)
+	    {
+	      cambiar (x, y + v, x, y, jugada);
+	      return calcularvalor (x, y + v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-cruz (tablero * board, int x, int y, char jugada[4], int valor)
+cruz (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
 
   valor = arriba (board, x, y, jugada, valor);
@@ -376,107 +378,107 @@ cruz (tablero * board, int x, int y, char jugada[4], int valor)
 }
 
 int
-diagonalard (tablero * board, int x, int y, char jugada[4], int valor)
+diagonalard (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x + v][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x + v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x + v, y + v, x, y, valor) == 1)
-            {
-              cambiar (x + v, y + v, x, y, jugada);
-              return calcularvalor (x + v, y + v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x + v][y + v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x + v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x + v, y + v, x, y, valor) == 1)
+	    {
+	      cambiar (x + v, y + v, x, y, jugada);
+	      return calcularvalor (x + v, y + v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-diagonalabd (tablero * board, int x, int y, char jugada[4], int valor)
+diagonalabd (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x - v][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x - v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x - v, y + v, x, y, valor) == 1)
-            {
-              cambiar (x - v, y + v, x, y, jugada);
-              return calcularvalor (x - v, y + v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x - v][y + v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x - v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x - v, y + v, x, y, valor) == 1)
+	    {
+	      cambiar (x - v, y + v, x, y, jugada);
+	      return calcularvalor (x - v, y + v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-diagonalari (tablero * board, int x, int y, char jugada[4], int valor)
+diagonalari (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x + v][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x + v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x + v, y - v, x, y, valor) == 1)
-            {
-              cambiar (x + v, y - v, x, y, jugada);
-              return calcularvalor (x + v, y - v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x + v][y - v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x + v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x + v, y - v, x, y, valor) == 1)
+	    {
+	      cambiar (x + v, y - v, x, y, jugada);
+	      return calcularvalor (x + v, y - v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-diagonalabi (tablero * board, int x, int y, char jugada[4], int valor)
+diagonalabi (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
-  int res = 2;
   while (v < 8)
     {
-      if (board[x - v][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
-        {
-          return valor;
-        }
-      if (board[x - v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-        {
-          if (comparar (x - v, y - v, x, y, valor) == 1)
-            {
-              cambiar (x - v, y - v, x, y, jugada);
-              return calcularvalor (x - v, y - v, x, y);
-            }
-          return valor;
-        }
+      if (board->casillas[x - v][y - v] ==
+	  ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+	{
+	  return valor;
+	}
+      if (board->casillas[x - v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+	{
+	  if (comparar (x - v, y - v, x, y, valor) == 1)
+	    {
+	      cambiar (x - v, y - v, x, y, jugada);
+	      return calcularvalor (x - v, y - v, x, y);
+	    }
+	  return valor;
+	}
       v = v + 1;
     }
   return valor;
 }
 
 int
-diagonal (tablero * board, int x, int y, char jugada[4], int valor)
+diagonal (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   valor = diagonalard (board, x, y, jugada, valor);
   valor = diagonalari (board, x, y, jugada, valor);
@@ -485,127 +487,127 @@ diagonal (tablero * board, int x, int y, char jugada[4], int valor)
 }
 
 int
-cab1 (tablero * board, int x, int y, char jugada[4], int valor)
+cab1 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x + 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x + 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x + 2, y + 1, x, y, valor) == 1)
-        {
-          cambiar (x + 2, y + 1, x, y, jugada);
-          return calcularvalor (x + 2, y + 1, x, y);
-        }
+	{
+	  cambiar (x + 2, y + 1, x, y, jugada);
+	  return calcularvalor (x + 2, y + 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab2 (tablero * board, int x, int y, char jugada[4], int valor)
+cab2 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x + 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x + 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x + 1, y + 2, x, y, valor) == 1)
-        {
-          cambiar (x + 1, y + 2, x, y, jugada);
-          return calcularvalor (x + 1, y + 2, x, y);
-        }
+	{
+	  cambiar (x + 1, y + 2, x, y, jugada);
+	  return calcularvalor (x + 1, y + 2, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab3 (tablero * board, int x, int y, char jugada[4], int valor)
+cab3 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x + 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x + 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x + 1, y - 2, x, y, valor) == 1)
-        {
-          cambiar (x + 1, y - 2, x, y, jugada);
-          return calcularvalor (x + 1, y - 2, x, y);
-        }
+	{
+	  cambiar (x + 1, y - 2, x, y, jugada);
+	  return calcularvalor (x + 1, y - 2, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab4 (tablero * board, int x, int y, char jugada[4], int valor)
+cab4 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x + 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x + 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x + 2, y - 1, x, y, valor) == 1)
-        {
-          cambiar (x + 2, y - 1, x, y, jugada);
-          return calcularvalor (x + 2, y - 1, x, y);
-        }
+	{
+	  cambiar (x + 2, y - 1, x, y, jugada);
+	  return calcularvalor (x + 2, y - 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab5 (tablero * board, int x, int y, char jugada[4], int valor)
+cab5 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x - 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x - 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x - 2, y - 1, x, y, valor) == 1)
-        {
-          cambiar (x - 2, y - 1, x, y, jugada);
-          return calcularvalor (x - 2, y - 1, x, y);
-        }
+	{
+	  cambiar (x - 2, y - 1, x, y, jugada);
+	  return calcularvalor (x - 2, y - 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab6 (tablero * board, int x, int y, char jugada[4], int valor)
+cab6 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x - 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x - 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x - 1, y - 2, x, y, valor) == 1)
-        {
-          cambiar (x - 1, y - 2, x, y, jugada);
-          return calcularvalor (x - 1, y - 2, x, y);
-        }
+	{
+	  cambiar (x - 1, y - 2, x, y, jugada);
+	  return calcularvalor (x - 1, y - 2, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab7 (tablero * board, int x, int y, char jugada[4], int valor)
+cab7 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (tablero[x - 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x - 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x - 1, y + 2, x, y, valor) == 1)
-        {
-          cambiar (x - 1, y + 2, x, y, jugada);
-          return calcularvalor (x - 1, y + 2, x, y);
-        }
+	{
+	  cambiar (x - 1, y + 2, x, y, jugada);
+	  return calcularvalor (x - 1, y + 2, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-cab8 (tablero * board, int x, int y, char jugada[4], int valor)
+cab8 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x - 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x - 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x - 2, y + 1, x, y, valor) == 1)
-        {
-          cambiar (x - 2, y + 1, x, y, jugada);
-          return calcularvalor (x - 2, y + 1, x, y);
-        }
+	{
+	  cambiar (x - 2, y + 1, x, y, jugada);
+	  return calcularvalor (x - 2, y + 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-caballo (tablero * board, int x, int y, char jugada[4], int valor)
+caballo (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   valor = cab1 (board, x, y, jugada, valor);
   valor = cab2 (board, x, y, jugada, valor);
@@ -619,37 +621,37 @@ caballo (tablero * board, int x, int y, char jugada[4], int valor)
 }
 
 int
-pe1 (tablero * board, int x, int y, char jugada[4], int valor)
+pe1 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (board[x][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x, y + 1, x, y, valor) == 1)
-        {
-          cambiar (x, y + 1, x, y, jugada);
-          return calcularvalor (x, y + 1, x, y);
-        }
+	{
+	  cambiar (x, y + 1, x, y, jugada);
+	  return calcularvalor (x, y + 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-pe2 (tablero * board, int x, int y, char jugada[4], int valor)
+pe2 (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
-  if (tablero[x][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+  if (board->casillas[x][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
     {
       if (comparar (x, y - 1, x, y, valor) == 1)
-        {
-          cambiar (x, y - 1, x, y, jugada);
-          return calcularvalor (x, y - 1, x, y);
-        }
+	{
+	  cambiar (x, y - 1, x, y, jugada);
+	  return calcularvalor (x, y - 1, x, y);
+	}
       return valor;
     }
   return valor;
 }
 
 int
-peon (tablero * board, int x, int y, char jugada[4], int valor)
+peon (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   valor = pe1 (board, x, y, jugada, valor);
   valor = pe2 (board, x, y, jugada, valor);
@@ -657,7 +659,7 @@ peon (tablero * board, int x, int y, char jugada[4], int valor)
 }
 
 int
-lados (tablero * board, int x, int y, char jugada[4], int valor)
+lados (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int i = -1;
   int k = -1;
@@ -665,26 +667,27 @@ lados (tablero * board, int x, int y, char jugada[4], int valor)
     {
       k = -1;
       while (k < 2)
-        {
-          if (board[x + i][y + k] == ('T' || 'Q' || 'A' || 'C' || 'P'))
-            {
-              if (comparar (x + i, y + k, x, y, valor) == 1)
-                {
-                  cambiar (x + i, y + k, x, y, jugada);
-                  valor = calcularvalor (x + i, y + k, x, y);
-                }
-            }
-          k = k + 1;
-        }
+	{
+	  if (board->casillas[x + i][y + k] ==
+	      ('T' || 'Q' || 'A' || 'C' || 'P'))
+	    {
+	      if (comparar (x + i, y + k, x, y, valor) == 1)
+		{
+		  cambiar (x + i, y + k, x, y, jugada);
+		  valor = calcularvalor (x + i, y + k, x, y);
+		}
+	    }
+	  k = k + 1;
+	}
       i = i + 1;
     }
   return valor;
 }
 
 int
-verificar (tablero * board, int x, int y, int valor, char jugada[4])
+verificar (struct tablero *board, int x, int y, int valor, char jugada[4])
 {
-  switch (board[x][y])
+  switch (board->casillas[x][y])
     {
     case 'd':
       valor = cruz (board, x, y, jugada, valor);
@@ -715,7 +718,7 @@ verificar (tablero * board, int x, int y, int valor, char jugada[4])
 }
 
 int
-analizar (tablero * board, char jugada[4])
+analizar (struct tablero *board, char jugada[4])
 {
   int x = 0;
   int y = 0;
@@ -724,24 +727,23 @@ analizar (tablero * board, char jugada[4])
     {
       y = 0;
       while (y < 8)
-        {
-          valor = verificar (board, x, y, valor, jugada);
-          y = y + 1;
-        }
+	{
+	  valor = verificar (board, x, y, valor, jugada);
+	  y = y + 1;
+	}
       x = x + 1;
     }
   return valor;
 }
 
 void
-ia (tablero * board, char jugada[4])
+ia (struct tablero *board, char jugada[4])
 {
   int valor = 0;
   valor = analizar (board, jugada);
-  if valor
-    ( == -9)
+  if (valor == -9)
     {
-      mover_peon (board);
+      mover_peon (board, jugada);
       return;
     }
   return;
