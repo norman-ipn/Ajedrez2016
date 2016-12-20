@@ -217,3 +217,532 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
     }
   return movimiento;
 }
+/* ============================== Aparte ======================= */
+
+void
+mover_peon (Tablero * board, char jugada[4])
+{
+  int i = 0;
+  int j = 0;
+  int aux = 0;
+  int cont = 0;
+  char o;
+  int val_mov = 0;
+  srand (time (NULL));
+  while (aux < 9)
+    {
+      aux = rand () % 8 + 1;
+      i = 0;
+      j = 0;
+      cont = 0;
+      while (i < 8)
+        {
+          while (j < 8)
+            {
+              if (board[i][j] == 'p')
+                {
+                  cont = cont + 1;
+                }
+              if (cont == aux)
+                {
+                  if (board[i + 1][j] == 'X' || '-')
+                    {
+                      cambiar (i + 1, j, i, j, jugada);
+                      return ;
+                    }
+                }
+              j = j + 1;
+            }
+          j = 0;
+          i = i + 1;
+        }
+      if (cont == 0)
+        {
+          return ;
+        }
+    }
+}
+
+int
+arriba (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x + v][y] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x + v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x + v, y, x, y, valor) == 1)
+            {
+              cambiar (x + v, y, x, y, jugada);
+              return calcularvalor (x + v, y, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+abajo (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x - v][y] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x - v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x - v, y, x, y, valor) == 1)
+            {
+              cambiar (x - v, y, x, y, jugada);
+              return calcularvalor (x - v, y, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+izquierda (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x, y - v, x, y, valor) == 1)
+            {
+              cambiar (x, y - v, x, y, jugada);
+              return calcularvalor (x, y - v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+derecha (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x, y + v, x, y, valor) == 1)
+            {
+              cambiar (x, y + v, x, y, jugada);
+              return calcularvalor (x, y + v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+cruz (tablero * board, int x, int y, char jugada[4], int valor)
+{
+
+  valor = arriba (board, x, y, jugada, valor);
+  valor = abajo (board, x, y, jugada, valor);
+  valor = izquierda (board, x, y, jugada, valor);
+  valor = derecha (board, x, y, jugada, valor);
+  return valor;
+
+}
+
+int
+diagonalard (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x + v][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x + v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x + v, y + v, x, y, valor) == 1)
+            {
+              cambiar (x + v, y + v, x, y, jugada);
+              return calcularvalor (x + v, y + v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+diagonalabd (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x - v][y + v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x - v][y + v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x - v, y + v, x, y, valor) == 1)
+            {
+              cambiar (x - v, y + v, x, y, jugada);
+              return calcularvalor (x - v, y + v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+diagonalari (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x + v][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x + v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x + v, y - v, x, y, valor) == 1)
+            {
+              cambiar (x + v, y - v, x, y, jugada);
+              return calcularvalor (x + v, y - v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+diagonalabi (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int v = 1;
+  int res = 2;
+  while (v < 8)
+    {
+      if (board[x - v][y - v] == ('p' || 'a' || 'q' || 'k' || 'c' || 't'))
+        {
+          return valor;
+        }
+      if (board[x - v][y - v] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+        {
+          if (comparar (x - v, y - v, x, y, valor) == 1)
+            {
+              cambiar (x - v, y - v, x, y, jugada);
+              return calcularvalor (x - v, y - v, x, y);
+            }
+          return valor;
+        }
+      v = v + 1;
+    }
+  return valor;
+}
+
+int
+diagonal (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  valor = diagonalard (board, x, y, jugada, valor);
+  valor = diagonalari (board, x, y, jugada, valor);
+  valor = diagonalabd (board, x, y, jugada, valor);
+  valor = diagonalabi (board, x, y, jugada, valor);
+}
+
+int
+cab1 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x + 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x + 2, y + 1, x, y, valor) == 1)
+        {
+          cambiar (x + 2, y + 1, x, y, jugada);
+          return calcularvalor (x + 2, y + 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab2 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x + 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x + 1, y + 2, x, y, valor) == 1)
+        {
+          cambiar (x + 1, y + 2, x, y, jugada);
+          return calcularvalor (x + 1, y + 2, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab3 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x + 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x + 1, y - 2, x, y, valor) == 1)
+        {
+          cambiar (x + 1, y - 2, x, y, jugada);
+          return calcularvalor (x + 1, y - 2, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab4 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x + 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x + 2, y - 1, x, y, valor) == 1)
+        {
+          cambiar (x + 2, y - 1, x, y, jugada);
+          return calcularvalor (x + 2, y - 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab5 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x - 2][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x - 2, y - 1, x, y, valor) == 1)
+        {
+          cambiar (x - 2, y - 1, x, y, jugada);
+          return calcularvalor (x - 2, y - 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab6 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x - 1][y - 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x - 1, y - 2, x, y, valor) == 1)
+        {
+          cambiar (x - 1, y - 2, x, y, jugada);
+          return calcularvalor (x - 1, y - 2, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab7 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (tablero[x - 1][y + 2] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x - 1, y + 2, x, y, valor) == 1)
+        {
+          cambiar (x - 1, y + 2, x, y, jugada);
+          return calcularvalor (x - 1, y + 2, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+cab8 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x - 2][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x - 2, y + 1, x, y, valor) == 1)
+        {
+          cambiar (x - 2, y + 1, x, y, jugada);
+          return calcularvalor (x - 2, y + 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+caballo (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  valor = cab1 (board, x, y, jugada, valor);
+  valor = cab2 (board, x, y, jugada, valor);
+  valor = cab3 (board, x, y, jugada, valor);
+  valor = cab4 (board, x, y, jugada, valor);
+  valor = cab5 (board, x, y, jugada, valor);
+  valor = cab6 (board, x, y, jugada, valor);
+  valor = cab7 (board, x, y, jugada, valor);
+  valor = cab8 (board, x, y, jugada, valor);
+  return valor;
+}
+
+int
+pe1 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (board[x][y + 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x, y + 1, x, y, valor) == 1)
+        {
+          cambiar (x, y + 1, x, y, jugada);
+          return calcularvalor (x, y + 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+pe2 (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  if (tablero[x][y - 1] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+    {
+      if (comparar (x, y - 1, x, y, valor) == 1)
+        {
+          cambiar (x, y - 1, x, y, jugada);
+          return calcularvalor (x, y - 1, x, y);
+        }
+      return valor;
+    }
+  return valor;
+}
+
+int
+peon (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  valor = pe1 (board, x, y, jugada, valor);
+  valor = pe2 (board, x, y, jugada, valor);
+  return valor;
+}
+
+int
+lados (tablero * board, int x, int y, char jugada[4], int valor)
+{
+  int i = -1;
+  int k = -1;
+  while (i < 2)
+    {
+      k = -1;
+      while (k < 2)
+        {
+          if (board[x + i][y + k] == ('T' || 'Q' || 'A' || 'C' || 'P'))
+            {
+              if (comparar (x + i, y + k, x, y, valor) == 1)
+                {
+                  cambiar (x + i, y + k, x, y, jugada);
+                  valor = calcularvalor (x + i, y + k, x, y);
+                }
+            }
+          k = k + 1;
+        }
+      i = i + 1;
+    }
+  return valor;
+}
+
+int
+verificar (tablero * board, int x, int y, int valor, char jugada[4])
+{
+  switch (board[x][y])
+    {
+    case 'd':
+      valor = cruz (board, x, y, jugada, valor);
+      valor = diagonal (board, x, y, jugada, valor);
+      return valor;
+      break;
+    case 't':
+      valor = cruz (board, x, y, jugada, valor);
+      return valor;
+      break;
+    case 'c':
+      valor = caballo (board, x, y, jugada, valor);
+      return valor;
+      break;
+    case 'p':
+      valor = peon (board, x, y, jugada, valor);
+      return valor;
+      break;
+    case 'k':
+      valor = lados (board, x, y, jugada, valor);
+      return valor;
+      break;
+    case 'a':
+      valor = diagonal (board, x, y, jugada, valor);
+      return valor;
+      break;
+    }
+}
+
+int
+analizar (tablero * board, char jugada[4])
+{
+  int x = 0;
+  int y = 0;
+  int valor = -9;
+  while (x < 8)
+    {
+      y = 0;
+      while (y < 8)
+        {
+          valor = verificar (board, x, y, valor, jugada);
+          y = y + 1;
+        }
+      x = x + 1;
+    }
+  return valor;
+}
+
+void
+ia (tablero * board, char jugada[4])
+{
+  int valor = 0;
+  valor = analizar (board, jugada);
+  if valor
+    ( == -9)
+    {
+      mover_peon (board);
+      return;
+    }
+  return;
+}
