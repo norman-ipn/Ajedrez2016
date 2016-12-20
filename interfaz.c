@@ -275,7 +275,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
     }
 }
 
-/*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h*/
+/*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h
 void
 imprimir_tablero (struct tablero *tablero)
 {
@@ -341,8 +341,7 @@ imprimir_tablero (struct tablero *tablero)
       i = i + 1;
     }
   printf ("\n\n");
-}
-
+}*/ //Lo comenté porque ya no se va a usar esta función.
 /* Inicio de la sección del manual */
 void
 reglas_alfil (void)
@@ -977,7 +976,7 @@ modo (void)
 
       fflush(stdin);
       fgets(buffer, 4, stdin);
-      sscanf(buffer, "%i%", &opcion);
+      sscanf(buffer, "%i", &opcion);
     }
   while (opcion < 1 || opcion > 2);
 
