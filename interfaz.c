@@ -1002,7 +1002,7 @@ mostrar_menu (struct tablero *un_tablero)
 	{
 	case 49:
           tipo_juego = modo();
-	  jugar (un_tablero, tipo_juego);
+	  jugar (&un_tablero, tipo_juego);
 	  break;
 
 	case 50:
