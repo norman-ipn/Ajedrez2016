@@ -515,13 +515,15 @@ tablero_cyan (void)
   int e = 0;
 }*/
 
+/*Realiza el intercambio entre la pieza seleccionada y la casilla de destino dejando un espacio en blanco
+en el lugar que ocupaba la pieza*/
 void
 mover_piezas (struct tablero *un_tablero)
 {
-  char aux = '\0';;
-  char pieza[3];
-  char destino[3];
-  int verificar = 0;
+  char pieza[3];//Guarda las coordenadas de la pieza que se quiere mover.
+  char destino[3];//Guarda las coordenadas a las que se desea mover la pieza
+  int verificar = 0;//Es un indicador que ayuda a saber si las coordenadas introducidas son válidas.
+//Variables en las que se almacena numéricamente las coordenadas del movimiento para facilitar el intercambio.
   int columna_pieza = 0;
   int fila_pieza = 0;
   int columna_destino = 0;
@@ -538,8 +540,8 @@ mover_piezas (struct tablero *un_tablero)
     }
   while (verificar != 1
 	 && un_tablero->casillas[pieza[0] - 'A'][pieza[1] - '1'] != ' ');
-//Se repite el proceso hasta que la coordenada corresponda a una pieza
-
+/*La condición verifica si las coordenadas son válidas y en caso de ser válidas
+que también correspondan a una pieza y no a una casilla vacía.*/
   verificar = 0;
 
   do
@@ -554,11 +556,13 @@ mover_piezas (struct tablero *un_tablero)
   while (verificar != 1);
 //Se repite el proceso hasta que se introduzca una coordenada válida.
 
+//Se transforman las coordenas a enteros.
   columna_pieza = pieza[0] - 'A';
   columna_destino = destino[0] - 'A';
   fila_pieza = pieza[1] - '1';
   fila_destino = destino[1] - '1';
 
+//Se realiza el intercambio y se deja un espacio en blanco en la posición que antes ocupaba la pieza.
   un_tablero->casillas[columna_destino][fila_destino] =
     un_tablero->casillas[columna_pieza][fila_pieza];
   un_tablero->casillas[columna_pieza][fila_pieza] = ' ';
@@ -566,13 +570,17 @@ mover_piezas (struct tablero *un_tablero)
   return;
 }
 
+/*Verifica si las coordenadas guardadas en un arreglo son válidas. Si no son vlidas regresa -1,
+en caso contraio regresa 1.*/
 int
 verificar_coordenada (char coordenada[3])
 {
+//Verifica que se haya introducido una fila válida.
   if (coordenada[0] > 'H' || coordenada[0] < 'A')
     {
       return -1;
     }
+//Verifica que se haya introducido una columna válida.
   if (coordenada[1] > '8' || coordenada[1] < '1')
     {
       return -1;
