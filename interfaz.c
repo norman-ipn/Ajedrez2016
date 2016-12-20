@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <sys/time.h>
 #include "interfaz.h"
 #include "tablero.h"
 #include "piezas.h"
@@ -123,7 +125,11 @@ jugar (struct tablero *un_tablero, int tipo_juego)
   int x_objetivod = 0;
   char *respuesta = 0;
   int turno = 1;
+  struct timeval ti, tf;
+  double tiempo;
 
+  gettimeofday (&ti, NULL);     //Comienza timer
+	
   printf ("Comienza el juego\n\n");
   while (1 == 1)
     {
@@ -145,7 +151,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
       printf ("Para cancelar el último movimiento introduzca \"c\"\n");
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
-
+      scanf ("%c", &opcion);
       if(turno % 2 == 0 && tipo_juego == 2)
         {
 	   opcion = 'm';      
@@ -154,6 +160,16 @@ jugar (struct tablero *un_tablero, int tipo_juego)
       {
         opcion = capturar_caracter ();
       }
+     gettimeofday (&tf, NULL);     // Instante final
+     tiempo =
+       (tf.tv_sec - ti.tv_sec) * 1000 + (tf.tv_usec - ti.tv_usec) / 1000.0;
+    if (tiempo > 180000.0f)
+       {
+         printf("Te pasaste del tiempo asignado para ti, se hara una jugada al azar\n");
+	 jugada_al_azar(turno);
+         turno++;
+	 break;
+       }
 
       switch (opcion)
 	{
