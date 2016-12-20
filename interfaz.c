@@ -107,20 +107,20 @@ imprimir (struct tablero *un_tablero)
 int
 jugar (struct tablero *un_tablero, int tipo_juego)
 {
-  int i = 0;
+  //int i = 0;
   char opcion = '\0';
   FILE *registro = NULL;
   int letra = 0;
-  char x_pieza = '0';
+  //char x_pieza = '0';
   int y_pieza = 0;
-  char x_objetivo = '0';
+  //char x_objetivo = '0';
   int y_objetivo = 0;
   int jugador = 0;
-  char columnas[16] =
+  /*char columnas[16] =
     { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
     'g', 'h'
-  };
-  char entrada[2] = "0";
+  };*/
+  //char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
   char *respuesta = 0;
