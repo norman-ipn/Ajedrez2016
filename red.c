@@ -357,7 +357,7 @@ main_servidor (void)
           sscanf (cs, "%s", c);
           send (sockfd, c, 1024, 0);
 	  bufs = srtlen(cs); 			/* Obtiene el tamaño de la cadena */
-	  if [(cs[0] == 'A' && cs[1] == 'D' && cs[2] == 'I' && cs[3] == 'O' && cs[4] == 'S' && cs [5] == '\0' || (cs[0] == 'a' && cs[1] == 'd' && cs[2] == 'i' && cs[3] == 'o' && cs[4] == 's' && cs [5] == '\0')]
+	  if (cs[0] == 'A' && cs[1] == 'D' && cs[2] == 'I' && cs[3] == 'O' && cs[4] == 'S' && cs [5] == '\0' || (cs[0] == 'a' && cs[1] == 'd' && cs[2] == 'i' && cs[3] == 'o' && cs[4] == 's' && cs [5] == '\0'))
 	    {
 	      printf("Servidor finalizado\n");
 	      printf("\n--------------SESION FINALIZADA--------------\n");
