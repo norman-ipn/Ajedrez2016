@@ -181,7 +181,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	      turno++;
 	      break;
 	    }
-	   mover_piezas(&un_tablero);
+	   mover_piezas(un_tablero);
 /*------SOLICITUD DE DATOS DE LAS PIEZAS------
 
 	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
@@ -290,6 +290,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 
       imprimir (un_tablero);
     }
+ return -1;//La funcion necesita un retorno, omiti el cero porque no sé si se ocupe el retorno, si no por favor de cambiar a void
 }
 
 /*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h
@@ -1019,7 +1020,7 @@ mostrar_menu (struct tablero *un_tablero)
 	{
 	case 49:
           tipo_juego = modo();
-	  jugar (&un_tablero, tipo_juego);
+	  jugar (un_tablero, tipo_juego);
 	  break;
 
 	case 50:

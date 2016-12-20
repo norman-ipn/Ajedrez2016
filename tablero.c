@@ -1,4 +1,5 @@
 #include "tablero.h"
+#include <stdlib.h>
 
 void				/* Esta función busca a los reyes en la estructura tablero y necesita direcciones de memoria a las que les asignara un valor para que desde donde se haya llamado, se puedan trabajar */
 buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
@@ -597,18 +598,18 @@ jugada_al_azar (struct tablero *un_tablero, int turno)
 	int x2=0;
 	int y2=0;
 	int good=0;
-	time_t t;
-	srand((unsigned) time (&t));
+	//time  t;
+	//srand(time (&t));
 	x1=rand () % 8 + 1;
 	y1=rand () % 8 + 1;
 	x2=rand () % 8 + 1;
 	y2=rand () % 8 + 1;
-	good=movimiento_valido(*un_tablero, x1, y1, x2, y2);
+	good=movimiento_valido(un_tablero, x1, y1, x2, y2);
 	while(good==-1)
 	{
 		x2=rand () % 8 + 1;
 		y2=rand () % 8 + 1;
 	}
-	movimiento valido(*un_tablero, x1, y1, x2, y2);
+	movimiento_valido(un_tablero, x1, y1, x2, y2);
 	return 1;
 }
