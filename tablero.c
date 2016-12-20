@@ -588,3 +588,27 @@ verificar_coordenada (char coordenada[3])
 
   return 1;
 }
+
+int
+jugada_al_azar (struct tablero *un_tablero, int turno)
+{
+	int x1=0;
+	int y1=0;
+	int x2=0;
+	int y2=0;
+	int good=0;
+	time_t t;
+	srand((unsigned) time (&t));
+	x1=rand () % 8 + 1;
+	y1=rand () % 8 + 1;
+	x2=rand () % 8 + 1;
+	y2=rand () % 8 + 1;
+	good=movimiento_valido(*un_tablero, x1, y1, x2, y2);
+	while(good==-1)
+	{
+		x2=rand () % 8 + 1;
+		y2=rand () % 8 + 1;
+	}
+	movimiento valido(*un_tablero, x1, y1, x2, y2);
+	return 1;
+}
