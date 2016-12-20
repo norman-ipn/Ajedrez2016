@@ -219,6 +219,49 @@ MovimientoRandom (Tablero * board, int x0, int y0, int x, int y, int x1,
 }
 /* ============================== Aparte ======================= */
 
+int
+mover_peon (Tablero * board)
+{
+  int i = 0;
+  int j = 0;
+  int aux = 0;
+  int cont = 0;
+  char o;
+  int val_mov = 0;
+  srand (time (NULL));
+  while (aux < 9)
+    {
+      aux = rand () % 8 + 1;
+      i = 0;
+      j = 0;
+      cont = 0;
+      while (i < 8)
+        {
+          while (j < 8)
+            {
+              if (tablero[i][j] == 'p')
+                {
+                  cont = cont + 1;
+                }
+              if (cont == aux)
+                {
+                  if (tablero[i + 1][j] == 'X' || '-')
+                    {
+                      cambiar (i + 1, j, i, j, jugada);
+                      return 0;
+                    }
+                }
+              j = j + 1;
+            }
+          j = 0;
+          i = i + 1;
+        }
+      if (cont == 0)
+        {
+          return 0;
+        }
+    }
+}
 
 int arriba (tablero *board, int x, int y,char jugada[4],int valor)
 {
