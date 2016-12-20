@@ -223,6 +223,23 @@ MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y, int x1,
 
 /* ============================== Aparte ======================= */
 
+//Definir funcion cambiar a su conveniencia
+void cambiar(int n1,int n2,int n3, int n4,char c[4]){
+
+
+}
+
+//Definir funcion calcula valor a u conveniencia
+int calcularvalor(int n1,int n2, int n3,int n4){
+ int resultado=0;
+ return resultado;
+}
+
+//Definir duncion comparar a su conveniencia
+int comparar(int n1, int n2, int n3, int n4, int n5){
+ return 0;
+}
+
 void
 mover_peon (struct tablero *board, char jugada[4])
 {
@@ -249,8 +266,8 @@ mover_peon (struct tablero *board, char jugada[4])
 		{
 		  if (board->casillas[i + 1][j] == 'X' || '-')
 		    {
-		      cambiar (i + 1, j, i, j, jugada);
-		      return;
+		      //cambiar (i + 1, j, i, j, jugada);   Marca error al compilar definir funcion cambiar
+		      //return;
 		    }
 		}
 	      j = j + 1;
@@ -260,7 +277,7 @@ mover_peon (struct tablero *board, char jugada[4])
 	}
       if (cont == 0)
 	{
-	  return;
+	  //return;
 	}
     }
 }
@@ -269,6 +286,8 @@ int
 arriba (struct tablero *board, int x, int y, char jugada[4], int valor)
 {
   int v = 1;
+  int valor2=0;
+  int comparacion=0;
   while (v < 8)
     {
       if (board->casillas[x + v][y] ==
@@ -278,10 +297,12 @@ arriba (struct tablero *board, int x, int y, char jugada[4], int valor)
 	}
       if (board->casillas[x + v][y] == ('T' || 'Q' || 'A' || 'C' || 'P'))
 	{
-	  if (comparar (x + v, y, x, y, valor) == 1)
+          //comparacion=comparar (x + v, y, x, y, valor); definir funcion comparar
+	  if ( comparacion== 1)
 	    {
 	      cambiar (x + v, y, x, y, jugada);
-	      return calcularvalor (x + v, y, x, y);
+              //valor2=calcularvalor (x + v, y, x, y); DEfinir funcion calcular valor
+	      return valor2;
 	    }
 	  return valor;
 	}
@@ -484,6 +505,8 @@ diagonal (struct tablero *board, int x, int y, char jugada[4], int valor)
   valor = diagonalari (board, x, y, jugada, valor);
   valor = diagonalabd (board, x, y, jugada, valor);
   valor = diagonalabi (board, x, y, jugada, valor);
+
+  return 0;//favor de agregar el valor de retorno necesario
 }
 
 int
@@ -715,6 +738,7 @@ verificar (struct tablero *board, int x, int y, int valor, char jugada[4])
       return valor;
       break;
     }
+    return -1; //necesita un return por default agrego -1...
 }
 
 int

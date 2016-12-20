@@ -9,13 +9,6 @@
 /*  C es para caballo */
 /*  P es para peon */
 
-/*DEVUELVE -1 SI ES INVALIDO, 1 SI ES VALIDO */
-int
-validar_movimiento_peon (struct tablero *t, int a, int b, int c, int d)
-{
-  return -1;
-}
-
 
 /*-----FUNCIONES AUXILIARES PAR VALIDAR EL MOVIMIENTO DE CADA PIEZA*/
 int
