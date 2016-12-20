@@ -222,6 +222,10 @@ validar_movimiento_rey (struct tablero *un_tablero, int x1, int y1, int x2,
   return validar_movimientos_instantaneos (un_tablero, direccion, x1, y1, x2,
 					   y2);
 }
+//Crei que validar_peon hacia lo de validar_mocimiento_peon pero hay funciones que ocupan esta a parte
+int validar_movimiento_peon(struct tablero *un_tablero,int j, int k, int fila_k, int columna_k){
+   return 0;
+}
 
 /* 1 para valido, -1 para invalido */
 int

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sys/time.h>
+#include "ia.h"
 #include "interfaz.h"
 #include "tablero.h"
 #include "piezas.h"
@@ -166,7 +167,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
     if (tiempo > 180000.0f)
        {
          printf("Te pasaste del tiempo asignado para ti, se hara una jugada al azar\n");
-	 jugada_al_azar(*un_tablero,turno);
+	 jugada_al_azar(un_tablero,turno);// supongo que no necesitamos un *
          turno++;
 	 break;
        }
@@ -177,7 +178,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  system ("clear");
 	  if(tipo_juego == 2)
 	    { 
-              responder_jugada(&un_tablero, turno, respuesta, x_piezad, y_pieza);
+              responder_jugada(un_tablero, turno, respuesta, x_piezad, y_pieza);
 	      turno++;
 	      break;
 	    }

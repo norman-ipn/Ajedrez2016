@@ -30,7 +30,7 @@ main (void)
       
     iniciar_partida_normal ();
       
-	imprimir_tablero(&el_tablero);
+	//imprimir_tablero(&el_tablero);
 	
       
 	break;

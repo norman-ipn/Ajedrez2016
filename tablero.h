@@ -45,6 +45,9 @@ int obtener_posicion (int Columna, int Fila);
 void mover_piezas (struct tablero *un_tablero);
 
 int verificar_coordenada (char coordenada[3]);
+
+int jugada_al_azar (struct tablero *, int );
+
 /*
 char color_remplazo (int columna, int fila);
 
