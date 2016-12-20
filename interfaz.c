@@ -165,7 +165,8 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	      turno++;
 	      break;
 	    }
-/*------SOLICITUD DE DATOS DE LAS PIEZAS------*/
+	   mover_piezas(&un_tablero);
+/*------SOLICITUD DE DATOS DE LAS PIEZAS------
 
 	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
           x_pieza = capturar_caracter();
@@ -184,7 +185,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  fgets (entrada, 2, stdin);
 	  sscanf (entrada, "%d", &jugador);
 
-/*--------TRATAMIENTO DE LOS DATOS--------*/
+--------TRATAMIENTO DE LOS DATOS--------
 	  for (i = 0; i < 8; i++)
 	    {
 	      if (x_pieza == columnas[i] || x_pieza == columnas[i + 8])
@@ -205,7 +206,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 			   y_objetivo, 1);
 
 	  turno++;
-	  break;
+	  break;*/
 
 	case 'g':
 	  system ("clear");
