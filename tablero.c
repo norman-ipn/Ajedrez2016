@@ -514,3 +514,69 @@ tablero_cyan (void)
   int j = 0;
   int e = 0;
 }*/
+
+void
+mover_piezas (struct tablero *un_tablero)
+{
+  char aux = '\0';;
+  char pieza[3];
+  char destino[3];
+  int verificar = 0;
+  int columna_pieza = 0;
+  int fila_pieza = 0;
+  int columna_destino = 0;
+  int fila_destino = 0;
+
+  do
+    {
+      printf
+	("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula, 2)Columna. Sin dejar ningún espacio. La coordenada debe corresponder a la posición de una pieza.\nEjemplo de una coordenada válida: \"H4\"\n\n");
+      printf
+	("Introduzca la coordenada de la pieza que desea mover (fila,columna): ");
+      fgets (pieza, 3, stdin);
+      verificar = verificar_coordenada (pieza);
+    }
+  while (verificar != 1
+	 && un_tablero->casillas[pieza[0] - 'A'][pieza[1] - '1'] != ' ');
+//Se repite el proceso hasta que la coordenada corresponda a una pieza
+
+  verificar = 0;
+
+  do
+    {
+      printf
+	("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula 2)Columna. Sin dejar ningún espacio. \nEjemplo de una coordenada válida: \"H4\"\n\n");
+      printf
+	("\n\nIntroduzca las coordenadas a las que desea mover la pieza: ");
+      fgets (destino, 3, stdin);
+      verificar = verificar_coordenada (destino);
+    }
+  while (verificar != 1);
+//Se repite el proceso hasta que se introduzca una coordenada válida.
+
+  columna_pieza = pieza[0] - 'A';
+  columna_destino = destino[0] - 'A';
+  fila_pieza = pieza[1] - '1';
+  fila_destino = destino[1] - '1';
+
+  un_tablero->casillas[columna_destino][fila_destino] =
+    un_tablero->casillas[columna_pieza][fila_pieza];
+  un_tablero->casillas[columna_pieza][fila_pieza] = ' ';
+
+  return;
+}
+
+int
+verificar_coordenada (char coordenada[3])
+{
+  if (coordenada[0] > 'H' || coordenada[0] < 'A')
+    {
+      return -1;
+    }
+  if (coordenada[1] > '8' || coordenada[1] < '1')
+    {
+      return -1;
+    }
+
+  return 1;
+}
