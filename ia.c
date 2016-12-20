@@ -698,7 +698,7 @@ void ia (tablero *board, char jugada[4] )
 	valor = analizar(board, jugada);
 	if valor (==-9)
 	{
-		mover_peon(board);
+		mover_peon(board, jugada);
 		return;
 	}
 	return;
