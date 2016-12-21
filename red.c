@@ -390,7 +390,8 @@ main_servidor (void)
 
 
 //sugerencia para que el jugador pueda decidir el tipo de conexión ------------------------------------
-int confirmacion()
+int 
+confirmacion()
 {
 	int confirmacion;
 	printf("Ingresa tipo de conexion que desea ocupar: \n\n 1.-----TCP/IP\n\n 2.-----UDP");
@@ -407,13 +408,15 @@ int confirmacion()
 	
 }
 
-int conexion_TCP()
+int 
+conexion_TCP()
 {
 	servidor_tcp();
 	cliente_tcp();
 }
 
-int conexion_UDP()
+int 
+conexion_UDP()
 {
 	servidor_udp();
 	cliente_udp();
