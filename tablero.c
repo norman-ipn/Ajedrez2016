@@ -521,9 +521,9 @@ en el lugar que ocupaba la pieza*/
 void
 mover_piezas (struct tablero *un_tablero)
 {
-  char pieza[3];//Guarda las coordenadas de la pieza que se quiere mover.
-  char destino[3];//Guarda las coordenadas a las que se desea mover la pieza
-  int verificar = 0;//Es un indicador que ayuda a saber si las coordenadas introducidas son válidas.
+  char pieza[3];		//Guarda las coordenadas de la pieza que se quiere mover.
+  char destino[3];		//Guarda las coordenadas a las que se desea mover la pieza
+  int verificar = 0;		//Es un indicador que ayuda a saber si las coordenadas introducidas son válidas.
 //Variables en las que se almacena numéricamente las coordenadas del movimiento para facilitar el intercambio.
   int columna_pieza = 0;
   int fila_pieza = 0;
@@ -532,8 +532,7 @@ mover_piezas (struct tablero *un_tablero)
 
   do
     {
-      system("clear");
-      texto_piezas();
+      system ("clear");
       fgets (pieza, 3, stdin);
       verificar = verificar_coordenada (pieza);
     }
@@ -545,20 +544,21 @@ que también correspondan a una pieza y no a una casilla vacía.*/
 
   do
     {
-      system("clear");
-      texto_destino();
+      system ("clear");
       fgets (destino, 3, stdin);
       verificar = verificar_coordenada (destino);
+      columna_pieza = pieza[0] - 'A';
+      columna_destino = destino[0] - 'A';
+      fila_pieza = pieza[1] - '1';
+      fila_destino = destino[1] - '1';
+      verificar =
+	movimiento_valido (un_tablero, columna_pieza, fila_pieza,
+			   columna_destino, fila_destino);
     }
   while (verificar != 1);
 //Se repite el proceso hasta que se introduzca una coordenada válida.
 
 //Se transforman las coordenas a enteros.
-  columna_pieza = pieza[0] - 'A';
-  columna_destino = destino[0] - 'A';
-  fila_pieza = pieza[1] - '1';
-  fila_destino = destino[1] - '1';
-
 //Se realiza el intercambio y se deja un espacio en blanco en la posición que antes ocupaba la pieza.
   un_tablero->casillas[columna_destino][fila_destino] =
     un_tablero->casillas[columna_pieza][fila_pieza];
@@ -589,23 +589,23 @@ verificar_coordenada (char coordenada[3])
 int
 jugada_al_azar (struct tablero *un_tablero, int turno)
 {
-	int x1=0;
-	int y1=0;
-	int x2=0;
-	int y2=0;
-	int good=0;
-	//time  t;
-	//srand(time (&t));
-	x1=rand () % 8 + 1;
-	y1=rand () % 8 + 1;
-	x2=rand () % 8 + 1;
-	y2=rand () % 8 + 1;
-	good=movimiento_valido(un_tablero, x1, y1, x2, y2);
-	while(good==-1)
-	{
-		x2=rand () % 8 + 1;
-		y2=rand () % 8 + 1;
-	}
-	movimiento_valido(un_tablero, x1, y1, x2, y2);
-	return 1;
+  int x1 = 0;
+  int y1 = 0;
+  int x2 = 0;
+  int y2 = 0;
+  int good = 0;
+  //time  t;
+  //srand(time (&t));
+  x1 = rand () % 8 + 1;
+  y1 = rand () % 8 + 1;
+  x2 = rand () % 8 + 1;
+  y2 = rand () % 8 + 1;
+  good = movimiento_valido (un_tablero, x1, y1, x2, y2);
+  while (good == -1)
+    {
+      x2 = rand () % 8 + 1;
+      y2 = rand () % 8 + 1;
+    }
+  movimiento_valido (un_tablero, x1, y1, x2, y2);
+  return 1;
 }
