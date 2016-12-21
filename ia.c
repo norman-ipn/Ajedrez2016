@@ -153,6 +153,367 @@ podemosSerComidos (struct tablero *board)
   return valor;
 }
 
+/*Funcion para en caso de poder comer una pieza hacerlo en lugar de hacer un movimiento random asi como tambien para mover el rey en caso de estar en jaque*/
+
+int
+comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
+{
+  int movimientoIndicado = 0;
+  int *pos_caballo_blanco = (int *) malloc (sizeof (int) * 2);
+  int *pos_torre_blanca = (int *) malloc (sizeof (int) * 2);
+  int *pos_alfil_blanco = (int *) malloc (sizeof (int) * 2);
+  int *pos_reina_negra = (int *) malloc (sizeof (int) * 2);
+  int *pos_caballo_negro = (int *) malloc (sizeof (int) * 2);
+  int *pos_torre_negra = (int *) malloc (sizeof (int) * 2);
+  int *pos_alfil_negro = (int *) malloc (sizeof (int) * 2);
+  int *pos_reina_blanca = (int *) malloc (sizeof (int) * 2);
+  int dama = 10;
+  int torre = 5;
+  int alfil = 3;
+  int caballo = 3;
+  int peon = 1;
+  int valor = 0;
+  int reyjaque = 0;
+  pos_caballo_blanco = posicion_caballo_blanco (board);
+  pos_torre_blanca = posicion_torre_blanca (board);
+  pos_alfil_blanco = posicion_alfil_blanco (board);
+  pos_reina_negra = posicion_reina_negra (board);
+  pos_caballo_negro = posicion_caballo_negro (board);
+  pos_torre_negra = posicion_torre_negra (board);
+  pos_alfil_negro = posicion_alfil_negro (board);
+  pos_reina_blanca = posicion_reina_blanca (board);
+  reyjaque = verifcar_rey_en_jaque (board, x1, y1, x2, y2);
+  if (reyjaque == 1)
+    {
+      return movimiento =
+	validar_movimiento_rey (board, x1, y1, x2 + 1, y2 + 1);
+    }
+  else
+    {
+      if (validar_movimiento_torre
+	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
+	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_torre (board, *(pos_torre_blanca),
+				      *(pos_torre_blanca + 1),
+				      *(pos_caballo_negro),
+				      *(pos_caballo_negro + 1));
+	}
+      if (validar_movimiento_torre
+	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
+	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_torre (board, *(pos_torre_blanca),
+				      *(pos_torre_blanca + 1),
+				      *(pos_alfil_negro),
+				      *(pos_alfil_negro + 1));
+	}
+      if (validar_movimiento_torre
+	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
+	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_torre (board, *(pos_torre_blanca),
+				      *(pos_torre_blanca + 1),
+				      *(pos_torre_negra),
+				      *(pos_torre_negra + 1));
+	}
+      if (validar_movimiento_torre
+	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
+	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_torre (board, *(pos_torre_blanca),
+				      *(pos_torre_blanca + 1),
+				      *(pos_reina_negra),
+				      *(pos_reina_negra + 1));
+	}
+
+      if (validar_movimiento_alfil
+	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
+	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
+				      *(pos_alfil_blanco + 1),
+				      *(pos_caballo_negro),
+				      *(pos_caballo_negro + 1));
+	}
+      if (validar_movimiento_alfil
+	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
+	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
+				      *(pos_alfil_blanco + 1),
+				      *(pos_alfil_negro),
+				      *(pos_alfil_negro + 1));
+	}
+      if (validar_movimiento_alfil
+	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
+	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
+				      *(pos_alfil_blanco + 1),
+				      *(pos_torre_negra),
+				      *(pos_torre_negra + 1));
+	}
+      if (validar_movimiento_alfil
+	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
+	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
+				      *(pos_alfil_blanco + 1),
+				      *(pos_reina_negra),
+				      *(pos_reina_negra + 1));
+	}
+      if (validar_movimiento_caballo
+	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
+	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_torre (board, *(pos_torre_blanca),
+				      *(pos_torre_blanca + 1),
+				      *(pos_caballo_negro),
+				      *(pos_caballo_negro + 1));
+	}
+      if (validar_movimiento_caballo
+	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
+	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
+					*(pos_caballo_blanco + 1),
+					*(pos_alfil_negro),
+					*(pos_alfil_negro + 1));
+	}
+      if (validar_movimiento_caballo
+	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
+	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
+					*(pos_caballo_blanco + 1),
+					*(pos_torre_negra),
+					*(pos_torre_negra + 1));
+	}
+      if (validar_movimiento_caballo
+	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
+	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
+					*(pos_caballo_blanco + 1),
+					*(pos_reina_negra),
+					*(pos_reina_negra + 1));
+	}
+      if (validar_movimiento_reina
+	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
+	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
+	     *(pos_caballo_negro), *(pos_caballo_negro + 1));
+	}
+      if (validar_movimiento_reina
+	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
+	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_reina (board, *(pos_reina_blanca),
+				      *(pos_reina_blanca + 1),
+				      *(pos_alfil_negro),
+				      *(pos_alfil_negro + 1));
+	}
+      if (validar_movimiento_reina
+	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
+	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_reina (board, *(pos_reina_blanca),
+				      *(pos_reina_blanca + 1),
+				      *(pos_torre_negra),
+				      *(pos_torre_negra + 1));
+	}
+      if (validar_movimiento_reina
+	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
+	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+	{
+	  return movimiento =
+	    validar_movimiento_reina (board, *(pos_reina_blanca),
+				      *(pos_reina_blanca + 1),
+				      *(pos_reina_negra),
+				      *(pos_reina_negra + 1));
+	}
+    }
+  return valor;
+}
+
+int *
+posicion_caballo_blanco (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'c')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_caballo_negro (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'C')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_alfil_blanco (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'a')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_alfil_negro (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'A')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_torre_blanca (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 't')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_torre_negra (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'T')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_reina_blanca (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'q')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_reina_negra (struct tablero *board)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (board->casillas[i][j] == 'Q')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	}
+    }
+  return posicion;
+}
+
+
 int
 MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y, int x1,
 		  int y1, int x2, int y2)
@@ -758,4 +1119,21 @@ ia (struct tablero *board, char jugada[4])
       return;
     }
   return;
+}
+
+int
+verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
+{
+
+  if (validar_movimiento_torre (board, x1, y1, x2, y2) == 1
+      || validar_movimiento_alfil (board, x1, y1, x2, y2) == 1
+      || validar_movimiento_caballo (board, x1, y1, x2, y2) == 1
+      || validar_movimiento_reina (board, x1, y1, x2, y2) == 1)
+    {
+      return 1;
+    }
+  else
+    {
+      return -1;
+    }
 }

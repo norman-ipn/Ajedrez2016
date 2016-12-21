@@ -15,7 +15,7 @@ int MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y,
 		      int x1, int y1, int x2, int y2);
 int validar_movimiento_torre (struct tablero *board, int x0, int y0, int x,
 			      int y);
-int responder_jugada(struct tablero *, int,char *,int,int); 
+int responder_jugada(struct tablero *, int,char *,int,int);
 //int validar_peon (struct tablero *board, int x1, int y1, int x2, int y2);
 int validar_movimiento_caballo (struct tablero *board, int x1, int y1, int x2,
 				int y2);
@@ -78,5 +78,24 @@ int verificar (struct tablero *board, int x, int y, int valor, char jugada[4]);
 int analizar (struct tablero *board, char jugada[4]);
 
 void ia (struct tablero *board, char jugada[4]);
+
+int *posicion_caballo_blanco (struct tablero *board);
+
+int *posicion_caballo_negro (struct tablero *board);
+
+int *posicion_alfil_blanco (struct tablero *board);
+
+int *posicion_alfil_negro (struct tablero *board);
+
+int *posicion_torre_blanca (struct tablero *board);
+
+int *posicion_torre_negra (struct tablero *board);
+
+int *posicion_reina_blanca (struct tablero *board);
+
+int *posicion_reina_negra (struct tablero *board);
+
+int verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2,
+			   int y2);
 
 #endif/*__IA_H__*/
