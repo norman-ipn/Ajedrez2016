@@ -502,6 +502,152 @@ cliente_udp()
   return 0;
 }
 
+int
+servidor_tcp()
+{
+        int sock, connected, bytes_recieved , true = 1;  
+        char send_data [1024] , recv_data[1024];       
+
+        struct sockaddr_in server_addr,client_addr;    
+        int sin_size;
+        
+        if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+            perror("Socket");
+            exit(1);
+        }
+
+        if (setsockopt(sock,SOL_SOCKET,SO_REUSEADDR,&true,sizeof(int)) == -1) {
+            perror("Setsockopt");
+            exit(1);
+        }
+        
+        /*Configurar opciones en direccion estructuras*/
+        server_addr.sin_family = AF_INET;         
+        server_addr.sin_port = htons(5000);     
+        server_addr.sin_addr.s_addr = INADDR_ANY; 
+        bzero(&(server_addr.sin_zero),8); 
+
+        if (bind(sock, (struct sockaddr *)&server_addr, sizeof(struct sockaddr))
+                                                                       == -1) {
+            perror("imposible realizar bind");
+            exit(1);
+        }
+
+        if (listen(sock, 5) == -1) {
+            perror("Listen");
+            exit(1);
+        }
+		
+	printf("\nTCPServidor esperando por cliente en el puerto 5000");
+        fflush(stdout);
+
+
+        while(1)
+        {  
+
+            sin_size = sizeof(struct sockaddr_in);
+
+            connected = accept(sock, (struct sockaddr *)&client_addr,&sin_size);
+
+            printf("\n obtuve coneccion de: (%s , %d)",
+                   inet_ntoa(client_addr.sin_addr),ntohs(client_addr.sin_port));
+
+            while (1)
+            {
+              printf("\n SEND (q o Q para quitar) : ");
+              gets(send_data);
+              
+              if (strcmp(send_data , "q") == 0 || strcmp(send_data , "Q") == 0)
+              {
+                send(connected, send_data,strlen(send_data), 0); 
+                close(connected);
+                break;
+              }
+               
+              else
+                 send(connected, send_data,strlen(send_data), 0);  
+
+              bytes_recieved = recv(connected,recv_data,1024,0);
+
+              recv_data[bytes_recieved] = '\0';
+
+              if (strcmp(recv_data , "q") == 0 || strcmp(recv_data , "Q") == 0)
+              {
+                close(connected);
+                break;
+              }
+
+              else 
+              printf("\n Recibe dato = %s " , recv_data);
+              fflush(stdout);
+            }
+        }       
+
+      close(sock);
+      return 0;
+} 
+
+int
+cliente_tcp()
+
+{
+
+        int sock, bytes_recieved;  
+        char send_data[1024],recv_data[1024];
+        struct hostent *host;
+        struct sockaddr_in server_addr;  
+
+        host = gethostbyname("127.0.0.1"); /*IP DE PRUEBA*/
+
+        if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
+            perror("Socket");
+            exit(1);
+        }
+        
+        /*Configurar opciones en direccion estructuras*/
+        server_addr.sin_family = AF_INET;     
+        server_addr.sin_port = htons(5000);   
+        server_addr.sin_addr = *((struct in_addr *)host->h_addr);
+        bzero(&(server_addr.sin_zero),8); 
+
+        if (connect(sock, (struct sockaddr *)&server_addr,
+                    sizeof(struct sockaddr)) == -1) 
+        {
+            perror("conectar");
+            exit(1);
+        }
+
+        while(1)
+        {
+        
+          bytes_recieved=recv(sock,recv_data,1024,0);
+          recv_data[bytes_recieved] = '\0';
+ 
+          if (strcmp(recv_data , "q") == 0 || strcmp(recv_data , "Q") == 0)
+          {
+           close(sock);
+           break;
+          }
+
+          else
+           printf("\nRecibe dato = %s " , recv_data);
+           
+           printf("\nEnviar(q o Q para quitar) : ");
+           gets(send_data);
+           
+          if (strcmp(send_data , "q") != 0 && strcmp(send_data , "Q") != 0)
+           send(sock,send_data,strlen(send_data), 0); 
+
+          else
+          {
+           send(sock,send_data,strlen(send_data), 0);   //envia datos
+           close(sock);									//cierra socket
+           break;
+          }
+        
+        }   
+return 0;
+}
 //----------------------------------------------------------------------------------------------------------
 /* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
 
