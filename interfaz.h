@@ -45,5 +45,7 @@ void reglas_reyna (void);
 void reglas_torre (void);
 int modo (void);
 int jugar (struct tablero *un_tablero, int tipo_juego);
+void texto_piezas (void);
+void texto_destino (void);
 
 #endif/*__INTERFAZ_H__*/
