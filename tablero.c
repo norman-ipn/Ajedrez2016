@@ -459,7 +459,7 @@ mover_piezas (struct tablero *un_tablero)
       verificar = verificar_coordenada (pieza);
     }
   while (verificar != 1
-	 && un_tablero->casillas[pieza[0] - 'A'][pieza[1] - '1'] != ' ');
+	 && un_tablero->casillas[pieza[0] - 'A'][pieza[1] - '1'] == ' ');
 /*La condición verifica si las coordenadas son válidas y en caso de ser válidas
 que también correspondan a una pieza y no a una casilla vacía.*/
   verificar = 0;
