@@ -1,4 +1,0 @@
-Partidas Guardadas
-Movimiento Jugador 2
-x inicial  y inicial  x final  y final
-5             2          0         -1
