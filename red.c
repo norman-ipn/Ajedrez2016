@@ -1,5 +1,7 @@
-#include "red.h"		/*concuerdo con wl que dijo que está bien */
+#include "red.h"	/*concuerdo con wl que dijo que está bien */
 #include <string.h>		//Para usar la funcion strlen que agregaron...
+#include <ctype.h> //Para usar la funcion toupper que agregaron
+#include <stdio.h> //Para usar la funcion gets que agregaron
 /* 
   importante, los socket siempre deben correrse en modo root, para estar
   para estar en modo root simplemente escribe:
@@ -391,44 +393,13 @@ main_servidor (void)
 
 //sugerencia para que el jugador pueda decidir el tipo de conexión ------------------------------------
 int 
-confirmacion()
-{
-	int confirmacion;
-	printf("Ingresa tipo de conexion que desea ocupar: \n\n 1.-----TCP/IP\n\n 2.-----UDP");
-	scanf("%d",&confirmacion);
-	
-	if(confirmacion == 1)
-	{
-		conexion_TCP();
-	}
-	else
-	{
-		conexion_UDP();
-	}
-	
-}
-
-int 
-conexion_TCP()
-{
-	servidor_tcp();
-	cliente_tcp();
-}
-
-int 
-conexion_UDP()
-{
-	servidor_udp();
-	cliente_udp();
-}
-int 
 servidor_udp()
 {
   int udpSocket, nBytes;
   char buffer[1024];
-  struct sockaddr_in serverAddr, clientAddr;
+  struct sockaddr_in serverAddr;//, clientAddr;
   struct sockaddr_storage serverStorage;
-  socklen_t addr_size, client_addr_size;
+  socklen_t addr_size;//, client_addr_size;
   int i;
 
   /*Crear socket UDP*/
@@ -465,7 +436,7 @@ servidor_udp()
 int 
 cliente_udp()
 {
-  int clientSocket, portNum, nBytes;
+  int clientSocket/*, portNum*/, nBytes;
   char buffer[1024];
   struct sockaddr_in serverAddr;
   socklen_t addr_size;
@@ -505,11 +476,11 @@ cliente_udp()
 int
 servidor_tcp()
 {
-        int sock, connected, bytes_recieved , true = 1;  
+        int sock, connected=0, bytes_recieved , true = 1;  
         char send_data [1024] , recv_data[1024];       
 
         struct sockaddr_in server_addr,client_addr;    
-        int sin_size;
+       // int sin_size=0;
         
         if ((sock = socket(AF_INET, SOCK_STREAM, 0)) == -1) {
             perror("Socket");
@@ -545,9 +516,9 @@ servidor_tcp()
         while(1)
         {  
 
-            sin_size = sizeof(struct sockaddr_in);
+            //sin_size = sizeof(struct sockaddr_in);
 
-            connected = accept(sock, (struct sockaddr *)&client_addr,&sin_size);
+           // connected = accept(sock, (struct sockaddr *)&client_addr,&sin_size); checar tipo de dato requerido en sin_size 
 
             printf("\n obtuve coneccion de: (%s , %d)",
                    inet_ntoa(client_addr.sin_addr),ntohs(client_addr.sin_port));
@@ -555,7 +526,7 @@ servidor_tcp()
             while (1)
             {
               printf("\n SEND (q o Q para quitar) : ");
-              gets(send_data);
+              //gets(send_data); usar otro metodo
               
               if (strcmp(send_data , "q") == 0 || strcmp(send_data , "Q") == 0)
               {
@@ -633,7 +604,7 @@ cliente_tcp()
            printf("\nRecibe dato = %s " , recv_data);
            
            printf("\nEnviar(q o Q para quitar) : ");
-           gets(send_data);
+           //gets(send_data); Usar otro metodo
            
           if (strcmp(send_data , "q") != 0 && strcmp(send_data , "Q") != 0)
            send(sock,send_data,strlen(send_data), 0); 
@@ -648,6 +619,41 @@ cliente_tcp()
         }   
 return 0;
 }
+
+void
+conexion_TCP()
+{
+	servidor_tcp();
+	cliente_tcp();
+}
+
+void
+conexion_UDP()
+{
+	servidor_udp();
+	cliente_udp();
+}
+
+void
+confirmacion()
+{
+	int confirmacion;
+	printf("Ingresa tipo de conexion que desea ocupar: \n\n 1.-----TCP/IP\n\n 2.-----UDP");
+	scanf("%d",&confirmacion);
+	
+	if(confirmacion == 1)
+	{
+		conexion_TCP();
+	}
+	else
+	{
+		conexion_UDP();
+	}
+	
+}
+
+
+
 //----------------------------------------------------------------------------------------------------------
 /* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
 
