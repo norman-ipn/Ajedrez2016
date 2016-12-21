@@ -358,7 +358,75 @@ imprimir_tablero (struct tablero *tablero)
 void
 reglas_alfil (void)
 {
+	
+  int x = 0;			
+  int y = 0;		
+  int f = 8;
 
+  char Partesuperior[] =
+    "\u250F\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2513";
+  char cuerpo[] =
+    "\u2523\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u252B ";
+  char parteinferior[] =
+    "\u2517\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u251b";
+
+
+  printf
+    ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
+
+  printf ("\n");
+  printf ("    ");
+
+
+  printf ("%s", Partesuperior);
+  while (y < 7)
+    {
+      printf ("\n");
+      printf ("  %d ", f);
+      if (y == 0)
+	printf
+	  ("\u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+      if (y == 1)
+	printf
+	  ("\u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+      if (y == 2)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503");
+      if (y == 3)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503 \u23F9 \u2503   \u2503");
+      if (y == 4)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503   \u2503 \u265D \u2503   \u2503   \u2503");
+      if (y == 5)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503 \u23F9 \u2503   \u2503");
+      if (y == 6)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503");
+      printf ("\n");
+      printf ("   ");
+      printf (" %s ", cuerpo);
+      x = 0;
+      y = y + 1;
+      f = f - 1;
+    }
+
+  printf ("\n");
+  printf
+    ("    \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+
+  printf ("\n");
+  printf ("    %s", parteinferior);
+  printf ("\n");
+  printf ("    ");
+
+  while (x < 8)
+    {
+      printf ("  %c ", 65 + x);
+      x = x + 1;
+    }
+/*
   printf
     ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
 
@@ -380,7 +448,7 @@ reglas_alfil (void)
 	  'X');
   printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', ' ', 'X', ' ', 'O',
 	  ' ');
-  printf (" |================|\n");
+  printf (" |================|\n");*/
   getchar ();
   return;
 }
