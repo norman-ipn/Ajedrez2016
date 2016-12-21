@@ -372,7 +372,7 @@ reglas_alfil (void)
 
 
   printf
-    ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
+    ("\n El Alfil se mueve de manera diagonal hacia las demás casilla pero esta pieza solo se moverá hacia el color de la casilla que le corresponde, ya sea blancas o negras, por lo que es recomendable usarlo con estrategia. \n");
 
   printf ("\n");
   printf ("    ");
@@ -457,10 +457,10 @@ void
 reglas_basicas (void)
 {
   printf
-    ("\n El Ajedrez es un juego de estrategia en el que dos jugadores hacen uso de piezas con distintos tipos de movimiento para capturar (comer) a las del rival. El objetivo del juego es acorralar al rey de tal modo que este no pueda moverse a ningún lugar sin ser amenazado \n ");
+    ("\n El Ajedrez es un juego de estrategia en el que dos jugadores hacen uso de piezas con distintos tipos de movimientos con el objetivo de acorralar al rey de tal modo que este no pueda moverse a ningún lugar mientras esta siendo amenazado, lo que se conoce como jaque mate. \n ");
   while (getchar () != '\n');
   printf
-    ("\n El juego comienza en un tablero de 8 x 8 casillas en las que los jugadores deben de mover sus piezas con el fin de capturar las del oponente y darle el jaque mate al rey adversario.\n");
+    ("\n El juego comienza en un tablero de 8 x 8 casillas en las que los jugadores deben de mover sus piezas con el fin de darle jaque mate al rey adversario.\n");
   getchar ();
   return;
 }
@@ -502,7 +502,7 @@ reglas_enroque (void)
 {
 
   printf
-    ("\n El Enroque un movimiento que realiza una torre y el rey en el que cambian de posicion de manera conjunta. El rey se movera 2 casillas hacia la dirreción\n");
+    ("\n El Enroque un movimiento que realiza el rey con una de las torres, en el que cambian de posicion de manera conjunta. El rey se movera 2 casillas hacia la dirreción\n");
   printf
     ("\n de la torre con la que enroca y la torre pasará a colocarse al lado del rey en la casilla inversa a la dirección a la cual el rey se haya desplazado.\n");
 
