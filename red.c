@@ -388,6 +388,118 @@ main_servidor (void)
   return 9;
 }
 
+
+//sugerencia para que el jugador pueda decidir el tipo de conexión ------------------------------------
+int confirmacion()
+{
+	int confirmacion;
+	printf("Ingresa tipo de conexion que desea ocupar: \n\n 1.-----TCP/IP\n\n 2.-----UDP");
+	scanf("%d",&confirmacion);
+	
+	if(confirmacion == 1)
+	{
+		conexion_TCP();
+	}
+	else
+	{
+		conexion_UDP();
+	}
+	
+}
+
+int conexion_TCP()
+{
+	servidor_tcp();
+	cliente_tcp();
+}
+
+int conexion_UDP()
+{
+	servidor_udp();
+	cliente_udp();
+}
+int 
+servidor_udp()
+{
+  int udpSocket, nBytes;
+  char buffer[1024];
+  struct sockaddr_in serverAddr, clientAddr;
+  struct sockaddr_storage serverStorage;
+  socklen_t addr_size, client_addr_size;
+  int i;
+
+  /*Crear socket UDP*/
+  udpSocket = socket(PF_INET, SOCK_DGRAM, 0);
+
+  /*Configuracion estructura de direcciones*/
+  serverAddr.sin_family = AF_INET;
+  serverAddr.sin_port = htons(7891);
+  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
+
+  /*Bind usando direccion de estructura*/
+  bind(udpSocket, (struct sockaddr *) &serverAddr, sizeof(serverAddr));
+
+  /*inicializacion de variable para ser utilizada posteriormente*/
+  addr_size = sizeof serverStorage;
+
+  while(1){
+    /* Trata de recibir cualquier datagrama UDP entrante. Dirección y puerto de
+       El cliente solicitante se almacenará en la variable serverStorage*/
+    nBytes = recvfrom(udpSocket,buffer,1024,0,(struct sockaddr *)&serverStorage, &addr_size);
+
+    /*Convierte mensaje recibido*/
+    for(i=0;i<nBytes-1;i++)
+      buffer[i] = toupper(buffer[i]);
+
+    /*Manda mensaje de vuelta al cliente*/
+    sendto(udpSocket,buffer,nBytes,0,(struct sockaddr *)&serverStorage,addr_size);
+  }
+
+  return 0;
+}
+
+int 
+cliente_udp()
+{
+  int clientSocket, portNum, nBytes;
+  char buffer[1024];
+  struct sockaddr_in serverAddr;
+  socklen_t addr_size;
+
+  /*Crear socket UDP*/
+  clientSocket = socket(PF_INET, SOCK_DGRAM, 0);
+
+  /*Configurar opciones en direccion estructuras*/
+  serverAddr.sin_family = AF_INET;
+  serverAddr.sin_port = htons(7891);
+  serverAddr.sin_addr.s_addr = inet_addr("127.0.0.1");
+  memset(serverAddr.sin_zero, '\0', sizeof serverAddr.sin_zero);  
+
+  /*Inicializa variable para posterior uso*/
+  addr_size = sizeof serverAddr;
+
+  while(1){
+    printf("Type a sentence to send to server:\n");
+    fgets(buffer,1024,stdin);
+    printf("You typed: %s",buffer);
+
+    nBytes = strlen(buffer) + 1;
+    
+    /*Mandar mensaje a servidor*/
+    sendto(clientSocket,buffer,nBytes,0,(struct sockaddr *)&serverAddr,addr_size);
+
+    /*Recivir mensaje de servidor*/
+                nBytes = recvfrom(clientSocket,buffer,1024,0,NULL, NULL);
+
+    printf("Received from server: %s\n",buffer);
+
+  }
+
+  return 0;
+}
+
+//----------------------------------------------------------------------------------------------------------
 /* Sugerencia para que el cliente se conecte y mande mensajes al servidor */
 
 
