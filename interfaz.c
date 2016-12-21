@@ -98,20 +98,20 @@ imprimir (struct tablero *un_tablero)
 int
 jugar (struct tablero *un_tablero, int tipo_juego)
 {
-  //int i = 0;
+  int i = 0;
   char opcion = '\0';
   FILE *registro = NULL;
   int letra = 0;
-  //char x_pieza = '0';
+  char x_pieza = '0';
   int y_pieza = 0;
-  //char x_objetivo = '0';
+  char x_objetivo = '0';
   int y_objetivo = 0;
   int jugador = 0;
-  /*char columnas[16] =
+  char columnas[16] =
      { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
      'g', 'h'
-     }; */
-  //char entrada[2] = "0";
+     }; 
+  char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
   char *respuesta = 0;
@@ -142,7 +142,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
       printf ("Para cancelar el último movimiento introduzca \"c\"\n");
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
-      scanf ("%c", &opcion);
+      //scanf ("%c", &opcion);
       if (turno % 2 == 0 && tipo_juego == 2)
 	{
 	  opcion = 'm';
@@ -174,9 +174,9 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	      turno++;
 	      break;
 	    }
-	  mover_piezas (un_tablero);
-	  break;
-/*------SOLICITUD DE DATOS DE LAS PIEZAS------
+	  //mover_piezas (un_tablero);
+	  //break;
+//------SOLICITUD DE DATOS DE LAS PIEZAS------
 
 	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
           x_pieza = capturar_caracter();
@@ -195,7 +195,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  fgets (entrada, 2, stdin);
 	  sscanf (entrada, "%d", &jugador);
 
---------TRATAMIENTO DE LOS DATOS--------
+//--------TRATAMIENTO DE LOS DATOS--------
 	  for (i = 0; i < 8; i++)
 	    {
 	      if (x_pieza == columnas[i] || x_pieza == columnas[i + 8])
@@ -214,9 +214,9 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 
 	  Guardar_Partida (jugador, x_piezad, y_pieza, x_objetivod,
 			   y_objetivo, 1);
-
+          mover_piezas (un_tablero);
 	  turno++;
-	  break;*/
+	  break;
 
 	case 'g':
 	  system ("clear");
