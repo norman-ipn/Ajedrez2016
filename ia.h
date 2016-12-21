@@ -98,4 +98,10 @@ int *posicion_reina_negra (struct tablero *board);
 int verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2,
 			   int y2);
 
+int comparar (int valor1, int valor2);
+
+void cambiar (int x2, int y2, int x1, int y1, char jugada[4]);
+
+int calcularvalor (int x1, int y1, int x2, int y2, char tablero[8][8]);
+
 #endif/*__IA_H__*/
