@@ -174,14 +174,15 @@ comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
   int peon = 1;
   int valor = 0;
   int reyjaque = 0;
-  pos_caballo_blanco = posicion_caballo_blanco (board);
-  pos_torre_blanca = posicion_torre_blanca (board);
-  pos_alfil_blanco = posicion_alfil_blanco (board);
-  pos_reina_negra = posicion_reina_negra (board);
-  pos_caballo_negro = posicion_caballo_negro (board);
-  pos_torre_negra = posicion_torre_negra (board);
-  pos_alfil_negro = posicion_alfil_negro (board);
-  pos_reina_blanca = posicion_reina_blanca (board);
+  pos_caballo_blanco = posicion_caballo_blanco (board, 0);
+  pos_alfil_blanco = posicion_alfil_blanco (board,0);
+  pos_torre_blanca = posicion_torre_blanca (board, 0);
+  pos_reina_negra = posicion_reina_negra (board,1);
+  pos_caballo_negro = posicion_caballo_negro (board,1);
+  pos_torre_negra = posicion_torre_negra (board,1);
+  pos_alfil_negro = posicion_alfil_negro (board,1);
+  pos_reina_blanca = posicion_reina_blanca (board,0);
+	
   reyjaque = verifcar_rey_en_jaque (board, x1, y1, x2, y2);
   if (reyjaque == 1)
     {
@@ -382,7 +383,7 @@ posicion_torre (struct tablero *board, int turno)
 }
 
 int *
-posicion_caballo (struct tablero *board,int turno)
+posicion_caballo (struct tablero *board,int tipo_pieza)
 {
   int i = 0;
   int j = 0;
@@ -391,7 +392,7 @@ posicion_caballo (struct tablero *board,int turno)
     {
       for (j = 0; j < 8; j = j + 1)
 	{
-	  if(turno %2 == 0){
+	  if(tipo_pieza %2 == 0){
 		  if (board->casillas[i][j] == 'C')
 		    {
 		      *(posicion) = i;
@@ -411,7 +412,7 @@ posicion_caballo (struct tablero *board,int turno)
 }
 
 int *
-posicion_alfil (struct tablero *board, int turno)
+posicion_alfil (struct tablero *board, int tipo_pieza)
 {
   int i = 0;
   int j = 0;
@@ -420,7 +421,7 @@ posicion_alfil (struct tablero *board, int turno)
     {
       for (j = 0; j < 8; j = j + 1)
 	{
-	  if (turno%2 == 0){
+	  if (tipo_pieza%2 == 0){
 	  if (board->casillas[i][j] == 'A')
 	    {
 	      *(posicion) = i;
@@ -449,7 +450,7 @@ posicion_reina_blanca (struct tablero *board)
     {
       for (j = 0; j < 8; j = j + 1)
 	{
-	  if(turno%2 == 0){
+	  if(tipopieza%2 == 0){
 	   if (board->casillas[i][j] == 'Q')
 	    {
 	      *(posicion) = i;
