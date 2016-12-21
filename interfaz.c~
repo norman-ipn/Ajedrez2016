@@ -134,7 +134,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
   printf ("Comienza el juego\n\n");
   while (1 == 1)
     {
-      
+      system ("clear");
       if (turno % 2 == 1)
 	{
 	  printf ("Es turno de las blancas\n\n");
@@ -246,7 +246,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 
 	case 'n':
 	  system ("clear");
-	  printf ("Comienza de nuevo el juego\n\n");
+  printf ("Comienza de nuevo el juego\n\n");
 	  iniciar_tablero (un_tablero);
 	  break;
 
@@ -293,7 +293,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  break;
 	}
 
-
+      
     }
   return -1;			//La funcion necesita un retorno, omiti el cero porque no sé si se ocupe el retorno, si no por favor de cambiar a void
 }
@@ -364,7 +364,7 @@ imprimir_tablero (struct tablero *tablero)
       i = i + 1;
     }
   printf ("\n\n");
-																																																    																								    												    						    			    	                 }*///Lo comenté porque ya no se va a usar esta función.
+																								    												    						    			    	                 }*///Lo comenté porque ya no se va a usar esta función.
 /* Inicio de la sección del manual */
 void
 reglas_alfil (void)
