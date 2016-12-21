@@ -1054,14 +1054,16 @@ mostrar_menu (struct tablero *un_tablero)
     }
 }
 
-void texto_piezas (void)
+void 
+texto_piezas (void)
 {
   printf ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula, 2)Columna. Sin dejar ningún espacio. La coordenada debe corresponder a la posición de una pieza.\nEjemplo de una coordenada válida: \"H4\"\n\n");
   printf ("Introduzca la coordenada de la pieza que desea mover (fila,columna): ");
   return;
 }
 
-void texto_destino (void)
+void
+texto_destino (void)
 {
   printf ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula 2)Columna. Sin dejar ningún espacio. \nEjemplo de una coordenada válida: \"H4\"\n\n");
   printf ("\n\nIntroduzca las coordenadas a las que desea mover la pieza: ");
