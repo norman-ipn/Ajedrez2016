@@ -174,14 +174,14 @@ comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
   int peon = 1;
   int valor = 0;
   int reyjaque = 0;
-  pos_caballo_blanco = posicion_caballo_blanco (board, 0);
-  pos_alfil_blanco = posicion_alfil_blanco (board,0);
-  pos_torre_blanca = posicion_torre_blanca (board, 0);
-  pos_reina_negra = posicion_reina_negra (board,1);
-  pos_caballo_negro = posicion_caballo_negro (board,1);
-  pos_torre_negra = posicion_torre_negra (board,1);
-  pos_alfil_negro = posicion_alfil_negro (board,1);
-  pos_reina_blanca = posicion_reina_blanca (board,0);
+  pos_caballo_blanco = posicion_caballo (board, 0);
+  pos_alfil_blanco = posicion_alfil (board,0);
+  pos_torre_blanca = posicion_torre (board, 0);
+  pos_reina_negra = posicion_reina (board,1);
+  pos_caballo_negro = posicion_caballo (board,1);
+  pos_torre_negra = posicion_torre (board,1);
+  pos_alfil_negro = posicion_alfil (board,1);
+  pos_reina_blanca = posicion_reina (board,0);
 	
   reyjaque = verifcar_rey_en_jaque (board, x1, y1, x2, y2);
   if (reyjaque == 1)
