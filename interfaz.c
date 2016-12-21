@@ -5,28 +5,17 @@
 #include "tablero.h"
 #include "piezas.h"
 #include "persistencia.h"	/*Bibloteca que se requiere para la opción de cargar partida */
-#define Reset     "\x1b[0m"	/*Agrego colores para poder visualizarlos en el menú para seleccionar el color del tablero */
-#define Negro     "\x1b[30m"
-#define Rojo      "\x1b[31m"
-#define Verde     "\x1b[32m"
-#define Amarillo  "\x1b[33m"
-#define Azul      "\x1b[34m"
-#define Magenta   "\x1b[35m"
-#define Cyan      "\x1b[36m"
 
-char 
-capturar_caracter (void) 
+
+char
+capturar_caracter (void)
 {
-  
-char buffer[128];
-  
-fflush (stdin);
-  
-fgets (buffer, 4, stdin);
-  
-    //sscanf (buffer, "%c", &opcion);
-    
-return buffer[0];
+
+  char buffer[128];
+  fflush (stdin);
+  fgets (buffer, 4, stdin);
+
+  return buffer[0];
 
 }
 
@@ -95,7 +84,7 @@ imprimir (struct tablero *un_tablero)
       a = a + 1;
     }
   /*printf                Esto lo dejo por si acaso 
-     ("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y2   x2 y2");
+     ("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y1   x2 y2");
 
      scanf ("%d %d %d %d", &x1, &y1, &x2, &y2);
      movimiento_valido (un_tablero.casillas, x1, y1, x2, y2);
@@ -118,9 +107,9 @@ jugar (struct tablero *un_tablero, int tipo_juego)
   int y_objetivo = 0;
   int jugador = 0;
   /*char columnas[16] =
-    { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
-    'g', 'h'
-  };*/
+     { 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'a', 'b', 'c', 'd', 'e', 'f',
+     'g', 'h'
+     }; */
   //char entrada[2] = "0";
   int x_piezad = 0;
   int x_objetivod = 0;
@@ -129,21 +118,21 @@ jugar (struct tablero *un_tablero, int tipo_juego)
   struct timeval ti, tf;
   double tiempo;
 
-  gettimeofday (&ti, NULL);     //Comienza timer
-	
+  gettimeofday (&ti, NULL);	//Comienza timer
+
   printf ("Comienza el juego\n\n");
   while (1 == 1)
     {
-      system ("clear");
-      if(turno % 2 == 1)
-        {
-          printf("Es turno de las blancas\n\n");
-        }
+      
+      if (turno % 2 == 1)
+	{
+	  printf ("Es turno de las blancas\n\n");
+	}
       else
-        {
-          printf("Es turno de las negras\n\n");
-        }
-      imprimir(un_tablero);
+	{
+	  printf ("Es turno de las negras\n\n");
+	}
+      imprimir (un_tablero);
       printf ("\n\n¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
@@ -153,37 +142,39 @@ jugar (struct tablero *un_tablero, int tipo_juego)
       printf ("Para ver el registro de movimientos introduzca \"r\"\n");
       printf ("Para salir de la partida actual introduzca \"s\"\n\n");
       scanf ("%c", &opcion);
-      if(turno % 2 == 0 && tipo_juego == 2)
-        {
-	   opcion = 'm';      
-        }
+      if (turno % 2 == 0 && tipo_juego == 2)
+	{
+	  opcion = 'm';
+	}
       else
-      {
-        opcion = capturar_caracter ();
-      }
-     gettimeofday (&tf, NULL);     // Instante final
-     tiempo =
-       (tf.tv_sec - ti.tv_sec) * 1000 + (tf.tv_usec - ti.tv_usec) / 1000.0;
-    if (tiempo > 180000.0f)
-       {
-         printf("Te pasaste del tiempo asignado para ti, se hara una jugada al azar\n");
-	 jugada_al_azar(un_tablero,turno);// supongo que no necesitamos un *
-         turno++;
-	 break;
-       }
+	{
+	  opcion = capturar_caracter ();
+	}
+      gettimeofday (&tf, NULL);	// Instante final
+      tiempo =
+	(tf.tv_sec - ti.tv_sec) * 1000 + (tf.tv_usec - ti.tv_usec) / 1000.0;
+      if (tiempo > 180000.0f)
+	{
+	  printf
+	    ("Te pasaste del tiempo asignado para ti, se hara una jugada al azar\n");
+	  jugada_al_azar (un_tablero, turno);	// supongo que no necesitamos un *
+	  turno++;
+	  break;
+	}
 
       switch (opcion)
 	{
 	case 'm':
 	  system ("clear");
-	  if(tipo_juego == 2)
-	    { 
-              responder_jugada(un_tablero, turno, respuesta, x_piezad, y_pieza);
+	  if (tipo_juego == 2)
+	    {
+	      responder_jugada (un_tablero, turno, respuesta, x_piezad,
+				y_pieza);
 	      turno++;
 	      break;
 	    }
-	   mover_piezas(un_tablero);
-	   break;
+	  mover_piezas (un_tablero);
+	  break;
 /*------SOLICITUD DE DATOS DE LAS PIEZAS------
 
 	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
@@ -244,6 +235,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 
 	case 'n':
 	  system ("clear");
+	  printf ("Comienza de nuevo el juego\n\n");
 	  iniciar_tablero (un_tablero);
 	  break;
 
@@ -290,9 +282,9 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	  break;
 	}
 
-      imprimir (un_tablero);
+
     }
- return -1;//La funcion necesita un retorno, omiti el cero porque no sé si se ocupe el retorno, si no por favor de cambiar a void
+  return -1;			//La funcion necesita un retorno, omiti el cero porque no sé si se ocupe el retorno, si no por favor de cambiar a void
 }
 
 /*Esta función imprime el tablero en pantalla. Recibe la estructura definida en tablero.h
@@ -361,12 +353,80 @@ imprimir_tablero (struct tablero *tablero)
       i = i + 1;
     }
   printf ("\n\n");
-}*/ //Lo comenté porque ya no se va a usar esta función.
+																																																    																								    												    						    			    	                 }*///Lo comenté porque ya no se va a usar esta función.
 /* Inicio de la sección del manual */
 void
 reglas_alfil (void)
 {
+	
+  int x = 0;			
+  int y = 0;		
+  int f = 8;
 
+  char Partesuperior[] =
+    "\u250F\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2533\u2501\u2501\u2501\u2513";
+  char cuerpo[] =
+    "\u2523\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u254B\u2501\u2501\u2501\u252B ";
+  char parteinferior[] =
+    "\u2517\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u253b\u2501\u2501\u2501\u251b";
+
+
+  printf
+    ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
+
+  printf ("\n");
+  printf ("    ");
+
+
+  printf ("%s", Partesuperior);
+  while (y < 7)
+    {
+      printf ("\n");
+      printf ("  %d ", f);
+      if (y == 0)
+	printf
+	  ("\u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+      if (y == 1)
+	printf
+	  ("\u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+      if (y == 2)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503");
+      if (y == 3)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503 \u23F9 \u2503   \u2503");
+      if (y == 4)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503   \u2503 \u265D \u2503   \u2503   \u2503");
+      if (y == 5)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503 \u23F9 \u2503   \u2503");
+      if (y == 6)
+	printf
+	  ("\u2503   \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503 \u23F9 \u2503");
+      printf ("\n");
+      printf ("   ");
+      printf (" %s ", cuerpo);
+      x = 0;
+      y = y + 1;
+      f = f - 1;
+    }
+
+  printf ("\n");
+  printf
+    ("    \u2503   \u2503   \u2503 \u23F9 \u2503   \u2503   \u2503   \u2503   \u2503   \u2503");
+
+  printf ("\n");
+  printf ("    %s", parteinferior);
+  printf ("\n");
+  printf ("    ");
+
+  while (x < 8)
+    {
+      printf ("  %c ", 65 + x);
+      x = x + 1;
+    }
+/*
   printf
     ("\n El Alfil se mueve de manera diagonal hacia las demás casillas cuanto quiera, esta pieza solo se moverá por un solo color de casillas, así que es recomendable usarlo con estrategia. \n");
 
@@ -388,7 +448,7 @@ reglas_alfil (void)
 	  'X');
   printf ("1|%c|%c|%c|%c|%c|%c|%c|%c|\n", 'O', ' ', 'X', ' ', 'X', ' ', 'O',
 	  ' ');
-  printf (" |================|\n");
+  printf (" |================|\n");*/
   getchar ();
   return;
 }
@@ -922,53 +982,6 @@ letreros (int n)
     }
 }
 
-/* ESto lo comente porque no compilaba
-void
-seleccionar_color_de_tablero ()
-{
-  int opcion;
-  printf ("Seleccione el color del tablero:\n");
-  printf ("1.Predeterminado\n");
-  printf (Negro "2.Negro\n" Reset);
-  printf (Rojo "3.Rojo\n" Reset);
-  printf (Verde "4.Verde\n" Reset);
-  printf (Amarillo "5.Amarillo\n" Reset);
-  printf (Azul "6.Azul\n" Reset);
-  printf (Magenta "7.Magenta\n" Reset);
-  printf (Cyan "8.Cyan\n" Reset);
-  scanf ("%d", &opcion);
-  switch (opcion)
-    {
-    case 1:
-      tablero ();		 Ya le pedí a unos compañeros del módulo de tablero que agregaran las funciones de los case con colores para que puedan llamarse desde aquí. Debido a eso también incluyo la cabecera "tablero.h" para que no haya errores. Ya compila, sólo hace falta agregar las funciones que ya mencioné 
-      break;
-    case 2:
-      tablero_negro ();
-      break;
-    case 3:
-      tablero_rojo ();
-      break;
-    case 4:
-      tablero_verde ();
-      break;
-    case 5:
-      tablero_amarillo ();
-      break;
-    case 6:
-      tablero_azul ();
-      break;
-    case 7:
-      tablero_magenta ();
-      break;
-    case 8:
-      tablero_cyan ();
-      break;
-    }
-}
-*/
-
-
-
 void
 mostrar_opciones (void)
 {
@@ -986,17 +999,17 @@ modo (void)
 {
   int opcion = 0;
   char buffer[4];
-  
+
   do
     {
-      system("clear");
+      system ("clear");
 
-      printf("¿Qué modo de juego desea jugar?\n\n");
-      printf("1) Jugador vs Jugador\n2)Jugador vs IA\n\n");
+      printf ("¿Qué modo de juego desea jugar?\n\n");
+      printf ("1) Jugador vs Jugador\n2)Jugador vs IA\n\n");
 
-      fflush(stdin);
-      fgets(buffer, 4, stdin);
-      sscanf(buffer, "%i", &opcion);
+      fflush (stdin);
+      fgets (buffer, 4, stdin);
+      sscanf (buffer, "%i", &opcion);
     }
   while (opcion < 1 || opcion > 2);
 
@@ -1018,10 +1031,10 @@ mostrar_menu (struct tablero *un_tablero)
       mostrar_opciones ();
       opcion = capturar_caracter ();
 
-      switch ((int)opcion)
+      switch ((int) opcion)
 	{
 	case 49:
-          tipo_juego = modo();
+	  tipo_juego = modo ();
 	  jugar (un_tablero, tipo_juego);
 	  break;
 
@@ -1054,28 +1067,54 @@ mostrar_menu (struct tablero *un_tablero)
     }
 }
 
-void 
+void
 texto_piezas (void)
 {
-  printf ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula, 2)Columna. Sin dejar ningún espacio. La coordenada debe corresponder a la posición de una pieza.\nEjemplo de una coordenada válida: \"H4\"\n\n");
-  printf ("Introduzca la coordenada de la pieza que desea mover (fila,columna): ");
+  printf
+    ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula, 2)Columna. Sin dejar ningún espacio. La coordenada debe corresponder a la posición de una pieza.\nEjemplo de una coordenada válida: \"H4\"\n\n");
+  printf
+    ("Introduzca la coordenada de la pieza que desea mover (fila,columna): ");
   return;
 }
 
 void
 texto_destino (void)
 {
-  printf ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula 2)Columna. Sin dejar ningún espacio. \nEjemplo de una coordenada válida: \"H4\"\n\n");
+  printf
+    ("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula 2)Columna. Sin dejar ningún espacio. \nEjemplo de una coordenada válida: \"H4\"\n\n");
   printf ("\n\nIntroduzca las coordenadas a las que desea mover la pieza: ");
   return;
 }
 
-/*
-int
-main_para_pruebas (int c, char **arg)
+void
+iniciar_sesion ()
 {
-  struct tablero un_tablero;
-  menu (un_tablero);
-  return 0;
+  int resp1 = 0, resp2 = 0;
+  char user[99999] = "usuario", password[99999] = "clave";
+  char usuario[99999], clave[99999];
+  char buffer1[99999], buffer2[99999];
+
+  printf ("Ingrese usuario ");
+
+  fgets (buffer1, 128, stdin);
+  sscanf (buffer1, "%s", &usuario);
+
+
+  printf ("Ingrese clave   ");
+
+  fgets (buffer2, 128, stdin);
+  sscanf (buffer2, "%s", &clave);
+
+  resp1 = strcmp (user, usuario);
+  resp2 = strcmp (password, clave);
+
+  if (resp1 == 0 && resp2 == 0)
+    {
+      printf ("Bienvenido");
+    }
+  else
+    {
+      printf (" Usuario incorrecto ");
+    }
+
 }
-*/
