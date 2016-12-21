@@ -21,4 +21,62 @@ int validar_movimiento_caballo (struct tablero *board, int x1, int y1, int x2,
 				int y2);
 int movimiento;
 
+int calcularvalor(int n1,int n2, int n3,int n4);
+
+int comparar(int n1, int n2, int n3, int n4, int n5);
+
+void mover_peon (struct tablero *board, char jugada[4]);
+
+int arriba (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int abajo (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int izquierda (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int derecha (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cruz (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int diagonalard (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int diagonalabd (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int diagonalari (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int diagonalabi (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int diagonal (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab1 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab2 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab3 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab4 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab5 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab6 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab7 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int cab8 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int caballo (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int pe1 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int pe2 (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int peon (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int lados (struct tablero *board, int x, int y, char jugada[4], int valor);
+
+int verificar (struct tablero *board, int x, int y, int valor, char jugada[4]);
+
+int analizar (struct tablero *board, char jugada[4]);
+
+void ia (struct tablero *board, char jugada[4]);
+
 #endif/*__IA_H__*/
