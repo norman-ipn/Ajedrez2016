@@ -29,10 +29,7 @@ void continuar_partida (char archivo[100], int);
 void obten_hora (void);
 void actualiza_historial (int resultado);
 int turno_jugador (void);
-void Agrega_Stack (struct Stack *S, char tablero[][8]);
-void Anterior (struct Stack *S);
-void Siguiente (struct Stack *S);
-void Imprime (struct Stack *S);
+
 
 
 #endif/*__PESISTENCIA_H_*/
