@@ -1,5 +1,5 @@
-#include "red.h"/*concuerdo con wl que dijo que está bien*/
-#include <string.h> //Para usar la funcion strlen que agregaron...
+#include "red.h"		/*concuerdo con wl que dijo que está bien */
+#include <string.h>		//Para usar la funcion strlen que agregaron...
 /* 
   importante, los socket siempre deben correrse en modo root, para estar
   para estar en modo root simplemente escribe:
@@ -351,29 +351,35 @@ main_servidor (void)
 	      printf ("Error al cargar el chat");
 	    }
 	  recv (client_sockfd, cs, 1024, 0);
-	  read (client_sockfd, c, 1024); 	/*Lee el mensaje del cliente*/
+	  read (client_sockfd, c, 1024);	/*Lee el mensaje del cliente */
 	  printf ("El cliente dijo: %s\n", cs);
 	  printf ("ingrese una cadena para enviar al cliente: ");
-          fgets (cs, 1024, stdin);
-          sscanf (cs, "%s", c);
+	  fgets (cs, 1024, stdin);
+	  sscanf (cs, "%s", c);
 
-          send (client_sockfd, c, 1024, 0);
-          int bufs=0;//Se agrega la declaracion de bufs que antes no estaba
-	  bufs = strlen(cs); 			/* Obtiene el tamaño de la cadena */
-	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I') && (cs[3] == 'O') && (cs[4] == 'S' ) && (cs [5] == '\0' )) || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i') && (cs[3] == 'o') && (cs[4] == 's') && (cs [5] == '\0')))
+	  send (client_sockfd, c, 1024, 0);
+	  int bufs = 0;		//Se agrega la declaracion de bufs que antes no estaba
+	  bufs = strlen (cs);	/* Obtiene el tamaño de la cadena */
+	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I')
+	       && (cs[3] == 'O') && (cs[4] == 'S') && (cs[5] == '\0'))
+	      || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i')
+		  && (cs[3] == 'o') && (cs[4] == 's') && (cs[5] == '\0')))
 
-          send (client_sockfd, c, 1024, 0);
-	  bufs = strlen(cs); 			/* Obtiene el tamaño de la cadena */
-	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I') && (cs[3] == 'O') && (cs[4] == 'S') && (cs [5] == '\0')) || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i') && (cs[3] == 'o') && (cs[4] == 's') && (cs [5] == '\0')))
+	    send (client_sockfd, c, 1024, 0);
+	  bufs = strlen (cs);	/* Obtiene el tamaño de la cadena */
+	  if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I')
+	       && (cs[3] == 'O') && (cs[4] == 'S') && (cs[5] == '\0'))
+	      || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i')
+		  && (cs[3] == 'o') && (cs[4] == 's') && (cs[5] == '\0')))
 
 	    {
-	      printf("Servidor finalizado\n");
-	      printf("\n--------------SESION FINALIZADA--------------\n");
-	      close(client_sockfd);
+	      printf ("Servidor finalizado\n");
+	      printf ("\n--------------SESION FINALIZADA--------------\n");
+	      close (client_sockfd);
 	      break;
 	    }
 
-	  write(client_sockfd, cs, bufs = 1); /* Envío de la infromación al servidor */
+	  write (client_sockfd, cs, bufs = 1);	/* Envío de la infromación al servidor */
 	  send (client_sockfd, c, 1024, 0);
 	  close (client_sockfd);
 	}
@@ -388,7 +394,7 @@ main_servidor (void)
 void
 cliente_conexion_mensaje (void)
 {
-  int server_sockfd=0;
+  int server_sockfd = 0;
   int sockfd = 0;		/* Descriptor del socket */
   int len = 0;			/* Tamaño de la estructura */
   struct sockaddr_in address;
@@ -398,7 +404,8 @@ cliente_conexion_mensaje (void)
   int ciclo = 0;		/* Variable para control de lectura y escritura */
   char ipserver[10];
   int puerto = 0;
-  /*int*/char buffer[1024]; //Debe de ser un arreglo de caracteres
+				/*int */ char buffer[1024];
+				//Debe de ser un arreglo de caracteres
   //int bufs = 0; 
   int inicio = 0;		/* Indicador de inicio de sesión */
   char cs[1024];		/* Cadena del servidor */
@@ -413,9 +420,9 @@ cliente_conexion_mensaje (void)
   fgets (buffer, 10, stdin);
   sscanf (buffer, "%d", &puerto);
   __fpurge (stdin);
-	
-  system ("clear");	
-	
+
+  system ("clear");
+
   while (ciclo == 0)
     {
       sockfd = socket (AF_INET, SOCK_STREAM, 0);
@@ -433,22 +440,25 @@ cliente_conexion_mensaje (void)
 	  close (sockfd);
 	  break;
 	}
-	  
+
       /* Validar el inicio de sesión */
       if (inicio == 0)
-        {
-	 printf("-----------------SESION INICIADA-----------------\n");
-	 read (sockfd, ch, 1024);		 	/* Lee la cadena del servidor */
-	 printf ("%s\n", ch); 	 			/* Imprime la cadena */
-         inicio = 1;
-        }
-	  
-      if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I') && (cs[3] == 'O') && (cs[4] == 'S') && (cs [5] == '\0')) || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i') && (cs[3] == 'o') && (cs[4] == 's') && (cs [5] == '\0')))
 	{
-	 printf("Servidor finalizado\n");
-	 printf("\n--------------SESION FINALIZADA--------------\n");
-	 close(sockfd);
-	 break;
+	  printf ("-----------------SESION INICIADA-----------------\n");
+	  read (sockfd, ch, 1024);	/* Lee la cadena del servidor */
+	  printf ("%s\n", ch);	/* Imprime la cadena */
+	  inicio = 1;
+	}
+
+      if (((cs[0] == 'A') && (cs[1] == 'D') && (cs[2] == 'I')
+	   && (cs[3] == 'O') && (cs[4] == 'S') && (cs[5] == '\0'))
+	  || ((cs[0] == 'a') && (cs[1] == 'd') && (cs[2] == 'i')
+	      && (cs[3] == 'o') && (cs[4] == 's') && (cs[5] == '\0')))
+	{
+	  printf ("Servidor finalizado\n");
+	  printf ("\n--------------SESION FINALIZADA--------------\n");
+	  close (sockfd);
+	  break;
 	}
 
       printf ("ingrese una cadena para enviar al servidor: ");
@@ -459,9 +469,9 @@ cliente_conexion_mensaje (void)
       //write(sockfd,' ',30); /* Envío de la infromación al servidor */ //Poner el arreglo correspondiente en el parametro
       close (sockfd);
       break;
-	}
-      close (server_sockfd);
-    
+    }
+  close (server_sockfd);
+
 
 
   close (sockfd);

@@ -363,7 +363,7 @@ imprimir_tablero (struct tablero *tablero)
       i = i + 1;
     }
   printf ("\n\n");
-												    						    			    	                 }*///Lo comenté porque ya no se va a usar esta función.
+																								    												    						    			    	                 }*///Lo comenté porque ya no se va a usar esta función.
 /* Inicio de la sección del manual */
 void
 reglas_alfil (void)
@@ -1107,9 +1107,3 @@ iniciar_sesion ()
     }
 
 }
-
-
-
-
-
-
