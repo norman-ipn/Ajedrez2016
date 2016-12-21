@@ -3,67 +3,66 @@
 /*Recibe cada movimiento de los jugadores para guardarlos en el archivo*/
 int
 Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
-		 int y_final, int i)
-{
+                         int y_final, int i)
+  {
 
-  char digitos[10][2] = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-  char NombreAnterior[50] = "PartidasGuardadas.txt";
-  char NombreActual[50];
+    char digitos[10][2] = {"0","1","2","3","4","5","6","7","8","9"};
+    char NombreAnterior[50] = "PartidasGuardadas.txt";
+    char NombreActual[50];
 
-  FILE *fichero = 0;
-  fichero = fopen ("PartidasGuardadas.txt", "a");
+    FILE *fichero = 0;
+    fichero = fopen ("PartidasGuardadas.txt", "a");
 
-  if (fichero == 0)
-    {				/* no se pudo abrir el archivo */
-      return -1;
-    }
-  fputs ("Partidas Guardadas\n", fichero);
+    if (fichero == 0)
+      {				/* no se pudo abrir el archivo*/ 
+        return -1;
+      }
+    fputs ("Partidas Guardadas\n", fichero);
 
-  if (jugador == 1)
-    {
-      fputs ("Movimiento Jugador 1\n", fichero);
-      fputs ("x inicial  y inicial  x final  y final\n", fichero);
-      fprintf (fichero, "%d             %d          %d         %d\n",
-	       x_inicial, y_inicial, x_final, y_final);
-    }
-  if (jugador == 2)
-    {
-      fputs ("Movimiento Jugador 2\n", fichero);
-      fputs ("x inicial  y inicial  x final  y final\n", fichero);
-      fprintf (fichero, "%d             %d          %d         %d\n",
-	       x_inicial, y_inicial, x_final, y_final);
-    }
-  fclose (fichero);
-  if (i > 0 && i < 10)
-    {
-      strcpy (NombreActual, "");
-      strcat (NombreActual, "PartidasGuardadas");
-      strcat (NombreActual, digitos[i]);
-      strcat (NombreActual, ".txt");
-    }
-  else if (i == 10)
-    {
-      strcpy (NombreActual, "PartidasGuardadas10.txt");
-    }
-  else
-    {
-      printf ("Memoria llena");
-      return i;
-    }
-  if (rename (NombreAnterior, NombreActual) == 0)
-    {				/*Renombramos el archivo */
-      printf ("Archivo Guardado\n");
-      printf ("Numero de archivo; %d\n", i);
-      i++;
-      return i;
-    }
-  else
-    {
-      printf ("No se pudo guardar el archivo\n");
-      return i;
-    }
+    if (jugador == 1)
+      {
+        fputs ("Movimiento Jugador 1\n", fichero);
+        fputs ("x inicial  y inicial  x final  y final\n", fichero);
+        fprintf (fichero, "%d             %d          %d         %d\n",
+        x_inicial, y_inicial, x_final, y_final);
+      }
+    if (jugador == 2)
+      {
+        fputs ("Movimiento Jugador 2\n", fichero);
+        fputs ("x inicial  y inicial  x final  y final\n", fichero);
+        fprintf (fichero, "%d             %d          %d         %d\n",
+        x_inicial, y_inicial, x_final, y_final);
+      }
+    fclose (fichero);
+    if(i > 0 && i < 10)
+      {
+        strcpy(NombreActual,"");
+        strcat(NombreActual,"PartidasGuardadas");
+        strcat(NombreActual,digitos[i]);
+        strcat(NombreActual,".txt");
+      } 
+    else if(i == 10)
+      {
+        strcpy(NombreActual,"PartidasGuardadas10.txt");
+      } 
+    else 
+      {
+        printf ("Memoria llena");
+        return i;
+      }  
+    if (rename (NombreAnterior, NombreActual) == 0)
+      {			/*Renombramos el archivo */
+        printf ("Archivo Guardado\n");
+        printf ("Numero de archivo; %d\n", i);
+        i++;
+        return i;
+      }
+    else
+      {
+        printf ("No se pudo guardar el archivo\n");
+        return i;
+      }  
 }
-
 //Se reduce el numero de lineas. Se incluye string.h en persistencia.h.
 
 void
@@ -133,7 +132,7 @@ continuar_partida (char archivo[100], int num)
       fclose (fichero);
 
     }
-  if (num == 5)
+   if (num == 5)
     {
       fichero = fopen ("PartidasGuardadas5.txt", "r");
       if (fichero == 0)
