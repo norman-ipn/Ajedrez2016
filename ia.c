@@ -352,9 +352,8 @@ comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
     }
   return valor;
 }
-
 int *
-posicion_caballo_blanco (struct tablero *board)
+posicion_torre (struct tablero *board, int turno)
 {
   int i = 0;
   int j = 0;
@@ -363,111 +362,78 @@ posicion_caballo_blanco (struct tablero *board)
     {
       for (j = 0; j < 8; j = j + 1)
 	{
-	  if (board->casillas[i][j] == 'c')
-	    {
-	      *(posicion) = i;
-	      *(posicion + 1) = j;
-	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_caballo_negro (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
-	  if (board->casillas[i][j] == 'C')
-	    {
-	      *(posicion) = i;
-	      *(posicion + 1) = j;
-	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_alfil_blanco (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
-	  if (board->casillas[i][j] == 'a')
-	    {
-	      *(posicion) = i;
-	      *(posicion + 1) = j;
-	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_alfil_negro (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
-	  if (board->casillas[i][j] == 'A')
-	    {
-	      *(posicion) = i;
-	      *(posicion + 1) = j;
-	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_torre_blanca (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
-	  if (board->casillas[i][j] == 't')
-	    {
-	      *(posicion) = i;
-	      *(posicion + 1) = j;
-	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_torre_negra (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
+	  if(turno%2 == 0){
 	  if (board->casillas[i][j] == 'T')
 	    {
 	      *(posicion) = i;
 	      *(posicion + 1) = j;
 	    }
+	  }
+	  else{
+	    if (board->casillas[i][j] == 't')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }  
+	  }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_caballo (struct tablero *board,int turno)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if(turno %2 == 0){
+		  if (board->casillas[i][j] == 'C')
+		    {
+		      *(posicion) = i;
+		      *(posicion + 1) = j;
+		    }
+	  }
+	  else{
+	          if (board->casillas[i][j] == 'c')
+		    {
+		      *(posicion) = i;
+		      *(posicion + 1) = j;
+		    }
+	  }
+	}
+    }
+  return posicion;
+}
+
+int *
+posicion_alfil (struct tablero *board, int turno)
+{
+  int i = 0;
+  int j = 0;
+  int *posicion = (int *) malloc (sizeof (int) * 2);
+  for (i = 0; i < 8; i = i + 1)
+    {
+      for (j = 0; j < 8; j = j + 1)
+	{
+	  if (turno%2 == 0){
+	  if (board->casillas[i][j] == 'A')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }
+	  }
+	  else{
+	    if (board->casillas[i][j] == 'a')
+	    {
+	      *(posicion) = i;
+	      *(posicion + 1) = j;
+	    }  
+	  }
 	}
     }
   return posicion;
@@ -483,36 +449,24 @@ posicion_reina_blanca (struct tablero *board)
     {
       for (j = 0; j < 8; j = j + 1)
 	{
-	  if (board->casillas[i][j] == 'q')
+	  if(turno%2 == 0){
+	   if (board->casillas[i][j] == 'Q')
 	    {
 	      *(posicion) = i;
 	      *(posicion + 1) = j;
 	    }
-	}
-    }
-  return posicion;
-}
-
-int *
-posicion_reina_negra (struct tablero *board)
-{
-  int i = 0;
-  int j = 0;
-  int *posicion = (int *) malloc (sizeof (int) * 2);
-  for (i = 0; i < 8; i = i + 1)
-    {
-      for (j = 0; j < 8; j = j + 1)
-	{
-	  if (board->casillas[i][j] == 'Q')
+	  }
+	  else{
+	   if (board->casillas[i][j] == 'q')
 	    {
 	      *(posicion) = i;
 	      *(posicion + 1) = j;
 	    }
+	  }
 	}
     }
   return posicion;
 }
-
 
 int
 MovimientoRandom (struct tablero *board, int x0, int y0, int x, int y, int x1,
