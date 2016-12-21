@@ -532,10 +532,8 @@ mover_piezas (struct tablero *un_tablero)
 
   do
     {
-      printf
-	("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula, 2)Columna. Sin dejar ningún espacio. La coordenada debe corresponder a la posición de una pieza.\nEjemplo de una coordenada válida: \"H4\"\n\n");
-      printf
-	("Introduzca la coordenada de la pieza que desea mover (fila,columna): ");
+      system("clear");
+      texto_piezas();
       fgets (pieza, 3, stdin);
       verificar = verificar_coordenada (pieza);
     }
@@ -547,10 +545,8 @@ que también correspondan a una pieza y no a una casilla vacía.*/
 
   do
     {
-      printf
-	("Recuerde que el formato de las coordenadas debe ser: 1)Fila en mayúscula 2)Columna. Sin dejar ningún espacio. \nEjemplo de una coordenada válida: \"H4\"\n\n");
-      printf
-	("\n\nIntroduzca las coordenadas a las que desea mover la pieza: ");
+      system("clear");
+      texto_destino();
       fgets (destino, 3, stdin);
       verificar = verificar_coordenada (destino);
     }
