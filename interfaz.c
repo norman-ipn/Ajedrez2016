@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <sys/time.h>
 #include "ia.h"
 #include "interfaz.h"
@@ -1091,19 +1092,19 @@ iniciar_sesion ()
 {
   int resp1 = 0, resp2 = 0;
   char user[99999] = "usuario", password[99999] = "clave";
-  char usuario[99999], clave[99999];
-  char buffer1[99999], buffer2[99999];
+  char *usuario=(char*)malloc(sizeof(char)*9*9*9*9), *clave=(char*)malloc(sizeof(char)*9*9*9*9);
+  char *buffer1=(char*)malloc(sizeof(char)*9*9*9*9), *buffer2=(char*)malloc(sizeof(char)*9*9*9*9);
 
   printf ("Ingrese usuario ");
 
   fgets (buffer1, 128, stdin);
-  sscanf (buffer1, "%s", &usuario);
+  sscanf (buffer1, "%s", usuario);
 
 
   printf ("Ingrese clave   ");
 
   fgets (buffer2, 128, stdin);
-  sscanf (buffer2, "%s", &clave);
+  sscanf (buffer2, "%s", clave);
 
   resp1 = strcmp (user, usuario);
   resp2 = strcmp (password, clave);

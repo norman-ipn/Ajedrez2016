@@ -429,9 +429,9 @@ posicion_alfil (struct tablero *board, int tipo_pieza)
 }
 
 int *
-posicion_reina_blanca (struct tablero *board)
+posicion_reina (struct tablero *board, int tipopieza)
 {
-  int tipopieza=0;
+  
   int i = 0;
   int j = 0;
   int *posicion = (int *) malloc (sizeof (int) * 2);
@@ -1065,7 +1065,7 @@ ia (struct tablero *board, char jugada[4])
   return;
 }
 
-/*int
+int
 verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
 {
 
@@ -1082,7 +1082,7 @@ verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
     }
 }
 
-int
+/*int
 comparar (int valor1, int valor2)       compara el valor mayor hasta el momento con el nuevo valor con base en las coordenadas) 
 {
   if (valor1 > valor2)
