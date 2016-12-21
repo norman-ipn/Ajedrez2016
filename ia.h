@@ -79,21 +79,13 @@ int analizar (struct tablero *board, char jugada[4]);
 
 void ia (struct tablero *board, char jugada[4]);
 
-int *posicion_caballo_blanco (struct tablero *board);
+int *posicion_caballo (struct tablero *board, int tipopieza);
 
-int *posicion_caballo_negro (struct tablero *board);
+int *posicion_alfil (struct tablero *board, int tipopieza);
 
-int *posicion_alfil_blanco (struct tablero *board);
+int *posicion_torre (struct tablero *board, int tipopieza);
 
-int *posicion_alfil_negro (struct tablero *board);
-
-int *posicion_torre_blanca (struct tablero *board);
-
-int *posicion_torre_negra (struct tablero *board);
-
-int *posicion_reina_blanca (struct tablero *board);
-
-int *posicion_reina_negra (struct tablero *board);
+int *posicion_reina (struct tablero *board, int tipopieza);
 
 int verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2,
 			   int y2);
