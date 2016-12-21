@@ -323,7 +323,7 @@ continuar_partida (char archivo[100], int num)
       fclose (fichero);
 
     }
-x  if (num == 5)
+   if (num == 5)
     {
       fichero = fopen ("PartidasGuardadas5.txt", "r");
       if (fichero == 0)
