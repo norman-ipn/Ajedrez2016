@@ -143,8 +143,8 @@ jugar (struct tablero *un_tablero, int tipo_juego)
         {
           printf("Es turno de las negras\n\n");
         }
-	  
-      printf ("¿Qué desea hacer a continuación?\n\n");
+      imprimir(un_tablero);
+      printf ("\n\n¿Qué desea hacer a continuación?\n\n");
 
       printf ("Para realizar un movimiento introduzca \"m\"\n");
       printf ("Para guardar la partida introduzca \"g\"\n");
