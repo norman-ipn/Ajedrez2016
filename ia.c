@@ -1137,3 +1137,143 @@ verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
       return -1;
     }
 }
+
+int
+comparar (int valor1, int valor2)       /*compara el valor mayor hasta el momento con el nuevo valor con base en las coordenadas) */
+{
+  if (valor1 > valor2)
+    {
+      return 1;                 /*regresas 1 si es mayor el nuevo valor, si no regresa 0 */
+    }
+  return 0;
+}
+
+void
+cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coordenada de la jugada */
+{
+  char arr1[8] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
+  char arr2[8] = { '1', '2', '3', '4', '5', '6', '7', '8' };
+  int i = 0;
+  int k = 0;
+  
+  while (i < 4)
+    {
+      if (i == 0)
+        {
+          while (k < 8)
+            {
+              if (k = x1)
+                {
+                  jugada[i] = arr1[k];
+                }
+              k = k + 1;
+            }
+        }
+
+      if (i == 1)
+        {
+          while (k < 8)
+            {
+              if (k = x1)
+                {
+                  jugada[i] = arr1[k];
+                }
+ 
+              k = k + 1;
+            }
+        }
+
+
+      if (i == 2)
+        {
+          while (k < 8)
+            {
+              if (k = x1)
+                {
+                  jugada[i] = arr2[k];
+                }
+              k = k + 1;
+            }
+        }
+
+
+
+      if (i == 3)
+        {
+          while (k < 8)
+            {
+              if (k = x1)
+                {
+                  jugada[i] = arr2[k];
+                }
+              k = k + 1;
+            }
+        }
+      k = 0;
+      i = i + 1;
+    }
+  return;
+}
+
+int
+calcularvalor (int x1, int y1, int x2, int y2, char tablero[8][8])
+{
+  int valor = 0;
+  int v1 = 0;
+  int v2 = 0;
+
+
+  switch (tablero[x1][y1])
+  {
+
+case 'P':
+
+    v1 = 1;
+
+case 'T':
+
+    v1 = 5;
+
+case 'C':
+
+    v1 = 3;
+
+case 'A':
+
+    v1 = 4;
+
+case 'D':
+
+    v1 = 9;
+
+  }
+
+  switch (tablero[x2][y2])
+  {
+
+case 'p':
+
+    v2 = 2;
+
+case 't':
+
+    v2 = 6;
+
+case 'c':
+
+    v2 = 4;
+		  
+case 'a':
+
+    v2 = 5;
+
+case 'd':
+
+    v2 = 10;
+
+  }
+  valor = v2 - v1;
+	
+  return valor;                 /*regresa el valor */
+
+}
