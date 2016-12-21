@@ -95,7 +95,7 @@ imprimir (struct tablero *un_tablero)
       a = a + 1;
     }
   /*printf                Esto lo dejo por si acaso 
-     ("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y2   x2 y2");
+     ("\nTurno de....  Ingrese su movimiento\n De la forma (x1 y1   x2 y2");
 
      scanf ("%d %d %d %d", &x1, &y1, &x2, &y2);
      movimiento_valido (un_tablero.casillas, x1, y1, x2, y2);
