@@ -158,7 +158,7 @@ podemosSerComidos (struct tablero *board)
 int
 comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
 {
-  int movimientoIndicado = 0;
+  //int movimientoIndicado = 0;
   int *pos_caballo_blanco = (int *) malloc (sizeof (int) * 2);
   int *pos_torre_blanca = (int *) malloc (sizeof (int) * 2);
   int *pos_alfil_blanco = (int *) malloc (sizeof (int) * 2);
@@ -167,11 +167,11 @@ comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
   int *pos_torre_negra = (int *) malloc (sizeof (int) * 2);
   int *pos_alfil_negro = (int *) malloc (sizeof (int) * 2);
   int *pos_reina_blanca = (int *) malloc (sizeof (int) * 2);
-  int dama = 10;
+ /* int dama = 10;
   int torre = 5;
   int alfil = 3;
   int caballo = 3;
-  int peon = 1;
+  int peon = 1;*/
   int valor = 0;
   int reyjaque = 0;
   pos_caballo_blanco = posicion_caballo (board, 0);
@@ -191,164 +191,152 @@ comer_pieza (struct tablero *board, int x1, int y1, int x2, int y2)
     }
   else
     {
-      if (validar_movimiento_torre
-	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
-	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+      int validar_torre=0;
+      validar_torre=validar_movimiento_torre(board, *(pos_torre_blanca), *(pos_torre_blanca + 1),*(pos_caballo_negro), *(pos_caballo_negro + 1));
+      if (validar_torre== 1)
 	{
-	  return movimiento =
+	  return validar_torre;/*movimiento =
 	    validar_movimiento_torre (board, *(pos_torre_blanca),
 				      *(pos_torre_blanca + 1),
 				      *(pos_caballo_negro),
-				      *(pos_caballo_negro + 1));
+				      *(pos_caballo_negro + 1));*/
 	}
-      if (validar_movimiento_torre
-	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
-	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+        validar_torre=validar_movimiento_torre(board, *(pos_torre_blanca), *(pos_torre_blanca + 1),*(pos_alfil_negro), *(pos_alfil_negro + 1));
+      if (validar_torre == 1)
 	{
-	  return movimiento =
+	  return validar_torre;/*movimiento =
 	    validar_movimiento_torre (board, *(pos_torre_blanca),
 				      *(pos_torre_blanca + 1),
 				      *(pos_alfil_negro),
-				      *(pos_alfil_negro + 1));
+				      *(pos_alfil_negro + 1));*/
 	}
-      if (validar_movimiento_torre
-	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
-	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+       validar_torre=validar_movimiento_torre(board, *(pos_torre_blanca), *(pos_torre_blanca + 1),*(pos_torre_negra), *(pos_torre_negra + 1));
+      if (validar_torre == 1)
 	{
-	  return movimiento =
+	  return validar_torre;/*movimiento =
 	    validar_movimiento_torre (board, *(pos_torre_blanca),
 				      *(pos_torre_blanca + 1),
 				      *(pos_torre_negra),
-				      *(pos_torre_negra + 1));
+				      *(pos_torre_negra + 1));*/
 	}
-      if (validar_movimiento_torre
-	  (board, *(pos_torre_blanca), *(pos_torre_blanca + 1),
-	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+         validar_torre=validar_movimiento_torre(board, *(pos_torre_blanca), *(pos_torre_blanca + 1),*(pos_reina_negra), *(pos_reina_negra + 1));
+      if (validar_torre == 1)
 	{
-	  return movimiento =
+	  return validar_torre; /*movimiento =
 	    validar_movimiento_torre (board, *(pos_torre_blanca),
 				      *(pos_torre_blanca + 1),
 				      *(pos_reina_negra),
-				      *(pos_reina_negra + 1));
+				      *(pos_reina_negra + 1));*/
 	}
-
-      if (validar_movimiento_alfil
-	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
-	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+      int validar_alfil=0;
+      validar_alfil=validar_movimiento_alfil(board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),*(pos_caballo_negro), *(pos_caballo_negro + 1));
+      if (validar_alfil== 1)
 	{
-	  return movimiento =
+	  return validar_alfil;/*movimiento =
 	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
 				      *(pos_alfil_blanco + 1),
 				      *(pos_caballo_negro),
-				      *(pos_caballo_negro + 1));
+				      *(pos_caballo_negro + 1));*/
 	}
-      if (validar_movimiento_alfil
-	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
-	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+        validar_alfil=validar_movimiento_alfil(board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),*(pos_alfil_negro), *(pos_alfil_negro + 1));
+      if (validar_alfil== 1)
 	{
-	  return movimiento =
+	  return validar_alfil; /*movimiento =
 	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
 				      *(pos_alfil_blanco + 1),
 				      *(pos_alfil_negro),
-				      *(pos_alfil_negro + 1));
+				      *(pos_alfil_negro + 1));*/
 	}
-      if (validar_movimiento_alfil
-	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
-	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+      validar_alfil=validar_movimiento_alfil(board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),*(pos_torre_negra), *(pos_torre_negra + 1));
+      if (validar_alfil == 1)
 	{
-	  return movimiento =
+	  return validar_alfil;/*movimiento =
 	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
 				      *(pos_alfil_blanco + 1),
 				      *(pos_torre_negra),
-				      *(pos_torre_negra + 1));
+				      *(pos_torre_negra + 1));*/
 	}
-      if (validar_movimiento_alfil
-	  (board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),
-	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+       validar_alfil=validar_movimiento_alfil(board, *(pos_alfil_blanco), *(pos_alfil_blanco + 1),*(pos_reina_negra), *(pos_reina_negra + 1));
+      
+      if (validar_alfil== 1)
 	{
-	  return movimiento =
+	  return validar_alfil; /*movimiento =
 	    validar_movimiento_alfil (board, *(pos_alfil_blanco),
 				      *(pos_alfil_blanco + 1),
 				      *(pos_reina_negra),
-				      *(pos_reina_negra + 1));
+				      *(pos_reina_negra + 1));*/
 	}
-      if (validar_movimiento_caballo
-	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
-	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+      int validar_caballo=0;
+      validar_caballo=validar_movimiento_caballo(board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),*(pos_caballo_negro), *(pos_caballo_negro + 1));
+      if (validar_caballo == 1)
 	{
-	  return movimiento =
+	  return validar_caballo; /*movimiento =
 	    validar_movimiento_torre (board, *(pos_torre_blanca),
 				      *(pos_torre_blanca + 1),
 				      *(pos_caballo_negro),
-				      *(pos_caballo_negro + 1));
+				      *(pos_caballo_negro + 1));*/
 	}
-      if (validar_movimiento_caballo
-	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
-	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+       validar_caballo=validar_movimiento_caballo(board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),*(pos_alfil_negro), *(pos_alfil_negro + 1));
+      if (validar_caballo== 1)
 	{
-	  return movimiento =
+	  return validar_caballo;/*movimiento =
 	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
 					*(pos_caballo_blanco + 1),
 					*(pos_alfil_negro),
-					*(pos_alfil_negro + 1));
+					*(pos_alfil_negro + 1));*/
 	}
-      if (validar_movimiento_caballo
-	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
-	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+        validar_caballo=validar_movimiento_caballo(board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),*(pos_torre_negra), *(pos_torre_negra + 1));
+      if (validar_caballo== 1)
 	{
-	  return movimiento =
+	  return validar_caballo;/*movimiento =
 	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
 					*(pos_caballo_blanco + 1),
 					*(pos_torre_negra),
-					*(pos_torre_negra + 1));
+					*(pos_torre_negra + 1));*/
 	}
-      if (validar_movimiento_caballo
-	  (board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),
-	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+       validar_caballo=validar_movimiento_caballo(board, *(pos_caballo_blanco), *(pos_caballo_blanco + 1),*(pos_reina_negra), *(pos_reina_negra + 1));
+      if (validar_caballo== 1)
 	{
-	  return movimiento =
+	  return validar_caballo;/*movimiento =
 	    validar_movimiento_caballo (board, *(pos_caballo_blanco),
 					*(pos_caballo_blanco + 1),
 					*(pos_reina_negra),
-					*(pos_reina_negra + 1));
+					*(pos_reina_negra + 1));*/
 	}
-      if (validar_movimiento_reina
-	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
-	   *(pos_caballo_negro), *(pos_caballo_negro + 1)) == 1)
+       int validar_reina=0;
+       validar_reina=validar_movimiento_reina(board, *(pos_reina_blanca), *(pos_reina_blanca + 1),*(pos_caballo_negro), *(pos_caballo_negro + 1));
+      if ( validar_reina== 1)
 	{
-	  return movimiento =
+	  return validar_reina;/*movimiento =
 	    (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
-	     *(pos_caballo_negro), *(pos_caballo_negro + 1));
+	     *(pos_caballo_negro), *(pos_caballo_negro + 1));*/
 	}
-      if (validar_movimiento_reina
-	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
-	   *(pos_alfil_negro), *(pos_alfil_negro + 1)) == 1)
+        validar_reina=validar_movimiento_reina(board, *(pos_reina_blanca), *(pos_reina_blanca + 1),*(pos_alfil_negro), *(pos_alfil_negro + 1));
+      if ( validar_reina== 1)
 	{
-	  return movimiento =
+	  return validar_reina;/*movimiento =
 	    validar_movimiento_reina (board, *(pos_reina_blanca),
 				      *(pos_reina_blanca + 1),
 				      *(pos_alfil_negro),
-				      *(pos_alfil_negro + 1));
+				      *(pos_alfil_negro + 1));*/
 	}
-      if (validar_movimiento_reina
-	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
-	   *(pos_torre_negra), *(pos_torre_negra + 1)) == 1)
+       validar_reina=validar_movimiento_reina(board, *(pos_reina_blanca), *(pos_reina_blanca + 1),*(pos_torre_negra), *(pos_torre_negra + 1));
+      if (validar_reina== 1)
 	{
-	  return movimiento =
+	  return validar_reina; /*movimiento =
 	    validar_movimiento_reina (board, *(pos_reina_blanca),
 				      *(pos_reina_blanca + 1),
 				      *(pos_torre_negra),
-				      *(pos_torre_negra + 1));
+				      *(pos_torre_negra + 1));*/
 	}
-      if (validar_movimiento_reina
-	  (board, *(pos_reina_blanca), *(pos_reina_blanca + 1),
-	   *(pos_reina_negra), *(pos_reina_negra + 1)) == 1)
+       validar_reina=validar_movimiento_reina(board, *(pos_reina_blanca), *(pos_reina_blanca + 1),*(pos_reina_negra), *(pos_reina_negra + 1));
+      if (validar_reina== 1)
 	{
-	  return movimiento =
+	  return validar_reina;/*movimiento =
 	    validar_movimiento_reina (board, *(pos_reina_blanca),
 				      *(pos_reina_blanca + 1),
 				      *(pos_reina_negra),
-				      *(pos_reina_negra + 1));
+				      *(pos_reina_negra + 1));*/
 	}
     }
   return valor;
@@ -443,6 +431,7 @@ posicion_alfil (struct tablero *board, int tipo_pieza)
 int *
 posicion_reina_blanca (struct tablero *board)
 {
+  int tipopieza=0;
   int i = 0;
   int j = 0;
   int *posicion = (int *) malloc (sizeof (int) * 2);
@@ -1000,7 +989,7 @@ lados (struct tablero *board, int x, int y, char jugada[4], int valor)
 	      if (comparar (x + i, y + k, x, y, valor) == 1)
 		{
 		  cambiar (x + i, y + k, x, y, jugada);
-		  valor = calcularvalor (x + i, y + k, x, y);
+		  //valor = calcularvalor (x + i, y + k, x, y); verificar argumentos de la firma de la funcion
 		}
 	    }
 	  k = k + 1;
@@ -1076,7 +1065,7 @@ ia (struct tablero *board, char jugada[4])
   return;
 }
 
-int
+/*int
 verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
 {
 
@@ -1094,17 +1083,17 @@ verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2, int y2)
 }
 
 int
-comparar (int valor1, int valor2)       /*compara el valor mayor hasta el momento con el nuevo valor con base en las coordenadas) */
+comparar (int valor1, int valor2)       compara el valor mayor hasta el momento con el nuevo valor con base en las coordenadas) 
 {
   if (valor1 > valor2)
     {
-      return 1;                 /*regresas 1 si es mayor el nuevo valor, si no regresa 0 */
+      return 1;                 regresas 1 si es mayor el nuevo valor, si no regresa 0 
     }
   return 0;
 }
 
 void
-cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coordenada de la jugada */
+cambiar (int x2, int y2, int x1, int y1, char jugada[4])        cambia la coordenada de la jugada 
 {
   char arr1[8] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h' };
   char arr2[8] = { '1', '2', '3', '4', '5', '6', '7', '8' };
@@ -1117,7 +1106,7 @@ cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coor
         {
           while (k < 8)
             {
-              if (k = x1)
+              if (k ==x1)
                 {
                   jugada[i] = arr1[k];
                 }
@@ -1129,7 +1118,7 @@ cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coor
         {
           while (k < 8)
             {
-              if (k = x1)
+              if (k == x1)
                 {
                   jugada[i] = arr1[k];
                 }
@@ -1143,7 +1132,7 @@ cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coor
         {
           while (k < 8)
             {
-              if (k = x1)
+              if (k ==x1)
                 {
                   jugada[i] = arr2[k];
                 }
@@ -1157,7 +1146,7 @@ cambiar (int x2, int y2, int x1, int y1, char jugada[4])        /*cambia la coor
         {
           while (k < 8)
             {
-              if (k = x1)
+              if (k == x1)
                 {
                   jugada[i] = arr2[k];
                 }
@@ -1229,6 +1218,6 @@ case 'd':
   }
   valor = v2 - v1;
 	
-  return valor;                 /*regresa el valor */
+  return valor;                 regresa el valor 
 
-}
+}  Favor de revisar las firmas de sus funciones antes de mandarlas a llamar*/

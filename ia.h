@@ -23,7 +23,7 @@ int movimiento;
 
 int calcularvalor(int n1,int n2, int n3,int n4);
 
-int comparar(int n1, int n2, int n3, int n4, int n5);
+int comparar(int , int ,int, int,int);
 
 void mover_peon (struct tablero *board, char jugada[4]);
 
@@ -90,10 +90,10 @@ int *posicion_reina (struct tablero *board, int tipopieza);
 int verifcar_rey_en_jaque (struct tablero *board, int x1, int y1, int x2,
 			   int y2);
 
-int comparar (int valor1, int valor2);
+/*int comparar (int , int );
 
-void cambiar (int x2, int y2, int x1, int y1, char jugada[4]);
+void cambiar (int , int , int , int , char [4]);
 
-int calcularvalor (int x1, int y1, int x2, int y2, char tablero[8][8]);
+int calcularvalor (int , int , int , int , char [8][8]);*/
 
 #endif/*__IA_H__*/
