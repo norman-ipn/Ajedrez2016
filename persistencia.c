@@ -1,6 +1,71 @@
 #include "persistencia.h"
+
 /*Recibe cada movimiento de los jugadores para guardarlos en el archivo*/
 int
+Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
+                         int y_final, int i)
+  {
+
+    char digitos[10][2] = {"0","1","2","3","4","5","6","7","8","9"};
+    char NombreAnterior[50] = "PartidasGuardadas.txt";
+    char NombreActual[50];
+
+    FILE *fichero = 0;
+    fichero = fopen ("PartidasGuardadas.txt", "a");
+
+    if (fichero == 0)
+      {				/* no se pudo abrir el archivo*/ 
+        return -1;
+      }
+    fputs ("Partidas Guardadas\n", fichero);
+
+    if (jugador == 1)
+      {
+        fputs ("Movimiento Jugador 1\n", fichero);
+        fputs ("x inicial  y inicial  x final  y final\n", fichero);
+        fprintf (fichero, "%d             %d          %d         %d\n",
+        x_inicial, y_inicial, x_final, y_final);
+      }
+    if (jugador == 2)
+      {
+        fputs ("Movimiento Jugador 2\n", fichero);
+        fputs ("x inicial  y inicial  x final  y final\n", fichero);
+        fprintf (fichero, "%d             %d          %d         %d\n",
+        x_inicial, y_inicial, x_final, y_final);
+      }
+    fclose (fichero);
+    if(i > 0 && i < 10)
+      {
+        strcpy(NombreActual,"");
+        strcat(NombreActual,"PartidasGuardadas");
+        strcat(NombreActual,digitos[i]);
+        strcat(NombreActual,".txt");
+      } 
+    else if(i == 10)
+      {
+        strcpy(NombreActual,"PartidasGuardadas10.txt");
+      } 
+    else 
+      {
+        printf ("Memoria llena");
+        return i;
+      }  
+    if (rename (NombreAnterior, NombreActual) == 0)
+      {			/*Renombramos el archivo */
+        printf ("Archivo Guardado\n");
+        printf ("Numero de archivo; %d\n", i);
+        i++;
+        return i;
+      }
+    else
+      {
+        printf ("No se pudo guardar el archivo\n");
+        return i;
+      }  
+}
+//Se reduce el numero de lineas. Se incluye string.h en persistencia.h. Codigo anterior en comentario.
+
+/*int
 Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
 		 int y_final, int i)
 {
@@ -8,7 +73,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   fichero = fopen ("PartidasGuardadas.txt", "a");
 
   if (fichero == 0)
-    {				/* no se pudo abrir el archivo */
+    {			
       return -1;
     }
   fputs ("Partidas Guardadas\n", fichero);
@@ -31,7 +96,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 1)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas1.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -46,7 +111,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 2)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas2.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -60,7 +125,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 3)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas3.txt") == 0)
-	{			/*Renombramos el archivo */
+	{		
 
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
@@ -78,7 +143,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 4)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas4.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
@@ -94,7 +159,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 5)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas5.txt") == 0)
-	{			// Renombramos el archivo
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -110,7 +175,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 6)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas6.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -125,7 +190,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 7)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas7.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -140,7 +205,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 8)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas8.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -155,7 +220,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 9)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas9.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -171,7 +236,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
   if (i == 10)
     {
       if (rename ("PartidasGuardadas.txt", "PartidasGuardadas10.txt") == 0)
-	{			/*Renombramos el archivo */
+	{			
 	  printf ("Archivo Guardado\n");
 	  printf ("Numero de archivo; %d\n", i);
 	  i++;
@@ -189,7 +254,7 @@ Guardar_Partida (int jugador, int x_inicial, int y_inicial, int x_final,
       return i;
     }
 
-}
+}*/
 
 void
 continuar_partida (char archivo[100], int num)
@@ -258,7 +323,7 @@ continuar_partida (char archivo[100], int num)
       fclose (fichero);
 
     }
-  if (num == 5)
+x  if (num == 5)
     {
       fichero = fopen ("PartidasGuardadas5.txt", "r");
       if (fichero == 0)
