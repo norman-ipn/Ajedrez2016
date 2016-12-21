@@ -18,8 +18,6 @@ enum columnas
   COLUMNA_E, COLUMNA_F, COLUMNA_G, COLUMNA_H
 };
 
-
-
 void
 buscar_reyes (int *columna_K, int *fila_K, int *columna_k, int *fila_k,
 	      struct tablero *un_tablero);
@@ -34,6 +32,7 @@ int buscar_atacantes_blancos (int fila_k, int columna_k,
 int verificar_jaque (struct tablero *un_tablero);
 
 int verificar_jaque_mate (struct tablero *un_tablero);
+
 void iniciar_tablero (struct tablero *un_tablero);
 
 int paso (struct tablero *un_tablero, int columna, int fila);
@@ -48,21 +47,4 @@ int verificar_coordenada (char coordenada[3]);
 
 int jugada_al_azar (struct tablero *, int );
 
-/*
-char color_remplazo (int columna, int fila);
-
-int tablero_negro (void);
-
-int tablero_verde (void);
-
-int tablero_rojo (void);
-
-int tablero_amarillo (void);
-
-int tablero_azul (void);
-
-int tablero_magenta (void);
-
-int tablero_cyan (void);
-*/
 #endif/*__TABLERO_H__*/
