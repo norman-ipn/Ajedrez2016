@@ -183,6 +183,7 @@ jugar (struct tablero *un_tablero, int tipo_juego)
 	      break;
 	    }
 	   mover_piezas(un_tablero);
+	   break;
 /*------SOLICITUD DE DATOS DE LAS PIEZAS------
 
 	  printf("\nINGRESE LA -COLUMNA- DE LA PIEZA QUE DESEA MOVER [A-H]: ");
