@@ -23,6 +23,7 @@ Semestre 2016-2017-1 (Julio-Diciembre 2016)
 |**erickvazquez**| Vazquez Nuñez Erick Francisco|1CM2|
 |**SimCri**| Simón Hernández Cristian |1CM2|
 |**TyrZephyroth**| Arenas de la Calleja Carlos Eduardo |1CM2|
+|**BrendaArlenn19**| Martínez Barrera Brenda Arlenn |1CM2|
 
 # Coordinadores ETAPA 3
 
