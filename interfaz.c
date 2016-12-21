@@ -19,12 +19,8 @@ capturar_caracter (void)
 {
 
   char buffer[128];
-
   fflush (stdin);
-
   fgets (buffer, 4, stdin);
-
-  //sscanf (buffer, "%c", &opcion);
 
   return buffer[0];
 
